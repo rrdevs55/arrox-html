@@ -417,7 +417,7 @@
     }
 
     .header__logo {
-        border: 1px solid #11111110;
+        border: 1px solid var(--primary10);
         padding: 17px 30px;
         border-radius: 60px;
 
@@ -432,7 +432,7 @@
     }
 
     .header__nav {
-        border: 1px solid #11111110;
+        border: 1px solid var(--primary10);
         border-radius: 60px;
         padding: 0 13px;
 
@@ -736,51 +736,257 @@
 
 /* hero area style  */
 .hero-area {
-    background-color: #FF813A15;
-}
+    background-color: #F9E6DC;
+    overflow: hidden;
 
-.hero-content {
-    padding-top: 161px;
-    padding-bottom: 135px;
-}
+    .hero-content {
+        padding-top: 161px;
+        padding-bottom: 135px;
 
-h2.section-title {
-    font-size: 100px;
-    font-weight: 500;
-    line-height: .9;
-    max-width: 640px;
+        @media #{$xxl} {
+            padding-bottom: 85px;
+        }
 
-    .title-shape-1 {
-        margin-left: 10px;
-        margin-right: 10px;
+        @media #{$md} {
+            padding-bottom: 55px;
+        }
     }
-}
 
-.feature-box .number {
-    font-size: 100px;
-    font-weight: 400;
-    line-height: .72;
-    display: inline-block;
-    color: var(--primary);
-}
+    .section-title {
+        font-size: 100px;
+        font-weight: 500;
+        line-height: .9;
+        max-width: 640px;
 
-.feature-box .text {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 21px;
-    color: var(--primary);
-}
+        @media #{$xxl} {
+            font-size: 70px;
+        }
 
-.text-wrapper .text {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 30px;
-    color: var(--primary);
-    max-width: 490px;
-}
+        @media #{$xl} {
+            font-size: 50px;
+            max-width: 340px;
 
-.hero-content {
-    display: grid;
-    gap: 40px 100px;
-    grid-template-columns: 130px 1fr 560px;
+        }
+
+        @media #{$lg} {
+            max-width: 590px;
+        }
+
+        .title-shape-1 {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: -8px;
+            width: 100px;
+
+            @media #{$xxl} {
+                width: 80px;
+            }
+
+            @media #{$xl} {
+                width: 40px;
+            }
+        }
+    }
+
+    .feature-box {
+        .number {
+            font-size: 100px;
+            font-weight: 400;
+            line-height: .72;
+            display: inline-block;
+            color: var(--primary);
+
+            @media #{$xxl} {
+                font-size: 70px;
+            }
+
+            @media #{$xl} {
+                font-size: 50px;
+            }
+
+        }
+
+        .text {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21px;
+            color: var(--primary);
+            margin-top: 21px;
+        }
+
+
+    }
+
+
+    .text-wrapper {
+        margin-top: 87px;
+
+        @media #{$xxl} {
+            margin-top: 37px;
+        }
+
+        .text {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 30px;
+            color: var(--primary);
+            max-width: 490px;
+
+            @media #{$xl} {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .hero-content {
+        display: grid;
+        gap: 40px 100px;
+        grid-template-columns: 130px 1fr 560px;
+
+        @media #{$xxl} {
+            grid-template-columns: 130px 1fr 510px;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 130px 1fr 460px;
+            gap: 40px 80px;
+
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 130px 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .award-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+
+        @media #{$lg} {
+            grid-row: span 2;
+        }
+
+        @media #{$sm} {
+            order: 3;
+
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 100%;
+            background-color: #E2D1C8;
+            top: 0;
+            left: calc(50% - 2px);
+            z-index: -1;
+
+            @media #{$sm} {
+                display: none;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 100%;
+            background-color: #E2D1C8;
+            top: 0;
+            left: calc(50% + 1px);
+            z-index: -1;
+
+            @media #{$sm} {
+                display: none;
+            }
+        }
+
+        .circle-text {
+            width: 130px;
+            height: 190px;
+            background-color: #F9E6DC;
+
+            @media #{$sm} {
+                height: 130px;
+            }
+        }
+    }
+
+
+    .features-wrapper-box {
+        padding-bottom: 36px;
+        border-bottom: 1px solid var(--primary10);
+    }
+
+    .features-wrapper {
+        display: grid;
+        gap: 40px 60px;
+        grid-template-columns: repeat(2, 230px);
+        justify-content: space-between;
+
+        @media #{$xl} {
+            grid-template-columns: repeat(2, 200px);
+
+        }
+
+        @media #{$xs} {
+            grid-template-columns: repeat(1, 100%);
+        }
+    }
+
+
+    .section-content {
+        margin-top: 10px;
+
+        @media #{$lg} {
+            max-width: 600px;
+        }
+    }
+
+    .big-text {
+        font-family: var(--font_thunder);
+        font-size: 920px;
+        font-weight: 700;
+        line-height: 0.477;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--theme);
+        margin-top: 210px;
+
+        @media #{$xxl} {
+            font-size: 690px;
+            margin-top: 160px;
+        }
+
+        @media #{$xl} {
+            font-size: 590px;
+            margin-top: 130px;
+        }
+
+        @media #{$lg} {
+            font-size: 500px;
+            margin-top: 110px;
+        }
+
+        @media #{$md} {
+            font-size: 370px;
+            margin-top: 90px;
+        }
+
+        @media #{$sm} {
+            font-size: 270px;
+            margin-top: 60px;
+        }
+
+        @media #{$xs} {
+            font-size: 180px;
+            margin-top: 40px;
+        }
+    }
 }

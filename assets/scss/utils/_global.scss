@@ -1,0 +1,50 @@
+/*----------------------------------------*/
+/*  01. Global CSS START
+/*----------------------------------------*/
+// Body Overlay
+
+.body-overlay {
+  position: fixed;
+  z-index: 9;
+  pointer-events: none;
+  top: 0;
+  opacity: 1;
+  inset-inline-start: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: repeat;
+  background-position: top left;
+  background-image: url(../imgs/writer/body-bg.webp);
+}
+
+.container-xl {
+  max-width: 1550px;
+}
+
+.text-slider-active {
+  .swiper-slide {
+    width: auto;
+  }
+}
+
+// scrollbar 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d6d6d6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.pos-abs {
+  position: absolute;
+}

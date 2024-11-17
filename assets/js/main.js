@@ -149,6 +149,20 @@
     });
   }
 
+  // text slider 
+  if ('.text-slider-active') {
+    var text_slider_active = new Swiper(".text-slider-active", {
+      slidesPerView: 'auto',
+      loop: true,
+      autoplay: true,
+      spaceBetween: 35,
+      speed: 10000,
+      autoplay: {
+        delay: 1,
+      },
+    });
+  }
+
   // wow js activation 
   new WOW().init();
 

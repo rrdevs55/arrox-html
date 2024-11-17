@@ -92,6 +92,10 @@
     font-family: DM Sans;
     letter-spacing: -0.02em;
 
+    @media #{$lg} {
+      padding: 15px 34px;
+    }
+
 
 
     &:hover {

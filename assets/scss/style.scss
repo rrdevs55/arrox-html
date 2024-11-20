@@ -32,6 +32,7 @@
 
     @media #{$md} {
         font-size: 40px;
+        line-height: 1;
     }
 
     @media #{$sm} {
@@ -518,10 +519,32 @@
     .footer-top-inner {
         padding-top: 92px;
         padding-bottom: 50px;
-        border-bottom: 1px solid #11111110;
+        border-bottom: 1px solid rgba(17, 17, 17, 0.1);
         display: grid;
-        gap: 40px 60px;
+        gap: 30px 60px;
         grid-template-columns: 1fr 660px;
+
+        @media #{$xxl} {
+            padding-top: 72px;
+            padding-bottom: 40px;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr 580px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 500px;
+
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr 430px;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr;
+        }
 
         .info-text {
             .text {
@@ -529,6 +552,10 @@
                 font-size: 30px;
                 line-height: 1.26;
                 color: var(--primary);
+
+                @media #{$xxl} {
+                    font-size: 22px;
+                }
             }
         }
 
@@ -538,18 +565,44 @@
                 line-height: 1.5;
                 color: var(--black-2);
                 text-decoration: underline;
+
+                @media #{$xxl} {
+                    font-size: 22px;
+                }
             }
         }
     }
 
     .footer-logo {
         margin-top: 8px;
+        max-width: 657px;
+
+        @media #{$xxl} {
+            max-width: 257px;
+        }
+
+        @media #{$lg} {
+            max-width: 207px;
+        }
+
+        @media #{$md} {
+            max-width: 147px;
+        }
     }
 
     .footer-widget-wrapper-box {
         padding-top: 97px;
         padding-bottom: 94px;
 
+        @media #{$xxl} {
+            padding-top: 77px;
+            padding-bottom: 74px;
+        }
+
+        @media #{$lg} {
+            padding-top: 57px;
+            padding-bottom: 54px;
+        }
     }
 
     .footer-widget-wrapper {
@@ -557,10 +610,30 @@
         gap: 30px 170px;
         grid-template-columns: 1fr auto auto auto;
         justify-content: space-between;
+
+        @media #{$xl} {
+            gap: 30px 130px;
+        }
+
+        @media #{$lg} {
+            gap: 30px 90px;
+
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
     }
 
     .subscribe-form {
-        margin-top: 20px;
         max-width: 515px;
 
         .input-field {
@@ -569,6 +642,10 @@
             background-color: rgba(17, 17, 17, 0.05);
             padding: 32px 30px;
             border-radius: 50px;
+
+            @media #{$xxl} {
+                padding: 22px 30px;
+            }
 
             input {
                 width: 100%;
@@ -616,6 +693,16 @@
             }
         }
 
+        &.newsletter {
+            @media #{$md} {
+                order: 4;
+                grid-column: span 2;
+            }
+
+            @media #{$xs} {
+                grid-column: auto;
+            }
+        }
 
     }
 
@@ -634,7 +721,7 @@
     }
 
     .copyright-area-inner {
-        border-top: 1px solid #11111110;
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
         padding: 47px 0;
 
         @media #{$xxl} {
@@ -1089,7 +1176,7 @@
     }
 
     .swiper-wrapper {
-        transition-timing-function: linear;
+        transition-timing-function: linear !important;
     }
 }
 
@@ -1654,6 +1741,11 @@
         margin-top: 128px;
         margin-bottom: 85px;
         text-align: center;
+
+        @media #{$md} {
+            margin-top: 58px;
+            margin-bottom: 55px;
+        }
     }
 
     .section-title {
@@ -1674,6 +1766,10 @@
             max-width: 637px;
         }
 
+        @media #{$md} {
+            max-width: 527px;
+        }
+
         span {
             color: #999999;
 
@@ -1689,7 +1785,11 @@
             }
 
             &:before {
-                content: url(../imgs/shape/shape-5.png);
+                content: "";
+                width: 150px;
+                aspect-ratio: 100/100;
+                background-image: url(../imgs/shape/shape-5.png);
+                background-size: contain;
                 position: absolute;
                 top: -141px;
                 right: 144px;
@@ -1697,16 +1797,19 @@
                 visibility: hidden;
                 transition: all 0.5s;
                 transform: rotate(15deg) translate(30px, -30px);
-                width: 150px;
-                object-fit: contain;
 
                 @media #{$xxl} {
                     width: 100px;
                 }
 
                 @media #{$xl} {
+                    width: 90px;
+                }
+
+                @media #{$lg} {
                     width: 80px;
                 }
+
             }
         }
 
@@ -1720,7 +1823,11 @@
             }
 
             &:before {
-                content: url(../imgs/shape/shape-4.png);
+                content: "";
+                width: 150px;
+                aspect-ratio: 100/100;
+                background-image: url(../imgs/shape/shape-4.png);
+                background-size: contain;
                 position: absolute;
                 top: 21px;
                 left: -117px;
@@ -1728,8 +1835,18 @@
                 visibility: hidden;
                 transition: all 0.5s;
                 transform: rotate(-15deg) translate(-30px, -30px);
-                width: 150px;
 
+                @media #{$xxl} {
+                    width: 100px;
+                }
+
+                @media #{$xl} {
+                    width: 90px;
+                }
+
+                @media #{$lg} {
+                    width: 80px;
+                }
             }
         }
 
@@ -1743,7 +1860,11 @@
             }
 
             &:before {
-                content: url(../imgs/shape/shape-6.png);
+                content: "";
+                width: 150px;
+                aspect-ratio: 100/100;
+                background-image: url(../imgs/shape/shape-6.png);
+                background-size: contain;
                 position: absolute;
                 bottom: -217px;
                 left: 523px;
@@ -1751,8 +1872,20 @@
                 visibility: hidden;
                 transition: all 0.5s;
                 transform: rotate(-15deg) translate(-30px, 30px);
-                width: 150px;
 
+                @media #{$xxl} {
+                    width: 100px;
+                    bottom: -137px;
+                }
+
+                @media #{$xl} {
+                    width: 90px;
+                    bottom: -107px;
+                }
+
+                @media #{$lg} {
+                    width: 80px;
+                }
             }
         }
     }

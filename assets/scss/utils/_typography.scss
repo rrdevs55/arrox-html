@@ -23,17 +23,38 @@
   font-weight: bold;
 }
 
+/* Sequel Sans  */
+@font-face {
+  font-family: 'Sequel Sans';
+  src: url('../fonts/Sequel Sans Light Body.otf');
+  font-style: normal;
+  font-weight: 300;
+}
+
 
 
 :root {
   --font_dmsans: "DM Sans", sans-serif;
   --font_instrumentsans: "Instrument Sans", sans-serif;
   --font_thunder: 'Thunder';
+  --font_sequelsans: 'Sequel Sans';
   --font_awesome: 'Font Awesome 6 Free';
 }
 
 
+// Font Family Classes
+.font {
+  &-heading {
+    &-instrumentsans-medium {
+      @include heading (var(--font_instrumentsans), 500, 0.90);
+    }
 
+    &-sequelsans-light {
+      @include heading (var(--font_sequelsans), 300, 0.90);
+    }
+
+  }
+}
 
 
 
@@ -100,11 +121,15 @@ button {
 p {
   padding: 0;
   margin: 0;
-  line-height: 30px;
   font-weight: 400;
   font-size: 22px;
+  line-height: 30px;
   color: var(--secondary);
 
+  @media #{$xl} {
+    font-size: 20px;
+    line-height: 28px;
+  }
 
 }
 

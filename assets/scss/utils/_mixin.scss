@@ -118,22 +118,7 @@
 }
 
 
-// 
-@mixin wc_overlay($bg_color: rgba(0, 0, 0, 0.3)) {
-  position: relative;
 
-  &::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    pointer-events: none;
-    background-color: $bg_color;
-  }
-}
 
 // dark 
 @mixin dark {

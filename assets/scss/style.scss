@@ -1403,12 +1403,11 @@
     }
 
     .section-content {
-        margin-top: 313px;
 
         .year-since {
             font-size: 580px;
             font-weight: 315;
-            line-height: 27px;
+            line-height: 0.71;
             letter-spacing: -0.1em;
             text-align: right;
         }
@@ -1422,7 +1421,7 @@
 
 
         .text-wrapper {
-            margin-top: 286px;
+            margin-top: 91px;
             max-width: 770px;
             margin-left: auto;
 
@@ -1654,6 +1653,111 @@
             margin-top: 50px;
         }
     }
+}
+
+/* work area 2 style  */
+.work-area-2 {
+    .section-title {
+        font-size: 580px;
+        font-weight: 315;
+        line-height: 0.71;
+        letter-spacing: -0.1em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .section-header {
+        margin-top: 22px;
+    }
+
+    .works-wrapper-box {
+        margin-top: 95px;
+    }
+
+    .works-wrapper {
+        display: grid;
+        gap: 98px 20px;
+        grid-template-columns: repeat(4, 1fr);
+
+        >* {
+            &:nth-child(3) {
+                grid-column-start: 4;
+            }
+
+            &:nth-child(4) {
+                grid-column-start: 2;
+            }
+
+            &:nth-child(6) {
+                grid-column-start: 1;
+            }
+
+            &:nth-child(7) {
+                grid-column-start: 3;
+            }
+
+            &:nth-child(9) {
+                grid-column-start: 2;
+            }
+
+            &:nth-child(12) {
+                grid-column-start: 3;
+            }
+        }
+
+    }
+
+    .work-box {
+
+
+        .thumb {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+
+        .content {
+            margin-top: 8px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+        }
+
+
+
+        .meta {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            span {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1;
+                color: #999999;
+                display: flex;
+                align-items: center;
+
+                &:not(:first-child):before {
+                    content: "";
+                    width: 6px;
+                    height: 1px;
+                    background-color: inherit;
+                    display: inline-block;
+                    margin-inline-end: 5px;
+                }
+            }
+        }
+    }
+
+
 }
 
 

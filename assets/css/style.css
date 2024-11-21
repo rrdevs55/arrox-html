@@ -4627,13 +4627,10 @@ FEATURES STYLES 3
 .about-area-2 .section-header {
   margin-top: 49px;
 }
-.about-area-2 .section-content {
-  margin-top: 313px;
-}
 .about-area-2 .section-content .year-since {
   font-size: 580px;
   font-weight: 315;
-  line-height: 27px;
+  line-height: 0.71;
   letter-spacing: -0.1em;
   text-align: right;
 }
@@ -4644,7 +4641,7 @@ FEATURES STYLES 3
   max-width: 515px;
 }
 .about-area-2 .section-content .text-wrapper {
-  margin-top: 286px;
+  margin-top: 91px;
   max-width: 770px;
   margin-left: auto;
 }
@@ -4839,6 +4836,81 @@ FEATURES STYLES 3
   .work-area .all-btn-wrapper {
     margin-top: 50px;
   }
+}
+
+/* work area 2 style  */
+.work-area-2 .section-title {
+  font-size: 580px;
+  font-weight: 315;
+  line-height: 0.71;
+  letter-spacing: -0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.work-area-2 .section-header {
+  margin-top: 22px;
+}
+.work-area-2 .works-wrapper-box {
+  margin-top: 95px;
+}
+.work-area-2 .works-wrapper {
+  display: grid;
+  gap: 98px 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.work-area-2 .works-wrapper > *:nth-child(3) {
+  grid-column-start: 4;
+}
+.work-area-2 .works-wrapper > *:nth-child(4) {
+  grid-column-start: 2;
+}
+.work-area-2 .works-wrapper > *:nth-child(6) {
+  grid-column-start: 1;
+}
+.work-area-2 .works-wrapper > *:nth-child(7) {
+  grid-column-start: 3;
+}
+.work-area-2 .works-wrapper > *:nth-child(9) {
+  grid-column-start: 2;
+}
+.work-area-2 .works-wrapper > *:nth-child(12) {
+  grid-column-start: 3;
+}
+.work-area-2 .work-box .thumb {
+  overflow: hidden;
+}
+.work-area-2 .work-box .thumb img {
+  width: 100%;
+}
+.work-area-2 .work-box .content {
+  margin-top: 8px;
+}
+.work-area-2 .work-box .title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+.work-area-2 .work-box .meta {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.work-area-2 .work-box .meta span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: #999999;
+  display: flex;
+  align-items: center;
+}
+.work-area-2 .work-box .meta span:not(:first-child):before {
+  content: "";
+  width: 6px;
+  height: 1px;
+  background-color: inherit;
+  display: inline-block;
+  margin-inline-end: 5px;
 }
 
 /* service area style  */

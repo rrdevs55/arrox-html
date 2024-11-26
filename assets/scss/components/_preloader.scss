@@ -16,7 +16,7 @@
     z-index: 100;
 
     .spinner {
-      animation: spinner 1s infinite linear;
+      animation: t-spinner 1s infinite linear;
       border-radius: 50%;
       height: 9em;
       width: 9em;
@@ -50,7 +50,7 @@
         &:before {
           color: var(--primary);
           content: attr(data-text);
-          animation: characters 4s infinite;
+          animation: t-characters 4s infinite;
           left: 0;
           top: 0;
           opacity: 0;

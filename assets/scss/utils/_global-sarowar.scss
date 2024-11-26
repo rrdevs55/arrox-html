@@ -15,7 +15,7 @@
   }
 
   .text {
-    animation: spinner 5s infinite linear;
+    animation: t-spinner 5s infinite linear;
   }
 
   .icon {
@@ -330,7 +330,7 @@
   }
 }
 
-.wcf__toggle_switcher {
+.t__toggle_switcher {
   .slide-toggle-wrapper {
     display: flex;
     justify-content: center;

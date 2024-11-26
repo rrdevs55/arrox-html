@@ -166,4 +166,32 @@
   // wow js activation 
   new WOW().init();
 
+  // hover tooltip 
+  const couponCodes = document.querySelectorAll('.couponcode');
+
+  couponCodes.forEach(coupon => {
+    const tooltip = coupon.querySelector('.coupontooltip');
+
+    coupon.addEventListener('mousemove', event => {
+      if (tooltip) {
+        const tooltipWidth = tooltip.offsetWidth;
+        const tooltipHeight = tooltip.offsetHeight;
+
+        // Position tooltip relative to the parent couponcode
+        const rect = coupon.getBoundingClientRect();
+        tooltip.style.left = event.clientX - rect.left - tooltipWidth / 2 + 'px';
+        tooltip.style.top = event.clientY - rect.top - tooltipHeight / 2 + 'px';
+        tooltip.style.display = 'block';
+      }
+    });
+
+    coupon.addEventListener('mouseleave', () => {
+      if (tooltip) {
+        tooltip.style.display = 'none';
+      }
+    });
+  });
+
+
+
 })(jQuery);

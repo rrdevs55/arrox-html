@@ -193,5 +193,200 @@
   });
 
 
+  // Color Scheme Swithcer
+  const storageKey = 'theme-preference';
+
+  const onClick = () => {
+    theme.value = theme.value === 'light' ? 'dark' : 'light';
+    setPreference();
+  }
+
+  const getColorPreference = () => {
+    if (localStorage.getItem(storageKey)) {
+      return localStorage.getItem(storageKey);
+    } else {
+      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+  }
+
+  const setPreference = () => {
+    localStorage.setItem(storageKey, theme.value);
+    reflectPreference();
+  }
+
+  const reflectPreference = () => {
+    document.firstElementChild.setAttribute('data-theme', theme.value);
+    document.querySelector('#theme-toogle')?.setAttribute('aria-label', theme.value);
+  }
+
+  const theme = {
+    value: getColorPreference(),
+  }
+
+  // set early so no page flashes / CSS is made aware
+  reflectPreference();
+
+  $(window).on("load", function (event) {
+    // set on load so screen readers can see latest value on the button
+    reflectPreference();
+
+    // now this script can find and listen for clicks on the control
+    document.querySelector('#theme-toogle').addEventListener('click', onClick);
+  });
+
+
+  // GSAP Fade Animation 
+  let fadeArray_items = document.querySelectorAll(".fade-anim");
+  if (fadeArray_items.length > 0) {
+    const fadeArray = gsap.utils.toArray(".fade-anim")
+    // gsap.set(fadeArray, {opacity:0})
+    fadeArray.forEach((item, i) => {
+
+      var fade_direction = "bottom"
+      var onscroll_value = 1
+      var duration_value = 1.15
+      var fade_offset = 50
+      var delay_value = 0.15
+      var ease_value = "power2.out"
+
+      if (item.getAttribute("data-offset")) {
+        fade_offset = item.getAttribute("data-offset");
+      }
+      if (item.getAttribute("data-duration")) {
+        duration_value = item.getAttribute("data-duration");
+      }
+
+      if (item.getAttribute("data-direction")) {
+        fade_direction = item.getAttribute("data-direction");
+      }
+      if (item.getAttribute("data-on-scroll")) {
+        onscroll_value = item.getAttribute("data-on-scroll");
+      }
+      if (item.getAttribute("data-delay")) {
+        delay_value = item.getAttribute("data-delay");
+      }
+      if (item.getAttribute("data-ease")) {
+        ease_value = item.getAttribute("data-ease");
+      }
+
+      let animation_settings = {
+        opacity: 0,
+        ease: ease_value,
+        duration: duration_value,
+        delay: delay_value,
+      }
+
+      if (fade_direction == "top") {
+        animation_settings['y'] = -fade_offset
+      }
+      if (fade_direction == "left") {
+        animation_settings['x'] = -fade_offset;
+      }
+
+      if (fade_direction == "bottom") {
+        animation_settings['y'] = fade_offset;
+      }
+
+      if (fade_direction == "right") {
+        animation_settings['x'] = fade_offset;
+      }
+
+      if (onscroll_value == 1) {
+        animation_settings['scrollTrigger'] = {
+          trigger: item,
+          start: 'top 85%',
+        }
+      }
+      gsap.from(item, animation_settings);
+    })
+  }
+
+
+
+  // Text Invert With Scroll 
+  const split = new SplitText(".text-invert", { type: "lines" });
+
+  split.lines.forEach((target) => {
+    gsap.to(target, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: target,
+        scrub: 1,
+        start: 'top 85%',
+        end: "bottom center",
+      }
+    });
+  });
+
+  //  text focus 
+  // gsap.utils.toArray(".text-focus").forEach((item) => {
+  //   ScrollTrigger.create({
+  //     trigger: item,
+  //     start: "top 85%",
+  //     end: "bottom center",
+  //     // toggleClass: "active",
+  //     onEnter: () => item.classList.add("active"),
+  //     markers: true,
+  //   })
+  // })
+
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1024px)", () => {
+
+    // Pin Active
+    var pin_fixed = document.querySelector('.pin-element');
+    if (pin_fixed && device_width > 991) {
+
+      gsap.to(".pin-element", {
+        scrollTrigger: {
+          trigger: ".pin-area",
+          pin: ".pin-element",
+          start: "top top",
+          end: "bottom bottom",
+          pinSpacing: false,
+        }
+      });
+    }
+
+
+    // grow animation 
+    var grow = document.querySelectorAll(".grow");
+
+    grow.forEach((item) => {
+      gsap.to(item, {
+        width: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: item,
+          scrub: 10,
+          start: 'top 70%',
+          end: "top center",
+        }
+      });
+    });
+
+  });
+
+
+  var tl = gsap.timeline({
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".cta-area-inner",
+      pin: ".cta-area",
+      pinSpacing: "100vh",
+      scrub: 5,
+      start: 'center 50%',
+      end: "bottom center",
+      markers: true
+    }
+  });
+  tl.to(".cta-area-inner", { width: "1920", height: "100vh", borderRadius: "0%" });
+  tl.to(".cta-area .section-title", { fontSize: "18vw" }, "<");
+
+
+
+
 
 })(jQuery);

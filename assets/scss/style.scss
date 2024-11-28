@@ -181,17 +181,6 @@
 
 }
 
-// .text-focus {
-//     background-image: linear-gradient(yellow, yellow);
-//     background-size: 0% 100%;
-//     background-repeat: no-repeat;
-//     transition: background-size 1s ease-in;
-//     display: inline;
-
-//     &.active {
-//         background-size: 100% 100%;
-//     }
-// }
 
 
 
@@ -2084,9 +2073,35 @@
         .thumb {
             border-radius: 20px;
             overflow: hidden;
+            position: relative;
+
+            &:hover {
+                .t-btn {
+                    opacity: 1;
+                }
+            }
 
             img {
                 width: 100%;
+            }
+
+            .t-btn {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 30px;
+                letter-spacing: -0.02em;
+                padding: 10px 20px;
+                display: inline-block;
+                background-color: white;
+                color: var(--black);
+                border-radius: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                margin: -25px 0 0 -65px;
+                transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+                pointer-events: none;
             }
         }
 
@@ -2316,9 +2331,35 @@
 
         .thumb {
             overflow: hidden;
+            position: relative;
+
+            &:hover {
+                .t-btn {
+                    opacity: 1;
+                }
+            }
 
             img {
                 width: 100%;
+            }
+
+            .t-btn {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 30px;
+                letter-spacing: -0.02em;
+                padding: 10px 20px;
+                display: inline-block;
+                background-color: white;
+                color: var(--black);
+                border-radius: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                margin: -25px 0 0 -65px;
+                transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+                pointer-events: none;
             }
         }
 
@@ -2825,6 +2866,72 @@
                 max-width: 100%;
                 margin-top: 23px;
             }
+        }
+    }
+
+
+
+    .clients-wrapper {
+        border-bottom: 1px solid var(--primary);
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        pointer-events: none;
+        padding-top: 60px;
+        height: 433px;
+
+        >* {
+            position: absolute;
+            display: inline-block;
+            margin-bottom: 0;
+            left: 0;
+            top: 0;
+            user-select: none;
+            pointer-events: auto;
+            transition: none;
+        }
+    }
+
+    .client-box {
+        width: 215px;
+        height: 100px;
+        padding: 0 20px;
+        background-color: var(--primary);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        transform: translate(-50%, -50%) rotate(0.01rad);
+
+    }
+}
+
+.client-capsule-item {
+    display: inline-block;
+    font-size: 15px;
+    color: var(--tp-common-white);
+    font-weight: 500;
+    border-radius: 100px;
+    padding: 10px 26px;
+    transform: translate(-50%, -50%) rotate(0.01rad);
+
+    &-wrapper {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        pointer-events: none;
+        padding-top: 60px;
+        height: 433px;
+
+        >* {
+            position: absolute;
+            display: inline-block;
+            margin-bottom: 0;
+            left: 0;
+            top: 0;
+            user-select: none;
+            pointer-events: auto;
+            transition: none;
         }
     }
 }
@@ -3621,21 +3728,4 @@
             margin-top: 19px;
         }
     }
-}
-
-.couponcode {
-    margin: 100px;
-    position: relative;
-    /* Ensure tooltips are positioned relative to this element */
-}
-
-.coupontooltip {
-    display: none;
-    background: #C8C8C8;
-    padding: 10px;
-    position: absolute;
-    /* Ensure positioning works within .couponcode */
-    z-index: 1000;
-    width: 200px;
-    height: 100px;
 }

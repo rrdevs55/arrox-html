@@ -10,7 +10,7 @@
 // Register GSAP Plugins
 // Counter active
 // testimonial slider
-// wow js activation 
+
 
 
 ****************************************************/
@@ -163,34 +163,8 @@
     });
   }
 
-  // wow js activation 
-  new WOW().init();
 
-  // hover tooltip 
-  const couponCodes = document.querySelectorAll('.couponcode');
 
-  couponCodes.forEach(coupon => {
-    const tooltip = coupon.querySelector('.coupontooltip');
-
-    coupon.addEventListener('mousemove', event => {
-      if (tooltip) {
-        const tooltipWidth = tooltip.offsetWidth;
-        const tooltipHeight = tooltip.offsetHeight;
-
-        // Position tooltip relative to the parent couponcode
-        const rect = coupon.getBoundingClientRect();
-        tooltip.style.left = event.clientX - rect.left - tooltipWidth / 2 + 'px';
-        tooltip.style.top = event.clientY - rect.top - tooltipHeight / 2 + 'px';
-        tooltip.style.display = 'block';
-      }
-    });
-
-    coupon.addEventListener('mouseleave', () => {
-      if (tooltip) {
-        tooltip.style.display = 'none';
-      }
-    });
-  });
 
 
   // Color Scheme Swithcer
@@ -319,17 +293,7 @@
     });
   });
 
-  //  text focus 
-  // gsap.utils.toArray(".text-focus").forEach((item) => {
-  //   ScrollTrigger.create({
-  //     trigger: item,
-  //     start: "top 85%",
-  //     end: "bottom center",
-  //     // toggleClass: "active",
-  //     onEnter: () => item.classList.add("active"),
-  //     markers: true,
-  //   })
-  // })
+
 
   let mm = gsap.matchMedia();
 
@@ -360,8 +324,8 @@
         ease: "none",
         scrollTrigger: {
           trigger: item,
-          scrub: 10,
-          start: 'top 70%',
+          scrub: 1,
+          start: 'top 90%',
           end: "top center",
         }
       });
@@ -386,7 +350,23 @@
   tl.to(".cta-area .section-title", { fontSize: "18vw" }, "<");
 
 
+  // hover reveal start
+  const hoverText = document.querySelectorAll(".hover-reveal");
+  function moveText(e, hoverText) {
+    const item = hoverText.getBoundingClientRect();
+    const x = e.clientX - item.x;
+    const y = e.clientY - item.y;
+    if (hoverText.children[0]) {
+      hoverText.children[0].style.transform = `translate(${x}px, ${y}px)`;
+    }
+  }
 
+  hoverText.forEach((item, i) => {
+    item.addEventListener("mousemove", (e) => {
+      setInterval(moveText(e, item), 100);
+    });
+  });
+  // hover reveal end
 
 
 })(jQuery);

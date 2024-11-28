@@ -840,6 +840,9 @@ body {
 .bg-transparent {
   background-color: transparent !important;
 }
+.bg-theme {
+  background-color: var(--theme) !important;
+}
 
 .zi-1 {
   z-index: 1;
@@ -5985,27 +5988,6 @@ FEATURES STYLES 3
     margin-top: 23px;
   }
 }
-.client-area .clients-wrapper {
-  border-bottom: 1px solid var(--primary);
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  pointer-events: none;
-  padding-top: 60px;
-  height: 433px;
-}
-.client-area .clients-wrapper > * {
-  position: absolute;
-  display: inline-block;
-  margin-bottom: 0;
-  left: 0;
-  top: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  pointer-events: auto;
-  transition: none;
-}
 .client-area .client-box {
   width: 215px;
   height: 100px;
@@ -6015,30 +5997,20 @@ FEATURES STYLES 3
   justify-content: center;
   align-items: center;
   border-radius: 100px;
-  transform: translate(-50%, -50%) rotate(0.01rad);
+  transform: translate(-50%, -50%) rotate(0rad);
 }
 
-.client-capsule-item {
-  display: inline-block;
-  font-size: 15px;
-  color: var(--tp-common-white);
-  font-weight: 500;
-  border-radius: 100px;
-  padding: 10px 26px;
-  transform: translate(-50%, -50%) rotate(0.01rad);
-}
-.client-capsule-item-wrapper {
+.client-capsule-wrapper {
   position: relative;
   overflow: hidden;
   height: 100%;
   pointer-events: none;
-  padding-top: 60px;
   height: 433px;
 }
-.client-capsule-item-wrapper > * {
+.client-capsule-wrapper > * {
   position: absolute;
   display: inline-block;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   left: 0;
   top: 0;
   -webkit-user-select: none;

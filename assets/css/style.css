@@ -4051,6 +4051,58 @@ FEATURES STYLES 3
   font-size: 22px;
 }
 
+/* header area 3 style  */
+.header-area-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header-area-3__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  padding-top: 35px;
+}
+@media only screen and (max-width: 1199px) {
+  .header-area-3__inner {
+    padding-top: 25px;
+  }
+}
+.header-area-3__inner > *:nth-child(1) {
+  margin-inline-end: auto;
+}
+@media (min-width: 1850px) {
+  .header-area-3 .container.large {
+    max-width: 1850px;
+  }
+}
+.header-area-3 .header__logo img {
+  width: 100%;
+}
+.header-area-3 .main-menu li a {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  padding: 0 0;
+}
+.header-area-3 .main-menu li a:hover {
+  color: var(--action);
+}
+.header-area-3 .main-menu > ul {
+  display: block;
+}
+.header-area-3 .side-toggle {
+  width: 50px;
+  height: 50px;
+  background-color: #F1E8E1;
+  border-radius: 50%;
+}
+.header-area-3 .side-toggle i {
+  font-size: 22px;
+}
+
 .sticky {
   position: fixed !important;
   top: 0;

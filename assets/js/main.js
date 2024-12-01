@@ -343,7 +343,7 @@
       scrub: 5,
       start: 'center 50%',
       end: "bottom center",
-      markers: true
+      markers: false
     }
   });
   tl.to(".cta-area-inner", { width: "1920", height: "100vh", borderRadius: "0%" });

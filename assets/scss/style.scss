@@ -630,11 +630,6 @@
                 font-family: DM Sans;
                 letter-spacing: -0.02em;
 
-                @media #{$lg} {
-                    padding: 15px 34px;
-                }
-
-
 
                 &:hover {
                     color: var(--black);
@@ -1905,6 +1900,23 @@
     .subtitle-wrapper {
         max-width: 1090px;
         margin-left: auto;
+
+        @media #{$xxl} {
+            max-width: 790px;
+        }
+
+        @media #{$xl} {
+            max-width: 690px;
+        }
+
+        @media #{$lg} {
+            max-width: 590px;
+        }
+
+        @media #{$md} {
+            margin-left: 0;
+            margin-top: 70px;
+        }
     }
 
     .section-title {
@@ -1914,29 +1926,87 @@
         letter-spacing: -0.07em;
         max-width: 1240px;
 
+        @media #{$xxl} {
+            font-size: 100px;
+            max-width: 940px;
+        }
+
+        @media #{$lg} {
+            font-size: 70px;
+            max-width: 640px;
+        }
+
+        @media #{$sm} {
+            font-size: 50px;
+        }
+
         .title-shape-1 {
             height: 96px;
             margin-right: 15px;
+
+            @media #{$xxl} {
+                height: 76px;
+                margin-right: 10px;
+            }
+
+            @media #{$lg} {
+                height: 51px;
+            }
+
+            @media #{$sm} {
+                height: 36px;
+                margin-right: 5px;
+            }
         }
 
         .title-shape-2 {
             height: 84px;
             margin-left: 5px;
             margin-top: -10px;
+
+            @media #{$xxl} {
+                height: 64px;
+            }
+
+            @media #{$lg} {
+                height: 44px;
+                margin-top: -6px;
+            }
+
+            @media #{$sm} {
+                height: 30px;
+            }
         }
 
         .text-underline {
             color: rgba(17, 17, 17, 0.2);
             text-decoration-line: underline;
-            text-decoration-style: solid;
-            text-underline-position: from-font;
-            text-decoration-skip-ink: auto;
             text-decoration-thickness: 7px;
+            text-underline-offset: 12px;
+
+            @media #{$xxl} {
+                text-decoration-thickness: 6px;
+                text-underline-offset: 8px;
+            }
+
+            @media #{$lg} {
+                text-decoration-thickness: 4px;
+                text-underline-offset: 6px;
+            }
+
+            @media #{$sm} {
+                text-decoration-thickness: 3px;
+                text-underline-offset: 4px;
+            }
         }
     }
 
     .title-wrapper {
         margin-top: 43px;
+
+        @media #{$md} {
+            margin-top: 23px;
+        }
     }
 
     .social-links {
@@ -1945,6 +2015,10 @@
         max-width: 270px;
         flex-wrap: wrap;
         align-self: flex-end;
+
+        @media #{$md} {
+            max-width: 100%;
+        }
 
         li {
             font-size: 18px;
@@ -1972,6 +2046,10 @@
         line-height: 28px;
         color: var(--primary);
         max-width: 410px;
+
+        @media #{$md} {
+            max-width: 100%;
+        }
     }
 
 
@@ -1981,8 +2059,29 @@
         grid-template-columns: 1fr 310px 730px;
         margin-top: 88px;
 
+        @media #{$xxl} {
+            grid-template-columns: 1fr 310px 430px;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr 310px 330px;
+            margin-top: 58px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 210px 330px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
+
         .btn-wrapper {
             margin-top: 56px;
+
+            @media #{$lg} {
+                margin-top: 36px;
+            }
         }
     }
 }
@@ -2741,16 +2840,32 @@
 
     .section-title {
         max-width: 1060px;
+
+        @media #{$xxl} {
+            max-width: 660px;
+        }
     }
 
     .works-wrapper-box {
         margin-top: 86px;
+
+        @media #{$xxl} {
+            margin-top: 56px;
+        }
+
+        @media #{$lg} {
+            margin-top: 36px;
+        }
     }
 
     .works-wrapper {
         display: grid;
         gap: 68px 20px;
         grid-template-columns: repeat(2, 1fr);
+
+        @media #{$xxl} {
+            gap: 48px 20px;
+        }
     }
 
     .work-box {
@@ -2802,7 +2917,11 @@
 
 
             @media #{$lg} {
-                font-size: 18px;
+                font-size: 22px;
+            }
+
+            @media #{$sm} {
+                font-size: 20px;
             }
         }
 
@@ -3197,11 +3316,23 @@
 
         .t-btn-group {
             transform: translateY(-14px);
+
+            @media #{$xl} {
+                transform: translateY(-10px);
+            }
         }
     }
 
     .services-wrapper-box {
         margin-top: 86px;
+
+        @media #{$xxl} {
+            margin-top: 56px;
+        }
+
+        @media #{$xl} {
+            margin-top: 36px;
+        }
     }
 
     .services-wrapper {
@@ -3209,6 +3340,18 @@
         gap: 30px 60px;
         grid-template-columns: repeat(4, 1fr);
         overflow: hidden;
+
+        @media #{$xxl} {
+            gap: 30px 40px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$xs} {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     .service-box {
@@ -3223,6 +3366,10 @@
             background-color: rgba(17, 17, 17, 0.1);
             top: 0;
             left: -30px;
+
+            @media #{$xxl} {
+                left: -20px;
+            }
         }
     }
 
@@ -3232,6 +3379,15 @@
         grid-template-columns: 110px 1fr;
         align-items: flex-start;
         padding-top: 12px;
+
+        @media #{$xxl} {
+            gap: 20px 20px;
+            grid-template-columns: 70px 1fr;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr;
+        }
 
         &:hover {
             .thumb {
@@ -3246,6 +3402,14 @@
             border-radius: 25px;
             overflow: hidden;
 
+            @media #{$xxl} {
+                border-radius: 15px;
+            }
+
+            @media #{$xl} {
+                max-width: 70px;
+            }
+
             img {
                 width: 100%;
                 transition: all 0.5s;
@@ -3255,8 +3419,12 @@
         .title {
             font-size: 30px;
             font-weight: 310;
-            line-height: 35px;
+            line-height: 1.16;
             letter-spacing: -0.07em;
+
+            @media #{$xxl} {
+                font-size: 24px;
+            }
         }
 
         .text {
@@ -3271,6 +3439,10 @@
             font-size: 18px;
             padding-bottom: 2px;
             margin-top: 50px;
+
+            @media #{$xxl} {
+                margin-top: 30px;
+            }
         }
     }
 

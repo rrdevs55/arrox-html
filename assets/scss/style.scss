@@ -2866,6 +2866,14 @@
         @media #{$xxl} {
             gap: 48px 20px;
         }
+
+        @media #{$sm} {
+            gap: 38px 20px;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     .work-box {
@@ -3665,11 +3673,19 @@
     .section-title {
         max-width: 820px;
         color: var(--white);
+
+        @media #{$xl} {
+            max-width: 500px;
+        }
     }
 
     .section-content {
 
         margin-top: 79px;
+
+        @media #{$xxl} {
+            margin-top: 59px;
+        }
 
         .text {
             font-size: 20px;
@@ -3687,6 +3703,26 @@
             letter-spacing: -0.1em;
             color: #FCF7F3;
             display: inline-block;
+
+            @media #{$xxl} {
+                font-size: 380px;
+            }
+
+            @media #{$xl} {
+                font-size: 320px;
+            }
+
+            @media #{$lg} {
+                font-size: 240px;
+            }
+
+            @media #{$md} {
+                font-size: 150px;
+            }
+
+            @media #{$xs} {
+                font-size: 100px;
+            }
         }
 
         .info-text {
@@ -3697,25 +3733,99 @@
             grid-template-columns: auto 1fr;
             align-items: flex-end;
 
+            @media #{$xxl} {
+                margin-top: 29px;
+            }
+
+            @media #{$xl} {
+                margin-left: 165px;
+            }
+
+            @media #{$md} {
+                margin-top: 19px;
+            }
+
+            @media #{$sm} {
+                margin-left: 0;
+            }
+
+            @media #{$xs} {
+                grid-template-columns: 1fr;
+            }
+
+            img {
+                height: 43px;
+
+                @media #{$xxl} {
+                    height: 33px;
+                }
+
+                @media #{$lg} {
+                    height: 20px;
+                }
+
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+
             .text {
                 font-family: var(--font_sequelsansromanbody);
                 font-size: 30px;
                 font-weight: 310;
-                line-height: 35px;
+                line-height: 1.16;
                 letter-spacing: -0.07em;
                 color: #FCF7F3;
                 max-width: 273px;
                 margin-top: 42px;
+
+                @media #{$xxl} {
+                    font-size: 24px;
+                    max-width: 223px;
+
+                }
+
+                @media #{$lg} {
+                    font-size: 18px;
+                    max-width: 173px;
+                    margin-top: 22px;
+                }
             }
         }
 
         .text-wrapper {
             margin-left: 265px;
+
+            @media #{$xl} {
+                margin-left: 165px;
+            }
+
+            @media #{$sm} {
+                margin-left: 0;
+            }
         }
 
         .thumb {
             margin-top: 94px;
             margin-left: 595px;
+
+            @media #{$xxl} {
+                margin-left: 495px;
+                margin-top: 64px;
+            }
+
+            @media #{$xxl} {
+                margin-left: 345px;
+            }
+
+            @media #{$md} {
+                margin-left: 255px;
+                margin-top: 44px;
+            }
+
+            @media #{$sm} {
+                margin-left: 0;
+            }
         }
     }
 }
@@ -4530,19 +4640,51 @@
         gap: 20px 60px;
         grid-template-columns: 1fr 1225px;
         align-items: flex-end;
+
+        @media #{$xxl} {
+            grid-template-columns: 1fr 905px;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr 675px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 575px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
     }
 
     .section-subtitle {
         font-family: var(--font_sequelsansromanbody);
         font-size: 30px;
         font-weight: 310;
-        line-height: 35px;
+        line-height: 1.16;
         letter-spacing: -0.07em;
         color: var(--primary);
+
+        @media #{$xxl} {
+            font-size: 24px;
+        }
+
+        @media #{$md} {
+            font-size: 18px;
+
+            br {
+                display: none;
+            }
+        }
     }
 
     .section-title {
         max-width: 1126px;
+
+        span {
+            color: rgba(17, 17, 17, 0.3);
+        }
     }
 
     .approach-wrapper-box {
@@ -4553,6 +4695,24 @@
         align-items: flex-start;
         margin-bottom: 80px;
 
+        @media #{$xxl} {
+            grid-template-columns: 1fr 905px;
+            margin-top: 64px;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr 675px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 575px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+            margin-top: 44px;
+        }
+
         .steps {
             font-family: var(--font_sequelsansromanbody);
             font-size: 265px;
@@ -4560,6 +4720,18 @@
             line-height: 0.65;
             letter-spacing: -0.07em;
             color: var(--primary);
+
+            @media #{$xxl} {
+                font-size: 205px;
+            }
+
+            @media #{$xl} {
+                font-size: 165px;
+            }
+
+            @media #{$lg} {
+                display: none;
+            }
         }
     }
 
@@ -4577,11 +4749,33 @@
         padding-bottom: 24px;
         border-bottom: 1px dashed #878482;
 
+        @media #{$xxl} {
+            grid-template-columns: 60px 1fr 395px;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 60px 1fr;
+
+        }
+
+        @media #{$md} {
+            gap: 10px 30px;
+
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 30px 1fr;
+        }
+
         .number {
             font-size: 18px;
             font-weight: 400;
             line-height: 26px;
             color: var(--primary);
+
+            @media #{$xl} {
+                grid-row: span 2;
+            }
         }
 
         .title {
@@ -4589,6 +4783,10 @@
             font-weight: 310;
             line-height: 30px;
             letter-spacing: -0.07em;
+
+            @media #{$xxl} {
+                font-size: 24px;
+            }
         }
 
         .text {

@@ -368,5 +368,30 @@
   });
   // hover reveal end
 
+  var ab2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about-area-2 .year-wrapper",
+      pin: ".about-area-2",
+      pinSpacing: true,
+      scrub: 3,
+      start: 'bottom 95%',
+      end: "bottom center",
+      // markers: true,
+    }
+  })
+  ab2.to("h2.year-since.fade-anim.animated", { right: "0" })
+
+  var cs = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".circular-shape-wrapper",
+      start: "center 50%",
+      end: "center top",
+      pin: true,
+      scrub: 3,
+      markers: true
+    }
+  })
+  cs.to(".shape-thumb img", { scale: "110" })
+
 
 })(jQuery);

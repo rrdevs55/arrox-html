@@ -2273,8 +2273,10 @@
             font-weight: 315;
             line-height: 0.71;
             letter-spacing: -0.1em;
-            text-align: right;
+            // text-align: right;
             font-family: var(--font_sequelsansmediumbody);
+            white-space: nowrap;
+            // transform: translate(39%, 0px);
 
             @media #{$xxl} {
                 font-size: 420px;
@@ -2354,6 +2356,23 @@
         }
     }
 
+}
+
+
+// ----------------
+.year-wrapper {
+    position: relative;
+}
+
+h2.year-since.fade-anim.animated {
+    position: absolute;
+    top: 0;
+    right: -86%;
+    opacity: 1;
+}
+
+h2.year-since.fade-anim {
+    opacity: 0;
 }
 
 /* video area style  */
@@ -2775,6 +2794,7 @@
         .thumb {
             overflow: hidden;
             position: relative;
+            cursor: none;
 
             &:hover {
                 .t-btn {
@@ -4519,6 +4539,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .shape-thumb {
+        img {
+            transform: scale(1);
+        }
+    }
 }
 
 /* award area style  */

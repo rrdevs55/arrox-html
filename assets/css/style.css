@@ -5445,8 +5445,8 @@ FEATURES STYLES 3
   font-weight: 315;
   line-height: 0.71;
   letter-spacing: -0.1em;
-  text-align: right;
   font-family: var(--font_sequelsansmediumbody);
+  white-space: nowrap;
 }
 @media only screen and (max-width: 1919px) {
   .about-area-2 .section-content .year-since {
@@ -5529,6 +5529,21 @@ FEATURES STYLES 3
   .about-area-2 .section-content .btn-wrapper {
     max-width: 100%;
   }
+}
+
+.year-wrapper {
+  position: relative;
+}
+
+h2.year-since.fade-anim.animated {
+  position: absolute;
+  top: 0;
+  right: -86%;
+  opacity: 1;
+}
+
+h2.year-since.fade-anim {
+  opacity: 0;
 }
 
 /* video area style  */
@@ -5908,6 +5923,7 @@ FEATURES STYLES 3
 .work-area-2 .work-box .thumb {
   overflow: hidden;
   position: relative;
+  cursor: none;
 }
 .work-area-2 .work-box .thumb:hover .t-btn {
   opacity: 1;
@@ -7531,6 +7547,9 @@ FEATURES STYLES 3
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.circular-shape-wrapper .shape-thumb img {
+  transform: scale(1);
 }
 
 /* award area style  */

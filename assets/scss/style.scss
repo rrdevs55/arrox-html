@@ -2545,6 +2545,8 @@ h2.year-since.fade-anim {
 
             img {
                 width: 100%;
+                cursor: none;
+
             }
 
             .t-btn {
@@ -2794,7 +2796,6 @@ h2.year-since.fade-anim {
         .thumb {
             overflow: hidden;
             position: relative;
-            cursor: none;
 
             &:hover {
                 .t-btn {
@@ -2804,6 +2805,8 @@ h2.year-since.fade-anim {
 
             img {
                 width: 100%;
+                cursor: none;
+
             }
 
             .t-btn {
@@ -2935,6 +2938,8 @@ h2.year-since.fade-anim {
 
             img {
                 width: 100%;
+                cursor: none;
+
             }
 
             .t-btn {
@@ -3879,15 +3884,23 @@ h2.year-since.fade-anim {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     &-inner {
-        height: 390px;
-        width: 390px;
-        border-radius: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--black);
+        position: relative;
+        z-index: 1;
+
+        .area-bg {
+            position: absolute;
+            height: 390px;
+            width: 390px;
+            background-color: var(--black);
+            border-radius: 100%;
+            z-index: -1;
+        }
     }
 
     .section-title {
@@ -4089,6 +4102,10 @@ h2.year-since.fade-anim {
     }
 }
 
+.client-capsule-wrapper-box {
+    border-bottom: 1px solid var(--primary);
+}
+
 .client-capsule-wrapper {
     position: relative;
     overflow: hidden;
@@ -4099,7 +4116,7 @@ h2.year-since.fade-anim {
     >* {
         position: absolute;
         display: inline-block;
-        margin-bottom: 10px;
+        margin-bottom: 0;
         left: 0;
         top: 0;
         user-select: none;
@@ -4539,6 +4556,7 @@ h2.year-since.fade-anim {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     .shape-thumb {
         img {

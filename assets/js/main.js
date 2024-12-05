@@ -337,16 +337,16 @@
   var tl = gsap.timeline({
     ease: "none",
     scrollTrigger: {
-      trigger: ".cta-area-inner",
-      pin: ".cta-area",
-      pinSpacing: "100vh",
-      scrub: 5,
-      start: 'center 50%',
-      end: "bottom center",
-      markers: false
+      trigger: ".cta-area",
+      pin: true,
+      pinSpacing: true,
+      scrub: 1,
+      start: 'bottom 100%',
+      end: "bottom 0%",
+      // markers: true
     }
   });
-  tl.to(".cta-area-inner", { width: "1920", height: "100vh", borderRadius: "0%" });
+  tl.to(".cta-area .area-bg", { scale: "10" });
   tl.to(".cta-area .section-title", { fontSize: "18vw" }, "<");
 
 
@@ -388,10 +388,11 @@
       end: "center top",
       pin: true,
       scrub: 3,
-      markers: true
+      // markers: true
     }
   })
   cs.to(".shape-thumb img", { scale: "110" })
+
 
 
 })(jQuery);

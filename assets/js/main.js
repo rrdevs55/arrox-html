@@ -79,7 +79,7 @@
 
 
   // Register GSAP Plugins
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
 
@@ -368,18 +368,20 @@
   });
   // hover reveal end
 
-  var ab2 = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".about-area-2 .year-wrapper",
-      pin: ".about-area-2",
-      pinSpacing: true,
-      scrub: 3,
-      start: 'bottom 95%',
-      end: "bottom center",
-      // markers: true,
-    }
-  })
-  ab2.to("h2.year-since.fade-anim.animated", { right: "0" })
+  if ((".about-area-2").length) {
+    var ab2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about-area-2 .year-wrapper",
+        pin: ".about-area-2",
+        pinSpacing: true,
+        scrub: 3,
+        start: 'bottom 95%',
+        end: "bottom center",
+        // markers: true,
+      }
+    });
+    ab2.to(".year-since.animated", { right: "0" });
+  };
 
   var cs = gsap.timeline({
     scrollTrigger: {
@@ -392,6 +394,22 @@
     }
   })
   cs.to(".shape-thumb img", { scale: "110" })
+
+
+  // video Active
+  var video_fixed = document.querySelector('.video-element');
+  if (video_fixed && device_width > 991) {
+
+    gsap.to(".video-element", {
+      scrollTrigger: {
+        trigger: ".video-area",
+        pin: ".video-element",
+        start: "top top",
+        end: "bottom bottom",
+        markers: true
+      }
+    });
+  }
 
 
 

@@ -2624,6 +2624,8 @@ h2.year-since.fade-anim {
 
 /* work area 2 style  */
 .work-area-2 {
+    padding-top: 92px;
+
     .works-wrapper-head {
         display: grid;
         gap: 10px 60px;
@@ -3836,6 +3838,10 @@ h2.year-since.fade-anim {
             @media #{$sm} {
                 margin-left: 0;
             }
+
+            img {
+                width: 100%;
+            }
         }
     }
 }
@@ -5031,8 +5037,3 @@ h2.year-since.fade-anim {
         }
     }
 }
-
-// .big-text {
-//     transform: scale(1);
-//     margin-bottom: 0px;
-// }

@@ -5758,6 +5758,9 @@ h2.year-since.fade-anim {
 }
 
 /* work area 2 style  */
+.work-area-2 {
+  padding-top: 92px;
+}
 .work-area-2 .works-wrapper-head {
   display: grid;
   gap: 10px 60px;
@@ -6911,6 +6914,9 @@ h2.year-since.fade-anim {
   .funfact-area-2 .section-content .thumb {
     margin-left: 0;
   }
+}
+.funfact-area-2 .section-content .thumb img {
+  width: 100%;
 }
 
 /* cta area style  */

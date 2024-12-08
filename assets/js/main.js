@@ -20,14 +20,14 @@
 
 
   // sticky header 
-  let header = document.querySelector('.header-sticky');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 150) {
-      header.classList.add('sticky')
-    } else {
-      header.classList.remove('sticky')
-    }
-  })
+  // let header = document.querySelector('.header-sticky');
+  // window.addEventListener('scroll', () => {
+  //   if (window.scrollY > 150) {
+  //     header.classList.add('sticky')
+  //   } else {
+  //     header.classList.remove('sticky')
+  //   }
+  // })
 
 
 
@@ -327,6 +327,7 @@
           scrub: 1,
           start: 'top 90%',
           end: "top center",
+          markers: true
         }
       });
     });
@@ -419,6 +420,18 @@
       start: "top top",
       end: "+=500 top",
       pin: ".work-area-2",
+      // markers: true,
+      scrub: 1
+    }
+  })
+
+  gsap.to(".funfact-area-2 .thumb", {
+    marginLeft: 0,
+    scrollTrigger: {
+      trigger: ".funfact-area-2 .thumb-wrapper",
+      start: "top top",
+      end: "bottom top",
+      pin: true,
       markers: true,
       scrub: 1
     }

@@ -4221,6 +4221,7 @@ FEATURES STYLES 3
   box-shadow: 0px 20px 30px rgba(3, 4, 28, 0.1);
   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
   border: none;
+  opacity: 0.5;
 }
 .sticky .header-area__inner {
   height: 70px;
@@ -5757,48 +5758,6 @@ h2.year-since.fade-anim {
 }
 
 /* work area 2 style  */
-.work-area-2 .section-title {
-  font-size: 580px;
-  font-weight: 315;
-  line-height: 0.71;
-  letter-spacing: -0.1em;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: var(--font_sequelsansmediumbody);
-}
-@media only screen and (max-width: 1919px) {
-  .work-area-2 .section-title {
-    font-size: 420px;
-  }
-}
-@media only screen and (max-width: 1399px) {
-  .work-area-2 .section-title {
-    font-size: 370px;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .work-area-2 .section-title {
-    font-size: 310px;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .work-area-2 .section-title {
-    font-size: 230px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .work-area-2 .section-title {
-    font-size: 170px;
-  }
-}
-@media (max-width: 575px) {
-  .work-area-2 .section-title {
-    font-size: 100px;
-  }
-}
-.work-area-2 .section-header {
-  margin-top: 22px;
-}
 .work-area-2 .works-wrapper-head {
   display: grid;
   gap: 10px 60px;
@@ -5857,7 +5816,7 @@ h2.year-since.fade-anim {
   }
 }
 .work-area-2 .works-wrapper-box {
-  margin-top: 95px;
+  margin: 95px 0 0;
 }
 @media only screen and (max-width: 1919px) {
   .work-area-2 .works-wrapper-box {

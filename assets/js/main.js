@@ -417,8 +417,8 @@
     scrollTrigger: {
       trigger: ".work-area-2",
       start: "top top",
-      end: "center top",
-      pin: true,
+      end: "+=500 top",
+      pin: ".work-area-2",
       markers: true,
       scrub: 1
     }

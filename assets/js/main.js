@@ -411,6 +411,17 @@
     });
   }
 
-
+  gsap.from(".big-text", {
+    scale: "19",
+    marginBottom: 430,
+    scrollTrigger: {
+      trigger: ".work-area-2",
+      start: "top top",
+      end: "center top",
+      pin: true,
+      markers: true,
+      scrub: 1
+    }
+  })
 
 })(jQuery);

@@ -2668,6 +2668,7 @@ h2.year-since.fade-anim {
         gap: 10px 60px;
         grid-template-columns: 1fr 1fr 1fr;
         margin-bottom: 48px;
+        align-items: flex-end;
 
         @media #{$xl} {
             margin-bottom: 28px;
@@ -5069,3 +5070,8 @@ h2.year-since.fade-anim {
         }
     }
 }
+
+// .big-text {
+//     transform: scale(1);
+//     margin-bottom: 0px;
+// }

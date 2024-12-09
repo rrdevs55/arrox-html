@@ -2,10 +2,8 @@
 
 @import "components/index";
 
-.parallax-view {
+.t-parallax-view {
     overflow: hidden;
-
-    img {}
 }
 
 
@@ -3940,6 +3938,16 @@ h2.year-since.fade-anim {
 
         @media #{$xs} {
             font-size: 40px;
+        }
+
+        .dot {
+            width: 143px;
+            height: 143px;
+            display: inline-block;
+            background-color: var(--action);
+            border-radius: 50%;
+            margin: 0 50px;
+            border: 60px solid var(--primary);
         }
     }
 

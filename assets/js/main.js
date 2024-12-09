@@ -395,7 +395,7 @@
         end: "bottom top",
         pin: true,
         scrub: 1,
-        markers: true
+        // markers: true
       }
     })
     cs.to(".shape-thumb img", { scale: "100", rotate: "90", delay: 0.1 })

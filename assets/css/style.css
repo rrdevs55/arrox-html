@@ -898,6 +898,10 @@ section {
   margin-bottom: -1px;
 }
 
+.mb--1 {
+  margin-bottom: -1px;
+}
+
 .dir-rtl {
   direction: rtl;
 }
@@ -7483,11 +7487,10 @@ h2.year-since.fade-anim {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin-bottom: -1px;
 }
 .circular-shape-wrapper .shape-thumb img {
   transform: scale(1) rotate(0);
-  opacity: 0.3;
+  opacity: 0.9;
 }
 
 /* award area style  */

@@ -20,14 +20,16 @@
 
 
   // sticky header 
-  // let header = document.querySelector('.header-sticky');
-  // window.addEventListener('scroll', () => {
-  //   if (window.scrollY > 150) {
-  //     header.classList.add('sticky')
-  //   } else {
-  //     header.classList.remove('sticky')
-  //   }
-  // })
+  if (document.querySelectorAll(".header-sticky").length > 0) {
+    let header = document.querySelector('.header-sticky');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 150) {
+        header.classList.add('sticky')
+      } else {
+        header.classList.remove('sticky')
+      }
+    })
+  }
 
 
 
@@ -327,28 +329,29 @@
           scrub: 1,
           start: 'top 90%',
           end: "top center",
-          markers: true
+          // markers: true
         }
       });
     });
 
   });
 
-
-  var tl = gsap.timeline({
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".cta-area",
-      pin: true,
-      pinSpacing: true,
-      scrub: 1,
-      start: 'bottom 100%',
-      end: "bottom 0%",
-      // markers: true
-    }
-  });
-  tl.to(".cta-area .area-bg", { scale: "10" });
-  tl.to(".cta-area .section-title", { fontSize: "18vw" }, "<");
+  if (document.querySelectorAll(".cta-area").length > 0) {
+    var tl = gsap.timeline({
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".cta-area",
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        start: 'bottom 100%',
+        end: "bottom 0%",
+        // markers: true
+      }
+    });
+    tl.to(".cta-area .area-bg", { scale: "10", delay: 0.1 });
+    tl.to(".cta-area .section-title", { fontSize: "18vw" }, "<");
+  }
 
 
   // hover reveal start
@@ -369,7 +372,7 @@
   });
   // hover reveal end
 
-  if ((".about-area-2").length) {
+  if (document.querySelectorAll(".about-area-2").length > 0) {
     var ab2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".about-area-2 .year-wrapper",
@@ -384,57 +387,50 @@
     ab2.to(".year-since.animated", { right: "0" });
   };
 
-  var cs = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".circular-shape-wrapper",
-      start: "center 50%",
-      end: "center top",
-      pin: true,
-      scrub: 3,
-      // markers: true
-    }
-  })
-  cs.to(".shape-thumb img", { scale: "110" })
-
-
-  // video Active
-  var video_fixed = document.querySelector('.video-element');
-  if (video_fixed && device_width > 991) {
-
-    gsap.to(".video-element", {
+  if (document.querySelectorAll(".circular-shape-wrapper").length > 0) {
+    var cs = gsap.timeline({
       scrollTrigger: {
-        trigger: ".video-area",
-        pin: ".video-element",
-        start: "top top",
-        end: "bottom bottom",
+        trigger: ".circular-shape-wrapper",
+        start: "bottom bottom",
+        end: "bottom top",
+        pin: true,
+        scrub: 1,
         markers: true
       }
-    });
+    })
+    cs.to(".shape-thumb img", { scale: "100", rotate: "90", delay: 0.1 })
   }
 
-  gsap.from(".big-text", {
-    scale: "19",
-    marginBottom: 430,
-    scrollTrigger: {
-      trigger: ".work-area-2",
-      start: "top top",
-      end: "+=500 top",
-      pin: ".work-area-2",
-      // markers: true,
-      scrub: 1
-    }
-  })
 
-  gsap.to(".funfact-area-2 .thumb", {
-    marginLeft: 0,
-    scrollTrigger: {
-      trigger: ".funfact-area-2 .thumb-wrapper",
-      start: "top top",
-      end: "bottom top",
-      pin: true,
-      markers: true,
-      scrub: 1
-    }
-  })
+
+
+  if (document.querySelectorAll(".work-area-2").length > 0) {
+    gsap.from(".big-text", {
+      scale: "19",
+      marginBottom: 430,
+      scrollTrigger: {
+        trigger: ".work-area-2",
+        start: "top top",
+        end: "+=500 top",
+        pin: ".work-area-2",
+        // markers: true,
+        scrub: 1
+      }
+    })
+  }
+
+  if (document.querySelectorAll(".funfact-area-2").length > 0) {
+    gsap.to(".funfact-area-2 .thumb img", {
+      scale: "1",
+      scrollTrigger: {
+        trigger: ".funfact-area-2 .thumb",
+        start: "top top",
+        end: "center top",
+        pin: true,
+        // markers: true,
+        scrub: 1
+      }
+    })
+  }
 
 })(jQuery);

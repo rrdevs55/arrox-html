@@ -3375,6 +3375,9 @@ FEATURES STYLES 3
   text-transform: capitalize;
 }
 
+.parallax-view {
+  overflow: hidden;
+}
 .section-spacing {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -5547,11 +5550,6 @@ h2.year-since.fade-anim {
   opacity: 0;
 }
 
-/* video area style  */
-.video-area .video-box video {
-  width: 100%;
-}
-
 /* text slider area style  */
 .text-slider-active .swiper-slide {
   width: auto;
@@ -6891,32 +6889,11 @@ h2.year-since.fade-anim {
 }
 .funfact-area-2 .section-content .thumb {
   margin-top: 94px;
-  margin-left: 595px;
-}
-@media only screen and (max-width: 1919px) {
-  .funfact-area-2 .section-content .thumb {
-    margin-left: 495px;
-    margin-top: 64px;
-  }
-}
-@media only screen and (max-width: 1919px) {
-  .funfact-area-2 .section-content .thumb {
-    margin-left: 345px;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .funfact-area-2 .section-content .thumb {
-    margin-left: 255px;
-    margin-top: 44px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .funfact-area-2 .section-content .thumb {
-    margin-left: 0;
-  }
 }
 .funfact-area-2 .section-content .thumb img {
   width: 100%;
+  transform: scale(0.67);
+  transform-origin: top right;
 }
 
 /* cta area style  */
@@ -7112,19 +7089,25 @@ h2.year-since.fade-anim {
   border-radius: 100px;
   transform: translate(-50%, -50%) rotate(0rad);
 }
-
-.client-capsule-wrapper-box {
+.client-area .client-capsule-wrapper-box {
   border-bottom: 1px solid var(--primary);
 }
-
-.client-capsule-wrapper {
+.client-area .line {
+  border-bottom: 1px solid var(--primary);
+}
+.client-area .lines-wrapper {
+  display: grid;
+  gap: 5px 0;
+  padding-top: 5px;
+}
+.client-area .client-capsule-wrapper {
   position: relative;
   overflow: hidden;
   height: 100%;
   pointer-events: none;
   height: 433px;
 }
-.client-capsule-wrapper > * {
+.client-area .client-capsule-wrapper > * {
   position: absolute;
   display: inline-block;
   margin-bottom: 0;
@@ -7529,7 +7512,7 @@ h2.year-since.fade-anim {
   overflow: hidden;
 }
 .circular-shape-wrapper .shape-thumb img {
-  transform: scale(1);
+  transform: scale(1) rotate(0);
 }
 
 /* award area style  */
@@ -7917,6 +7900,10 @@ h2.year-since.fade-anim {
 .blog-area .blog:hover .thumb img {
   transform: scale(1.1);
 }
+.blog-area .blog:hover .title:after {
+  transform: rotate(60deg);
+  background-color: var(--action);
+}
 .blog-area .blog:before {
   position: absolute;
   content: "";
@@ -7971,6 +7958,8 @@ h2.year-since.fade-anim {
   background-image: url("../imgs/icon/icon-4.png");
   background-size: contain;
   margin-left: 7px;
+  border-radius: 50%;
+  transition: all 0.5s;
 }
 @media only screen and (max-width: 1919px) {
   .blog-area .blog .title:after {

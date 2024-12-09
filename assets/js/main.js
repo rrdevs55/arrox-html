@@ -354,7 +354,7 @@
         // markers: true
       }
     })
-    cs.to(".shape-thumb img", { scale: "100", rotate: "90", delay: 0.1 })
+    cs.to(".shape-thumb img", { scale: 100, rotation: 90, autoAlpha: 1, delay: 0.1 })
   }
 
 

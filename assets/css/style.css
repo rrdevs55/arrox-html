@@ -3379,6 +3379,19 @@ FEATURES STYLES 3
   overflow: hidden;
 }
 
+.hover-reveal {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+.hover-reveal:hover > *:first-child {
+  opacity: 1 !important;
+}
+.hover-reveal > *:first-child {
+  opacity: 0;
+  z-index: 1;
+}
+
 .section-spacing {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -6899,6 +6912,9 @@ h2.year-since.fade-anim {
     font-size: 40px;
   }
 }
+.cta-area-2 .section-title a {
+  cursor: none;
+}
 .cta-area-2 .section-title .dot {
   width: 143px;
   height: 143px;
@@ -6926,6 +6942,22 @@ h2.year-since.fade-anim {
 }
 .cta-area-2 .section-header .title-wrapper {
   animation: 45s t-slide infinite linear;
+}
+.cta-area-2 .section-header .t-btn {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  padding: 10px 20px;
+  display: inline-block;
+  background-color: white;
+  color: var(--black);
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: -25px 0 0 -65px;
+  transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .cta-area-2 .cta-area-2-inner {
   overflow: hidden;

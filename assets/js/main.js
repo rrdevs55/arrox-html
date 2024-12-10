@@ -413,4 +413,23 @@
     });
   }
 
+  // video Active
+  var video_fixed = document.querySelector('.video-element');
+  if (video_fixed && device_width > 991) {
+    // gsap.set(video_fixed, { width: "155", height: "84", radius: 80 });
+    gsap.to(".video-element", {
+      width: "100vw",
+      height: "100vh",
+      radius: 0,
+      scrollTrigger: {
+        trigger: ".video-area",
+        pin: ".video-element",
+        start: "top top",
+        end: "bottom bottom",
+        pinSpacing: false,
+        markers: true
+      }
+    });
+  }
+
 })(jQuery);

@@ -5247,6 +5247,9 @@ FEATURES STYLES 3
 }
 
 /* about area style  */
+.about-area {
+  padding-bottom: 100vh;
+}
 .about-area-inner {
   height: 100vh;
   padding-top: 100px;
@@ -5362,15 +5365,25 @@ FEATURES STYLES 3
 .about-area .video-thumb {
   margin-left: 4px;
   margin-right: 4px;
+  width: 155px;
   height: 84px;
+  display: inline-block;
   border-radius: 80px;
   margin-top: -25px;
+  position: relative;
+  background-color: var(--black);
 }
 @media only screen and (max-width: 1399px) {
   .about-area .video-thumb {
     height: 57px;
     margin-top: -13px;
   }
+}
+.about-area .video-thumb .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 80px;
 }
 
 /* about area 2 style  */

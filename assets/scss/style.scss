@@ -3511,6 +3511,7 @@ h2.year-since.fade-anim {
 
     .funfact-item {
         max-width: 360px;
+        opacity: 0.2;
 
         @media #{$lg} {
             max-width: 290px;

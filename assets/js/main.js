@@ -369,6 +369,7 @@
         start: "top top",
         end: "+=500 top",
         pin: ".work-area-2",
+        pinSpacing: false,
         // markers: true,
         scrub: 1
       }
@@ -387,6 +388,29 @@
         scrub: 1
       }
     })
+  }
+
+
+
+
+  // go-visible animation 
+  if (document.querySelectorAll(".go-visible").length > 0) {
+
+    var govisible = document.querySelectorAll(".go-visible");
+
+    govisible.forEach((item) => {
+      gsap.to(item, {
+        opacity: "1",
+        ease: "none",
+        scrollTrigger: {
+          trigger: item,
+          scrub: 1,
+          start: 'top 40%',
+          end: "top 30%",
+          // markers: true
+        }
+      });
+    });
   }
 
 })(jQuery);

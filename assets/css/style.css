@@ -6604,6 +6604,7 @@ h2.year-since.fade-anim {
 }
 .funfact-area .funfact-item {
   max-width: 360px;
+  opacity: 0.2;
 }
 @media only screen and (max-width: 1199px) {
   .funfact-area .funfact-item {

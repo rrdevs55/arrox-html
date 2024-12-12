@@ -440,6 +440,7 @@
             &.large {
                 @media (min-width: 1850px) {
                     max-width: 1850px;
+                    --container-max-widths: 1820px;
                 }
             }
         }
@@ -2164,13 +2165,10 @@
     .video-thumb {
         margin-left: 4px;
         margin-right: 4px;
-        width: 155px;
-        height: 84px;
         display: inline-block;
         border-radius: 80px;
         margin-top: -25px;
         position: relative;
-        background-color: var(--black);
 
         @media #{$xl} {
             height: 57px;
@@ -2178,17 +2176,19 @@
         }
 
         .video {
-            // width: 100%;
-            // height: 100%;
             position: absolute;
             top: 0;
             left: 0;
             border-radius: 80px;
-            // margin-left: 50% !important;
-            // transform: translate(calc(100vw / -2), 0px);
-            // width: 155px;
-            // height: auto;
-            // position: fixed;
+            overflow: hidden;
+            scale: auto;
+            max-width: auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
 
         }
     }
@@ -2221,10 +2221,9 @@
             font-weight: 315;
             line-height: 0.71;
             letter-spacing: -0.1em;
-            // text-align: right;
             font-family: var(--font_sequelsansmediumbody);
             white-space: nowrap;
-            // transform: translate(39%, 0px);
+            text-transform: uppercase;
 
             @media #{$xxl} {
                 font-size: 420px;
@@ -2251,6 +2250,19 @@
 
             @media #{$xs} {
                 font-size: 100px;
+            }
+
+            .first-text {
+                width: var(--container-max-widths);
+                display: inline-block;
+                text-align: right;
+                padding-right: 40px;
+            }
+
+            .last-text {
+                width: var(--container-max-widths);
+                display: inline-block;
+                text-align: center;
             }
 
         }
@@ -2310,18 +2322,17 @@
 // ----------------
 .year-wrapper {
     position: relative;
+    height: 412px;
+
 }
 
-h2.year-since.fade-anim.animated {
+.year-since {
     position: absolute;
     top: 0;
-    right: -86%;
     opacity: 1;
 }
 
-h2.year-since.fade-anim {
-    opacity: 0;
-}
+
 
 
 

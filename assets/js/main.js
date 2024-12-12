@@ -327,20 +327,7 @@
   });
   // hover reveal end
 
-  if (document.querySelectorAll(".about-area-2").length > 0) {
-    var ab2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-area-2 .year-wrapper",
-        pin: ".about-area-2",
-        pinSpacing: true,
-        scrub: 3,
-        start: 'bottom 95%',
-        end: "bottom center",
-        // markers: true,
-      }
-    });
-    ab2.to(".year-since.animated", { right: "0" });
-  };
+
 
   if (document.querySelectorAll(".circular-shape-wrapper").length > 0) {
     var cs = gsap.timeline({
@@ -360,21 +347,21 @@
 
 
 
-  if (document.querySelectorAll(".work-area-2").length > 0) {
-    gsap.from(".big-text", {
-      scale: "19",
-      marginBottom: 430,
-      scrollTrigger: {
-        trigger: ".work-area-2",
-        start: "top top",
-        end: "+=500 top",
-        pin: ".work-area-2",
-        pinSpacing: false,
-        // markers: true,
-        scrub: 1
-      }
-    })
-  }
+  // if (document.querySelectorAll(".work-area-2").length > 0) {
+  //   gsap.from(".big-text", {
+  //     scale: "19",
+  //     marginBottom: 430,
+  //     scrollTrigger: {
+  //       trigger: ".work-area-2",
+  //       start: "top top",
+  //       end: "+=500 top",
+  //       pin: ".work-area-2",
+  //       pinSpacing: false,
+  //       // markers: true,
+  //       scrub: 1
+  //     }
+  //   })
+  // }
 
   if (document.querySelectorAll(".funfact-area-2").length > 0) {
     gsap.to(".funfact-area-2 .thumb img", {
@@ -415,21 +402,61 @@
 
   // video Active
   var video_fixed = document.querySelector('.video-element');
+  // gsap.set(video_fixed, { width: "unset" });
   if (video_fixed && device_width > 991) {
-    // gsap.set(video_fixed, { width: "155", height: "84", radius: 80 });
     gsap.to(".video-element", {
       width: "100vw",
       height: "100vh",
-      radius: 0,
+      borderRadius: "0",
       scrollTrigger: {
         trigger: ".video-area",
-        pin: ".video-element",
         start: "top top",
         end: "bottom bottom",
+        pin: ".video-element",
         pinSpacing: false,
-        markers: true
+        markers: true,
+        scrub: true
       }
     });
   }
+
+  if (document.querySelectorAll(".about-area-2").length > 0) {
+    var ab2 = gsap.timeline()
+      .to(".year-since", {
+        right: "0",
+        scrollTrigger: {
+          trigger: ".about-area-2 .section-content",
+          pin: ".about-area-2",
+          pinSpacing: true,
+          start: "top top",
+          endTrigger: ".about-area-2 .year-wrapper",
+          end: "bottom top",
+          scrub: 3,
+          markers: true,
+        }
+      })
+      .to(".year-since .last-text", {
+        scrollTrigger: {
+          trigger: ".about-area-2 .year-wrapper",
+          pin: ".year-since .last-text",
+          pinSpacing: true,
+          start: "bottom top",
+          endTrigger: ".about-area-2 .section-content",
+          end: "bottom top",
+          markers: true,
+        }
+      })
+      .to(".year-since .last-text", {
+        fontSize: 30,
+        scrollTrigger: {
+          trigger: ".about-area-2 .section-content",
+          start: "bottom top",
+          end: "bottom -=200",
+          pinSpacing: true,
+          markers: true,
+          scrub: 1
+        }
+      })
+  };
 
 })(jQuery);

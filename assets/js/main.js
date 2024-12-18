@@ -432,8 +432,8 @@
           endTrigger: ".about-area-2 .year-wrapper",
           end: "bottom top",
           scrub: 3,
-          markers: true,
-        }
+          markers: { startColor: "red", endColor: "red", indent: 200 },
+        },
       })
       .to(".year-since .last-text", {
         scrollTrigger: {
@@ -441,21 +441,21 @@
           pin: ".year-since .last-text",
           pinSpacing: true,
           start: "bottom top",
-          endTrigger: ".about-area-2 .section-content",
-          end: "bottom top",
-          markers: true,
-        }
+          endTrigger: ".work-area-2",
+          end: "top top",
+          markers: { startColor: "green", endColor: "green", indent: 100 },
+        },
       })
       .to(".year-since .last-text", {
         fontSize: 30,
         scrollTrigger: {
-          trigger: ".about-area-2 .section-content",
+          trigger: ".about-area-2",
           start: "bottom top",
-          end: "bottom -=200",
+          end: "bottom+=200 top",
           pinSpacing: true,
-          markers: true,
-          scrub: 1
-        }
+          scrub: 1,
+          markers: { startColor: "blue", endColor: "blue", indent: 0 },
+        },
       })
   };
 

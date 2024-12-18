@@ -451,7 +451,8 @@
         scrollTrigger: {
           trigger: ".about-area-2",
           start: "bottom top",
-          end: "bottom+=200 top",
+          end: "bottom+=307 top",
+          pin: ".about-area-2",
           pinSpacing: true,
           scrub: 1,
           markers: { startColor: "blue", endColor: "blue", indent: 0 },

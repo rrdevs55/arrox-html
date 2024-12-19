@@ -422,6 +422,7 @@
         },
       })
       .to(".year-since .last-text", {
+        delay: "2",
         scrollTrigger: {
           trigger: ".about-area-2 .year-wrapper",
           pin: ".year-since .last-text",

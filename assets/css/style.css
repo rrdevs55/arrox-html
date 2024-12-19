@@ -5460,6 +5460,7 @@ FEATURES STYLES 3
   width: var(--container-max-widths);
   display: inline-block;
   text-align: center;
+  mix-blend-mode: exclusion;
 }
 .about-area-2 .section-content .text {
   font-size: 20px;

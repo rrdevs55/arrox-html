@@ -347,21 +347,7 @@
 
 
 
-  // if (document.querySelectorAll(".work-area-2").length > 0) {
-  //   gsap.from(".big-text", {
-  //     scale: "19",
-  //     marginBottom: 430,
-  //     scrollTrigger: {
-  //       trigger: ".work-area-2",
-  //       start: "top top",
-  //       end: "+=500 top",
-  //       pin: ".work-area-2",
-  //       pinSpacing: false,
-  //       // markers: true,
-  //       scrub: 1
-  //     }
-  //   })
-  // }
+
 
   if (document.querySelectorAll(".funfact-area-2").length > 0) {
     gsap.to(".funfact-area-2 .thumb img", {
@@ -448,11 +434,12 @@
       })
       .to(".year-since .last-text", {
         fontSize: 30,
+        letterSpacing: "-0.1em",
         scrollTrigger: {
           trigger: ".about-area-2",
           start: "bottom top",
-          end: "bottom+=307 top",
-          pin: ".about-area-2",
+          end: "bottom+=215 top",
+          pin: ".year-since .last-text",
           pinSpacing: true,
           scrub: 1,
           markers: { startColor: "blue", endColor: "blue", indent: 0 },

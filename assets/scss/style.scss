@@ -25,12 +25,12 @@
 
 
 .section-spacing {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     @media #{$xxl} {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 90px;
+        padding-bottom: 90px;
     }
 
     @media #{$xl} {
@@ -45,10 +45,10 @@
 }
 
 .section-spacing-top {
-    padding-top: 120px;
+    padding-top: 100px;
 
     @media #{$xxl} {
-        padding-top: 100px;
+        padding-top: 90px;
     }
 
     @media #{$xl} {
@@ -61,10 +61,10 @@
 }
 
 .section-spacing-bottom {
-    padding-bottom: 120px;
+    padding-bottom: 100px;
 
     @media #{$xxl} {
-        padding-bottom: 100px;
+        padding-bottom: 90px;
     }
 
     @media #{$xl} {
@@ -2334,7 +2334,80 @@
 }
 
 
+/* about area details style  */
+.about-area-details {
+    .section-header {
+        margin-top: 27px;
+    }
 
+    .section-subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        display: inline-block;
+    }
+
+    .title-wrapper {
+        margin-top: 22px;
+    }
+
+    .section-title {
+        max-width: 1140px;
+    }
+
+    .text {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 38px;
+
+        &:not(:first-child) {
+            margin-top: 38px;
+        }
+    }
+
+    .btn-wrapper {
+        margin-top: 61px;
+    }
+
+    .info-list {
+        li {
+            font-size: 30px;
+            font-weight: 310;
+            line-height: 35px;
+            letter-spacing: -0.07em;
+            color: var(--primary);
+            font-family: var(--font_sequelsansromanbody);
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &:not(:first-child) {
+                margin-top: 4px;
+            }
+
+            &:before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                background-color: var(--primary);
+                margin-right: 10px;
+            }
+        }
+
+    }
+
+
+    .section-content-wrapper {
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        padding-top: 22px;
+        margin-top: 93px;
+        max-width: 1290px;
+        margin-left: auto;
+        display: grid;
+        gap: 20px 60px;
+        grid-template-columns: 1fr 705px;
+    }
+}
 
 
 /* text slider area style  */

@@ -3397,13 +3397,13 @@ FEATURES STYLES 3
 }
 
 .section-spacing {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 @media only screen and (max-width: 1919px) {
   .section-spacing {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 }
 @media only screen and (max-width: 1399px) {
@@ -3420,11 +3420,11 @@ FEATURES STYLES 3
 }
 
 .section-spacing-top {
-  padding-top: 120px;
+  padding-top: 100px;
 }
 @media only screen and (max-width: 1919px) {
   .section-spacing-top {
-    padding-top: 100px;
+    padding-top: 90px;
   }
 }
 @media only screen and (max-width: 1399px) {
@@ -3439,11 +3439,11 @@ FEATURES STYLES 3
 }
 
 .section-spacing-bottom {
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
 @media only screen and (max-width: 1919px) {
   .section-spacing-bottom {
-    padding-bottom: 100px;
+    padding-bottom: 90px;
   }
 }
 @media only screen and (max-width: 1399px) {
@@ -5523,6 +5523,65 @@ FEATURES STYLES 3
   position: absolute;
   top: 0;
   opacity: 1;
+}
+
+/* about area details style  */
+.about-area-details .section-header {
+  margin-top: 27px;
+}
+.about-area-details .section-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  display: inline-block;
+}
+.about-area-details .title-wrapper {
+  margin-top: 22px;
+}
+.about-area-details .section-title {
+  max-width: 1140px;
+}
+.about-area-details .text {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 38px;
+}
+.about-area-details .text:not(:first-child) {
+  margin-top: 38px;
+}
+.about-area-details .btn-wrapper {
+  margin-top: 61px;
+}
+.about-area-details .info-list li {
+  font-size: 30px;
+  font-weight: 310;
+  line-height: 35px;
+  letter-spacing: -0.07em;
+  color: var(--primary);
+  font-family: var(--font_sequelsansromanbody);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.about-area-details .info-list li:not(:first-child) {
+  margin-top: 4px;
+}
+.about-area-details .info-list li:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  margin-right: 10px;
+}
+.about-area-details .section-content-wrapper {
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  padding-top: 22px;
+  margin-top: 93px;
+  max-width: 1290px;
+  margin-left: auto;
+  display: grid;
+  gap: 20px 60px;
+  grid-template-columns: 1fr 705px;
 }
 
 /* text slider area style  */

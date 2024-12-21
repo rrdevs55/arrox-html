@@ -5247,6 +5247,43 @@ FEATURES STYLES 3
   }
 }
 
+/* hero area service style  */
+.hero-area-service .section-content {
+  margin-top: 16px;
+}
+.hero-area-service .section-content .title-one {
+  max-width: 590px;
+}
+.hero-area-service .section-content .title-two {
+  max-width: 700px;
+  text-align: right;
+  margin-left: auto;
+  margin-top: 29px;
+  position: relative;
+}
+.hero-area-service .section-content .title-two img.title-shape-1 {
+  width: 500px;
+  position: absolute;
+  top: -36px;
+  right: calc(100% + 88px);
+}
+.hero-area-service .section-content .text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  max-width: 400px;
+}
+.hero-area-service .section-content .text-wrapper {
+  margin-top: 36px;
+  max-width: 1290px;
+  margin-left: auto;
+}
+.hero-area-service .section-thumb {
+  margin-top: 88px;
+  max-width: 1330px;
+  margin-left: auto;
+}
+
 /* about area style  */
 .about-area {
   padding-bottom: 100vh;

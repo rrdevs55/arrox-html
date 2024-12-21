@@ -2039,6 +2039,51 @@
     }
 }
 
+/* hero area service style  */
+.hero-area-service {
+    .section-content {
+        margin-top: 16px;
+
+        .title-one {
+            max-width: 590px;
+        }
+
+        .title-two {
+            max-width: 700px;
+            text-align: right;
+            margin-left: auto;
+            margin-top: 29px;
+            position: relative;
+
+            img.title-shape-1 {
+                width: 500px;
+                position: absolute;
+                top: -36px;
+                right: calc(100% + 88px);
+            }
+        }
+
+        .text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            max-width: 400px;
+        }
+
+        .text-wrapper {
+            margin-top: 36px;
+            max-width: 1290px;
+            margin-left: auto;
+        }
+    }
+
+
+    .section-thumb {
+        margin-top: 88px;
+        max-width: 1330px;
+        margin-left: auto;
+    }
+}
 
 
 /* about area style  */
@@ -3528,6 +3573,8 @@
     }
 
 }
+
+
 
 /* funfact area style  */
 .funfact-area {

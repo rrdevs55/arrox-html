@@ -8638,4 +8638,50 @@ FEATURES STYLES 3
 .blog-area .blog .meta .name span {
   font-weight: 500;
   color: var(--primary);
+}
+
+/* faq area page style  */
+.faq-area-page .section-header {
+  margin-top: 16px;
+}
+@media only screen and (max-width: 1199px) {
+  .faq-area-page .section-header {
+    margin-top: 36px;
+  }
+}
+.faq-area-page .section-title {
+  max-width: 1005px;
+}
+.faq-area-page .accordion-wrapper {
+  max-width: 1420px;
+  margin-left: auto;
+  margin-top: 93px;
+}
+.faq-area-page .accordion-button {
+  font-size: 30px;
+  font-weight: 310;
+  line-height: 35px;
+  letter-spacing: -0.07em;
+  color: var(--primary);
+  padding: 30px 0 33px;
+  border-radius: 0 !important;
+  background-color: transparent;
+  outline: 0;
+  box-shadow: none;
+}
+.faq-area-page .accordion-item {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #E5E0DC;
+}
+.faq-area-page .accordion {
+  border-top: 1px solid #E5E0DC;
+}
+.faq-area-page .accordion-body {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--secondary);
+  padding: 4px 0 43px;
+  border: none;
 }/*# sourceMappingURL=style.css.map */

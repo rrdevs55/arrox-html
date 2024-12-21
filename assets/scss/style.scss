@@ -4020,6 +4020,12 @@
             border-radius: 50%;
             margin: 0 50px;
             border: 60px solid var(--primary);
+
+            @media #{$xxl} {
+                width: 103px;
+                height: 103px;
+                border-width: 40px;
+            }
         }
     }
 
@@ -4048,7 +4054,7 @@
             letter-spacing: -0.02em;
             padding: 10px 20px;
             display: inline-block;
-            background-color: white;
+            background-color: var(--theme);
             color: var(--black);
             border-radius: 50px;
             position: absolute;

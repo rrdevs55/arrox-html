@@ -7062,6 +7062,13 @@ FEATURES STYLES 3
   margin: 0 50px;
   border: 60px solid var(--primary);
 }
+@media only screen and (max-width: 1919px) {
+  .cta-area-2 .section-title .dot {
+    width: 103px;
+    height: 103px;
+    border-width: 40px;
+  }
+}
 .cta-area-2 .section-header {
   margin-top: 70px;
   margin-bottom: 93px;
@@ -7088,7 +7095,7 @@ FEATURES STYLES 3
   letter-spacing: -0.02em;
   padding: 10px 20px;
   display: inline-block;
-  background-color: white;
+  background-color: var(--theme);
   color: var(--black);
   border-radius: 50px;
   position: absolute;

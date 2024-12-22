@@ -5719,19 +5719,42 @@
 
     .section-title {
         max-width: 1005px;
+
+        @media #{$xxl} {
+            max-width: 805px;
+        }
+
+        @media #{$xl} {
+            max-width: 605px;
+        }
     }
 
     .accordion-wrapper {
         max-width: 1420px;
         margin-left: auto;
         margin-top: 93px;
+        margin-bottom: 10px;
+
+        @media #{$xxl} {
+            max-width: 1020px;
+            margin-top: 63px;
+        }
+
+        @media #{$xl} {
+            max-width: 920px;
+        }
     }
 
+
+    .accordion {
+        border-top: 1px solid #E5E0DC;
+        counter-reset: accordion;
+    }
 
     .accordion-button {
         font-size: 30px;
         font-weight: 310;
-        line-height: 35px;
+        line-height: 1.16;
         letter-spacing: -0.07em;
         color: var(--primary);
         padding: 30px 0 33px;
@@ -5739,17 +5762,74 @@
         background-color: transparent;
         outline: 0;
         box-shadow: none;
+
+        @media #{$xxl} {
+            padding: 20px 0 23px;
+            font-size: 24px;
+        }
+
+        @media #{$sm} {
+            font-size: 20px;
+        }
+
+        &::after {
+            content: "+";
+            font-family: var(--font_awesome);
+            background-image: none;
+            width: auto;
+            height: auto;
+
+        }
+
+        &:not(.collapsed) {
+            pointer-events: none;
+
+            &::after {
+                content: "-";
+            }
+        }
     }
 
     .accordion-item {
         background-color: transparent;
         border: none;
         border-bottom: 1px solid #E5E0DC;
+        position: relative;
+        padding-left: 130px;
+        transition: all 0.5s;
+
+        @media #{$md} {
+            padding-left: 80px;
+        }
+
+        @media #{$sm} {
+            padding-left: 50px;
+        }
+
+        &:before {
+            counter-increment: accordion;
+            content: counter(accordion, decimal-leading-zero);
+            font-family: var(--font_sequelsansromanbody);
+            font-size: 30px;
+            font-weight: 310;
+            line-height: 1.16;
+            letter-spacing: -0.07em;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            transition: all 0.5s;
+
+            @media #{$xxl} {
+                top: 20px;
+                font-size: 24px;
+            }
+
+            @media #{$sm} {
+                font-size: 20px;
+            }
+        }
     }
 
-    .accordion {
-        border-top: 1px solid #E5E0DC;
-    }
 
     .accordion-body {
         font-size: 20px;

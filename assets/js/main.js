@@ -476,26 +476,26 @@
         start: "top top",
         scrub: 1,
         end: (st) => "+=" + (st.vars.trigger.offsetWidth - innerWidth),
-        markers: true,
+        // markers: true,
       }
     });
-    // if (!isMobile()) {
-    //   $(".news-panel .panel .panel-image").mouseenter(function (e) {
-    //     var $this = $(this);
-    //     gsap.to('#ball', { duration: 0.3, borderWidth: '2px', scale: 1.2, borderColor: $this.parents(".panel").data('color'), backgroundColor: $this.parents(".panel").data('color') });
-    //     gsap.to('#ball-loader', { duration: 0.2, borderWidth: '2px', top: 2, left: 2 });
-    //     $("#ball").append('<p class="first">' + $this.parents(".panel").data("firstline") + '</p>' + '<p>' + $this.parents(".panel").data("secondline") + '</p>');
-    //   });
 
-    //   $(".news-panel .panel .panel-image").mouseleave(function (e) {
-    //     var $this = $(this);
-    //     gsap.to('#ball', { duration: 0.2, borderWidth: '4px', scale: 0.5, borderColor: '#999999', backgroundColor: 'transparent' });
-    //     gsap.to('#ball-loader', { duration: 0.2, borderWidth: '4px', top: 0, left: 0 });
-    //     $('#ball p').remove();
-    //   });
-    // }
 
   }
+
+
+  // Moving Gallery		
+  gsap.utils.toArray('.moving-gallery').forEach((section, index) => {
+    const w = section.querySelector('.wrapper-gallery');
+    const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+    gsap.fromTo(w, { x }, {
+      x: xEnd,
+      scrollTrigger: {
+        trigger: section,
+        scrub: 0.5,
+      }
+    });
+  });
 
 
 

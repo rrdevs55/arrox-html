@@ -9050,4 +9050,43 @@ FEATURES STYLES 3
   height: 60%;
   display: block;
   max-width: none;
+}
+
+.tp-services-capsule-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 630px;
+  pointer-events: none;
+  margin-right: 30px;
+}
+@media (max-width: 575px) {
+  .tp-services-capsule-wrapper {
+    margin-right: 0;
+  }
+}
+.tp-services-capsule-wrapper > .tp-services-capsule-item-wrapper > p {
+  position: absolute;
+  display: inline-block;
+  margin-bottom: 0;
+  left: 0;
+  top: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: auto;
+  transition: none;
+}
+.tp-services-capsule-wrapper > .tp-services-capsule-item-wrapper > p img {
+  transition: none;
+  padding-bottom: 10px;
+}
+.tp-services-capsule-item {
+  display: inline-block;
+  font-size: 15px;
+  color: var(--theme);
+  background-color: var(--primary);
+  font-weight: 500;
+  border-radius: 100px;
+  padding: 10px 26px;
+  transform: translate(-50%, -50%) rotate(0.01rad);
 }/*# sourceMappingURL=style.css.map */

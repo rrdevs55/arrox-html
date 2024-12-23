@@ -6147,3 +6147,48 @@
     display: block;
     max-width: none;
 }
+
+.tp-services {
+    &-capsule {
+        &-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 630px;
+            pointer-events: none;
+            margin-right: 30px;
+
+            @media #{$xs} {
+                margin-right: 0;
+            }
+
+            &>.tp-services-capsule-item-wrapper {
+                &>p {
+                    position: absolute;
+                    display: inline-block;
+                    margin-bottom: 0;
+                    left: 0;
+                    top: 0;
+                    user-select: none;
+                    pointer-events: auto;
+                    transition: none;
+
+                    & img {
+                        transition: none;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        &-item {
+            display: inline-block;
+            font-size: 15px;
+            color: var(--theme);
+            background-color: var(--primary);
+            font-weight: 500;
+            border-radius: 100px;
+            padding: 10px 26px;
+            transform: translate(-50%, -50%) rotate(0.01rad);
+        }
+    }
+}

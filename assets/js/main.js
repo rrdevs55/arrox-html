@@ -476,9 +476,9 @@
         start: "top top",
         scrub: 1,
         end: (st) => "+=" + (st.vars.trigger.offsetWidth - innerWidth),
+        markers: true,
       }
     });
-
     // if (!isMobile()) {
     //   $(".news-panel .panel .panel-image").mouseenter(function (e) {
     //     var $this = $(this);
@@ -496,6 +496,9 @@
     // }
 
   }
+
+
+
 
 
 })(jQuery);

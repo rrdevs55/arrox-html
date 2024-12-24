@@ -4300,6 +4300,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    position: relative;
 
     &-inner {
         display: flex;
@@ -4315,6 +4316,27 @@
             background-color: var(--black);
             border-radius: 100%;
             z-index: -1;
+
+            @media #{$xxl} {
+                height: 300px;
+                width: 300px;
+            }
+
+            @media #{$xl} {
+                height: 260px;
+                width: 260px;
+
+            }
+
+            @media #{$lg} {
+                height: 200px;
+                width: 200px;
+            }
+
+            @media #{$md} {
+                height: 160px;
+                width: 160px;
+            }
         }
     }
 

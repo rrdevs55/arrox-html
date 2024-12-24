@@ -7352,6 +7352,7 @@ FEATURES STYLES 3
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  position: relative;
 }
 .cta-area-inner {
   display: flex;
@@ -7367,6 +7368,30 @@ FEATURES STYLES 3
   background-color: var(--black);
   border-radius: 100%;
   z-index: -1;
+}
+@media only screen and (max-width: 1919px) {
+  .cta-area-inner .area-bg {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .cta-area-inner .area-bg {
+    height: 260px;
+    width: 260px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .cta-area-inner .area-bg {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .cta-area-inner .area-bg {
+    height: 160px;
+    width: 160px;
+  }
 }
 .cta-area .section-title {
   font-family: var(--font_thunder);

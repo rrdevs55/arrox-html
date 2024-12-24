@@ -4699,6 +4699,92 @@
     }
 }
 
+/* client area service-page style  */
+.client-area-service-page {
+    .section-title {
+        max-width: 1430px;
+
+        span {
+            color: var(--primary);
+        }
+    }
+
+    .section-content {
+        margin-top: 67px;
+
+        .text-wrapper {
+            max-width: 505px;
+            margin-top: 133px;
+            margin-left: 545px;
+
+            @media #{$xxl} {
+                margin-top: 83px;
+            }
+
+            @media #{$xl} {
+                margin-top: 63px;
+                margin-left: 345px;
+            }
+
+            @media #{$md} {
+                margin-top: 43px;
+                margin-left: auto;
+            }
+
+            @media #{$sm} {
+                max-width: 100%;
+                margin-top: 23px;
+            }
+        }
+    }
+
+    .client-box {
+        width: 215px;
+        height: 100px;
+        padding: 0 20px;
+        background-color: var(--primary);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        transform: translate(-50%, -50%) rotate(0.00rad);
+
+        img {
+            pointer-events: none;
+        }
+
+    }
+
+
+
+    .line {
+        border-bottom: 1px solid var(--primary);
+    }
+
+    .lines-wrapper {
+        display: grid;
+        gap: 5px 0;
+    }
+
+    .client-capsule-wrapper {
+        position: relative;
+        overflow: hidden;
+        pointer-events: none;
+        height: 633px;
+
+        >* {
+            position: absolute;
+            display: inline-block;
+            margin-bottom: 0;
+            left: 0;
+            top: 0;
+            user-select: none;
+            pointer-events: auto;
+            transition: none;
+        }
+    }
+}
+
 
 /* productivity area style  */
 .productivity-area {
@@ -6146,59 +6232,4 @@
     height: 60%;
     display: block;
     max-width: none;
-}
-
-.tp-services-wrapper {
-
-    .tp-services-capsule-wrapper {
-        position: relative;
-        overflow: hidden;
-        height: 633px;
-        pointer-events: none;
-
-        &>p {
-            position: absolute;
-            display: inline-block;
-            margin-bottom: 0;
-            left: 0;
-            top: 0;
-            user-select: none;
-            pointer-events: auto;
-            transition: none;
-
-            & img {
-                transition: none;
-                padding-bottom: 10px;
-            }
-        }
-    }
-
-    .tp-services-capsule {
-        display: inline-block;
-        font-size: 15px;
-        color: var(--theme);
-        background-color: var(--primary);
-        font-weight: 500;
-        border-radius: 100px;
-        padding: 10px 26px;
-        transform: translate(-50%, -50%) rotate(0.01rad);
-        width: 300px;
-    }
-
-    .client-box {
-        width: 215px;
-        height: 100px;
-        padding: 0 20px;
-        background-color: var(--primary);
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100px;
-        transform: translate(-50%, -50%) rotate(0.00rad);
-
-        img {
-            pointer-events: none;
-        }
-
-    }
 }

@@ -1,8 +1,8 @@
-! function($) {
+! function ($) {
     "use strict";
-    const restArguments = function(t, e) {
+    const restArguments = function (t, e) {
         return e = null == e ? t.length - 1 : +e,
-            function(i, s) {
+            function (i, s) {
                 for (var n = Math.max(arguments.length - e, 0), o = Array(n), a = 0; a < n; a++) o[a] = arguments[a + e];
                 switch (e) {
                     case 0:
@@ -17,28 +17,28 @@
                 return l[e] = o, t.apply(this, l)
             }
     },
-    tpDelay = restArguments((function(t, e, i) {
-        return setTimeout((function() {
-            return t.apply(null, i)
-        }), e)
-    }));
-    window.tpDebounce = function(t, e, i) {
-        var s, n, o = function(e, i) {
-                s = null, i && (n = t.apply(e, i))
-            },
-            a = restArguments((function(a) {
+        tpDelay = restArguments((function (t, e, i) {
+            return setTimeout((function () {
+                return t.apply(null, i)
+            }), e)
+        }));
+    window.tpDebounce = function (t, e, i) {
+        var s, n, o = function (e, i) {
+            s = null, i && (n = t.apply(e, i))
+        },
+            a = restArguments((function (a) {
                 if (s && clearTimeout(s), i) {
                     var l = !s;
                     s = setTimeout(o, e), l && (n = t.apply(this, a))
                 } else s = tpDelay(o, e, this, a);
                 return n
             }));
-        return a.cancel = function() {
+        return a.cancel = function () {
             clearTimeout(s), s = null
         }, a
     };
 
-    const t = "tpThrowable";
+    const t = "tThrowable";
     let e = {
         roundness: "sharp",
         scrollGravity: !1
@@ -48,7 +48,7 @@
             this._defaults = e, this._name = t, this.options = {
                 ...e,
                 ...s
-            }, this.DOM = {}, this.DOM.element = i, this.DOM.$element = $(i), this.DOM.throwables = this.DOM.element.querySelectorAll("[data-tp-throwable-el]"), this.onWindowResize = tpDebounce(this.onWindowResize.bind(this), 250), this.bodies = [], this.init()
+            }, this.DOM = {}, this.DOM.element = i, this.DOM.$element = $(i), this.DOM.throwables = this.DOM.element.querySelectorAll("[data-t-throwable-el]"), this.onWindowResize = tpDebounce(this.onWindowResize.bind(this), 250), this.bodies = [], this.init()
         }
         init() {
             this.createWorld(), this.createBoundries(), this.createBodies(), this.enableRunner(), this.makeItRain(), this.bindResize()
@@ -162,9 +162,9 @@
                         angle: i.angle
                     });
                 if (Matter.Body.setVertices(i, o.vertices), i.position.y > this.height && Matter.Body.setPosition(i, {
-                        y: this.height / 2,
-                        x: i.position.x
-                    }), i.position.x > this.width) {
+                    y: this.height / 2,
+                    x: i.position.x
+                }), i.position.x > this.width) {
                     var h = gsap.utils.random(s.width / 2, this.width - s.width / 2);
                     Matter.Body.setPosition(i, {
                         y: i.position.y,
@@ -198,8 +198,8 @@
             this.runner.enabled = !1, Matter.Runner.stop(this.runner), window.removeEventListener("resize", this.onWindowResize)
         }
     }
-    $.fn[t] = function(e) {
-        return this.each((function() {
+    $.fn[t] = function (e) {
+        return this.each((function () {
             const s = {
                 ...$(this).data("throwable-options"),
                 ...e
@@ -207,6 +207,6 @@
             $.data(this, "plugin_" + t) || $.data(this, "plugin_" + t, new i(this, s))
         }))
     }
-}(jQuery), jQuery(document).ready((function($) {
-    $("[data-tp-throwable-scene]").tpThrowable()
+}(jQuery), jQuery(document).ready((function ($) {
+    $("[data-t-throwable-scene]").tThrowable()
 }));

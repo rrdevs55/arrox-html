@@ -3313,6 +3313,10 @@
             overflow: hidden;
             text-align: right;
 
+            @media #{$md} {
+                border-radius: 10px;
+            }
+
             @media #{$sm} {
                 grid-column: span 2;
 
@@ -3328,6 +3332,11 @@
                 object-fit: cover;
                 height: 265px;
                 border-radius: 20px;
+
+                @media #{$md} {
+                    width: 100%;
+                    border-radius: 10px;
+                }
             }
         }
     }

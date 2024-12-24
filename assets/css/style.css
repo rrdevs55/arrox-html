@@ -6412,6 +6412,11 @@ FEATURES STYLES 3
   overflow: hidden;
   text-align: right;
 }
+@media only screen and (max-width: 991px) {
+  .service-area .service-box .thumb {
+    border-radius: 10px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .service-area .service-box .thumb {
     grid-column: span 2;
@@ -6428,6 +6433,12 @@ FEATURES STYLES 3
      object-fit: cover;
   height: 265px;
   border-radius: 20px;
+}
+@media only screen and (max-width: 991px) {
+  .service-area .service-box .thumb img {
+    width: 100%;
+    border-radius: 10px;
+  }
 }
 
 /* service area style  */

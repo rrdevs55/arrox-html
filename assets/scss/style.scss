@@ -4550,11 +4550,13 @@
         border-radius: 100px;
         transform: translate(-50%, -50%) rotate(0.00rad);
 
+        img {
+            pointer-events: none;
+        }
+
     }
 
-    .client-capsule-wrapper-box {
-        border-bottom: 1px solid var(--primary);
-    }
+
 
     .line {
         border-bottom: 1px solid var(--primary);
@@ -4563,15 +4565,13 @@
     .lines-wrapper {
         display: grid;
         gap: 5px 0;
-        padding-top: 5px;
     }
 
     .client-capsule-wrapper {
         position: relative;
         overflow: hidden;
-        height: 100%;
         pointer-events: none;
-        height: 433px;
+        height: 633px;
 
         >* {
             position: absolute;
@@ -6148,47 +6148,57 @@
     max-width: none;
 }
 
-.tp-services {
-    &-capsule {
-        &-wrapper {
-            position: relative;
-            overflow: hidden;
-            height: 630px;
-            pointer-events: none;
-            margin-right: 30px;
+.tp-services-wrapper {
 
-            @media #{$xs} {
-                margin-right: 0;
-            }
+    .tp-services-capsule-wrapper {
+        position: relative;
+        overflow: hidden;
+        height: 633px;
+        pointer-events: none;
 
-            &>.tp-services-capsule-item-wrapper {
-                &>p {
-                    position: absolute;
-                    display: inline-block;
-                    margin-bottom: 0;
-                    left: 0;
-                    top: 0;
-                    user-select: none;
-                    pointer-events: auto;
-                    transition: none;
-
-                    & img {
-                        transition: none;
-                        padding-bottom: 10px;
-                    }
-                }
-            }
-        }
-
-        &-item {
+        &>p {
+            position: absolute;
             display: inline-block;
-            font-size: 15px;
-            color: var(--theme);
-            background-color: var(--primary);
-            font-weight: 500;
-            border-radius: 100px;
-            padding: 10px 26px;
-            transform: translate(-50%, -50%) rotate(0.01rad);
+            margin-bottom: 0;
+            left: 0;
+            top: 0;
+            user-select: none;
+            pointer-events: auto;
+            transition: none;
+
+            & img {
+                transition: none;
+                padding-bottom: 10px;
+            }
         }
+    }
+
+    .tp-services-capsule {
+        display: inline-block;
+        font-size: 15px;
+        color: var(--theme);
+        background-color: var(--primary);
+        font-weight: 500;
+        border-radius: 100px;
+        padding: 10px 26px;
+        transform: translate(-50%, -50%) rotate(0.01rad);
+        width: 300px;
+    }
+
+    .client-box {
+        width: 215px;
+        height: 100px;
+        padding: 0 20px;
+        background-color: var(--primary);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        transform: translate(-50%, -50%) rotate(0.00rad);
+
+        img {
+            pointer-events: none;
+        }
+
     }
 }

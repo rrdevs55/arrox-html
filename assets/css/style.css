@@ -7573,8 +7573,8 @@ FEATURES STYLES 3
   border-radius: 100px;
   transform: translate(-50%, -50%) rotate(0rad);
 }
-.client-area .client-capsule-wrapper-box {
-  border-bottom: 1px solid var(--primary);
+.client-area .client-box img {
+  pointer-events: none;
 }
 .client-area .line {
   border-bottom: 1px solid var(--primary);
@@ -7582,14 +7582,12 @@ FEATURES STYLES 3
 .client-area .lines-wrapper {
   display: grid;
   gap: 5px 0;
-  padding-top: 5px;
 }
 .client-area .client-capsule-wrapper {
   position: relative;
   overflow: hidden;
-  height: 100%;
   pointer-events: none;
-  height: 433px;
+  height: 633px;
 }
 .client-area .client-capsule-wrapper > * {
   position: absolute;
@@ -9052,19 +9050,13 @@ FEATURES STYLES 3
   max-width: none;
 }
 
-.tp-services-capsule-wrapper {
+.tp-services-wrapper .tp-services-capsule-wrapper {
   position: relative;
   overflow: hidden;
-  height: 630px;
+  height: 633px;
   pointer-events: none;
-  margin-right: 30px;
 }
-@media (max-width: 575px) {
-  .tp-services-capsule-wrapper {
-    margin-right: 0;
-  }
-}
-.tp-services-capsule-wrapper > .tp-services-capsule-item-wrapper > p {
+.tp-services-wrapper .tp-services-capsule-wrapper > p {
   position: absolute;
   display: inline-block;
   margin-bottom: 0;
@@ -9076,11 +9068,11 @@ FEATURES STYLES 3
   pointer-events: auto;
   transition: none;
 }
-.tp-services-capsule-wrapper > .tp-services-capsule-item-wrapper > p img {
+.tp-services-wrapper .tp-services-capsule-wrapper > p img {
   transition: none;
   padding-bottom: 10px;
 }
-.tp-services-capsule-item {
+.tp-services-wrapper .tp-services-capsule {
   display: inline-block;
   font-size: 15px;
   color: var(--theme);
@@ -9089,4 +9081,19 @@ FEATURES STYLES 3
   border-radius: 100px;
   padding: 10px 26px;
   transform: translate(-50%, -50%) rotate(0.01rad);
+  width: 300px;
+}
+.tp-services-wrapper .client-box {
+  width: 215px;
+  height: 100px;
+  padding: 0 20px;
+  background-color: var(--primary);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  transform: translate(-50%, -50%) rotate(0rad);
+}
+.tp-services-wrapper .client-box img {
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */

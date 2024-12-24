@@ -38,7 +38,7 @@
         }, a
     };
 
-    const t = "tpThrowable";
+    const t = "tThrowable";
     let e = {
         roundness: "sharp",
         scrollGravity: !1
@@ -208,5 +208,5 @@
         }))
     }
 }(jQuery), jQuery(document).ready((function ($) {
-    $("[data-tp-throwable-scene]").tpThrowable()
+    $("[data-t-throwable-scene]").tThrowable()
 }));

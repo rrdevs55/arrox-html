@@ -165,6 +165,20 @@
     });
   }
 
+  // client slider 
+  if ('.client-slider-active') {
+    var client_slider_active = new Swiper(".client-slider-active", {
+      slidesPerView: 'auto',
+      loop: true,
+      autoplay: true,
+      spaceBetween: 0,
+      speed: 5000,
+      autoplay: {
+        delay: 1,
+      },
+    });
+  }
+
 
   // GSAP Fade Animation 
   let fadeArray_items = document.querySelectorAll(".fade-anim");

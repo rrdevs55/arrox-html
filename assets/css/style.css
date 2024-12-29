@@ -10582,4 +10582,97 @@ FEATURES STYLES 3
 .media-area-page-about .section-content .t-btn-primary {
   border-color: rgba(255, 255, 255, 0.2);
   color: var(--white);
+}
+
+/* error area style  */
+.error-area-inner {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.error-area .section-subtitle {
+  font-family: var(--font_sequelsansmediumbody);
+  font-size: 300px;
+  font-weight: 315;
+  line-height: 0.7;
+  letter-spacing: -0.07em;
+}
+@media only screen and (max-width: 1919px) {
+  .error-area .section-subtitle {
+    font-size: 240px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .error-area .section-subtitle {
+    font-size: 180px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .error-area .section-subtitle {
+    font-size: 140px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .error-area .section-subtitle {
+    font-size: 120px;
+  }
+}
+.error-area .section-title {
+  max-width: 740px;
+}
+@media only screen and (max-width: 1919px) {
+  .error-area .section-title {
+    max-width: 640px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .error-area .section-title {
+    max-width: 540px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .error-area .section-title {
+    max-width: 440px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .error-area .section-title {
+    max-width: 340px;
+  }
+}
+.error-area .section-content {
+  align-self: center;
+}
+.error-area .section-content .title-wrapper {
+  margin-top: 37px;
+}
+@media only screen and (max-width: 1919px) {
+  .error-area .section-content .title-wrapper {
+    margin-top: 27px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .error-area .section-content .title-wrapper {
+    margin-top: 17px;
+  }
+}
+.error-area .section-content .btn-wrapper {
+  margin-top: 64px;
+}
+@media only screen and (max-width: 1919px) {
+  .error-area .section-content .btn-wrapper {
+    margin-top: 44px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .error-area .section-content .btn-wrapper {
+    margin-top: 34px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .error-area .section-content .btn-wrapper {
+    margin-top: 24px;
+  }
 }/*# sourceMappingURL=style.css.map */

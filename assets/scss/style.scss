@@ -6279,6 +6279,107 @@
 .team-area {
 
     .section-header {
+        margin-top: 59px;
+        display: grid;
+        gap: 20px 20px;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-end;
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
+
+        .text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            max-width: 375px;
+        }
+
+        .section-title-wrapper {
+            order: 2;
+
+            @media #{$md} {
+                order: unset;
+            }
+        }
+    }
+
+
+
+    .team-wrapper-box {
+        margin-top: 94px;
+
+        @media #{$xxl} {
+            margin-top: 64px;
+        }
+
+        @media #{$md} {
+            margin-top: 44px;
+        }
+    }
+
+    .team-wrapper {
+        display: grid;
+        gap: 40px 20px;
+        grid-template-columns: repeat(4, 1fr);
+
+        @media #{$md} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$xs} {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .team-box {
+        &:hover {
+            .thumb {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .thumb {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                transition: all 0.5s;
+            }
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: 310;
+            line-height: 1;
+            letter-spacing: -0.07em;
+
+            @media #{$xxl} {
+                font-size: 24px;
+            }
+        }
+
+        .post {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 30px;
+            display: inline-block;
+            margin-top: 3px;
+        }
+
+        .content {
+            margin-top: 19px;
+        }
+    }
+}
+
+/* team area about page style  */
+.team-area-about-page {
+
+    .section-header {
         margin-top: 50px;
         border-top: 1px solid rgba(17, 17, 17, 0.1);
         padding-top: 37px;

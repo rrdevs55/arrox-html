@@ -5895,7 +5895,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .about-area-details .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -6102,7 +6102,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .info-area-page-about .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -6755,7 +6755,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .work-area-work-page .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -7485,7 +7485,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .service-area-service-page .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -8260,6 +8260,30 @@ FEATURES STYLES 3
 @media only screen and (max-width: 1199px) {
   .cta-area-3 .section-title {
     max-width: 340px;
+  }
+}
+
+/* cta area team page style  */
+.cta-area-team-page .section-content {
+  margin-top: 32px;
+  text-align: center;
+}
+.cta-area-team-page .section-content .btn-wrapper {
+  margin-top: 45px;
+}
+@media only screen and (max-width: 1199px) {
+  .cta-area-team-page .section-content .btn-wrapper {
+    margin-top: 35px;
+  }
+}
+.cta-area-team-page .section-title {
+  max-width: 920px;
+  margin-inline: auto;
+}
+@media (min-width: 1200px) {
+  .cta-area-team-page .section-title {
+    font-size: 50px;
+    line-height: 50px;
   }
 }
 
@@ -9092,7 +9116,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .award-area-page-about .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -9199,7 +9223,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .team-area .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -9274,7 +9298,7 @@ FEATURES STYLES 3
 
 /* team list area style  */
 .team-list-area .team-box {
-  border-bottom: 1px solid #E5E0DC;
+  border-bottom: 1px solid #E1E1E1;
   padding-top: 20px;
   padding-bottom: 20px;
   display: grid;
@@ -9305,7 +9329,7 @@ FEATURES STYLES 3
   }
 }
 .team-list-area .team-box:hover {
-  background-color: #F8F2ED;
+  background-color: #FAFAFA;
 }
 .team-list-area .team-box:hover .thumb {
   transform: translateX(20px);
@@ -9364,7 +9388,145 @@ FEATURES STYLES 3
   }
 }
 .team-list-area .team-wrapper {
-  border-top: 1px solid #E5E0DC;
+  border-top: 1px solid #E1E1E1;
+}
+
+/* team area team page style  */
+.team-area-team-page .page-title {
+  font-family: var(--font_thunder);
+  font-size: 495px;
+  font-weight: 600;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 1919px) {
+  .team-area-team-page .page-title {
+    font-size: 385px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .team-area-team-page .page-title {
+    font-size: 325px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .team-area-team-page .page-title {
+    font-size: 265px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .team-area-team-page .page-title {
+    font-size: 185px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .team-area-team-page .page-title {
+    font-size: 125px;
+  }
+}
+@media (max-width: 575px) {
+  .team-area-team-page .page-title {
+    font-size: 95px;
+  }
+}
+.team-area-team-page .page-title-wrapper {
+  margin-top: 68px;
+}
+.team-area-team-page .section-header {
+  margin-top: 28px;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  padding-top: 37px;
+}
+@media only screen and (max-width: 991px) {
+  .team-area-team-page .section-header {
+    margin-top: 10px;
+    padding-top: 7px;
+  }
+}
+.team-area-team-page .section-title-wrapper {
+  display: grid;
+  gap: 20px 60px;
+  grid-template-columns: 325px 1fr;
+}
+@media only screen and (max-width: 1919px) {
+  .team-area-team-page .section-title-wrapper {
+    grid-template-columns: 275px 1fr;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .team-area-team-page .section-title-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+.team-area-team-page .subtitle-wrapper {
+  margin-top: 8px;
+}
+.team-area-team-page .section-title {
+  max-width: 530px;
+}
+@media only screen and (max-width: 1919px) {
+  .team-area-team-page .section-title {
+    max-width: 430px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .team-area-team-page .section-title {
+    max-width: 350px;
+  }
+}
+.team-area-team-page .team-info {
+  margin-top: 13px;
+}
+.team-area-team-page .team-info .team-group {
+  display: inline-flex;
+  align-items: center;
+}
+.team-area-team-page .team-info .team-group img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: 3px solid var(--white);
+}
+@media only screen and (max-width: 1919px) {
+  .team-area-team-page .team-info .team-group img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.team-area-team-page .team-info .team-group img:not(:first-child) {
+  margin-left: -10px;
+}
+.team-area-team-page .team-info .text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  max-width: 275px;
+}
+.team-area-team-page .team-info .text span {
+  font-weight: 500;
+  color: var(--primary);
+}
+.team-area-team-page .team-info .text-wrapper {
+  margin-top: 16px;
+}
+.team-area-team-page .title-wrapper .text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  max-width: 580px;
+  margin-top: 54px;
+}
+@media only screen and (max-width: 1919px) {
+  .team-area-team-page .title-wrapper .text {
+    margin-top: 44px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .team-area-team-page .title-wrapper .text {
+    margin-top: 24px;
+  }
 }
 
 /* approach area style  */
@@ -9577,7 +9739,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .approach-area-details .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -9888,7 +10050,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .faq-area-faq-page .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -10097,7 +10259,7 @@ FEATURES STYLES 3
 }
 @media only screen and (max-width: 1399px) {
   .contact-area-contact-page .section-title-wrapper {
-    grid-template-columns: 1fr 900px;
+    grid-template-columns: 1fr 850px;
   }
 }
 @media only screen and (max-width: 1199px) {

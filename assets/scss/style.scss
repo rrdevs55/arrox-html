@@ -7207,7 +7207,7 @@
         gap: 20px 60px;
         grid-template-columns: 1fr 1125px;
         align-items: flex-start;
-        margin-bottom: 80px;
+        margin-bottom: 50px;
 
         @media #{$xxl} {
             grid-template-columns: 1fr 905px;
@@ -7780,6 +7780,177 @@
 
 }
 
+
+/* faq area style  */
+.faq-area {
+    .section-header {
+        margin-top: 50px;
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        padding-top: 37px;
+
+        @media #{$md} {
+            margin-top: 10px;
+            padding-top: 7px;
+        }
+    }
+
+    .section-title-wrapper {
+        display: grid;
+        gap: 15px 60px;
+        grid-template-columns: 1fr 1235px;
+
+        @media #{$xxl} {
+            grid-template-columns: 1fr 1000px;
+
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr 850px;
+
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 750px;
+
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .subtitle-wrapper {
+        margin-top: 8px;
+    }
+
+    .section-title {
+        max-width: 1005px;
+
+        @media #{$xxl} {
+            max-width: 805px;
+        }
+
+        @media #{$xl} {
+            max-width: 605px;
+        }
+    }
+
+    .accordion-wrapper {
+        max-width: 1235px;
+        margin-left: auto;
+        margin-top: 93px;
+        margin-bottom: 10px;
+
+        @media #{$xxl} {
+            margin-top: 63px;
+            max-width: 1000px;
+        }
+
+        @media #{$xl} {
+            margin-top: 43px;
+            max-width: 900px;
+        }
+
+        @media #{$lg} {
+            max-width: 750px;
+        }
+    }
+
+
+    .accordion {
+        border-top: 1px solid #E5E0DC;
+        counter-reset: accordion;
+    }
+
+    .accordion-button {
+        font-size: 30px;
+        font-weight: 310;
+        line-height: 1.16;
+        letter-spacing: -0.07em;
+        color: var(--primary);
+        padding: 30px 0 33px;
+        border-radius: 0 !important;
+        background-color: transparent;
+        outline: 0;
+        box-shadow: none;
+
+        @media #{$xxl} {
+            padding: 20px 0 23px;
+            font-size: 24px;
+        }
+
+        @media #{$sm} {
+            font-size: 20px;
+        }
+
+        &::after {
+            content: "+";
+            font-family: var(--font_awesome);
+            background-image: none;
+            width: auto;
+            height: auto;
+
+        }
+
+        &:not(.collapsed) {
+            pointer-events: none;
+
+            &::after {
+                content: "-";
+            }
+        }
+    }
+
+    .accordion-item {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #E5E0DC;
+        position: relative;
+        padding-left: 130px;
+        transition: all 0.5s;
+
+        @media #{$md} {
+            padding-left: 80px;
+        }
+
+        @media #{$sm} {
+            padding-left: 50px;
+        }
+
+        &:before {
+            counter-increment: accordion;
+            content: counter(accordion, decimal-leading-zero);
+            font-family: var(--font_sequelsansromanbody);
+            font-size: 30px;
+            font-weight: 310;
+            line-height: 1.16;
+            letter-spacing: -0.07em;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            transition: all 0.5s;
+
+            @media #{$xxl} {
+                top: 20px;
+                font-size: 24px;
+            }
+
+            @media #{$sm} {
+                font-size: 20px;
+            }
+        }
+    }
+
+
+    .accordion-body {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        color: var(--secondary);
+        padding: 4px 0 43px;
+        border: none;
+    }
+}
 
 /* faq area faq page style  */
 .faq-area-faq-page {
@@ -8490,4 +8661,118 @@
         }
     }
 
+}
+
+/* feature area style  */
+.feature-area {
+    background-color: var(--black);
+
+    .features-wrapper-box {
+        margin-top: 44px;
+    }
+
+    .features-wrapper {
+        display: grid;
+        gap: 40px 60px;
+        grid-template-columns: repeat(4, 1fr);
+        overflow: hidden;
+
+        >* {
+            &:nth-child(2n) {
+                .thumb {
+                    order: 2;
+                }
+            }
+        }
+    }
+
+
+    .feature-box {
+        position: relative;
+        display: grid;
+        gap: 175px;
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            top: 0;
+            left: -30px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: 310;
+            line-height: 30px;
+            letter-spacing: -0.07em;
+            color: var(--white);
+        }
+
+        .text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            color: var(--white-2);
+            margin-top: 30px;
+        }
+    }
+
+}
+
+/* value area style  */
+.value-area {
+    background-color: var(--black);
+
+    .section-content-wrapper {
+        margin-top: 32px;
+        margin-bottom: 45px;
+        display: grid;
+        gap: 40px 60px;
+        grid-template-columns: 605px 905px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section-title {
+        font-size: 50px;
+        font-weight: 315;
+        line-height: 55px;
+        letter-spacing: -0.07em;
+        color: var(--white);
+        max-width: 660px;
+    }
+
+    .values-wrapper {
+        margin-top: 56px;
+    }
+
+    .value-box {
+        display: grid;
+        gap: 0 80px;
+        grid-template-columns: 330px 1fr;
+
+        &:not(:first-child) {
+            margin-top: 68px;
+        }
+
+        .number {
+            font-size: 100px;
+            font-weight: 310;
+            line-height: 90px;
+            letter-spacing: -0.07em;
+            color: var(--white);
+            padding-top: 17px;
+            border-top: 1px solid rgba(252, 247, 243, 0.2);
+            margin-top: 6px;
+        }
+
+        .text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26px;
+            color: var(--white-2);
+        }
+    }
 }

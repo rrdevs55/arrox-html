@@ -669,6 +669,8 @@
                 @media (min-width: 1650px) {
                     max-width: 1650px;
                     --container-max-widths: 1620px;
+                    --bs-gutter-x: 30px;
+
                 }
             }
         }
@@ -7080,15 +7082,15 @@
 
     .blogs-wrapper {
         display: grid;
-        gap: 30px 60px;
+        gap: 76px 60px;
         grid-template-columns: repeat(4, 1fr);
         overflow: hidden;
 
         @media #{$xxl} {
-            gap: 30px 40px;
+            gap: 46px 40px;
         }
 
-        @media #{$md} {
+        @media #{$lg} {
             grid-template-columns: repeat(2, 1fr);
         }
 
@@ -7156,6 +7158,10 @@
             @media #{$xxl} {
                 font-size: 24px;
 
+            }
+
+            @media #{$xl} {
+                font-size: 22px;
             }
 
             @media #{$lg} {
@@ -7324,12 +7330,12 @@
 
     .blogs-wrapper {
         display: grid;
-        gap: 30px 60px;
-        grid-template-columns: repeat(3, 1fr);
+        gap: 76px 60px;
+        grid-template-columns: repeat(6, 1fr);
         overflow: hidden;
 
         @media #{$xxl} {
-            gap: 30px 40px;
+            gap: 46px 40px;
         }
 
         @media #{$md} {
@@ -7338,6 +7344,53 @@
 
         @media #{$xs} {
             grid-template-columns: repeat(1, 1fr);
+        }
+
+        >* {
+            grid-column: span 2;
+
+            @media #{$md} {
+                grid-column: auto;
+            }
+
+
+            &:nth-child(4),
+            &:nth-child(5) {
+                grid-column: span 3;
+
+                @media #{$md} {
+                    grid-column: auto;
+                }
+
+                .content {
+                    padding-right: 130px;
+
+                    @media #{$xxl} {
+                        padding-right: 100px;
+                    }
+
+                    @media #{$lg} {
+                        padding-right: 80px;
+                    }
+
+                    @media #{$md} {
+                        padding-right: 0;
+                    }
+                }
+            }
+
+            .content {
+                padding-right: 90px;
+
+                @media #{$xxl} {
+                    padding-right: 70px;
+
+                }
+
+                @media #{$lg} {
+                    padding-right: 0;
+                }
+            }
         }
     }
 
@@ -7385,6 +7438,7 @@
         .content {
             margin-top: 24px;
 
+
             @media #{$lg} {
                 margin-top: 14px;
             }
@@ -7398,6 +7452,11 @@
             display: inline;
 
             @media #{$xxl} {
+                font-size: 30px;
+
+            }
+
+            @media #{$xl} {
                 font-size: 24px;
 
             }

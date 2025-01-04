@@ -6365,6 +6365,12 @@
 
 
 /* testimonial area style  */
+.mwg_landing2 .testimonial-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .testimonial-area {
     background-color: var(--black);
@@ -6405,17 +6411,17 @@
         >* {
             &:nth-child(1) {
                 margin-top: 0;
-                transform: rotate(-15deg);
+                // transform: rotate(-15deg);
             }
 
             &:nth-child(2) {
                 margin-top: 18px;
-                transform: rotate(8.43deg);
+                // transform: rotate(8.43deg);
             }
 
             &:nth-child(3) {
                 margin-top: 118px;
-                transform: rotate(15deg);
+                // transform: rotate(15deg);
 
                 @media #{$md} {
                     margin-top: 38px;
@@ -6425,12 +6431,12 @@
 
             &:nth-child(4) {
                 margin-top: 40px;
-                transform: rotate(0deg);
+                // transform: rotate(0deg);
             }
 
             &:nth-child(5) {
                 margin-top: 40px;
-                transform: rotate(-15deg);
+                // transform: rotate(-15deg);
             }
         }
     }

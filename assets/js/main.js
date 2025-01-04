@@ -512,8 +512,8 @@
   });
 
 
-  mm.add("(min-width: 769px)", () => {
-    const e = document.querySelector(".mwg_landing2"),
+  mm.add("(min-width: 768px)", () => {
+    const e = document.querySelector(".moving-testimonial"),
       t = e.querySelector(".pin"),
       o = e.querySelectorAll(".card");
     ScrollTrigger.create({ trigger: t, start: "top top", end: "bottom bottom", pin: !0, pinSpacing: !1, scrub: !0 }), gsap.set(o, { yPercent: 50, y: 0.5 * window.innerHeight + 1 });

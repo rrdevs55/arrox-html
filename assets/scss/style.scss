@@ -418,7 +418,7 @@
         }
     }
 
-    &-design-agency {
+    &-creative-agency {
         position: relative;
         z-index: 100;
         background-color: #FCF7F3;
@@ -657,6 +657,43 @@
                 }
             }
         }
+    }
+
+    &-design-agency {
+        .container {
+            &.large {
+                @media (min-width: 1650px) {
+                    max-width: 1650px;
+                }
+            }
+        }
+
+        .section-title {
+            font-size: 100px;
+            letter-spacing: -0.07em;
+
+
+            @media #{$xxl} {
+                font-size: 80px;
+            }
+
+            @media #{$xl} {
+                font-size: 60px;
+            }
+
+            @media #{$lg} {
+                font-size: 50px;
+            }
+
+            @media #{$md} {
+                font-size: 40px;
+            }
+
+            @media #{$sm} {
+                font-size: 35px;
+            }
+        }
+
     }
 
     &-page-inner {

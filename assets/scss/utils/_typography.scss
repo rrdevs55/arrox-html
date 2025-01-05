@@ -15,25 +15,26 @@
 
 
 
-/* Thunder-BoldLC  */
+/* Thunder  */
 @font-face {
   font-family: 'Thunder';
   src: url('../fonts/Thunder-BoldLC.ttf');
-  font-style: normal;
-  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../fonts/Thunder-LC.ttf');
 }
 
 /* Sequel Sans  */
 @font-face {
   font-family: 'Sequel Sans Roman Body';
   src: url('../fonts/Sequel Sans Roman Body.otf');
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'Sequel Sans Medium Body';
   src: url('../fonts/Sequel Sans Medium Body.otf');
-  font-style: normal;
 }
 
 
@@ -57,6 +58,10 @@
 
     &-sequelsans-romanbody {
       @include heading (var(--font_sequelsansromanbody), 310, 0.90);
+    }
+
+    &-thunder-regular {
+      @include heading (var(--font_thunder), 400, 0.85);
     }
 
   }

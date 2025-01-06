@@ -17,24 +17,35 @@
 
 /* Thunder  */
 @font-face {
-  font-family: 'Thunder';
+  font-family: "Thunder";
   src: url('../fonts/Thunder-BoldLC.ttf');
+  font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Thunder';
+  font-family: "Thunder";
   src: url('../fonts/Thunder-LC.ttf');
+  font-weight: 400;
 }
 
 /* Sequel Sans  */
 @font-face {
-  font-family: 'Sequel Sans Roman Body';
+  font-family: "Sequel Sans Roman Body";
   src: url('../fonts/Sequel Sans Roman Body.otf');
+  font-weight: 310;
 }
 
 @font-face {
-  font-family: 'Sequel Sans Medium Body';
+  font-family: "equel Sans Medium Body";
   src: url('../fonts/Sequel Sans Medium Body.otf');
+  font-weight: 315;
+}
+
+/* times now  */
+@font-face {
+  font-family: "TimesNow-SemiLightItalic";
+  src: url('../fonts/TimesNow-SemiLightItalic.ttf');
+  font-weight: 400;
 }
 
 
@@ -42,9 +53,10 @@
 :root {
   --font_dmsans: "DM Sans", sans-serif;
   --font_instrumentsans: "Instrument Sans", sans-serif;
-  --font_thunder: 'Thunder';
-  --font_sequelsansromanbody: 'Sequel Sans Roman Body';
-  --font_sequelsansmediumbody: 'Sequel Sans Medium Body';
+  --font_thunder: "Thunder";
+  --font_sequelsansromanbody: "Sequel Sans Roman Body";
+  --font_sequelsansmediumbody: "Sequel Sans Medium Body";
+  --font_timesnow: "TimesNow-SemiLightItalic";
   --font_awesome: 'Font Awesome 6 Free';
 }
 

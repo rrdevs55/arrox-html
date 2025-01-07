@@ -629,7 +629,7 @@
         scrollTrigger: {
           trigger: ".about-area",
           start: "center center",
-          end: "center+=400 center",
+          end: "center+=50 center",
           scrub: 1,
           markers: { startColor: "purple", endColor: "purple", indent: 50 },
         },

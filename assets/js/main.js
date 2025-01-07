@@ -285,20 +285,6 @@
       });
     }
 
-    //Client Pin Active
-    var pin_fixed = document.querySelector('.client-pin-element');
-    if (pin_fixed && device_width > 991) {
-
-      gsap.to(".client-pin-element", {
-        scrollTrigger: {
-          trigger: ".client-pin-area",
-          pin: ".client-pin-element",
-          start: "top top",
-          end: "bottom bottom",
-          pinSpacing: false,
-        }
-      });
-    }
 
 
     // grow animation 
@@ -805,5 +791,23 @@
     });
   });
   //image animation in hero end
+
+
+  //Client Pin Active
+  var pin_fixed = document.querySelector('.client-pin-element');
+  if (pin_fixed && device_width > 0) {
+
+    gsap.to(".client-pin-element", {
+      scrollTrigger: {
+        trigger: ".client-pin-element",
+        pin: ".client-pin-element",
+        start: "bottom bottom",
+        endTrigger: ".client-pin-area",
+        end: "bottom bottom",
+        pinSpacing: false,
+      }
+    });
+  }
+
 
 })(jQuery);

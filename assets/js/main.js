@@ -285,6 +285,21 @@
       });
     }
 
+    //Client Pin Active
+    var pin_fixed = document.querySelector('.client-pin-element');
+    if (pin_fixed && device_width > 991) {
+
+      gsap.to(".client-pin-element", {
+        scrollTrigger: {
+          trigger: ".client-pin-area",
+          pin: ".client-pin-element",
+          start: "top top",
+          end: "bottom bottom",
+          pinSpacing: false,
+        }
+      });
+    }
+
 
     // grow animation 
     var grow = document.querySelectorAll(".grow");

@@ -532,4 +532,263 @@
     });
   }
 
+
+
+  // video start
+  mm.add("(min-width: 1200px)", () => {
+
+    if (document.querySelectorAll(".hero-area").length > 0) {
+      const removeWordElement = document.querySelector(".remove-word");
+      var ab2 = gsap.timeline({
+        duration: 5,
+        scrollTrigger: {
+          trigger: ".hero-area",
+          pin: false,
+          pinSpacing: false,
+          scrub: 2,
+          start: "top 20%",
+          end: "bottom 0%",
+          markers: { startColor: "black", endColor: "red", indent: 200 },
+
+        },
+      });
+
+      ab2.to(".big-text-wrapper .big-text", {
+        scale: 0.09,
+        y: "74%",
+        color: "black",
+        duration: 2,
+        ease: "power1.inOut",
+      });
+
+      ab2.to(
+        ".gap",
+        {
+          minWidth: "2000px",
+          duration: 1.5,
+          ease: "power1.inOut",
+        },
+        ">"
+      );
+      ab2.to(
+        ".remove-word",
+        {
+          x: "-100%",
+          opacity: 0,
+          duration: 1.5,
+          ease: "power1.inOut",
+        },
+        "start"
+      );
+
+      ab2.to(
+        ".big-video",
+        {
+          visibility: "visible",
+          x: "0%",
+          minHeight: "20px",
+          opacity: 1,
+          duration: 1.5,
+          ease: "power1.inOut",
+          width: "100vw",
+          height: "680px",
+          minHeight: "680px"
+        },
+        "start"
+      );
+
+      ab2.to(".about-area", {
+        scrollTrigger: {
+          trigger: ".about-area",
+          start: "bottom bottom",
+          end: "bottom top",
+          pin: ".about-area",
+          pinSpacing: true,
+          scrub: 1,
+          markers: { startColor: "blue", endColor: "blue", indent: 0 },
+        },
+      });
+
+      ab2.to(".big-text-wrapper", {
+        scrollTrigger: {
+          trigger: ".about-area",
+          start: "bottom bottom",
+          end: "bottom top",
+          pin: ".big-text-wrapper",
+          pinSpacing: false,
+          scrub: 1,
+          markers: { startColor: "blue", endColor: "blue", indent: 0 },
+        },
+      });
+
+      gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
+        y: "0",
+        delay: 2,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".about-area",
+          start: "center center",
+          end: "center+=400 center",
+          scrub: 1,
+          markers: { startColor: "purple", endColor: "purple", indent: 50 },
+        },
+      });
+
+      gsap.to(".big-video", {
+        scale: 12,
+        delay: 3,
+        transformOrigin: "top center",
+        borderRadius: "0",
+        scrollTrigger: {
+          trigger: ".about-area .btn-wrapper",
+          start: "bottom center",
+          end: "bottom 0",
+          scrub: 3,
+          markers: { startColor: "green", endColor: "green", indent: 50 },
+        },
+      });
+    }
+  });
+  // video end
+
+  // text-animation start
+  mm.add("(min-width: 1200px)", () => {
+
+    if (document.querySelectorAll(".about-area-2").length > 0) {
+      var ab2 = gsap.timeline();
+
+      ab2.to(".year-since", {
+        right: "0",
+        scrollTrigger: {
+          trigger: ".about-area-2 .section-content",
+          pin: ".about-area-2",
+          pinSpacing: true,
+          start: "top top",
+          endTrigger: ".about-area-2 .year-wrapper",
+          end: "bottom top",
+          scrub: 3,
+          // markers: { startColor: "red", endColor: "red", indent: 200 },
+        },
+      });
+
+      ab2.to(".year-since .last-text", {
+        scale: 0.05,
+        right: "0",
+        transformOrigin: "top center",
+        scrollTrigger: {
+          trigger: ".about-area-2 .year-wrapper",
+          start: "bottom top",
+          end: "bottom+=784 top",
+          pin: ".year-since .last-text",
+          pinSpacing: true,
+          scrub: 1,
+          // markers: { startColor: "blue", endColor: "blue", indent: 0 },
+        },
+      });
+
+      ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
+        x: "100", // Move 100px to the right
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".about-area-2 .year-wrapper",
+          start: "center center",
+          end: "center+=400 center",
+          scrub: 3,
+          // markers: { startColor: "purple", endColor: "purple", indent: 50 },
+        },
+      });
+    }
+  });
+  // text-animation end
+
+
+  // service-area-2 text and bg animation start
+
+  if (document.querySelectorAll(".service-area-2").length > 0) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".service-area-2",
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        start: "top 10%",
+        end: "bottom 0%",
+        markers: { startColor: "purple", endColor: "purple", indent: 50 },
+      }
+    })
+      .fromTo(".service-area-2 .bg-area",
+        { scale: 0 },
+        {
+          scale: 10,
+          duration: 2,
+          ease: "power4.inOut"
+        }
+      );
+  }
+  // service-area-2 text and bg animation end
+
+
+  // work-area-2 box animation start
+  document.addEventListener("DOMContentLoaded", function () {
+    const workBoxes = document.querySelectorAll(".work-box");
+    gsap.fromTo(
+      workBoxes,
+      {
+        opacity: 0,
+        scale: 0.8,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: {
+          each: 0.2,
+          from: "random",
+        },
+        scrollTrigger: {
+          trigger: ".works-wrapper",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: false,
+        },
+      }
+    );
+  });
+  // work-area-2 box animation end
+
+  //image animation in hero start
+  const hoverItems = document.querySelectorAll(".text-underline");
+  function moveImage(e, hoverItem, index) {
+    const item = hoverItem.getBoundingClientRect();
+    const x = e.clientX - item.left;
+    const y = e.clientY - item.top;
+    if (hoverItem.children[index]) {
+      hoverItem.children[index].style.transform = `translate(${x}px, ${y}px)`;
+    }
+  }
+
+  hoverItems.forEach((item, i) => {
+    const image = item.querySelector(".hover-image");
+
+    item.addEventListener("mousemove", (e) => {
+      moveImage(e, item, 0);
+    });
+
+    item.addEventListener("mouseenter", () => {
+      if (image) {
+        image.style.opacity = 1;
+      }
+    });
+
+    item.addEventListener("mouseleave", () => {
+      if (image) {
+        image.style.opacity = 0;
+        image.style.transform = "translate(0, 0)";
+      }
+    });
+  });
+  //image animation in hero end
+
 })(jQuery);

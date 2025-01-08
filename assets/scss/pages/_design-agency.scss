@@ -685,14 +685,54 @@
             display: inline-block;
             color: var(--primary);
             margin-top: 80px;
+
+            @media #{$xxl} {
+                font-size: 200px;
+            }
+
+            @media #{$xl} {
+                font-size: 180px;
+                margin-top: 60px;
+            }
+
+            @media #{$lg} {
+                font-size: 150px;
+            }
+
+            @media #{$md} {
+                font-size: 120px;
+            }
+
+            @media #{$sm} {
+                font-size: 100px;
+            }
         }
 
         .title {
             font-size: 100px;
-            font-weight: 400;
-            line-height: 85px;
             text-transform: uppercase;
             margin-top: 40px;
+
+            @media #{$xxl} {
+                font-size: 80px;
+            }
+
+            @media #{$xl} {
+                font-size: 60px;
+                margin-top: 30px;
+            }
+
+            @media #{$lg} {
+                font-size: 50px;
+            }
+
+            @media #{$md} {
+                font-size: 40px;
+            }
+
+            @media #{$sm} {
+                font-size: 35px;
+            }
         }
 
         .feature-list {

@@ -421,47 +421,6 @@
     });
   }
 
-  if (document.querySelectorAll(".about-area-2").length > 0) {
-    var ab2 = gsap.timeline()
-      .to(".year-since", {
-        right: "0",
-        scrollTrigger: {
-          trigger: ".about-area-2 .section-content",
-          pin: ".about-area-2",
-          pinSpacing: true,
-          start: "top top",
-          endTrigger: ".about-area-2 .year-wrapper",
-          end: "bottom top",
-          scrub: 3,
-          markers: { startColor: "red", endColor: "red", indent: 200 },
-        },
-      })
-      .to(".year-since .last-text", {
-        delay: "2",
-        scrollTrigger: {
-          trigger: ".about-area-2 .year-wrapper",
-          pin: ".year-since .last-text",
-          pinSpacing: true,
-          start: "bottom top",
-          endTrigger: ".work-area-2",
-          end: "top top",
-          markers: { startColor: "green", endColor: "green", indent: 100 },
-        },
-      })
-      .to(".year-since .last-text", {
-        fontSize: 30,
-        letterSpacing: "-0.1em",
-        scrollTrigger: {
-          trigger: ".about-area-2",
-          start: "bottom top",
-          end: "bottom+=215 top",
-          pin: ".year-since .last-text",
-          pinSpacing: true,
-          scrub: 1,
-          markers: { startColor: "blue", endColor: "blue", indent: 0 },
-        },
-      })
-  };
 
 
 
@@ -652,6 +611,8 @@
   });
   // video end
 
+
+
   // text-animation start
   mm.add("(min-width: 1200px)", () => {
 
@@ -691,9 +652,9 @@
         x: "100", // Move 100px to the right
         opacity: 0,
         scrollTrigger: {
-          trigger: ".about-area-2 .year-wrapper",
-          start: "center center",
-          end: "center+=400 center",
+          trigger: ".about-area-2 .last-text",
+          start: "top top",
+          end: "bottom 0",
           scrub: 3,
           // markers: { startColor: "purple", endColor: "purple", indent: 50 },
         },
@@ -713,7 +674,7 @@
         pinSpacing: true,
         scrub: 1,
         start: "top 10%",
-        end: "bottom 0%",
+        end: "bottom 100%",
         markers: { startColor: "purple", endColor: "purple", indent: 50 },
       }
     })

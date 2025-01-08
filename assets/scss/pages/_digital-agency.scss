@@ -2,6 +2,56 @@
 
 @import "../components/index";
 
+
+.body {
+    &-digital-agency {
+        .container {
+            &.large {
+                @media (min-width: 1800px) {
+                    max-width: 1750px;
+                }
+            }
+
+
+
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+            display: inline-block;
+            text-transform: uppercase;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 100px;
+
+            @media #{$xxl} {
+                font-size: 80px;
+            }
+
+            @media #{$xl} {
+                font-size: 60px;
+            }
+
+            @media #{$lg} {
+                font-size: 50px;
+            }
+
+            @media #{$md} {
+                font-size: 40px;
+            }
+
+            @media #{$sm} {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
 /* hero area style  */
 .hero-area {
     background-color: rgba(255, 129, 58, 0.15);

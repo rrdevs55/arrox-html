@@ -2,6 +2,62 @@
 
 @import "../components/index";
 
+.body {
+    &-design-agency {
+        .container {
+            &.large {
+                @media (min-width: 1650px) {
+                    max-width: 1650px;
+                }
+            }
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+
+        .section-title {
+            font-size: 100px;
+            text-transform: uppercase;
+
+
+            @media #{$xxl} {
+                font-size: 80px;
+            }
+
+            @media #{$xl} {
+                font-size: 60px;
+            }
+
+            @media #{$lg} {
+                font-size: 50px;
+            }
+
+            @media #{$md} {
+                font-size: 40px;
+            }
+
+            @media #{$sm} {
+                font-size: 35px;
+            }
+
+            span {
+                font-family: var(--font_timesnow);
+                color: rgba(17, 17, 17, 0.4);
+                display: inline-block;
+                line-height: 0;
+            }
+        }
+
+    }
+}
+
 /* capabilities area style  */
 .capabilities-area {
     &-inner {
@@ -17,7 +73,6 @@
         }
 
     }
-
 
     .section-content-wrapper {
         margin-top: 50px;

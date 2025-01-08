@@ -663,3 +663,60 @@
     }
 
 }
+
+/* service area 4 style  */
+.service-area-4 {
+
+    .services-wrapper {
+        display: grid;
+        gap: 100px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-box {
+        border-top: 1px solid var(--primary);
+
+        .number {
+            font-family: var(--font_thunder);
+            font-size: 350px;
+            font-weight: 400;
+            line-height: 0.7;
+            letter-spacing: -0.02em;
+            display: inline-block;
+            color: var(--primary);
+            margin-top: 80px;
+        }
+
+        .title {
+            font-size: 100px;
+            font-weight: 400;
+            line-height: 85px;
+            text-transform: uppercase;
+            margin-top: 40px;
+        }
+
+        .feature-list {
+            border-top: 1px dashed #878482;
+            margin-top: 34px;
+
+            li {
+                font-family: var(--font_thunder);
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 28px;
+                color: var(--primary);
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px dashed #878482;
+                padding-top: 13px;
+                padding-bottom: 8px;
+
+                &:before {
+                    content: "+";
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}

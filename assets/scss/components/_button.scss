@@ -6,9 +6,27 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  font-family: var(--font_dmsans);
+
+  &.btn-whte {
+    .b {
+      border: 1px solid white;
+      color: var(--white);
+    }
+
+    .c {
+      border: 1px solid white;
+      color: var(--white);
+    }
+  }
+
 }
 
 .rr-btn-group {
+
+  span {
+    letter-spacing: 0;
+  }
 
   &:hover {
 
@@ -29,10 +47,11 @@
   font-size: 18px;
   line-height: 1;
   color: var(--black);
-  background-color: var(--white);
+  background-color: transparent;
   border: 2px solid var(--black);
   border-radius: 50px;
   transition: all 0.3s;
+
 }
 
 .rr-btn-group .c {
@@ -41,10 +60,14 @@
   font-size: 18px;
   line-height: 1;
   color: var(--black);
-  background-color: var(--white);
+  background-color: transparent;
   border: 2px solid var(--black);
   border-radius: 50px;
   transition: all 0.3s;
+
+  i {
+    rotate: -30deg;
+  }
 }
 
 

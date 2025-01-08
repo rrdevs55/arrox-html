@@ -405,3 +405,136 @@
         }
     }
 }
+
+/* service area 3 style  */
+.service-area-3 {
+    .section-header {
+        margin-top: 50px;
+
+        .rr-btn-group.b {
+            padding: 9px 18px !important;
+        }
+    }
+
+    .services-wrapper-box {
+        margin-top: 86px;
+
+        @media #{$xxl} {
+            margin-top: 56px;
+        }
+
+        @media #{$xl} {
+            margin-top: 36px;
+        }
+    }
+
+    .services-wrapper {
+        display: grid;
+        gap: 30px 60px;
+        grid-template-columns: repeat(4, 1fr);
+        overflow: hidden;
+
+        @media #{$xxl} {
+            gap: 30px 40px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$xs} {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+
+    .service-box {
+        display: grid;
+        gap: 20px 30px;
+        grid-template-columns: 110px 1fr;
+        align-items: flex-start;
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        position: relative;
+
+        @media #{$xxl} {
+            gap: 20px 20px;
+            grid-template-columns: 70px 1fr;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr;
+        }
+
+        &:hover {
+            .thumb {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.1);
+            top: 0;
+            left: -30px;
+
+            @media #{$xxl} {
+                left: -20px;
+            }
+        }
+
+        .thumb {
+            margin-top: 8px;
+            border-radius: 25px;
+            overflow: hidden;
+
+            @media #{$xxl} {
+                border-radius: 15px;
+            }
+
+            @media #{$xl} {
+                max-width: 70px;
+            }
+
+            img {
+                width: 100%;
+                transition: all 0.5s;
+            }
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: 310;
+            line-height: 1.16;
+            letter-spacing: -0.07em;
+
+            @media #{$xxl} {
+                font-size: 24px;
+            }
+        }
+
+        .text {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+            margin-top: 18px;
+        }
+
+        .t-btn-underline {
+            text-transform: unset;
+            font-size: 18px;
+            padding-bottom: 2px;
+            margin-top: 50px;
+
+            @media #{$xxl} {
+                margin-top: 30px;
+            }
+        }
+    }
+
+}

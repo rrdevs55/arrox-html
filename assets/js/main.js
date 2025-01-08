@@ -809,6 +809,63 @@
     });
   }
 
+  // about 3 thumb animation 
+  let about_3_thumb_anim = document.querySelector(".about_3__thumb-anim")
+  if (about_3_thumb_anim) {
+    let about_3_thumb_1 = document.querySelector(".thumb-1")
+    let about_3_thumb_2 = document.querySelector(".thumb-2")
+    let about_3_thumb_3 = document.querySelector(".thumb-3")
+    let about_3_thumb_4 = document.querySelector(".thumb-4")
+
+    gsap.to(about_3_thumb_1, {
+      xPercent: -26,
+      yPercent: 0,
+      scrollTrigger: {
+        trigger: about_3_thumb_anim,
+        start: "top bottom",
+        end: "bottom center",
+        pinSpacing: false,
+        scrub: true
+      }
+    })
+
+    gsap.to(about_3_thumb_2, {
+      xPercent: 0,
+      yPercent: 10,
+      scrollTrigger: {
+        trigger: about_3_thumb_anim,
+        start: "top bottom",
+        end: "bottom center",
+        pinSpacing: false,
+        scrub: true
+      }
+    })
+
+    gsap.to(about_3_thumb_3, {
+      xPercent: 30,
+      yPercent: 0,
+      scrollTrigger: {
+        trigger: about_3_thumb_anim,
+        start: "top bottom",
+        end: "bottom center",
+        pinSpacing: false,
+        scrub: true
+      }
+    })
+    gsap.to(about_3_thumb_4, {
+      xPercent: -172,
+      yPercent: 34,
+      scrollTrigger: {
+        trigger: about_3_thumb_anim,
+        start: "top bottom",
+        end: "bottom center",
+        pinSpacing: false,
+        scrub: true
+      }
+    })
+
+  }
+
 
 
 })(jQuery);

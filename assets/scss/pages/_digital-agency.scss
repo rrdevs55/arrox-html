@@ -1260,7 +1260,6 @@
                 &:before {
                     opacity: 1;
                     visibility: visible;
-                    transform: rotate(0) translate(0);
                 }
             }
 
@@ -1275,8 +1274,7 @@
                 right: 144px;
                 opacity: 0;
                 visibility: hidden;
-                transition: all 0.5s;
-                transform: rotate(15deg) translate(30px, -30px);
+                transition: all 0.1s;
 
                 @media #{$xxl} {
                     width: 100px;
@@ -1298,7 +1296,6 @@
                 &:before {
                     opacity: 1;
                     visibility: visible;
-                    transform: rotate(0) translate(0);
                 }
             }
 
@@ -1313,8 +1310,7 @@
                 left: -117px;
                 opacity: 0;
                 visibility: hidden;
-                transition: all 0.5s;
-                transform: rotate(-15deg) translate(-30px, -30px);
+                transition: all 0.1s;
 
                 @media #{$xxl} {
                     width: 100px;
@@ -1335,7 +1331,6 @@
                 &:before {
                     opacity: 1;
                     visibility: visible;
-                    transform: rotate(0) translate(0);
                 }
             }
 
@@ -1350,8 +1345,8 @@
                 left: 523px;
                 opacity: 0;
                 visibility: hidden;
-                transition: all 0.5s;
-                transform: rotate(-15deg) translate(-30px, 30px);
+                transition: all 0.1s;
+                z-index: 1;
 
                 @media #{$xxl} {
                     width: 100px;

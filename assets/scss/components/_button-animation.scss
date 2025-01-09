@@ -173,19 +173,7 @@
         }
       }
 
-      @include dark {
-        border-color: var(--black);
 
-        &::after {
-          z-index: -1;
-          color: var(--white);
-          background-color: var(--black);
-        }
-
-        &:hover {
-          color: var(--black);
-        }
-      }
     }
   }
 

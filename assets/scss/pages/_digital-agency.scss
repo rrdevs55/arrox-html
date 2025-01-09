@@ -1,10 +1,8 @@
-@import "../utils/index";
-
-@import "../components/index";
-
-
 .body {
     &-digital-agency {
+        background-color: #F8F8F8;
+        color: var(--secondary);
+
         .container {
             &.large {
                 @media (min-width: 1800px) {
@@ -232,7 +230,7 @@
         .circle-text {
             width: 130px;
             height: 190px;
-            background-color: rgb(255 236 226);
+            background-color: #F9E6DC;
 
             @media #{$sm} {
                 height: 130px;

@@ -317,9 +317,7 @@
                         font-weight: 300;
                         border: none !important;
 
-                        @include rtl {
-                            right: 275px;
-                        }
+
 
                         @media #{$sm} {
                             height: 50px;

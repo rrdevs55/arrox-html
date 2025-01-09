@@ -37,9 +37,6 @@ body {
 .body-wrapper {
   background-color: var(--white);
 
-  @include dark {
-    background-color: var(--black);
-  }
 }
 
 .img_anim_reveal {
@@ -192,26 +189,20 @@ section {
 .show-dark {
   display: inline-block;
 
-  @include dark {
-    display: none;
-  }
+
 }
 
 .show-light {
   display: none;
 
-  @include dark {
-    display: inline-block;
-  }
+
 }
 
 .line-divider-sm {
   height: 0.5px;
   background-color: var(--black-9);
 
-  @include dark {
-    background-color: #E9E9E9;
-  }
+
 }
 
 

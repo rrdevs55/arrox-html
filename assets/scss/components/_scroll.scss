@@ -87,11 +87,7 @@
     z-index: 9;
     transition: all 0.5s;
 
-    @include dark {
-      color: var(--black);
-      background-image: url(../imgs/writer/go-top-light.webp);
 
-    }
 
     &:hover {
       color: var(--primary);

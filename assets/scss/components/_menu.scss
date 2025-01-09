@@ -56,9 +56,6 @@
       padding: 37px 15px;
       text-transform: capitalize;
 
-      @include dark {
-        color: var(--black);
-      }
     }
   }
 
@@ -681,10 +678,7 @@
         transition: transform .4s ease, box-shadow .4s ease;
         box-sizing: border-box;
 
-        @include dark {
-          color: var(--black);
-          border-color: var(--white-4);
-        }
+
 
         @media #{$sm} {
           font-size: 20px;
@@ -697,13 +691,7 @@
           font-weight: 300;
           border: none !important;
 
-          @include dark {
-            background-color: var(--white-4);
-          }
 
-          @include rtl {
-            right: 275px;
-          }
 
           @media #{$sm} {
             height: 50px;
@@ -713,9 +701,6 @@
             background: var(--secondary);
             opacity: 1;
 
-            @include dark {
-              background-color: var(--white-4);
-            }
           }
         }
       }
@@ -724,9 +709,6 @@
         &:first-child {
           border-top: 1px solid var(--black-4);
 
-          @include dark {
-            border-color: var(--white-4);
-          }
         }
 
         a {

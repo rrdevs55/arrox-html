@@ -320,7 +320,6 @@
           scrub: 1,
           start: 'top 90%',
           end: "top center",
-          // markers: true
         }
       });
     });
@@ -337,7 +336,6 @@
         scrub: 1,
         start: 'bottom 100%',
         end: "bottom 0%",
-        markers: true
       }
     });
     tl.to(".cta-area .area-bg", { scale: "10", delay: 0.1 });
@@ -377,14 +375,10 @@
         end: "bottom top",
         pin: true,
         scrub: 1,
-        // markers: true
       }
     })
     cs.to(".shape-thumb img", { scale: 100, rotation: 90, autoAlpha: 1, delay: 0.1 })
   }
-
-
-
 
 
 
@@ -396,13 +390,10 @@
         start: "top top",
         end: "center top",
         pin: true,
-        // markers: true,
         scrub: 1
       }
     })
   }
-
-
 
 
   // go-visible animation 
@@ -419,7 +410,6 @@
           scrub: 1,
           start: 'top 40%',
           end: "top 30%",
-          // markers: true
         }
       });
     });
@@ -439,14 +429,10 @@
         end: "bottom bottom",
         pin: ".video-element",
         pinSpacing: false,
-        markers: true,
         scrub: true
       }
     });
   }
-
-
-
 
   // Horizontal Gallery
   const panelsSections = gsap.utils.toArray(".panels");
@@ -474,11 +460,8 @@
         start: "top top",
         scrub: 1,
         end: (st) => "+=" + (st.vars.trigger.offsetWidth - innerWidth),
-        // markers: true,
       }
     });
-
-
   }
 
 
@@ -528,27 +511,35 @@
         scrollTrigger: {
           trigger: ".hero-area",
           pin: false,
-          pinSpacing: false,
+          pinSpacing: true,
           scrub: 2,
-          start: "top 20%",
+          start: "top center",
           end: "bottom 0%",
-          markers: { startColor: "black", endColor: "red", indent: 200 },
+          markers: true,
 
         },
       });
 
       ab2.to(".big-text-wrapper .big-text", {
-        scale: 0.09,
-        y: "74%",
+        scale: 0.1,
+        // fontSize: "120px",
+        y: "40%",
         color: "black",
         duration: 2,
+        start: "top top",
+        // transformOrigin: "bottom center",
         ease: "power1.inOut",
+        pin: true,
+        pinSpacing: false,
+        scrub: 2,
+        scrollTrigger: ".hero-area",
+
       });
 
       ab2.to(
         ".gap",
         {
-          minWidth: "2000px",
+          minWidth: "1300px",
           duration: 1.5,
           ease: "power1.inOut",
         },
@@ -574,7 +565,7 @@
           opacity: 1,
           duration: 1.5,
           ease: "power1.inOut",
-          width: "100vw",
+          width: "85vw",
           height: "680px",
           minHeight: "680px"
         },
@@ -589,7 +580,7 @@
           pin: ".about-area",
           pinSpacing: true,
           scrub: 1,
-          markers: { startColor: "blue", endColor: "blue", indent: 0 },
+          markers: true,
         },
       });
 
@@ -601,7 +592,7 @@
           pin: ".big-text-wrapper",
           pinSpacing: false,
           scrub: 1,
-          markers: { startColor: "blue", endColor: "blue", indent: 0 },
+          markers: true,
         },
       });
 
@@ -614,13 +605,14 @@
           start: "center center",
           end: "center+=50 center",
           scrub: 1,
-          markers: { startColor: "purple", endColor: "purple", indent: 50 },
+
         },
       });
 
       gsap.to(".big-video", {
         scale: 12,
         delay: 3,
+        height: "100vh",
         transformOrigin: "top center",
         borderRadius: "0",
         scrollTrigger: {
@@ -628,14 +620,124 @@
           start: "bottom center",
           end: "bottom 0",
           scrub: 3,
-          markers: { startColor: "green", endColor: "green", indent: 50 },
         },
       });
     }
   });
   // video end
 
+  // video start
+  // mm.add("(min-width: 1200px)", () => {
 
+  //   if (document.querySelectorAll(".hero-area").length > 0) {
+  //     const removeWordElement = document.querySelector(".remove-word");
+  //     var ab2 = gsap.timeline({
+  //       duration: 5,
+  //       scrollTrigger: {
+  //         trigger: ".hero-area",
+  //         pin: false,
+  //         pinSpacing: false,
+  //         scrub: 2,
+  //         start: "top 20%",
+  //         end: "bottom 0%",
+
+  //       },
+  //     });
+
+  //     ab2.to(".big-text-wrapper .big-text", {
+  //       scale: 0.09,
+  //       y: "74%",
+  //       color: "black",
+  //       duration: 2,
+  //       ease: "power1.inOut",
+  //     });
+
+  //     ab2.to(
+  //       ".gap",
+  //       {
+  //         minWidth: "2000px",
+  //         duration: 1.5,
+  //         ease: "power1.inOut",
+  //       },
+  //       ">"
+  //     );
+  //     ab2.to(
+  //       ".remove-word",
+  //       {
+  //         x: "-100%",
+  //         opacity: 0,
+  //         duration: 1.5,
+  //         ease: "power1.inOut",
+  //       },
+  //       "start"
+  //     );
+
+  //     ab2.to(
+  //       ".big-video",
+  //       {
+  //         visibility: "visible",
+  //         x: "0%",
+  //         minHeight: "20px",
+  //         opacity: 1,
+  //         duration: 1.5,
+  //         ease: "power1.inOut",
+  //         width: "100vw",
+  //         height: "680px",
+  //         minHeight: "680px"
+  //       },
+  //       "start"
+  //     );
+
+  //     ab2.to(".about-area", {
+  //       scrollTrigger: {
+  //         trigger: ".about-area",
+  //         start: "bottom bottom",
+  //         end: "bottom top",
+  //         pin: ".about-area",
+  //         pinSpacing: true,
+  //         scrub: 1,
+  //       },
+  //     });
+
+  //     ab2.to(".big-text-wrapper", {
+  //       scrollTrigger: {
+  //         trigger: ".about-area",
+  //         start: "bottom bottom",
+  //         end: "bottom top",
+  //         pin: ".big-text-wrapper",
+  //         pinSpacing: false,
+  //         scrub: 1,
+  //       },
+  //     });
+
+  //     gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
+  //       y: "0",
+  //       delay: 2,
+  //       opacity: 1,
+  //       scrollTrigger: {
+  //         trigger: ".about-area",
+  //         start: "center center",
+  //         end: "center+=50 center",
+  //         scrub: 1,
+  //       },
+  //     });
+
+  //     gsap.to(".big-video", {
+  //       scale: 12,
+  //       delay: 3,
+  //       height: "100vh",
+  //       transformOrigin: "top center",
+  //       borderRadius: "0",
+  //       scrollTrigger: {
+  //         trigger: ".about-area .btn-wrapper",
+  //         start: "bottom center",
+  //         end: "bottom 0",
+  //         scrub: 3,
+  //       },
+  //     });
+  //   }
+  // });
+  // video end
 
   // text-animation start
   mm.add("(min-width: 1200px)", () => {
@@ -653,7 +755,6 @@
           endTrigger: ".about-area-2 .year-wrapper",
           end: "bottom top",
           scrub: 3,
-          // markers: { startColor: "red", endColor: "red", indent: 200 },
         },
       });
 
@@ -668,7 +769,6 @@
           pin: ".year-since .last-text",
           pinSpacing: true,
           scrub: 1,
-          // markers: { startColor: "blue", endColor: "blue", indent: 0 },
         },
       });
 
@@ -678,9 +778,8 @@
         scrollTrigger: {
           trigger: ".about-area-2 .last-text",
           start: "top top",
-          end: "bottom 0",
+          end: "bottom center",
           scrub: 3,
-          // markers: { startColor: "purple", endColor: "purple", indent: 50 },
         },
       });
     }
@@ -699,7 +798,6 @@
         scrub: 1,
         start: "top 10%",
         end: "bottom 100%",
-        markers: { startColor: "purple", endColor: "purple", indent: 50 },
       }
     })
       .fromTo(".service-area-2 .bg-area",

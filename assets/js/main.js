@@ -534,29 +534,6 @@
         scrollTrigger: ".hero-area",
 
       });
-      ab2.to(".about-area", {
-        scrollTrigger: {
-          trigger: ".about-area",
-          start: "bottom bottom",
-          end: "bottom top",
-          pin: ".about-area",
-          pinSpacing: true,
-          scrub: 1,
-          markers: { startColor: "blue", endColor: "blue", indent: 0 },
-        },
-      });
-      gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
-        y: "0",
-        // delay: 2,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".about-area",
-          start: "center center",
-          end: "center+=50 center",
-          scrub: 1,
-          markers: { startColor: "purple", endColor: "purple", indent: 50 },
-        },
-      });
 
       gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
         y: "0",
@@ -578,18 +555,17 @@
           duration: 1.5,
           ease: "power1.inOut",
         },
-        // ">"
+        ">"
       );
-
       ab2.to(
         ".remove-word",
         {
           x: "-100%",
           opacity: 0,
-          // duration: 1.5,
+          duration: 1.5,
           ease: "power1.inOut",
         },
-        // "start"
+        "start"
       );
 
       ab2.to(
@@ -599,13 +575,13 @@
           x: "0%",
           minHeight: "20px",
           opacity: 1,
-          // duration: 1.5,
+          duration: 1.5,
           ease: "power1.inOut",
           width: "85vw",
           height: "680px",
           minHeight: "680px"
         },
-        // "start"
+        "start"
       );
 
       ab2.to(".about-area", {
@@ -973,7 +949,6 @@
     })
 
   }
-
 
 
 })(jQuery);

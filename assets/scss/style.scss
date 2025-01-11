@@ -468,11 +468,11 @@
     right: 0;
     left: 0;
     width: 100%;
+    opacity: 0.1;
     transition: 0.4s;
     box-shadow: 0px 20px 30px rgba(3, 4, 28, 0.1);
     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
     border: none;
-    opacity: 0.5;
 
     .header-area__inner {
         height: 70px;

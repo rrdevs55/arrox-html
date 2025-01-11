@@ -337,10 +337,10 @@
         scrub: 1,
         start: 'bottom 100%',
         end: "bottom 0%",
-        // markers: true
+        markers: true
       }
     });
-    tl.to(".cta-area .area-bg", { scale: "10", delay: 10 });
+    tl.to(".cta-area .area-bg", { scale: "10", delay: 0.1 });
     tl.to(".cta-area .section-title", { fontSize: "18vw" }, "<");
   }
 
@@ -362,6 +362,9 @@
     });
   });
   // hover reveal end
+
+
+
 
 
 

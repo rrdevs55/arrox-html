@@ -516,24 +516,36 @@
           start: "top center",
           end: "bottom 0%",
           markers: true,
-
         },
       });
 
       ab2.to(".big-text-wrapper .big-text", {
         scale: 0.1,
         // fontSize: "120px",
-        y: "40%",
+        // y: "40%",
         color: "black",
         duration: 2,
         start: "top top",
-        // transformOrigin: "bottom center",
+        transformOrigin: "bottom center",
         ease: "power1.inOut",
         pin: true,
         pinSpacing: false,
         scrub: 2,
         scrollTrigger: ".hero-area",
 
+      });
+
+      gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
+        y: "0",
+        delay: 2,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".about-area",
+          start: "center center",
+          end: "center+=50 center",
+          scrub: 1,
+
+        },
       });
 
       ab2.to(
@@ -596,28 +608,17 @@
         },
       });
 
-      gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
-        y: "0",
-        delay: 2,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".about-area",
-          start: "center center",
-          end: "center+=50 center",
-          scrub: 1,
-
-        },
-      });
 
       gsap.to(".big-video", {
-        scale: 12,
+        scale: 12.2,
         delay: 3,
         height: "100vh",
+        // width: "100vw",
         transformOrigin: "top center",
         borderRadius: "0",
         scrollTrigger: {
           trigger: ".about-area .btn-wrapper",
-          start: "bottom center",
+          start: "top 30%",
           end: "bottom 0",
           scrub: 3,
         },

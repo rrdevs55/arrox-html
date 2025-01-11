@@ -97,6 +97,7 @@
 
 
 .container {
+    --bs-gutter-x: 30px;
 
     &.full-hd {
         @media (min-width: 1600px) {

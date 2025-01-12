@@ -18,32 +18,19 @@
 (function ($) {
   "use strict";
 
-  var windowOn = $(window);
 
-
-
-  //  sticky header
-  function pinned_header() {
-    var lastScrollTop = 0;
-
-    windowOn.on('scroll', function () {
-      var currentScrollTop = $(this).scrollTop();
-
-      if (currentScrollTop > lastScrollTop) {
-        $('.header-sticky').removeClass('sticky');
-        $('.header-sticky').addClass('transformed');
-      } else if ($(this).scrollTop() <= 500) {
-        $('.header-sticky').removeClass('sticky');
-        $('.header-sticky').removeClass('transformed');
+  // sticky header 
+  if (document.querySelectorAll(".header-sticky").length > 0) {
+    let header = document.querySelector('.header-sticky');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 150) {
+        header.classList.add('sticky')
       } else {
-        // Scrolling up, remove the class
-        $('.header-sticky').addClass('sticky');
-        $('.header-sticky').removeClass('transformed');
+        header.classList.remove('sticky')
       }
-      lastScrollTop = currentScrollTop;
-    });
+    })
   }
-  pinned_header();
+
 
 
   // Smooth active
@@ -92,14 +79,6 @@
     meanMenuCloseSize: '28px',
   });
 
-
-  // Magnific Video popup
-  if ($('.video-popup').length && 'magnificPopup' in jQuery) {
-    $('.video-popup').magnificPopup({
-      type: 'iframe',
-    });
-
-  }
 
   // Register GSAP Plugins
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
@@ -363,9 +342,6 @@
 
 
 
-
-
-
   if (document.querySelectorAll(".circular-shape-wrapper").length > 0) {
     var cs = gsap.timeline({
       ease: "none",
@@ -516,6 +492,7 @@
           start: "top center",
           end: "bottom 0%",
           markers: true,
+
         },
       });
 
@@ -533,19 +510,6 @@
         scrub: 2,
         scrollTrigger: ".hero-area",
 
-      });
-
-      gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
-        y: "0",
-        delay: 2,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".about-area",
-          start: "center center",
-          end: "center+=50 center",
-          scrub: 1,
-
-        },
       });
 
       ab2.to(
@@ -608,18 +572,29 @@
         },
       });
 
+      gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
+        y: "0",
+        delay: 2,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".about-area",
+          start: "top center",
+          end: "center+=50 center",
+          scrub: 1,
+
+        },
+      });
 
       gsap.to(".big-video", {
-        scale: 12.2,
+        scale: 13.2,
         delay: 3,
-        height: "100vh",
-        // width: "100vw",
+        // height: "100vh",
         transformOrigin: "top center",
         borderRadius: "0",
         scrollTrigger: {
           trigger: ".about-area .btn-wrapper",
-          start: "top 30%",
-          end: "bottom 0",
+          start: "top center",
+          end: "bottom +=100",
           scrub: 3,
         },
       });
@@ -766,10 +741,10 @@
         scrollTrigger: {
           trigger: ".about-area-2 .year-wrapper",
           start: "bottom top",
-          end: "bottom+=784 top",
+          end: "bottom+=770 top",
           pin: ".year-since .last-text",
           pinSpacing: true,
-          scrub: 1,
+          scrub: 3,
         },
       });
 
@@ -790,18 +765,19 @@
 
   // service-area-2 text and bg animation start
 
-  if (document.querySelectorAll(".service-area-2").length > 0) {
+  if (document.querySelectorAll(".actually-area").length > 0) {
     gsap.timeline({
       scrollTrigger: {
-        trigger: ".service-area-2",
+        trigger: ".actually-area",
         pin: true,
         pinSpacing: true,
         scrub: 1,
         start: "top 10%",
-        end: "bottom 100%",
+        end: "bottom 0",
+        markers: true,
       }
     })
-      .fromTo(".service-area-2 .bg-area",
+      .fromTo(".actually-area .bg-area",
         { scale: 0 },
         {
           scale: 10,

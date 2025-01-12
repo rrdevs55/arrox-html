@@ -486,8 +486,6 @@
         duration: 5,
         scrollTrigger: {
           trigger: ".hero-area",
-          pin: false,
-          pinSpacing: true,
           scrub: 2,
           start: "top center",
           end: "bottom 0%",
@@ -498,17 +496,9 @@
 
       ab2.to(".big-text-wrapper .big-text", {
         scale: 0.1,
-        // fontSize: "120px",
-        // y: "40%",
         color: "black",
         duration: 2,
-        start: "top top",
         transformOrigin: "bottom center",
-        ease: "power1.inOut",
-        pin: true,
-        pinSpacing: false,
-        scrub: 2,
-        scrollTrigger: ".hero-area",
 
       });
 
@@ -595,7 +585,7 @@
           trigger: ".about-area .btn-wrapper",
           start: "top center",
           end: "bottom +=100",
-          scrub: 3,
+          scrub: 1,
         },
       });
     }

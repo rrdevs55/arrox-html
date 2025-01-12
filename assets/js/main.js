@@ -815,7 +815,7 @@
 
   // work-area-2 box animation start
   document.addEventListener("DOMContentLoaded", function () {
-    const workBoxes = document.querySelectorAll(".work-box");
+    const workBoxes = document.querySelectorAll(".work-area-2 .work-box");
     gsap.fromTo(
       workBoxes,
       {

@@ -261,6 +261,9 @@
 
 
 
+
+
+
   // Text Invert With Scroll 
   const split = new SplitText(".text-invert", { type: "lines" });
 

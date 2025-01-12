@@ -31,7 +31,8 @@
     })
   }
 
-
+  // Register GSAP Plugins
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
 
   // Smooth active
   var device_width = window.screen.width;
@@ -80,8 +81,7 @@
   });
 
 
-  // Register GSAP Plugins
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
+
 
 
 
@@ -491,7 +491,7 @@
           scrub: 2,
           start: "top center",
           end: "bottom 0%",
-          markers: true,
+          // markers: true,
 
         },
       });
@@ -556,7 +556,7 @@
           pin: ".about-area",
           pinSpacing: true,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -568,7 +568,7 @@
           pin: ".big-text-wrapper",
           pinSpacing: false,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
 

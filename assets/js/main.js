@@ -917,4 +917,59 @@
   }
 
 
+  //GSAP title animation
+  if ($('.rr_title_anim').length > 0) {
+    let splitTitleLines = gsap.utils.toArray(".rr_title_anim");
+    splitTitleLines.forEach(splitTextLine => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: splitTextLine,
+          start: 'top 90%',
+          end: 'bottom 60%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
+      gsap.set(splitTextLine, { perspective: 400 });
+      itemSplitted.split({ type: "lines" })
+      tl.from(itemSplitted.lines, {
+        duration: 1,
+        delay: 0.3,
+        opacity: 0,
+        rotationX: -80,
+        force3D: true,
+        transformOrigin: "top center -50",
+        stagger: 0.1
+      });
+    });
+  }
+
+
+  let revealContainers = document.querySelectorAll(".return");
+
+  revealContainers.forEach((container) => {
+    let image = container.querySelector("img");
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        toggleActions: "restart none none reset"
+      }
+    });
+
+    tl.set(container, { autoAlpha: 1 });
+    tl.from(container, 1.5, {
+      xPercent: -100,
+      ease: Power2.out
+    });
+    tl.from(image, 1.5, {
+      xPercent: 100,
+      scale: 1.3,
+      delay: -1.5,
+      ease: Power2.out
+    });
+  });
+
 })(jQuery);

@@ -583,14 +583,17 @@
 
     .work-box {
         .thumb {
-            overflow: hidden;
-            position: relative;
-            border-radius: 20px;
-
             &:hover {
                 .t-btn {
                     opacity: 1;
                 }
+            }
+
+            .image {
+                overflow: hidden;
+                position: relative;
+                border-radius: 20px;
+                transform: scale(0.8);
             }
 
             img {

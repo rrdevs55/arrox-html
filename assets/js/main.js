@@ -296,7 +296,23 @@
         ease: "none",
         scrollTrigger: {
           trigger: item,
-          scrub: 1,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+        }
+      });
+    });
+
+    // scale animation 
+    var scale = document.querySelectorAll(".scale");
+
+    scale.forEach((item) => {
+      gsap.to(item, {
+        scale: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: item,
+          scrub: 2,
           start: 'top 90%',
           end: "top center",
         }
@@ -780,7 +796,9 @@
 
 
   // work-area-2 box animation start
-  document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelectorAll(".actually-area").length > 0) {
+
+    // document.addEventListener("DOMContentLoaded", function () {
     const workBoxes = document.querySelectorAll(".work-area-2 .work-box");
     gsap.fromTo(
       workBoxes,
@@ -806,7 +824,8 @@
         },
       }
     );
-  });
+    // });
+  }
   // work-area-2 box animation end
 
   //image animation in hero start

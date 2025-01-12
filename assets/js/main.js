@@ -19,19 +19,33 @@
   "use strict";
 
 
-  // sticky header 
-  if (document.querySelectorAll(".header-sticky").length > 0) {
-    let header = document.querySelector('.header-sticky');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 150) {
-        header.classList.add('sticky')
+  var windowOn = $(window);
+
+  //  sticky header
+  function pinned_header() {
+    var lastScrollTop = 0;
+
+    windowOn.on('scroll', function () {
+      var currentScrollTop = $(this).scrollTop();
+
+      if (currentScrollTop > lastScrollTop) {
+        $('.header-sticky').removeClass('sticky');
+        $('.header-sticky').addClass('transformed');
+      } else if ($(this).scrollTop() <= 500) {
+        $('.header-sticky').removeClass('sticky');
+        $('.header-sticky').removeClass('transformed');
       } else {
-        header.classList.remove('sticky')
+        // Scrolling up, remove the class
+        $('.header-sticky').addClass('sticky');
+        $('.header-sticky').removeClass('transformed');
       }
-    })
+      lastScrollTop = currentScrollTop;
+    });
   }
+  pinned_header();
 
-
+  // Register GSAP Plugins
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
 
   // Smooth active
   var device_width = window.screen.width;
@@ -80,8 +94,7 @@
   });
 
 
-  // Register GSAP Plugins
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
+
 
 
 
@@ -248,6 +261,9 @@
 
 
 
+
+
+
   // Text Invert With Scroll 
   const split = new SplitText(".text-invert", { type: "lines" });
 
@@ -296,7 +312,23 @@
         ease: "none",
         scrollTrigger: {
           trigger: item,
-          scrub: 1,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+        }
+      });
+    });
+
+    // scale animation 
+    var scale = document.querySelectorAll(".scale");
+
+    scale.forEach((item) => {
+      gsap.to(item, {
+        scale: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: item,
+          scrub: 2,
           start: 'top 90%',
           end: "top center",
         }
@@ -546,7 +578,7 @@
           pin: ".about-area",
           pinSpacing: true,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -558,7 +590,7 @@
           pin: ".big-text-wrapper",
           pinSpacing: false,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -780,7 +812,9 @@
 
 
   // work-area-2 box animation start
-  document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelectorAll(".actually-area").length > 0) {
+
+    // document.addEventListener("DOMContentLoaded", function () {
     const workBoxes = document.querySelectorAll(".work-area-2 .work-box");
     gsap.fromTo(
       workBoxes,
@@ -806,7 +840,8 @@
         },
       }
     );
-  });
+    // });
+  }
   // work-area-2 box animation end
 
   //image animation in hero start

@@ -478,6 +478,10 @@
     // background-color: #FFFFFF;
     transform: translateY(-100%);
 
+    .header-area__inner {
+        height: 80px;
+    }
+
 }
 
 .sticky {
@@ -489,6 +493,10 @@
     z-index: 800;
     background-color: #FFFFFF;
     transform: translateY(0%);
+
+    .header-area__inner {
+        height: 80px;
+    }
 
 }
 
@@ -543,6 +551,11 @@
 
 
 
+    }
+
+    .sticky,
+    .transformed {
+        background-color: #F9E6DC;
     }
 
     .header__logo {
@@ -646,6 +659,11 @@
 
 
 
+    }
+
+    .sticky,
+    .transformed {
+        background-color: #FCF7F3;
     }
 
     .header__logo {

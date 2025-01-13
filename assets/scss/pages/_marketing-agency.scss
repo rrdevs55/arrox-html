@@ -1,5 +1,7 @@
 .body {
     &-marketing-agency {
+        background-color: #FCF7F3;
+
         .container {
             &.large {
                 @media (min-width: 1850px) {
@@ -31,6 +33,11 @@
 
             @media #{$sm} {
                 font-size: 35px;
+            }
+
+            .mb-14 {
+                transform: translate(0px, -14px);
+                display: inline-block;
             }
 
         }
@@ -406,8 +413,10 @@
         .t-btn-underline {
             text-transform: unset;
             font-size: 18px;
-            padding-bottom: 2px;
+            color: #111111;
             margin-top: 50px;
+            text-decoration: underline;
+            display: inline-block;
 
             @media #{$xxl} {
                 margin-top: 30px;
@@ -467,14 +476,17 @@
 
     .work-box {
         .thumb {
-            overflow: hidden;
-            position: relative;
-            border-radius: 20px;
-
             &:hover {
                 .t-btn {
                     opacity: 1;
                 }
+            }
+
+            .image {
+                overflow: hidden;
+                position: relative;
+                border-radius: 20px;
+                transform: scale(0.8);
             }
 
             img {
@@ -1027,9 +1039,13 @@
             }
 
             .title {
-                &:after {
-                    transform: rotate(60deg);
-                    background-color: var(--action);
+                .arrow {
+                    background-color: var(--black);
+                    transform: rotate(60deg) translate(-5px, -5px);
+
+                    svg [fill="#111111"] {
+                        fill: var(--white);
+                    }
                 }
             }
         }
@@ -1085,26 +1101,17 @@
                 font-size: 20px;
             }
 
-            &:after {
-                content: "";
+            .arrow {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
                 width: 25px;
                 height: 25px;
-                display: inline-block;
-                background-image: url("../imgs/icon/icon-4.png");
-                background-size: contain;
-                margin-left: 7px;
-                border-radius: 50%;
-                transition: all 0.5s;
-
-                @media #{$xxl} {
-                    width: 16px;
-                    height: 16px;
-                }
-
-                @media #{$lg} {
-                    width: 14px;
-                    height: 14px;
-                }
+                transition: all 0.3s;
+                border-radius: 500px;
+                border: 2px solid #111111;
+                transform: translate(0px, -5px);
+                margin-left: 5px;
             }
         }
 

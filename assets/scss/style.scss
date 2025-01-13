@@ -1908,6 +1908,7 @@
     }
 }
 
+
 /* footer area 2 style  */
 .footer-area-2 {
 
@@ -2047,20 +2048,41 @@
     }
 
     .footer-nav-list {
+
+        &:hover {
+
+            li {
+                opacity: 0.3;
+            }
+        }
+
         li {
             font-size: 22px;
             line-height: 30px;
             color: var(--primary);
+            transition-property: opacity;
+            transition-duration: 500ms;
 
-            @media #{$lg} {
-                font-size: 18px;
-            }
+            &:hover {
+                opacity: 1;
 
-            a {
-                &:hover {
-                    color: var(--action);
+                a strong {
+                    opacity: 1;
+                    top: -23px;
                 }
             }
+
+            a strong {
+                opacity: 0;
+                transition-property: opacity, top;
+                transition-duration: 250ms;
+            }
+
+            // a {
+            //     &:hover {
+            //         color: var(--action);
+            //     }
+            // }
         }
     }
 

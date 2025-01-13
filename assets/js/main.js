@@ -319,42 +319,44 @@
       });
     });
 
-    // scale animation 
-    var scale = document.querySelectorAll(".scale");
-    var image = document.querySelectorAll(".scale img");
 
-    scale.forEach((item) => {
-      gsap.to(item, {
-        scale: 1,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: item,
-          // scrub: 2,
-          start: 'top bottom',
-          end: "bottom top",
-          toggleActions: 'play reverse play reverse'
-        }
-      });
-    });
-    image.forEach((image) => {
-      gsap.set(image, {
-        scale: 1.3,
-      });
-      gsap.to(image, {
-        scale: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: image,
-          // scrub: 2,
-          start: 'top bottom',
-          end: "bottom top",
-          toggleActions: 'play reverse play reverse'
-        }
-      });
-    })
 
   });
+
+  // scale animation 
+  var scale = document.querySelectorAll(".scale");
+  var image = document.querySelectorAll(".scale img");
+
+  scale.forEach((item) => {
+    gsap.to(item, {
+      scale: 1,
+      duration: 1,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: item,
+        // scrub: 2,
+        start: 'top bottom',
+        end: "bottom top",
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+  });
+  image.forEach((image) => {
+    gsap.set(image, {
+      scale: 1.3,
+    });
+    gsap.to(image, {
+      scale: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: image,
+        // scrub: 2,
+        start: 'top bottom',
+        end: "bottom top",
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+  })
 
   if (document.querySelectorAll(".cta-area").length > 0) {
     var tl = gsap.timeline({

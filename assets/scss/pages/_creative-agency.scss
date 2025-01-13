@@ -1288,8 +1288,19 @@
 
         a {
             cursor: none;
+            display: inline-flex;
+            align-items: center;
         }
 
+        .line {
+            width: 1em;
+            height: 0.1em;
+            background-color: var(--primary);
+            display: inline-block;
+            align-self: center;
+            margin-left: 0.3em;
+            margin-right: 0.2em;
+        }
     }
 
     .section-header {

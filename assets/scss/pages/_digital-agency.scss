@@ -105,7 +105,7 @@
         font-size: 100px;
         font-weight: 500;
         line-height: .9;
-        max-width: 650px;
+        max-width: 660px;
 
         @media #{$xxl} {
             font-size: 70px;
@@ -126,6 +126,7 @@
             margin-right: 10px;
             margin-top: -8px;
             width: 100px;
+            display: inline-flex;
 
             @media #{$xxl} {
                 width: 80px;
@@ -1275,7 +1276,7 @@
     }
 
     .section-title {
-        max-width: 1137px;
+        max-width: 1140px;
         margin-inline: auto;
         position: relative;
 
@@ -1298,6 +1299,7 @@
 
         span {
             color: #999999;
+            display: inline-block;
 
         }
 
@@ -1321,6 +1323,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.1s;
+                display: inline-block;
 
                 @media #{$xxl} {
                     width: 100px;
@@ -1357,6 +1360,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.1s;
+                display: inline-block;
 
                 @media #{$xxl} {
                     width: 100px;
@@ -1393,6 +1397,7 @@
                 visibility: hidden;
                 transition: all 0.1s;
                 z-index: 1;
+                display: inline-block;
 
                 @media #{$xxl} {
                     width: 100px;

@@ -53,7 +53,7 @@
   if (device_width > 767) {
     if (document.querySelector("#has_smooth").classList.contains("has-smooth")) {
       const smoother = ScrollSmoother.create({
-        smooth: 0.5,
+        smooth: 0.9,
         effects: device_width < 1025 ? false : true,
         smoothTouch: 0.1,
         normalizeScroll: false,
@@ -321,19 +321,38 @@
 
     // scale animation 
     var scale = document.querySelectorAll(".scale");
+    var image = document.querySelectorAll(".scale img");
 
     scale.forEach((item) => {
       gsap.to(item, {
         scale: 1,
-        ease: "none",
+        duration: 1,
+        ease: "power1.out",
         scrollTrigger: {
           trigger: item,
-          scrub: 2,
-          start: 'top 90%',
-          end: "top center",
+          // scrub: 2,
+          start: 'top bottom',
+          end: "bottom top",
+          toggleActions: 'play reverse play reverse'
         }
       });
     });
+    image.forEach((image) => {
+      gsap.set(image, {
+        scale: 1.3,
+      });
+      gsap.to(image, {
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: image,
+          // scrub: 2,
+          start: 'top bottom',
+          end: "bottom top",
+          toggleActions: 'play reverse play reverse'
+        }
+      });
+    })
 
   });
 

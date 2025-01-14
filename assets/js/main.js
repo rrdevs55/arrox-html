@@ -334,7 +334,6 @@
       ease: "power1.out",
       scrollTrigger: {
         trigger: item,
-        // scrub: 2,
         start: 'top bottom',
         end: "bottom top",
         toggleActions: 'play reverse play reverse'
@@ -350,7 +349,6 @@
       duration: 1,
       scrollTrigger: {
         trigger: image,
-        // scrub: 2,
         start: 'top bottom',
         end: "bottom top",
         toggleActions: 'play reverse play reverse'

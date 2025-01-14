@@ -363,7 +363,7 @@
         trigger: ".cta-area",
         pin: true,
         pinSpacing: true,
-        scrub: 1,
+        scrub: 2,
         start: 'bottom 100%',
         end: "bottom 0%",
       }

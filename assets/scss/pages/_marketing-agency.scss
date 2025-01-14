@@ -976,6 +976,16 @@
         gap: 0;
         justify-content: center;
         flex-wrap: wrap;
+
+        .client-slider-active {
+            .swiper-slide {
+                width: auto;
+            }
+
+            .swiper-wrapper {
+                transition-timing-function: linear !important;
+            }
+        }
     }
 
     .client-box {

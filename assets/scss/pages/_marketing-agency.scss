@@ -912,33 +912,15 @@
             }
         }
 
-        .thumb {
-            margin-top: 94px;
-            // margin-left: 595px;
+    }
 
-            // @media #{$xxl} {
-            //     margin-left: 495px;
-            //     margin-top: 64px;
-            // }
+    .thumb {
+        margin-top: 94px;
 
-            // @media #{$xxl} {
-            //     margin-left: 345px;
-            // }
-
-            // @media #{$md} {
-            //     margin-left: 255px;
-            //     margin-top: 44px;
-            // }
-
-            // @media #{$sm} {
-            //     margin-left: 0;
-            // }
-
-            img {
-                width: 100%;
-                transform: scale(0.67);
-                transform-origin: top right;
-            }
+        img {
+            width: 100%;
+            transform: scale(0.67);
+            transform-origin: top right;
         }
     }
 }

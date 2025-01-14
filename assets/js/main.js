@@ -534,13 +534,12 @@
   mm.add("(min-width: 1200px)", () => {
 
     if (document.querySelectorAll(".hero-area").length > 0) {
-      const removeWordElement = document.querySelector(".remove-word");
       var ab2 = gsap.timeline({
         duration: 5,
         scrollTrigger: {
           trigger: ".hero-area",
           scrub: 2,
-          start: "top center",
+          start: "top 100%",
           end: "bottom 0%",
           // markers: true,
 
@@ -551,53 +550,19 @@
         scale: 0.1,
         color: "black",
         duration: 2,
+        y: "80%",
         transformOrigin: "bottom center",
 
       });
 
-      ab2.to(
-        ".gap",
-        {
-          minWidth: "1300px",
-          duration: 1.5,
-          ease: "power1.inOut",
-        },
-        ">"
-      );
-      ab2.to(
-        ".remove-word",
-        {
-          x: "-100%",
-          opacity: 0,
-          duration: 1.5,
-          ease: "power1.inOut",
-        },
-        "start"
-      );
-
-      ab2.to(
-        ".big-video",
-        {
-          visibility: "visible",
-          x: "0%",
-          minHeight: "20px",
-          opacity: 1,
-          duration: 1.5,
-          ease: "power1.inOut",
-          width: "85vw",
-          height: "680px",
-          minHeight: "680px"
-        },
-        "start"
-      );
 
       ab2.to(".about-area", {
         scrollTrigger: {
           trigger: ".about-area",
-          start: "bottom bottom",
-          end: "bottom top",
+          start: "top 0",
+          end: "bottom bottom",
           pin: ".about-area",
-          pinSpacing: true,
+          pinSpacing: false,
           scrub: 1,
           // markers: true,
         },
@@ -606,8 +571,8 @@
       ab2.to(".big-text-wrapper", {
         scrollTrigger: {
           trigger: ".about-area",
-          start: "bottom bottom",
-          end: "bottom top",
+          start: "top top",
+          end: "bottom bottom",
           pin: ".big-text-wrapper",
           pinSpacing: false,
           scrub: 1,
@@ -616,29 +581,15 @@
       });
 
       gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
-        y: "0",
+        y: "40",
         delay: 2,
         opacity: 1,
         scrollTrigger: {
           trigger: ".about-area",
           start: "top center",
-          end: "center+=50 center",
+          end: "center center",
           scrub: 1,
 
-        },
-      });
-
-      gsap.to(".big-video", {
-        scale: 13.2,
-        delay: 3,
-        // height: "100vh",
-        transformOrigin: "top center",
-        borderRadius: "0",
-        scrollTrigger: {
-          trigger: ".about-area .btn-wrapper",
-          start: "top center",
-          end: "bottom +=100",
-          scrub: 1,
         },
       });
     }

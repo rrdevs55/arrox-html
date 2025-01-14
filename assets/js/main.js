@@ -415,9 +415,10 @@
       scrollTrigger: {
         trigger: ".funfact-area-2 .thumb",
         start: "top top",
-        end: "center top",
+        end: "70% top",
         pin: true,
-        scrub: 1
+        scrub: 2,
+        markers: true
       }
     })
   }
@@ -511,8 +512,8 @@
       const e = document.querySelector(".moving-testimonial"),
         t = e.querySelector(".pin"),
         o = e.querySelectorAll(".card");
-      ScrollTrigger.create({ trigger: t, start: "top top", end: "bottom bottom", pin: !0, pinSpacing: !1, scrub: !0 }), gsap.set(o, { yPercent: 50, y: 0.5 * window.innerHeight + 1 });
-      const n = gsap.timeline({ paused: !0, scrollTrigger: { trigger: e, start: "top top", end: "bottom bottom", scrub: !0 } });
+      ScrollTrigger.create({ trigger: t, start: "top top", end: "bottom center", pin: !0, pinSpacing: !1, scrub: !0 }), gsap.set(o, { yPercent: 50, y: 0.5 * window.innerHeight + 1 });
+      const n = gsap.timeline({ paused: !0, scrollTrigger: { trigger: e, start: "top top", end: "bottom center", scrub: !0 } });
       n.to(o, { yPercent: -50, y: -0.5 * window.innerHeight, duration: 1, stagger: -0.12, ease: CustomEase.create("custom", "M0,0 C0,0 0.098,0.613 0.5,0.5 0.899,0.386 1,1 1,1") }, "sameStep"),
         n.to(o, { rotation: () => 20 * (Math.random() - 0.5), stagger: -0.12, duration: 0.5, ease: "power3.out" }, "sameStep"),
         n.to(o, { rotation: 0, stagger: -0.12, duration: 0.5, ease: "power3.in" }, "sameStep+=0.5");

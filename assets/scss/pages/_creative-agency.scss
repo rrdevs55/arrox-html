@@ -724,15 +724,11 @@
         }
     }
 
-    .section-title {
-        max-width: 716px;
-        text-align: center;
-        margin-inline: auto;
-    }
+
 
     .services-wrapper-box {
         background-color: var(--primary);
-        padding-top: 100px;
+        margin-top: -1px;
     }
 
     .service-box {
@@ -936,7 +932,7 @@
 
 /* testimonial area style  */
 .moving-testimonial .testimonial-wrapper {
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -981,37 +977,37 @@
             grid-template-columns: 1fr;
         }
 
-        >* {
-            &:nth-child(1) {
-                margin-top: 0;
-                // transform: rotate(-15deg);
-            }
+        // >* {
+        //     &:nth-child(1) {
+        //         margin-top: 0;
+        //         // transform: rotate(-15deg);
+        //     }
 
-            &:nth-child(2) {
-                margin-top: 18px;
-                // transform: rotate(8.43deg);
-            }
+        //     &:nth-child(2) {
+        //         margin-top: 18px;
+        //         // transform: rotate(8.43deg);
+        //     }
 
-            &:nth-child(3) {
-                margin-top: 118px;
-                // transform: rotate(15deg);
+        //     &:nth-child(3) {
+        //         margin-top: 118px;
+        //         // transform: rotate(15deg);
 
-                @media #{$md} {
-                    margin-top: 38px;
+        //         @media #{$md} {
+        //             margin-top: 38px;
 
-                }
-            }
+        //         }
+        //     }
 
-            &:nth-child(4) {
-                margin-top: 40px;
-                // transform: rotate(0deg);
-            }
+        //     &:nth-child(4) {
+        //         margin-top: 40px;
+        //         // transform: rotate(0deg);
+        //     }
 
-            &:nth-child(5) {
-                margin-top: 40px;
-                // transform: rotate(-15deg);
-            }
-        }
+        //     &:nth-child(5) {
+        //         margin-top: 40px;
+        //         // transform: rotate(-15deg);
+        //     }
+        // }
     }
 
     .testimonial-item {

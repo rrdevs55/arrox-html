@@ -172,6 +172,7 @@
       autoplay: true,
       spaceBetween: 35,
       speed: 10000,
+      allowTouchMove: false,
       autoplay: {
         delay: 1,
       },
@@ -186,6 +187,7 @@
       autoplay: true,
       spaceBetween: 0,
       speed: 5000,
+      allowTouchMove: false,
       autoplay: {
         delay: 1,
       },

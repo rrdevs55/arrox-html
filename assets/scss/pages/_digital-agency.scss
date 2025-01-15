@@ -1300,6 +1300,7 @@
         max-width: 1140px;
         margin-inline: auto;
         position: relative;
+        z-index: 1;
 
         @media #{$xxl} {
             max-width: 937px;
@@ -1358,6 +1359,10 @@
                     width: 80px;
                 }
 
+                @media #{$md} {
+                    top: -91px;
+                }
+
             }
         }
 
@@ -1394,6 +1399,10 @@
                 @media #{$lg} {
                     width: 80px;
                 }
+
+                @media #{$md} {
+                    left: -67px;
+                }
             }
         }
 
@@ -1412,12 +1421,11 @@
                 background-image: url(../imgs/shape/shape-6.png);
                 background-size: contain;
                 position: absolute;
-                bottom: -217px;
+                bottom: -177px;
                 left: 523px;
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.1s;
-                z-index: 1;
                 display: inline-block;
 
                 @media #{$xxl} {
@@ -1432,6 +1440,11 @@
 
                 @media #{$lg} {
                     width: 80px;
+                }
+
+                @media #{$md} {
+                    left: 473px;
+                    bottom: -57px;
                 }
             }
         }

@@ -882,9 +882,15 @@
                 line-height: 1.5;
                 color: var(--black-2);
                 text-decoration: underline;
+                transition: all 0.3s;
 
                 @media #{$xxl} {
                     font-size: 22px;
+                }
+
+                &:hover {
+                    color: var(--black);
+                    text-decoration: none;
                 }
             }
         }
@@ -993,6 +999,12 @@
 
             a {
                 text-decoration: underline;
+                transition: all 0.3s;
+
+                &:hover {
+                    text-decoration: none;
+                    color: var(--black-2);
+                }
             }
         }
     }
@@ -1054,12 +1066,6 @@
                 transition-property: opacity, top;
                 transition-duration: 250ms;
             }
-
-            // a {
-            //     &:hover {
-            //         color: var(--action);
-            //     }
-            // }
         }
     }
 
@@ -1091,6 +1097,12 @@
 
             a {
                 color: #999999;
+                transition: all 0.3s;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: var(--black);
+                }
             }
         }
     }
@@ -1204,6 +1216,12 @@
 
             a {
                 text-decoration: underline;
+                transition: all 0.3s;
+
+                &:hover {
+                    text-decoration: none;
+                    color: var(--black-2);
+                }
             }
         }
     }
@@ -1306,6 +1324,12 @@
 
             a {
                 color: #999999;
+                transition: all 0.3s;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: var(--black);
+                }
             }
         }
     }
@@ -1416,6 +1440,12 @@
 
             a {
                 text-decoration: underline;
+                transition: all 0.3s;
+
+                &:hover {
+                    text-decoration: none;
+                    color: var(--black-2);
+                }
             }
         }
     }
@@ -1518,6 +1548,12 @@
 
             a {
                 color: #999999;
+                transition: all 0.3s;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: var(--black);
+                }
             }
         }
     }
@@ -1579,6 +1615,7 @@
                 line-height: 1.5;
                 color: var(--black-2);
                 text-decoration: underline;
+                transition: all 0.3s;
 
                 @media #{$xxl} {
                     font-size: 22px;
@@ -1586,6 +1623,11 @@
 
                 @media #{$lg} {
                     font-size: 18px;
+                }
+
+                &:hover {
+                    color: var(--black);
+                    text-decoration: none;
                 }
             }
         }
@@ -1702,6 +1744,12 @@
 
             a {
                 text-decoration: underline;
+                transition: all 0.3s;
+
+                &:hover {
+                    text-decoration: none;
+                    color: var(--black-2);
+                }
             }
         }
     }
@@ -1791,6 +1839,12 @@
 
             a {
                 color: #999999;
+                transition: all 0.3s;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: var(--black);
+                }
             }
         }
     }

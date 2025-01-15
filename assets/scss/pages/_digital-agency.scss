@@ -503,14 +503,6 @@ video.video-area {
 /* work area style  */
 .work-area {
 
-    @media #{$xxl} {
-        padding-top: 200px;
-    }
-
-    @media #{$xl} {
-        padding-top: 150px;
-    }
-
     &-inner {
         margin-top: 18px;
     }

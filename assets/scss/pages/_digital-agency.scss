@@ -1429,8 +1429,12 @@ video.video-area {
         display: flex;
         align-items: center;
 
-        @media #{$lg} {
+        @media #{$xxl} {
             font-size: 26px;
+        }
+
+        @media #{$lg} {
+            font-size: 24px;
         }
 
         @media #{$sm} {

@@ -718,6 +718,8 @@
 
       ab2.to(".year-since", {
         right: "0",
+        delay: 0.5,
+        duration: 1,
         scrollTrigger: {
           trigger: ".about-area-2 .section-content",
           pin: ".about-area-2",
@@ -726,12 +728,14 @@
           endTrigger: ".about-area-2 .year-wrapper",
           end: "bottom top",
           scrub: 3,
+          markers: true
         },
       });
 
       ab2.to(".year-since .last-text", {
         scale: 0.05,
         right: "0",
+        duration: 1,
         transformOrigin: "top center",
         scrollTrigger: {
           trigger: ".about-area-2 .year-wrapper",
@@ -769,7 +773,7 @@
         scrub: 1,
         start: "top 10%",
         end: "bottom 0",
-        markers: true,
+        // markers: true,
       }
     })
       .fromTo(".actually-area .bg-area",

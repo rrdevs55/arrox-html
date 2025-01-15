@@ -1272,6 +1272,7 @@ video.video-area {
         max-width: 1140px;
         margin-inline: auto;
         position: relative;
+        z-index: 1;
 
         @media #{$xxl} {
             max-width: 937px;
@@ -1330,6 +1331,10 @@ video.video-area {
                     width: 80px;
                 }
 
+                @media #{$md} {
+                    top: -91px;
+                }
+
             }
         }
 
@@ -1366,6 +1371,10 @@ video.video-area {
                 @media #{$lg} {
                     width: 80px;
                 }
+
+                @media #{$md} {
+                    left: -67px;
+                }
             }
         }
 
@@ -1384,12 +1393,11 @@ video.video-area {
                 background-image: url(../imgs/shape/shape-6.png);
                 background-size: contain;
                 position: absolute;
-                bottom: -217px;
+                bottom: -177px;
                 left: 523px;
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.1s;
-                z-index: 1;
                 display: inline-block;
 
                 @media #{$xxl} {
@@ -1404,6 +1412,11 @@ video.video-area {
 
                 @media #{$lg} {
                     width: 80px;
+                }
+
+                @media #{$md} {
+                    left: 473px;
+                    bottom: -57px;
                 }
             }
         }

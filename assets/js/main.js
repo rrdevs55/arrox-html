@@ -714,12 +714,7 @@
   mm.add("(min-width: 1200px)", () => {
 
     if (document.querySelectorAll(".about-area-2").length > 0) {
-      var ab2 = gsap.timeline();
-
-      ab2.to(".year-since", {
-        right: "0",
-        delay: 0.5,
-        duration: 1,
+      var ab2 = gsap.timeline({
         scrollTrigger: {
           trigger: ".about-area-2 .section-content",
           pin: ".about-area-2",
@@ -729,13 +724,29 @@
           end: "bottom top",
           scrub: 3,
           markers: true
-        },
+        }
+      });
+
+      ab2.to(".year-since", {
+        right: "0",
+        delay: 1,
+        duration: 3,
+        // scrollTrigger: {
+        //   trigger: ".about-area-2 .section-content",
+        //   pin: ".about-area-2",
+        //   pinSpacing: true,
+        //   start: "top top",
+        //   endTrigger: ".about-area-2 .year-wrapper",
+        //   end: "bottom top",
+        //   scrub: 3,
+        //   // markers: true
+        // },
       });
 
       ab2.to(".year-since .last-text", {
         scale: 0.05,
         right: "0",
-        duration: 1,
+        duration: 5,
         transformOrigin: "top center",
         scrollTrigger: {
           trigger: ".about-area-2 .year-wrapper",

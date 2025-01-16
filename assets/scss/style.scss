@@ -1098,10 +1098,25 @@
             a {
                 color: #999999;
                 transition: all 0.3s;
+                position: relative;
+
+                &::before {
+                    width: 0%;
+                    height: 1px;
+                    background-color: currentColor;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transition: all 0.5s;
+                }
 
                 &:hover {
-                    text-decoration: underline;
                     color: var(--black);
+
+                    &::before {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -1325,10 +1340,25 @@
             a {
                 color: #999999;
                 transition: all 0.3s;
+                position: relative;
+
+                &::before {
+                    width: 0;
+                    height: 1px;
+                    background-color: currentColor;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transition: all 0.5s;
+                }
 
                 &:hover {
-                    text-decoration: underline;
                     color: var(--black);
+
+                    &::before {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -1549,10 +1579,25 @@
             a {
                 color: #999999;
                 transition: all 0.3s;
+                position: relative;
+
+                &::before {
+                    width: 0;
+                    height: 1px;
+                    background-color: currentColor;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transition: all 0.5s;
+                }
 
                 &:hover {
-                    text-decoration: underline;
                     color: var(--black);
+
+                    &::before {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -1840,10 +1885,25 @@
             a {
                 color: #999999;
                 transition: all 0.3s;
+                position: relative;
+
+                &::before {
+                    width: 0;
+                    height: 1px;
+                    background-color: currentColor;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transition: all 0.5s;
+                }
 
                 &:hover {
-                    text-decoration: underline;
                     color: var(--black);
+
+                    &::before {
+                        width: 100%;
+                    }
                 }
             }
         }

@@ -417,7 +417,6 @@
         end: "70% top",
         pin: true,
         scrub: 2,
-        markers: true
       }
     })
   }
@@ -624,6 +623,7 @@
           pin: ".year-since .last-text",
           pinSpacing: true,
           scrub: 3,
+          // markers: true,
         },
       });
 
@@ -653,7 +653,6 @@
         scrub: 1,
         start: "top 10%",
         end: "bottom 0",
-        markers: true,
       }
     })
       .fromTo(".actually-area .bg-area",

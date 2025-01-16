@@ -370,13 +370,16 @@
                 text-transform: uppercase;
                 text-align: center;
 
-                @media #{$sm} {
-                    font-size: 170px;
+                @media #{$md} {
+                    font-size: 145px;
+                }
 
+                @media #{$sm} {
+                    font-size: 110px;
                 }
 
                 @media #{$xs} {
-                    font-size: 100px;
+                    font-size: 60px;
                 }
             }
         }

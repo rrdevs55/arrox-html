@@ -320,9 +320,6 @@
         }
       });
     });
-
-
-
   });
 
   // scale animation 
@@ -551,7 +548,7 @@
         scale: 0.1,
         color: "black",
         duration: 2,
-        y: "80%",
+        y: "76%",
         transformOrigin: "bottom center",
 
       });
@@ -595,119 +592,6 @@
       });
     }
   });
-  // video end
-
-  // video start
-  // mm.add("(min-width: 1200px)", () => {
-
-  //   if (document.querySelectorAll(".hero-area").length > 0) {
-  //     const removeWordElement = document.querySelector(".remove-word");
-  //     var ab2 = gsap.timeline({
-  //       duration: 5,
-  //       scrollTrigger: {
-  //         trigger: ".hero-area",
-  //         pin: false,
-  //         pinSpacing: false,
-  //         scrub: 2,
-  //         start: "top 20%",
-  //         end: "bottom 0%",
-
-  //       },
-  //     });
-
-  //     ab2.to(".big-text-wrapper .big-text", {
-  //       scale: 0.09,
-  //       y: "74%",
-  //       color: "black",
-  //       duration: 2,
-  //       ease: "power1.inOut",
-  //     });
-
-  //     ab2.to(
-  //       ".gap",
-  //       {
-  //         minWidth: "2000px",
-  //         duration: 1.5,
-  //         ease: "power1.inOut",
-  //       },
-  //       ">"
-  //     );
-  //     ab2.to(
-  //       ".remove-word",
-  //       {
-  //         x: "-100%",
-  //         opacity: 0,
-  //         duration: 1.5,
-  //         ease: "power1.inOut",
-  //       },
-  //       "start"
-  //     );
-
-  //     ab2.to(
-  //       ".big-video",
-  //       {
-  //         visibility: "visible",
-  //         x: "0%",
-  //         minHeight: "20px",
-  //         opacity: 1,
-  //         duration: 1.5,
-  //         ease: "power1.inOut",
-  //         width: "100vw",
-  //         height: "680px",
-  //         minHeight: "680px"
-  //       },
-  //       "start"
-  //     );
-
-  //     ab2.to(".about-area", {
-  //       scrollTrigger: {
-  //         trigger: ".about-area",
-  //         start: "bottom bottom",
-  //         end: "bottom top",
-  //         pin: ".about-area",
-  //         pinSpacing: true,
-  //         scrub: 1,
-  //       },
-  //     });
-
-  //     ab2.to(".big-text-wrapper", {
-  //       scrollTrigger: {
-  //         trigger: ".about-area",
-  //         start: "bottom bottom",
-  //         end: "bottom top",
-  //         pin: ".big-text-wrapper",
-  //         pinSpacing: false,
-  //         scrub: 1,
-  //       },
-  //     });
-
-  //     gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
-  //       y: "0",
-  //       delay: 2,
-  //       opacity: 1,
-  //       scrollTrigger: {
-  //         trigger: ".about-area",
-  //         start: "center center",
-  //         end: "center+=50 center",
-  //         scrub: 1,
-  //       },
-  //     });
-
-  //     gsap.to(".big-video", {
-  //       scale: 12,
-  //       delay: 3,
-  //       height: "100vh",
-  //       transformOrigin: "top center",
-  //       borderRadius: "0",
-  //       scrollTrigger: {
-  //         trigger: ".about-area .btn-wrapper",
-  //         start: "bottom center",
-  //         end: "bottom 0",
-  //         scrub: 3,
-  //       },
-  //     });
-  //   }
-  // });
   // video end
 
   // text-animation start

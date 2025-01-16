@@ -413,38 +413,36 @@ video.video-area {
         }
 
         .text-wrapper {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: transform 0.5s, opacity 0.5s;
 
             @media #{$lg} {
-                opacity: 0;
-                transform: translateY(100px);
-                transition: transform 0.5s, opacity 0.5s;
-                display: none;
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
         .btn-wrapper {
             margin-top: 62px;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: transform 0.5s, opacity 0.5s;
 
             @media #{$lg} {
-                opacity: 0;
-                transform: translateY(100px);
-                transition: transform 0.5s, opacity 0.5s;
+                opacity: 1;
+                margin-top: 50px;
+                transform: translateY(0);
             }
         }
     }
 
     .section-title-wrapper {
-        margin-top: 250px;
-
-        .description {
-            padding-top: 10px;
-            margin-bottom: 40px;
-        }
-
         display: none;
 
         @media #{$lg} {
             display: block;
+            margin-bottom: 20px;
         }
     }
 

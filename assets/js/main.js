@@ -525,8 +525,6 @@
     });
   }
 
-
-
   // video start
   mm.add("(min-width: 1200px)", () => {
 
@@ -720,39 +718,46 @@
   }
   // work-area-2 box animation end
 
+
   //image animation in hero start
-  const hoverItems = document.querySelectorAll(".text-underline");
-  function moveImage(e, hoverItem, index) {
-    const item = hoverItem.getBoundingClientRect();
-    const x = e.clientX - item.left;
-    const y = e.clientY - item.top;
-    if (hoverItem.children[index]) {
-      hoverItem.children[index].style.transform = `translate(${x}px, ${y}px)`;
-    }
-  }
+  const categoriesWrapper = document.querySelector('.section-title');
 
-  hoverItems.forEach((item, i) => {
-    const image = item.querySelector(".hover-image");
+  categoriesWrapper.addEventListener('mousemove', (e) => {
+    const { clientX: mouseX, clientY: mouseY } = e;
 
-    item.addEventListener("mousemove", (e) => {
-      moveImage(e, item, 0);
-    });
-
-    item.addEventListener("mouseenter", () => {
-      if (image) {
-        image.style.opacity = 1;
-      }
-    });
-
-    item.addEventListener("mouseleave", () => {
-      if (image) {
-        image.style.opacity = 0;
-        image.style.transform = "translate(0, 0)";
-      }
+    // Move the hovered image directly to the mouse position
+    gsap.to('.image-hover', {
+      x: mouseX,
+      y: mouseY,
+      xPercent: -50, // Center the image horizontally on the cursor
+      yPercent: -50, // Center the image vertically on the cursor
+      duration: 0,   // Instant movement to follow the cursor
     });
   });
-  //image animation in hero end
 
+  gsap.utils.toArray('.text-underline').forEach((category) => {
+    const { label } = category.dataset;
+
+    category.addEventListener('mouseenter', () => {
+      gsap.set(`.image-hover[data-image="${label}"]`, {
+        zIndex: 1,
+        opacity: 1,
+        scale: 1,
+      });
+    });
+
+    category.addEventListener('mouseleave', () => {
+      gsap.to(`.image-hover[data-image="${label}"]`, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.3,
+        ease: 'power3.out',
+      });
+      gsap.set(`.image-hover[data-image="${label}"]`, { zIndex: -1 });
+    });
+  });
+
+  //image animation in hero end
 
   //Client Pin Active
   var pin_fixed = document.querySelector('.client-pin-element');

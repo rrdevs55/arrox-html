@@ -187,25 +187,6 @@
         }
     }
 
-    .tp-hover-reveal-item {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        margin: 50px;
-        overflow: hidden;
-        background-color: #f3f3f3;
-        display: inline-block;
-    }
-
-    .tp-hover-reveal-item img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        transition: transform 0.2s ease;
-    }
-
     .title-wrapper {
         margin-top: 43px;
 
@@ -312,6 +293,29 @@
         }
     }
 }
+
+.text-underline {
+    position: relative;
+    cursor: pointer;
+
+    .image-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 250px;
+        pointer-events: none; // Ensure no interference
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    &:hover .image-hover {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 /* service area 3 style  */
 .service-area-3 {

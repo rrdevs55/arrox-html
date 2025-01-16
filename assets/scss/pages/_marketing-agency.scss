@@ -735,10 +735,7 @@
         }
     }
 
-    .approach-wrapper {
-        border-top: 1px dashed #878482;
-
-    }
+    .approach-wrapper {}
 
     .approach-box {
         display: grid;
@@ -748,6 +745,10 @@
         padding-top: 24px;
         padding-bottom: 24px;
         border-bottom: 1px dashed #878482;
+
+        &:first-child {
+            border-top: 1px dashed #878482;
+        }
 
         @media #{$xxl} {
             grid-template-columns: 60px 1fr 395px;

@@ -272,15 +272,15 @@
     overflow-x: clip;
 
     .section-title {
-        max-width: 1120px;
+        max-width: 1130px;
 
         @media #{$xxl} {
-            max-width: 820px;
+            max-width: 830px;
 
         }
 
         @media #{$xl} {
-            max-width: 620px;
+            max-width: 630px;
         }
     }
 
@@ -301,6 +301,9 @@
     }
 
     .section-content {
+        .section-content {
+            min-height: 100vh;
+        }
 
         .year-since {
             font-size: 580px;

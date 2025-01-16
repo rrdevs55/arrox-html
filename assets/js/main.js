@@ -729,8 +729,9 @@
 
       ab2.to(".year-since", {
         right: "0",
-        delay: 1,
-        duration: 3,
+        delay: 5,
+        duration: 10,
+        ease: "power1.inOut",
         // scrollTrigger: {
         //   trigger: ".about-area-2 .section-content",
         //   pin: ".about-area-2",
@@ -742,32 +743,37 @@
         //   // markers: true
         // },
       });
-
+      ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
+        x: "100", // Move 100px to the right
+        opacity: 0,
+        duration: 5,
+        // scrollTrigger: {
+        //   trigger: ".about-area-2 .last-text",
+        //   start: "top top",
+        //   end: "bottom center",
+        //   scrub: 3,
+        // },
+      }, "-=5");
       ab2.to(".year-since .last-text", {
         scale: 0.05,
         right: "0",
-        duration: 5,
+        duration: 9,
+        ease: "none",
         transformOrigin: "top center",
         scrollTrigger: {
           trigger: ".about-area-2 .year-wrapper",
           start: "bottom top",
-          end: "bottom+=770 top",
+          // end: "bottom+=670 top",
+          endTrigger: ".works-wrapper-head",
+          end: "top-=95 top",
           pin: ".year-since .last-text",
           pinSpacing: true,
-          scrub: 3,
+          scrub: 1,
+          markers: true
         },
       });
 
-      ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
-        x: "100", // Move 100px to the right
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".about-area-2 .last-text",
-          start: "top top",
-          end: "bottom center",
-          scrub: 3,
-        },
-      });
+
     }
   });
   // text-animation end

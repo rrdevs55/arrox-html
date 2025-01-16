@@ -525,8 +525,6 @@
     });
   }
 
-
-
   // video start
   mm.add("(min-width: 1200px)", () => {
 
@@ -705,39 +703,55 @@
   }
   // work-area-2 box animation end
 
+
   //image animation in hero start
-  const hoverItems = document.querySelectorAll(".text-underline");
-  function moveImage(e, hoverItem, index) {
-    const item = hoverItem.getBoundingClientRect();
-    const x = e.clientX - item.left;
-    const y = e.clientY - item.top;
-    if (hoverItem.children[index]) {
-      hoverItem.children[index].style.transform = `translate(${x}px, ${y}px)`;
-    }
-  }
+  const categoriesWrapper = document.querySelector('.section-title');
 
-  hoverItems.forEach((item, i) => {
-    const image = item.querySelector(".hover-image");
+  // Optimized mousemove for smooth positioning
+  categoriesWrapper.addEventListener('mousemove', (e) => {
+    const imageHover = document.querySelector('.image-hover');
+    const { clientX: mouseX, clientY: mouseY } = e;
 
-    item.addEventListener("mousemove", (e) => {
-      moveImage(e, item, 0);
-    });
-
-    item.addEventListener("mouseenter", () => {
-      if (image) {
-        image.style.opacity = 1;
-      }
-    });
-
-    item.addEventListener("mouseleave", () => {
-      if (image) {
-        image.style.opacity = 0;
-        image.style.transform = "translate(0, 0)";
-      }
+    // Use requestAnimationFrame for smooth animations
+    requestAnimationFrame(() => {
+      gsap.to(imageHover, {
+        x: mouseX,
+        y: mouseY,
+        xPercent: -50,
+        yPercent: -50, // Center image around the cursor
+        ease: 'power3.out',
+        duration: 0.2, // Smooth transition
+      });
     });
   });
-  //image animation in hero end
 
+  gsap.utils.toArray('.text-underline').forEach((category) => {
+    const { label } = category.dataset;
+
+    // On hover, reveal the corresponding image
+    category.addEventListener('mouseenter', () => {
+      gsap.to(`.image-hover[data-image="${label}"]`, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.3,
+        ease: 'power3.out',
+      });
+      gsap.set(`.image-hover[data-image="${label}"]`, { zIndex: 1 });
+    });
+
+    // On leave, hide the corresponding image
+    category.addEventListener('mouseleave', () => {
+      gsap.to(`.image-hover[data-image="${label}"]`, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.3,
+        ease: 'power3.out',
+      });
+      gsap.set(`.image-hover[data-image="${label}"]`, { zIndex: -1 });
+    });
+  });
+
+  //image animation in hero end
 
   //Client Pin Active
   var pin_fixed = document.querySelector('.client-pin-element');
@@ -1191,4 +1205,22 @@
     });
   });
 
+
+
+  // Animate on scroll
+  const boxes = document.querySelectorAll(".approach-box");
+
+  gsap.from(boxes, {
+    x: "100%",
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out",
+    scrollTrigger: {
+      scrub: 2,
+      trigger: ".approach-wrapper-box",
+      start: "top 100%",
+      end: "bottom 40%",
+      toggleActions: "play none none reverse",
+    }
+  });
 })(jQuery);

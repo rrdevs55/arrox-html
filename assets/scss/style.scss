@@ -111,7 +111,60 @@
 
 }
 
+.section-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
 
+.section-title {
+    font-size: 100px;
+    letter-spacing: -0.07em;
+
+    @media #{$xxl} {
+        font-size: 80px;
+    }
+
+    @media #{$xl} {
+        font-size: 60px;
+    }
+
+    @media #{$lg} {
+        font-size: 50px;
+    }
+
+    @media #{$md} {
+        font-size: 40px;
+    }
+
+    @media #{$sm} {
+        font-size: 35px;
+    }
+
+    &.large {
+        font-size: 64px;
+
+        @media #{$xxl} {
+            font-size: 56px;
+        }
+
+        @media #{$lg} {
+            font-size: 48px;
+        }
+
+        @media #{$md} {
+            font-size: 42px;
+        }
+
+        @media #{$sm} {
+            font-size: 36px;
+        }
+    }
+}
 
 /* inverted text style  */
 .text-invert>div {
@@ -405,60 +458,7 @@
             }
         }
 
-        .section-subtitle {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 20px;
-            display: inline-block;
-            text-transform: uppercase;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
 
-        .section-title {
-            font-size: 100px;
-            letter-spacing: -0.07em;
-
-            @media #{$xxl} {
-                font-size: 80px;
-            }
-
-            @media #{$xl} {
-                font-size: 60px;
-            }
-
-            @media #{$lg} {
-                font-size: 50px;
-            }
-
-            @media #{$md} {
-                font-size: 40px;
-            }
-
-            @media #{$sm} {
-                font-size: 35px;
-            }
-
-            &.large {
-                font-size: 64px;
-
-                @media #{$xxl} {
-                    font-size: 56px;
-                }
-
-                @media #{$lg} {
-                    font-size: 48px;
-                }
-
-                @media #{$md} {
-                    font-size: 42px;
-                }
-
-                @media #{$sm} {
-                    font-size: 36px;
-                }
-            }
-        }
     }
 }
 

@@ -722,30 +722,39 @@
   //image animation in hero start
   const categoriesWrapper = document.querySelector('.section-title');
 
+  // Optimized mousemove for smooth positioning
   categoriesWrapper.addEventListener('mousemove', (e) => {
+    const imageHover = document.querySelector('.image-hover');
     const { clientX: mouseX, clientY: mouseY } = e;
 
-    // Move the hovered image directly to the mouse position
-    gsap.to('.image-hover', {
-      x: mouseX,
-      y: mouseY,
-      xPercent: -50, // Center the image horizontally on the cursor
-      yPercent: -50, // Center the image vertically on the cursor
-      duration: 0,   // Instant movement to follow the cursor
+    // Use requestAnimationFrame for smooth animations
+    requestAnimationFrame(() => {
+      gsap.to(imageHover, {
+        x: mouseX,
+        y: mouseY,
+        xPercent: -50,
+        yPercent: -50, // Center image around the cursor
+        ease: 'power3.out',
+        duration: 0.2, // Smooth transition
+      });
     });
   });
 
   gsap.utils.toArray('.text-underline').forEach((category) => {
     const { label } = category.dataset;
 
+    // On hover, reveal the corresponding image
     category.addEventListener('mouseenter', () => {
-      gsap.set(`.image-hover[data-image="${label}"]`, {
-        zIndex: 1,
+      gsap.to(`.image-hover[data-image="${label}"]`, {
         opacity: 1,
         scale: 1,
+        duration: 0.3,
+        ease: 'power3.out',
       });
+      gsap.set(`.image-hover[data-image="${label}"]`, { zIndex: 1 });
     });
 
+    // On leave, hide the corresponding image
     category.addEventListener('mouseleave', () => {
       gsap.to(`.image-hover[data-image="${label}"]`, {
         opacity: 0,

@@ -125,6 +125,13 @@
     });
   }
 
+  // Magnific Video popup
+  if ($('.video-popup').length && 'magnificPopup' in jQuery) {
+    $('.video-popup').magnificPopup({
+      type: 'iframe',
+    });
+
+  }
 
   // testimonial slider
   if (('.testimonial-slider').length) {

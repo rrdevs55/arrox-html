@@ -507,7 +507,7 @@
 
   // moving testimonial 
   if (document.querySelectorAll(".moving-testimonial").length > 0) {
-    mm.add("(min-width: 768px)", () => {
+    mm.add("(min-width: 1200px)", () => {
       const e = document.querySelector(".moving-testimonial"),
         t = e.querySelector(".pin"),
         o = e.querySelectorAll(".card");
@@ -595,7 +595,7 @@
   // video end
 
   // text-animation start
-  mm.add("(min-width: 1200px)", () => {
+  mm.add("(min-width: 992px)", () => {
 
     if (document.querySelectorAll(".about-area-2").length > 0) {
       var ab2 = gsap.timeline({
@@ -616,40 +616,25 @@
         delay: 5,
         duration: 10,
         ease: "power1.inOut",
-        // scrollTrigger: {
-        //   trigger: ".about-area-2 .section-content",
-        //   pin: ".about-area-2",
-        //   pinSpacing: true,
-        //   start: "top top",
-        //   endTrigger: ".about-area-2 .year-wrapper",
-        //   end: "bottom top",
-        //   scrub: 3,
-        //   // markers: true
-        // },
       });
       ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
         x: "100", // Move 100px to the right
         opacity: 0,
         duration: 5,
-        // scrollTrigger: {
-        //   trigger: ".about-area-2 .last-text",
-        //   start: "top top",
-        //   end: "bottom center",
-        //   scrub: 3,
-        // },
       }, "-=5");
       ab2.to(".year-since .last-text", {
-        scale: 0.05,
-        right: "0",
+        fontSize: 30,
+        lineHeight: "27px",
+        letterSpacing: "-0.1em",
+        position: "absolute",
+        top: 0,
         duration: 9,
         ease: "none",
-        transformOrigin: "top center",
         scrollTrigger: {
           trigger: ".about-area-2 .year-wrapper",
           start: "bottom top",
-          // end: "bottom+=670 top",
           endTrigger: ".works-wrapper-head",
-          end: "top-=95 top",
+          end: "top-=100 top",
           pin: ".year-since .last-text",
           pinSpacing: true,
           scrub: 1,

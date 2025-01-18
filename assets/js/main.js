@@ -1217,7 +1217,7 @@
 
 
   // Animate on scroll
-  const boxes = document.querySelectorAll(".approach-box");
+  const boxes = document.querySelectorAll(".approach-area .approach-box");
 
   gsap.from(boxes, {
     x: "100%",

@@ -1093,10 +1093,14 @@
             .title {
                 .arrow {
                     background-color: var(--black);
-                    transform: rotate(60deg) translate(-5px, -5px);
 
-                    svg [fill="#111111"] {
-                        fill: var(--white);
+                    svg {
+                        transform: rotate(60deg);
+
+                        * {
+                            fill: var(--white);
+
+                        }
                     }
                 }
             }
@@ -1160,10 +1164,40 @@
                 width: 25px;
                 height: 25px;
                 transition: all 0.3s;
-                border-radius: 500px;
+                border-radius: 50%;
                 border: 2px solid #111111;
-                transform: translate(0px, -5px);
+                transform: translate(0px, -1px);
                 margin-left: 5px;
+
+                @media #{$xxl} {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                @media #{$xl} {
+                    width: 17px;
+                    height: 17px;
+                }
+
+                @media #{$lg} {
+                    width: 15px;
+                    height: 15px;
+                    border-width: 1px;
+                }
+
+                svg {
+                    transition: all 0.3s;
+                    width: 13px;
+
+                    @media #{$xxl} {
+                        width: 10px;
+                    }
+
+                    @media #{$xl} {
+                        width: 7px;
+                    }
+
+                }
             }
         }
 

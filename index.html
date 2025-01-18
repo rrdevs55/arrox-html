@@ -55,6 +55,13 @@
     </svg>
   </div>
 
+  <!-- cursorAnimation start -->
+  <div class="cursor-wrapper relative">
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+  </div>
+  <!-- cursorAnimation end -->
+
   <!-- side toggle start -->
   <aside class="fix">
     <div class="side-info">
@@ -221,12 +228,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="big-text-wrapper fade-anim" data-offset="100" data-direction="bottom" data-delay="0.90">
-                  <h2 class="big-text">Arr <span class="text-and-video"><span class="remove-word">o
-                      </span><video class="big-video" loop muted autoplay playsinline>
-                        <source src="assets/video/video.mp4" type="video/mp4">
-                      </video></span> <span class="gap"></span>
-                    x
+                <div class="big-text-wrapper">
+                  <h2 class="big-text">Arrox
                   </h2>
                 </div>
 
@@ -236,7 +239,7 @@
           <!-- hero area end  -->
 
           <!-- about area start  -->
-          <section class="about-area video-area">
+          <section class="about-area ">
             <div class="container large">
               <div class="about-area-inner">
                 <div class="section-content">
@@ -248,18 +251,8 @@
                     <div class="title-wrapper">
                       <h2 class="section-title">Arrox</h2>
                     </div>
-                    <p class="description">We’re a dynamic startup agency specializing in innovative solutions for
-                      businesses
-                      looking to elevate their brand presence. We offer a range of services including digital marketing,
-                      branding, web development, and creative strategy to help company</p>
-                    <a href="about.html" class="rr-btn">
-                      <span class="btn-wrap">
-                        <span class="text-one">Learn More</span>
-                        <span class="text-two">Learn More</span>
-                      </span>
-                    </a>
                   </div>
-                  <div class="text-wrapper ">
+                  <div class="text-wrapper">
                     <p class="text">We’re a dynamic startup agency specializing in innovative solutions for businesses
                       looking to elevate their brand presence. We offer a range of services including digital marketing,
                       branding, web development, and creative strategy to help company</p>
@@ -275,20 +268,19 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="video-box">
-              <video src="" poster="assets/imgs/gallery/image-2.png"></video>
-            </div> -->
           </section>
           <!-- about area end  -->
-
-
-
+          <div class="video-box">
+            <video class="video-area" loop="" muted="" autoplay="" playsinline="">
+              <source src="assets/video/video.mp4" type="video/mp4">
+            </video>
+          </div>
 
           <!-- work area start  -->
           <section class="work-area">
             <!-- text slider area start  -->
-            <div class="text-slider-box">
-              <div class="text-slider fade-anim">
+            <div class="text-slider-box fade-anim">
+              <div class="text-slider">
                 <div class="swiper text-slider-active">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -358,13 +350,12 @@
                   <div class="works-wrapper fade-anim">
                     <div class="work-box">
                       <div class="thumb">
-                        <div class="image hover-reveal scale">
-                          <span class="t-btn">View Project</span>
-                          <a href="#"><img src="assets/imgs/project/image-1.jpg" alt="image"></a>
+                        <div class="image scale" data-cursor-text="View Project">
+                          <a href="work-details.html"><img src="assets/imgs/project/image-1.jpg" alt="image"></a>
                         </div>
                       </div>
                       <div class="content">
-                        <h3 class="title"><a href="#">Panda Automap</a></h3>
+                        <h3 class="title"><a href="work-details.html">Panda Automap</a></h3>
                         <div class="meta">
                           <span class="tag">Development</span>
                           <span class="date">2024</span>
@@ -374,13 +365,12 @@
                     </div>
                     <div class="work-box">
                       <div class="thumb">
-                        <div class="image hover-reveal scale">
-                          <span class="t-btn">View Project</span>
-                          <a href="#"><img src="assets/imgs/project/image-2.jpg" alt="image"></a>
+                        <div class="image scale" data-cursor-text="View Project">
+                          <a href="work-details.html"><img src="assets/imgs/project/image-2.jpg" alt="image"></a>
                         </div>
                       </div>
                       <div class="content">
-                        <h3 class="title"><a href="#">Saudi Venture Capital</a></h3>
+                        <h3 class="title"><a href="work-details.html">Saudi Venture Capital</a></h3>
                         <div class="meta">
                           <span class="tag">Graphics</span>
                           <span class="date">2024</span>
@@ -389,13 +379,12 @@
                     </div>
                     <div class="work-box">
                       <div class="thumb">
-                        <div class="image hover-reveal scale">
-                          <span class="t-btn">View Project</span>
-                          <a href="#"><img src="assets/imgs/project/image-3.jpg" alt="image"></a>
+                        <div class="image scale" data-cursor-text="View Project">
+                          <a href="work-details.html"><img src="assets/imgs/project/image-3.jpg" alt="image"></a>
                         </div>
                       </div>
                       <div class="content">
-                        <h3 class="title"><a href="#">Rebrand Lawberry</a></h3>
+                        <h3 class="title"><a href="work-details.html">Rebrand Lawberry</a></h3>
                         <div class="meta">
                           <span class="tag">Motion, Design</span>
                           <span class="date">2024</span>
@@ -404,13 +393,12 @@
                     </div>
                     <div class="work-box">
                       <div class="thumb">
-                        <div class="image hover-reveal scale">
-                          <span class="t-btn">View Project</span>
-                          <a href="#"><img src="assets/imgs/project/image-4.jpg" alt="image"></a>
+                        <div class="image scale" data-cursor-text="View Project">
+                          <a href="work-details.html"><img src="assets/imgs/project/image-4.jpg" alt="image"></a>
                         </div>
                       </div>
                       <div class="content">
-                        <h3 class="title"><a href="#">Selicon Cloud Cave</a></h3>
+                        <h3 class="title"><a href="work-details.html">Selicon Cloud Cave</a></h3>
                         <div class="meta">
                           <span class="tag">UI Design</span>
                           <span class="date">2024</span>
@@ -419,13 +407,12 @@
                     </div>
                     <div class="work-box">
                       <div class="thumb">
-                        <div class="image hover-reveal scale">
-                          <span class="t-btn">View Project</span>
-                          <a href="#"><img src="assets/imgs/project/image-5.jpg" alt="image"></a>
+                        <div class="image scale" data-cursor-text="View Project">
+                          <a href="work-details.html"><img src="assets/imgs/project/image-5.jpg" alt="image"></a>
                         </div>
                       </div>
                       <div class="content">
-                        <h3 class="title"><a href="#">Mountain Upwork</a></h3>
+                        <h3 class="title"><a href="work-details.html">Mountain Upwork</a></h3>
                         <div class="meta">
                           <span class="tag">Branding</span>
                           <span class="date">2024</span>
@@ -434,13 +421,12 @@
                     </div>
                     <div class="work-box">
                       <div class="thumb">
-                        <div class="image hover-reveal scale">
-                          <span class="t-btn">View Project</span>
-                          <a href="#"><img src="assets/imgs/project/image-6.jpg" alt="image"></a>
+                        <div class="image scale" data-cursor-text="View Project">
+                          <a href="work-details.html"><img src="assets/imgs/project/image-6.jpg" alt="image"></a>
                         </div>
                       </div>
                       <div class="content">
-                        <h3 class="title"><a href="#">Blacky Motorola</a></h3>
+                        <h3 class="title"><a href="work-details.html">Blacky Motorola</a></h3>
                         <div class="meta">
                           <span class="tag">UI Design</span>
                           <span class="date">2024</span>
@@ -450,8 +436,7 @@
                   </div>
                 </div>
                 <div class="all-btn-wrapper fade-anim" data-direction="top" data-ease="bounce" data-offset="100">
-
-                  <a href="contact.html" class="rr-btn btn-border">
+                  <a href="work.html" class="rr-btn btn-border">
                     <span class="btn-wrap">
                       <span class="text-one">View All Work</span>
                       <span class="text-two">View All Work</span>
@@ -485,11 +470,11 @@
                       <div class="content">
                         <h3 class="title">Branding</h3>
                         <ul class="service-list">
-                          <li><a href="#">Creative Direction</a></li>
-                          <li><a href="#">Brand Identity</a></li>
-                          <li><a href="#">Branding Strategy</a></li>
-                          <li><a href="#">Graphic Design</a></li>
-                          <li><a href="#">Startup</a></li>
+                          <li><a href="service-details.html">Creative Direction</a></li>
+                          <li><a href="service-details.html">Brand Identity</a></li>
+                          <li><a href="service-details.html">Branding Strategy</a></li>
+                          <li><a href="service-details.html">Graphic Design</a></li>
+                          <li><a href="service-details.html">Startup</a></li>
                         </ul>
                       </div>
                       <div class="thumb">
@@ -504,11 +489,11 @@
                       <div class="content">
                         <h3 class="title">UI-UX Design</h3>
                         <ul class="service-list">
-                          <li><a href="#">UI UX Consulting</a></li>
-                          <li><a href="#">UX Research</a></li>
-                          <li><a href="#">Usability Testing</a></li>
-                          <li><a href="#">Wireframing</a></li>
-                          <li><a href="#">Prototyping</a></li>
+                          <li><a href="service-details.html">UI UX Consulting</a></li>
+                          <li><a href="service-details.html">UX Research</a></li>
+                          <li><a href="service-details.html">Usability Testing</a></li>
+                          <li><a href="service-details.html">Wireframing</a></li>
+                          <li><a href="service-details.html">Prototyping</a></li>
                         </ul>
                       </div>
                       <div class="thumb">
@@ -523,11 +508,11 @@
                       <div class="content">
                         <h3 class="title">Development</h3>
                         <ul class="service-list">
-                          <li><a href="#">WordPress</a></li>
-                          <li><a href="#">Webflow</a></li>
-                          <li><a href="#">Laravel Framework</a></li>
-                          <li><a href="#">React & Flutter</a></li>
-                          <li><a href="#">Design System</a></li>
+                          <li><a href="service-details.html">WordPress</a></li>
+                          <li><a href="service-details.html">Webflow</a></li>
+                          <li><a href="service-details.html">Laravel Framework</a></li>
+                          <li><a href="service-details.html">React & Flutter</a></li>
+                          <li><a href="service-details.html">Design System</a></li>
                         </ul>
                       </div>
                       <div class="thumb">
@@ -542,11 +527,11 @@
                       <div class="content">
                         <h3 class="title">Digital Marketing</h3>
                         <ul class="service-list">
-                          <li><a href="#">Online Marketing</a></li>
-                          <li><a href="#">SEO-Marketing</a></li>
-                          <li><a href="#">Strategy</a></li>
-                          <li><a href="#">Market Research</a></li>
-                          <li><a href="#">Social Reform</a></li>
+                          <li><a href="service-details.html">Online Marketing</a></li>
+                          <li><a href="service-details.html">SEO-Marketing</a></li>
+                          <li><a href="service-details.html">Strategy</a></li>
+                          <li><a href="service-details.html">Market Research</a></li>
+                          <li><a href="service-details.html">Social Reform</a></li>
                         </ul>
                       </div>
                       <div class="thumb">
@@ -723,7 +708,7 @@
                   <div class="section-content">
                     <div class="section-title-wrapper">
                       <div class="title-wrapper">
-                        <h2 class="section-title word-anim"><a href="#">Let’s Work</a></h2>
+                        <h2 class="section-title char-anim"><a href="contact.html">Let’s Work</a></h2>
                       </div>
                     </div>
                   </div>
@@ -793,7 +778,7 @@
                   <div class="subscription-text">
                     <div class="text-wrapper">
                       <p class="text">By subscribing you agree with our
-                        <a href="#">Privacy Policy</a>
+                        <a href="contact.html">Privacy Policy</a>
                       </p>
                     </div>
                   </div>
@@ -801,31 +786,31 @@
                 <div class="footer-widget-box">
                   <h2 class="title">Company</h2>
                   <ul class="footer-nav-list">
-                    <li><a href="#">agency</a></li>
-                    <li><a href="#">Solutions</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="contact.html">agency</a></li>
+                    <li><a href="contact.html">Solutions</a></li>
+                    <li><a href="contact.html">Community</a></li>
+                    <li><a href="contact.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </div>
                 <div class="footer-widget-box">
                   <h2 class="title">Social</h2>
                   <ul class="footer-nav-list">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Dribbble</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Awwwards</a></li>
-                    <li><a href="#">YouTube</a></li>
+                    <li><a href="contact.html">Facebook</a></li>
+                    <li><a href="contact.html">Twitter</a></li>
+                    <li><a href="contact.html">Dribbble</a></li>
+                    <li><a href="contact.html">Instagram</a></li>
+                    <li><a href="contact.html">Awwwards</a></li>
+                    <li><a href="contact.html">YouTube</a></li>
                   </ul>
                 </div>
                 <div class="footer-widget-box">
                   <h2 class="title">Office</h2>
                   <ul class="footer-nav-list">
-                    <li><a href="#">New York</a></li>
-                    <li><a href="#">Toronto</a></li>
-                    <li><a href="#">Berlin</a></li>
-                    <li><a href="#">London</a></li>
+                    <li><a href="contact.html">New York</a></li>
+                    <li><a href="contact.html">Toronto</a></li>
+                    <li><a href="contact.html">Berlin</a></li>
+                    <li><a href="contact.html">London</a></li>
                   </ul>
                 </div>
               </div>
@@ -834,7 +819,7 @@
           <div class="copyright-area">
             <div class="copyright-area-inner">
               <div class="copyright-text">
-                <p class="text">© 2024 <a href="#">RavexTheme.</a> All right reserved</p>
+                <p class="text">© 2024 <a href="contact.html">RavexTheme.</a> All right reserved</p>
               </div>
             </div>
           </div>
@@ -864,6 +849,7 @@
   <script src="assets/vendor/backToTop.js"></script>
   <script src="assets/vendor/matter.js"></script>
   <script src="assets/vendor/throwable.js"></script>
+  <script src="assets/js/magiccursor.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

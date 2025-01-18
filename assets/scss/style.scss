@@ -1148,7 +1148,7 @@
 
         &:hover {
 
-            li {
+            li a {
                 opacity: 0.3;
             }
         }
@@ -1160,20 +1160,24 @@
             transition-property: opacity;
             transition-duration: 500ms;
 
-            &:hover {
-                opacity: 1;
+            a {
+
+                &:hover {
+                    opacity: 1;
+
+                    a strong {
+                        opacity: 1;
+                        top: -23px;
+                    }
+                }
 
                 a strong {
-                    opacity: 1;
-                    top: -23px;
+                    opacity: 0;
+                    transition-property: opacity, top;
+                    transition-duration: 250ms;
                 }
             }
 
-            a strong {
-                opacity: 0;
-                transition-property: opacity, top;
-                transition-duration: 250ms;
-            }
         }
     }
 
@@ -1389,11 +1393,12 @@
 
     }
 
+
     .footer-nav-list {
 
         &:hover {
 
-            li {
+            li a {
                 opacity: 0.3;
             }
         }
@@ -1405,26 +1410,24 @@
             transition-property: opacity;
             transition-duration: 500ms;
 
-            &:hover {
-                opacity: 1;
+            a {
+
+                &:hover {
+                    opacity: 1;
+
+                    a strong {
+                        opacity: 1;
+                        top: -23px;
+                    }
+                }
 
                 a strong {
-                    opacity: 1;
-                    top: -23px;
+                    opacity: 0;
+                    transition-property: opacity, top;
+                    transition-duration: 250ms;
                 }
             }
 
-            a strong {
-                opacity: 0;
-                transition-property: opacity, top;
-                transition-duration: 250ms;
-            }
-
-            // a {
-            //     &:hover {
-            //         color: var(--action);
-            //     }
-            // }
         }
     }
 
@@ -1645,7 +1648,7 @@
 
         &:hover {
 
-            li {
+            li a {
                 opacity: 0.3;
             }
         }
@@ -1657,26 +1660,24 @@
             transition-property: opacity;
             transition-duration: 500ms;
 
-            &:hover {
-                opacity: 1;
+            a {
+
+                &:hover {
+                    opacity: 1;
+
+                    a strong {
+                        opacity: 1;
+                        top: -23px;
+                    }
+                }
 
                 a strong {
-                    opacity: 1;
-                    top: -23px;
+                    opacity: 0;
+                    transition-property: opacity, top;
+                    transition-duration: 250ms;
                 }
             }
 
-            a strong {
-                opacity: 0;
-                transition-property: opacity, top;
-                transition-duration: 250ms;
-            }
-
-            // a {
-            //     &:hover {
-            //         color: var(--action);
-            //     }
-            // }
         }
     }
 
@@ -1974,24 +1975,39 @@
     }
 
     .footer-nav-list {
+
+        &:hover {
+
+            li a {
+                opacity: 0.3;
+            }
+        }
+
         li {
             font-size: 22px;
             line-height: 30px;
             color: var(--primary);
-
-            @media #{$xxl} {
-                font-size: 20px;
-            }
-
-            @media #{$lg} {
-                font-size: 18px;
-            }
+            transition-property: opacity;
+            transition-duration: 500ms;
 
             a {
+
                 &:hover {
-                    color: var(--action);
+                    opacity: 1;
+
+                    a strong {
+                        opacity: 1;
+                        top: -23px;
+                    }
+                }
+
+                a strong {
+                    opacity: 0;
+                    transition-property: opacity, top;
+                    transition-duration: 250ms;
                 }
             }
+
         }
     }
 

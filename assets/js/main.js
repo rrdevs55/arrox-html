@@ -711,52 +711,54 @@
   // work-area-2 box animation end
 
 
-  //image animation in hero start
+  // Select the container and image elements
   const categoriesWrapper = document.querySelector('.section-title');
+  const imageHover = document.querySelector('.image-hover');
 
-  // Optimized mousemove for smooth positioning
+  // Smooth mousemove for positioning
   categoriesWrapper.addEventListener('mousemove', (e) => {
-    const imageHover = document.querySelector('.image-hover');
     const { clientX: mouseX, clientY: mouseY } = e;
 
-    // Use requestAnimationFrame for smooth animations
-    requestAnimationFrame(() => {
-      gsap.to(imageHover, {
-        x: mouseX,
-        y: mouseY,
-        xPercent: -50,
-        yPercent: -50, // Center image around the cursor
-        ease: 'power3.out',
-        duration: 0.2, // Smooth transition
-      });
+    // Use GSAP to position the image relative to the cursor
+    gsap.to(imageHover, {
+      x: mouseX,
+      y: mouseY,
+      xPercent: -50, // Center the image horizontally
+      yPercent: -50, // Center the image vertically
+      ease: 'power3.out',
+      duration: 0.2,
     });
   });
 
+  // GSAP hover animations for .text-underline elements
   gsap.utils.toArray('.text-underline').forEach((category) => {
-    const { label } = category.dataset;
+    const label = category.dataset.label;
 
-    // On hover, reveal the corresponding image
     category.addEventListener('mouseenter', () => {
-      gsap.to(`.image-hover[data-image="${label}"]`, {
+      const targetImage = document.querySelector(`.image-hover[data-image="${label}"]`);
+
+      gsap.to(targetImage, {
         opacity: 1,
         scale: 1,
         duration: 0.3,
         ease: 'power3.out',
       });
-      gsap.set(`.image-hover[data-image="${label}"]`, { zIndex: 1 });
+      gsap.set(targetImage, { zIndex: 1 });
     });
 
-    // On leave, hide the corresponding image
     category.addEventListener('mouseleave', () => {
-      gsap.to(`.image-hover[data-image="${label}"]`, {
+      const targetImage = document.querySelector(`.image-hover[data-image="${label}"]`);
+
+      gsap.to(targetImage, {
         opacity: 0,
         scale: 0.8,
         duration: 0.3,
         ease: 'power3.out',
       });
-      gsap.set(`.image-hover[data-image="${label}"]`, { zIndex: -1 });
+      gsap.set(targetImage, { zIndex: -1 });
     });
   });
+
 
   //image animation in hero end
 
@@ -1230,4 +1232,5 @@
       toggleActions: "play none none reverse",
     }
   });
+
 })(jQuery);

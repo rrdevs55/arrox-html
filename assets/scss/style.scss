@@ -832,6 +832,101 @@
 
 }
 
+/* header area 2 style  */
+.header-area-4 {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+
+    &__inner {
+        display: flex;
+        border-top: 1px solid var(--black);
+        padding-top: 20px;
+        gap: 10px;
+        position: relative;
+        height: 80px;
+
+        @media #{$lg} {
+            height: 70px;
+            gap: 10px;
+        }
+
+        &>*:nth-child(1) {
+            margin-inline-end: auto;
+        }
+    }
+
+    .container {
+        &.large {
+            @media (min-width: 1650px) {
+                max-width: 1650px;
+            }
+        }
+
+    }
+
+
+
+    .header__logo {
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .header {
+
+        &__middel {
+            margin-right: 320px;
+
+            @media #{$lg} {
+                margin-left: 100px;
+            }
+
+            @media #{$md} {
+                display: none;
+            }
+
+            p {
+                text-transform: uppercase;
+                color: var(--black);
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 16px;
+            }
+        }
+    }
+
+    .main-menu li a {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 21px 17px;
+
+        &:hover {
+            color: var(--action);
+        }
+    }
+
+    .search-icon {
+        color: var(--primary);
+    }
+
+    .header__meta {
+        @media #{$xs} {
+            display: none;
+        }
+    }
+
+    .header__navicon {
+        button {
+            text-transform: uppercase;
+        }
+    }
+
+
+}
+
 /* footer area style  */
 .footer-area {
     .footer-top-inner {
@@ -1013,8 +1108,6 @@
 
                 &:hover {
                     &:hover {
-                        color: var(--action);
-
                         &::before {
                             width: 0;
                         }
@@ -1260,8 +1353,6 @@
 
                 &:hover {
                     &:hover {
-                        color: var(--action);
-
                         &::before {
                             width: 0;
                         }
@@ -1514,8 +1605,6 @@
 
                 &:hover {
                     &:hover {
-                        color: var(--action);
-
                         &::before {
                             width: 0;
                         }
@@ -1848,8 +1937,6 @@
 
                 &:hover {
                     &:hover {
-                        color: var(--action);
-
                         &::before {
                             width: 0;
                         }

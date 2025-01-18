@@ -178,6 +178,18 @@
         @media #{$xs} {
             grid-template-columns: repeat(1, 1fr);
         }
+
+        >* {
+            .image {
+                transform-origin: bottom right;
+            }
+
+            &:nth-child(2n) {
+                .image {
+                    transform-origin: bottom left;
+                }
+            }
+        }
     }
 
     .work-box {
@@ -190,6 +202,18 @@
                 .t-btn {
                     opacity: 1;
                 }
+            }
+
+            .image {
+                overflow: hidden;
+                position: relative;
+                border-radius: 20px;
+                transform: scale(0.9);
+
+                img {
+                    transform-origin: center;
+                }
+
             }
 
             img {

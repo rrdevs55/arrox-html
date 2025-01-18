@@ -86,7 +86,7 @@
         }
 
         @media #{$xl} {
-            max-width: 640px;
+            max-width: 500px;
         }
     }
 
@@ -280,6 +280,10 @@
 .client-area-service-page {
     .section-title {
         max-width: 1430px;
+
+        @media #{$xxl} {
+            max-width: 1130px;
+        }
 
         span {
             color: var(--primary);

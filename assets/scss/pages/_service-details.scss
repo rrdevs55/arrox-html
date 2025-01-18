@@ -448,6 +448,7 @@
 
     .section-thumb {
         margin-top: 11px;
+        max-width: 660px;
 
         img {
             width: 100%;
@@ -592,11 +593,11 @@
         max-width: 1005px;
 
         @media #{$xxl} {
-            max-width: 805px;
+            max-width: 905px;
         }
 
         @media #{$xl} {
-            max-width: 605px;
+            max-width: 705px;
         }
     }
 
@@ -613,7 +614,7 @@
 
         @media #{$xl} {
             margin-top: 43px;
-            max-width: 900px;
+            max-width: 850px;
         }
 
         @media #{$lg} {

@@ -1093,10 +1093,14 @@
             .title {
                 .arrow {
                     background-color: var(--black);
-                    transform: rotate(60deg) translate(-5px, -5px);
 
-                    svg [fill="#111111"] {
-                        fill: var(--white);
+                    svg {
+                        transform: rotate(60deg);
+
+                        * {
+                            fill: var(--white);
+
+                        }
                     }
                 }
             }
@@ -1164,6 +1168,11 @@
                 border: 2px solid #111111;
                 transform: translate(0px, -5px);
                 margin-left: 5px;
+
+                svg {
+                    transition: all 0.3s;
+
+                }
             }
         }
 

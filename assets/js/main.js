@@ -654,25 +654,54 @@
 
   // service-area-2 text and bg animation start
 
+  // t_line.lines.forEach((target) => {
+  //   gsap.to(target, {
+  //     backgroundPositionX: 0,
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: target,
+  //       scrub: 1,
+  //       start: 'top 85%',
+  //       end: "bottom center",
+  //     }
+  //   });
+  // });
   if (document.querySelectorAll(".actually-area").length > 0) {
-    gsap.timeline({
+
+    const t_line = new SplitText(".t_line", { type: "lines" });
+    var t_i_line = t_line.lines.forEach((target) => { });
+
+    var anim = gsap.timeline({
       scrollTrigger: {
         trigger: ".actually-area",
         pin: true,
         pinSpacing: true,
         scrub: 1,
-        start: "top 10%",
+        start: "top 0%",
         end: "bottom 0",
+        markers: true
       }
     })
-      .fromTo(".actually-area .bg-area",
-        { scale: 0 },
-        {
-          scale: 10,
-          duration: 2,
-          ease: "power4.inOut"
-        }
-      );
+    console.log("hi")
+    anim.to(t_i_line, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: t_i_line,
+        scrub: 1,
+        start: 'top 85%',
+        end: "bottom center",
+      }
+    })
+    anim.fromTo(".actually-area .bg-area",
+      { scale: 0 },
+      {
+        scale: 10,
+        duration: 2,
+        ease: "power4.inOut",
+        delay: 0.1
+      }
+    );
   }
   // service-area-2 text and bg animation end
 
@@ -1217,20 +1246,25 @@
 
 
   // Animate on scroll
-  const boxes = document.querySelectorAll(".approach-area .approach-box");
+  if (document.querySelectorAll(".approach-area").length > 0) {
 
-  gsap.from(boxes, {
-    x: "100%",
-    duration: 1,
-    stagger: 0.3,
-    ease: "power2.out",
-    scrollTrigger: {
-      scrub: 2,
-      trigger: ".approach-wrapper-box",
-      start: "top 100%",
-      end: "bottom 40%",
-      toggleActions: "play none none reverse",
-    }
-  });
+    const boxes = document.querySelectorAll(".approach-area .approach-box");
+
+    gsap.from(boxes, {
+      x: "100%",
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        scrub: 2,
+        trigger: ".approach-wrapper-box",
+        start: "top 100%",
+        end: "bottom 40%",
+        toggleActions: "play none none reverse",
+      }
+    });
+  }
+
+
 
 })(jQuery);

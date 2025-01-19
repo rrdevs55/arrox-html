@@ -656,38 +656,52 @@
 
 }
 
-.actually {
+.actually-area {
+    padding-top: 227px;
+    padding-bottom: 450px;
+    position: relative;
 
-    &-area {
-        padding-top: 227px;
-        padding-bottom: 450px;
+    .section-title {
+        position: relative;
+        max-width: 716px;
+        text-align: center;
+        margin-inline: auto;
+        mix-blend-mode: exclusion;
+    }
 
-        .section-title {
-            position: relative;
-            max-width: 716px;
-            text-align: center;
-            margin-inline: auto;
-        }
+    .t_line>div {
+        background-image: linear-gradient(to right,
+                #111111 50%,
+                #CDC9C6 51%);
+        background-size: 200% 100%;
+        background-position-x: 100%;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
 
-        .bg-area {
-            position: absolute;
-            top: 40%;
-            left: 51%;
-            transform: translate(-50%, -50%) scale(0);
-            /* Start with scale 0 */
-            background-color: #111111;
-            width: 250px;
-            /* Adjust width as needed */
-            height: 250px;
-            /* Adjust height as needed */
-            border-radius: 500px;
-            /* Circular shape */
-        }
+
     }
 
 
-
+    .bg-area {
+        position: absolute;
+        top: 40%;
+        left: 51%;
+        transform: translate(-50%, -50%) scale(0);
+        /* Start with scale 0 */
+        background-color: #111111;
+        background-color: red;
+        width: 250px;
+        /* Adjust width as needed */
+        height: 250px;
+        /* Adjust height as needed */
+        border-radius: 50%;
+        /* Circular shape */
+    }
 }
+
+
+
 
 /* service area style  */
 .service-area-2 {

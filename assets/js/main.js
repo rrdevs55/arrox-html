@@ -1233,4 +1233,106 @@
     }
   });
 
+
+  // button hover animation
+  $('.tp-hover-btn').on('mouseenter', function (e) {
+    var x = e.pageX - $(this).offset().left;
+    var y = e.pageY - $(this).offset().top;
+
+    $(this).find('.tp-btn-circle-dot').css({
+      top: y,
+      left: x
+    });
+  });
+
+  $('.tp-hover-btn').on('mouseout', function (e) {
+    var x = e.pageX - $(this).offset().left;
+    var y = e.pageY - $(this).offset().top;
+
+    $(this).find('.tp-btn-circle-dot').css({
+      top: y,
+      left: x
+    });
+  });
+
+
+  var hoverBtns = gsap.utils.toArray(".tp-hover-btn-wrapper");
+
+  const hoverBtnItem = gsap.utils.toArray(".tp-hover-btn-item");
+  hoverBtns.forEach((btn, i) => {
+    $(btn).mousemove(function (e) {
+      callParallax(e);
+    });
+
+    function callParallax(e) {
+      parallaxIt(e, hoverBtnItem[i], 80);
+    }
+
+    function parallaxIt(e, target, movement) {
+      var $this = $(btn);
+      var relX = e.pageX - $this.offset().left;
+      var relY = e.pageY - $this.offset().top;
+
+      gsap.to(target, 0.5, {
+        x: ((relX - $this.width() / 2) / $this.width()) * movement,
+        y: ((relY - $this.height() / 2) / $this.height()) * movement,
+        ease: Power2.easeOut,
+      });
+    }
+    $(btn).mouseleave(function (e) {
+      gsap.to(hoverBtnItem[i], 0.5, {
+        x: 0,
+        y: 0,
+        ease: Power2.easeOut,
+      });
+    });
+  });
+
+  //tp-btn-trigger-2
+  if ($('.tp-btn-trigger-2').length > 0) {
+
+    gsap.set(".tp-btn-bounce-2", {
+      y: -100,
+      opacity: 0
+    });
+    var mybtn = gsap.utils.toArray(".tp-btn-bounce-2");
+    mybtn.forEach((btn) => {
+      var $this = $(btn);
+      gsap.to(btn, {
+        scrollTrigger: {
+          trigger: $this.closest('.tp-btn-trigger-2'),
+          start: "bottom bottom",
+          markers: false
+        },
+        duration: 1,
+        ease: "bounce.out",
+        y: 0,
+        opacity: 1,
+      })
+    });
+  }
+
+  // button hover animation
+  $('.tp-hover-btn').on('mouseenter', function (e) {
+    var x = e.pageX - $(this).offset().left;
+    var y = e.pageY - $(this).offset().top;
+
+    $(this).find('.tp-btn-circle-dot').css({
+      top: y,
+      left: x
+    });
+  });
+
+  $('.tp-hover-btn').on('mouseout', function (e) {
+    var x = e.pageX - $(this).offset().left;
+    var y = e.pageY - $(this).offset().top;
+
+    $(this).find('.tp-btn-circle-dot').css({
+      top: y,
+      left: x
+    });
+  });
+
+
+
 })(jQuery);

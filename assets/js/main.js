@@ -599,7 +599,7 @@
   // video end
 
   // text-animation start
-  mm.add("(min-width: 992px)", () => {
+  mm.add("(min-width: 1201px)", () => {
 
     if (document.querySelectorAll(".about-area-2").length > 0) {
       var ab2 = gsap.timeline({
@@ -617,15 +617,23 @@
 
       ab2.to(".year-since", {
         right: "0",
-        delay: 5,
-        duration: 10,
+        delay: 0.5,
+        duration: 3,
         ease: "power1.inOut",
+        position: "absolute",
+      });
+      ab2.to(".is-fading", {
+        opacity: 0,
+        delay: 0.1,
+        visibility: "hidden",
+        position: "absolute",
+
       });
       ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
         x: "100", // Move 100px to the right
         opacity: 0,
-        duration: 5,
-      }, "-=5");
+        duration: 1,
+      }, "-=2");
       ab2.to(".year-since .last-text", {
         fontSize: 30,
         lineHeight: "27px",
@@ -638,11 +646,11 @@
           trigger: ".about-area-2 .year-wrapper",
           start: "bottom top",
           endTrigger: ".works-wrapper-head",
-          end: "top-=100 top",
+          end: "top-=100 0%",
           pin: ".year-since .last-text",
           pinSpacing: true,
-          scrub: 3,
-          // markers: true,
+          scrub: 1,
+          markers: true,
         },
       });
 
@@ -653,55 +661,43 @@
 
 
   // service-area-2 text and bg animation start
+  const t_line = new SplitText(".t_line", { type: "lines" });
 
-  // t_line.lines.forEach((target) => {
-  //   gsap.to(target, {
-  //     backgroundPositionX: 0,
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       trigger: target,
-  //       scrub: 1,
-  //       start: 'top 85%',
-  //       end: "bottom center",
-  //     }
-  //   });
-  // });
+  t_line.lines.forEach((target) => {
+    gsap.to(target, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: target,
+        scrub: 1,
+        start: 'top 20%',
+        end: "bottom 20%",
+        markers: true
+      }
+    });
+  });
+
   if (document.querySelectorAll(".actually-area").length > 0) {
-
-    const t_line = new SplitText(".t_line", { type: "lines" });
-    var t_i_line = t_line.lines.forEach((target) => { });
-
-    var anim = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
         trigger: ".actually-area",
         pin: true,
         pinSpacing: true,
         scrub: 1,
         start: "top 0%",
-        end: "bottom 0",
+        end: "bottom +=500",
         markers: true
       }
     })
-    console.log("hi")
-    anim.to(t_i_line, {
-      backgroundPositionX: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: t_i_line,
-        scrub: 1,
-        start: 'top 85%',
-        end: "bottom center",
-      }
-    })
-    anim.fromTo(".actually-area .bg-area",
-      { scale: 0 },
-      {
-        scale: 10,
-        duration: 2,
-        ease: "power4.inOut",
-        delay: 0.1
-      }
-    );
+      .fromTo(".actually-area .bg-area",
+        { scale: 0 },
+        {
+          scale: 10,
+          duration: 2,
+          ease: "power4.inOut",
+          delay: 0.8
+        }
+      );
   }
   // service-area-2 text and bg animation end
 
@@ -1246,25 +1242,20 @@
 
 
   // Animate on scroll
-  if (document.querySelectorAll(".approach-area").length > 0) {
+  const boxes = document.querySelectorAll(".approach-area .approach-box");
 
-    const boxes = document.querySelectorAll(".approach-area .approach-box");
-
-    gsap.from(boxes, {
-      x: "100%",
-      duration: 1,
-      stagger: 0.3,
-      ease: "power2.out",
-      scrollTrigger: {
-        scrub: 2,
-        trigger: ".approach-wrapper-box",
-        start: "top 100%",
-        end: "bottom 40%",
-        toggleActions: "play none none reverse",
-      }
-    });
-  }
-
-
+  gsap.from(boxes, {
+    x: "100%",
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out",
+    scrollTrigger: {
+      scrub: 2,
+      trigger: ".approach-wrapper-box",
+      start: "top 100%",
+      end: "bottom 40%",
+      toggleActions: "play none none reverse",
+    }
+  });
 
 })(jQuery);

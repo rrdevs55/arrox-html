@@ -1242,121 +1242,80 @@
 
 
   // Animate on scroll
-  const boxes = document.querySelectorAll(".approach-area .approach-box");
+  if (document.querySelectorAll(".approach-area").length > 0) {
 
-  gsap.from(boxes, {
-    x: "100%",
-    duration: 1,
-    stagger: 0.3,
-    ease: "power2.out",
-    scrollTrigger: {
-      scrub: 2,
-      trigger: ".approach-wrapper-box",
-      start: "top 100%",
-      end: "bottom 40%",
-      toggleActions: "play none none reverse",
-    }
-  });
+    const boxes = document.querySelectorAll(".approach-area .approach-box");
 
-
+    gsap.from(boxes, {
+      x: "100%",
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        scrub: 2,
+        trigger: ".approach-wrapper-box",
+        start: "top 100%",
+        end: "bottom 40%",
+        toggleActions: "play none none reverse",
+      }
+    });
+  }
   // button hover animation
-  $('.tp-hover-btn').on('mouseenter', function (e) {
-    var x = e.pageX - $(this).offset().left;
-    var y = e.pageY - $(this).offset().top;
 
-    $(this).find('.tp-btn-circle-dot').css({
-      top: y,
-      left: x
-    });
-  });
+  if (document.querySelectorAll(".rr-hover-btn-wrapper").length > 0) {
+    $('.rr-btn-circle').on('mouseenter', function (e) {
+      var x = e.pageX - $(this).offset().left;
+      var y = e.pageY - $(this).offset().top;
 
-  $('.tp-hover-btn').on('mouseout', function (e) {
-    var x = e.pageX - $(this).offset().left;
-    var y = e.pageY - $(this).offset().top;
-
-    $(this).find('.tp-btn-circle-dot').css({
-      top: y,
-      left: x
-    });
-  });
-
-
-  var hoverBtns = gsap.utils.toArray(".tp-hover-btn-wrapper");
-
-  const hoverBtnItem = gsap.utils.toArray(".tp-hover-btn-item");
-  hoverBtns.forEach((btn, i) => {
-    $(btn).mousemove(function (e) {
-      callParallax(e);
-    });
-
-    function callParallax(e) {
-      parallaxIt(e, hoverBtnItem[i], 80);
-    }
-
-    function parallaxIt(e, target, movement) {
-      var $this = $(btn);
-      var relX = e.pageX - $this.offset().left;
-      var relY = e.pageY - $this.offset().top;
-
-      gsap.to(target, 0.5, {
-        x: ((relX - $this.width() / 2) / $this.width()) * movement,
-        y: ((relY - $this.height() / 2) / $this.height()) * movement,
-        ease: Power2.easeOut,
-      });
-    }
-    $(btn).mouseleave(function (e) {
-      gsap.to(hoverBtnItem[i], 0.5, {
-        x: 0,
-        y: 0,
-        ease: Power2.easeOut,
+      $(this).find('.rr-btn-circle-dot').css({
+        top: y,
+        left: x
       });
     });
-  });
 
-  //tp-btn-trigger-2
-  if ($('.tp-btn-trigger-2').length > 0) {
+    $('.rr-btn-circle').on('mouseout', function (e) {
+      var x = e.pageX - $(this).offset().left;
+      var y = e.pageY - $(this).offset().top;
 
-    gsap.set(".tp-btn-bounce-2", {
-      y: -100,
-      opacity: 0
+      $(this).find('.rr-btn-circle-dot').css({
+        top: y,
+        left: x
+      });
     });
-    var mybtn = gsap.utils.toArray(".tp-btn-bounce-2");
-    mybtn.forEach((btn) => {
-      var $this = $(btn);
-      gsap.to(btn, {
-        scrollTrigger: {
-          trigger: $this.closest('.tp-btn-trigger-2'),
-          start: "bottom bottom",
-          markers: false
-        },
-        duration: 1,
-        ease: "bounce.out",
-        y: 0,
-        opacity: 1,
-      })
+
+    var hoverBtns = gsap.utils.toArray(".rr-hover-btn-wrapper");
+
+    const hoverBtnItem = gsap.utils.toArray(".rr-btn-circle");
+    hoverBtns.forEach((btn, i) => {
+      $(btn).mousemove(function (e) {
+        callParallax(e);
+      });
+
+      function callParallax(e) {
+        parallaxIt(e, hoverBtnItem[i], 80);
+      }
+
+      function parallaxIt(e, target, movement) {
+        var $this = $(btn);
+        var relX = e.pageX - $this.offset().left;
+        var relY = e.pageY - $this.offset().top;
+
+        gsap.to(target, 0.5, {
+          x: ((relX - $this.width() / 2) / $this.width()) * movement,
+          y: ((relY - $this.height() / 2) / $this.height()) * movement,
+          ease: Power2.easeOut,
+        });
+      }
+      $(btn).mouseleave(function (e) {
+        gsap.to(hoverBtnItem[i], 0.5, {
+          x: 0,
+          y: 0,
+          ease: Power2.easeOut,
+        });
+      });
     });
   }
 
-  // button hover animation
-  $('.tp-hover-btn').on('mouseenter', function (e) {
-    var x = e.pageX - $(this).offset().left;
-    var y = e.pageY - $(this).offset().top;
-
-    $(this).find('.tp-btn-circle-dot').css({
-      top: y,
-      left: x
-    });
-  });
-
-  $('.tp-hover-btn').on('mouseout', function (e) {
-    var x = e.pageX - $(this).offset().left;
-    var y = e.pageY - $(this).offset().top;
-
-    $(this).find('.tp-btn-circle-dot').css({
-      top: y,
-      left: x
-    });
-  });
 
 
 

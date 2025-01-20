@@ -29,6 +29,7 @@
 
             @media #{$md} {
                 font-size: 40px;
+                line-height: 1.1;
             }
 
             @media #{$sm} {
@@ -38,6 +39,15 @@
             .mb-14 {
                 transform: translate(0px, -14px);
                 display: inline-block;
+
+                @media #{$lg} {
+                    display: block;
+                    transform: none;
+                }
+
+                @media #{$sm} {
+                    margin-top: 10px;
+                }
             }
 
         }
@@ -483,7 +493,7 @@
         max-width: 1060px;
 
         @media #{$xxl} {
-            max-width: 660px;
+            max-width: 860px;
         }
     }
 

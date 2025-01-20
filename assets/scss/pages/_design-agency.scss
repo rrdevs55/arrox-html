@@ -604,6 +604,24 @@
     }
 }
 
+.img-container {
+    position: relative;
+    width: 700px;
+    height: 400px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+        width: 700px;
+        height: 400px;
+    }
+}
+
 /* capabilities area style  */
 .capabilities-area {
     &-inner {

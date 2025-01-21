@@ -669,33 +669,28 @@
         scrollTrigger: {
           trigger: ".about-area-2 .section-content",
           pin: ".about-area-2",
-          pinSpacing: true,
+          pinSpacing: false,
           start: "top top",
-          // endTrigger: ".about-area-2 .year-wrapper",
-          end: "+=4000",
-          scrub: 3,
+          endTrigger: ".works-wrapper-head",
+          end: "-=100",
+          // end: "+=4000",
+          scrub: 2,
           markers: true
         }
       });
 
       ab2.to(".year-since", {
         right: "0",
-        // delay: 0.5,
-        // duration: 3,
         ease: "power1.inOut",
         position: "absolute",
       });
       ab2.to(".is-fading", {
         opacity: 0,
-        // delay: 0.1,
-        visibility: "hidden",
-        position: "absolute",
 
       });
       ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
-        x: "100", // Move 100px to the right
+        x: "100",
         opacity: 0,
-        // duration: 1,
       });
       ab2.to(".year-since .last-text", {
         fontSize: 30,
@@ -703,18 +698,8 @@
         letterSpacing: "-0.1em",
         position: "absolute",
         top: 0,
-        // duration: 9,
+        right: 0,
         ease: "none",
-        // scrollTrigger: {
-        //   trigger: ".about-area-2 .year-wrapper",
-        //   start: "bottom top",
-        //   endTrigger: ".works-wrapper-head",
-        //   end: "top-=100 0%",
-        //   pin: ".year-since .last-text",
-        //   pinSpacing: true,
-        //   scrub: 1,
-        //   markers: true,
-        // },
       });
 
     }

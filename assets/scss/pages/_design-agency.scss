@@ -1214,13 +1214,21 @@
 .service-area-4 {
 
     .services-wrapper {
-        display: grid;
         gap: 100px;
-        grid-template-columns: repeat(2, 1fr);
+        width: fit-content;
+        display: flex;
+        flex-wrap: nowrap;
+        pointer-events: none;
+        padding-right: 0.3em;
+        padding-left: 0.3em;
     }
+
 
     .service-box {
         border-top: 1px solid var(--primary);
+        width: 760px;
+        // max-width: 760px;
+        // min-width: 760px;
 
         .number {
             font-family: var(--font_thunder);
@@ -1303,6 +1311,16 @@
                     margin-right: 4px;
                 }
             }
+        }
+    }
+
+    .service-thumb {
+        width: 1920px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }

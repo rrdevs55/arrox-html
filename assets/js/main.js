@@ -673,7 +673,7 @@
         trigger: target,
         scrub: 1,
         start: 'top 20%',
-        end: "bottom 20%",
+        end: "center 20%",
         // markers: true
       }
     });

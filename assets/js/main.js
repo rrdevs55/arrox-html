@@ -1242,22 +1242,25 @@
 
 
 
-  // Animate on scroll
-  const boxes = document.querySelectorAll(".approach-area .approach-box");
+  if (document.querySelectorAll(".approach-area").length > 0) {
 
-  gsap.from(boxes, {
-    x: "100%",
-    duration: 1,
-    stagger: 0.3,
-    ease: "power2.out",
-    scrollTrigger: {
-      scrub: 2,
-      trigger: ".approach-wrapper-box",
-      start: "top 100%",
-      end: "bottom 40%",
-      toggleActions: "play none none reverse",
-    }
-  });
+    // Animate on scroll
+    const boxes = document.querySelectorAll(".approach-area .approach-box");
+
+    gsap.from(boxes, {
+      x: "100%",
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        scrub: 2,
+        trigger: ".approach-wrapper-box",
+        start: "top 100%",
+        end: "bottom 40%",
+        toggleActions: "play none none reverse",
+      }
+    });
+  }
 
 
   // button hover animation
@@ -1315,57 +1318,52 @@
   });
 
 
+  if (document.querySelectorAll(".service-area-4").length > 0) {
+    const races = document.querySelector(".service-area-4");
+    const racesScrollWidth = races.scrollWidth;
 
-  const races = document.querySelector(".service-area-4");
-  console.log(races.offsetWidth);
-
-  function getScrollAmount() {
-    let racesWidth = races.scrollWidth;
-    return -(racesWidth - window.innerWidth);
-  }
-
-  const tween = gsap.to(races, {
-    x: getScrollAmount,
-    duration: 3,
-    ease: "none"
-  });
-
-  ScrollTrigger.create({
-    trigger: ".service-area-4",
-    start: "top 0%",
-    end: () => `+=${getScrollAmount() * -1}`,
-    pin: true,
-    animation: tween,
-    scrub: 1,
-    invalidateOnRefresh: true,
-    markers: true
-  });
-
-  ScrollTrigger.observe({
-    target: ".service-area-4", // can be any element (selector text is fine)
-    type: "pointer,touch", // comma-delimited list of what to listen for ("wheel,touch,scroll,pointer")
-    // onUp: () => previous(),
-    // onDown: () => next(),
-
-    onDrag: (self) => {
-      console.warn(self.deltaX);
-      gsap.to(window, { scrollTo: { y: `+=${self.deltaX * 10}` } });
+    function getScrollAmount() {
+      return -(racesScrollWidth - window.innerWidth);
     }
-  });
 
-  // gsap.utils.toArray('.services-wrapper-box').forEach((section, index) => {
-  //   const w = section.querySelector('.services-wrapper');
-  //   const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
-  //   gsap.fromTo(w, { x }, {
-  //     x: xEnd,
-  //     scrollTrigger: {
-  //       trigger: section,
-  //       pin: true,
-  //       start: "top 10%",
-  //       scrub: 0.5,
-  //     }
-  //   });
-  // });
+    const tween = gsap.to(races, {
+      x: getScrollAmount(),
+      duration: 3,
+      ease: "none"
+    });
 
+    ScrollTrigger.create({
+      trigger: ".service-area-4",
+      start: "top 0",
+      end: () => `+=${getScrollAmount() * -1}`,
+      pin: true,
+      animation: tween,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      markers: true
+    });
+
+    // Fade out spans in service-thumb-line-wrapper immediately
+    ScrollTrigger.create({
+      trigger: ".service-thumb-line-wrapper",
+      start: "top 80%",
+      end: "bottom 40%",
+      scrub: 2,
+      markers: true,
+      animation: gsap.to(".service-thumb-line-wrapper span", {
+        scaleX: "0",
+        duration: 0.5,
+        // stagger: 0.5,
+      })
+    });
+
+    ScrollTrigger.observe({
+      target: ".service-area-4",
+      type: "pointer,touch",
+      onDrag: (self) => {
+        gsap.to(window, { scrollTo: { y: `+=${self.deltaX * 10}` }, duration: 0.2 });
+      }
+    });
+  }
 
 })(jQuery);

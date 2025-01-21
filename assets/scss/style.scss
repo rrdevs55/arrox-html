@@ -205,17 +205,10 @@
         }
     }
 
-    .t-btn-primary {
+    .rr-btn {
         padding: 16px 28px;
         font-size: 16px;
         letter-spacing: -0.04em;
-
-
-        @media #{$lg} {
-            padding: 12px 28px;
-
-        }
-
     }
 
     .side-toggle {
@@ -579,11 +572,11 @@
             display: flex;
             gap: 10px;
             background-color: rgba(17, 17, 17, 0.05);
-            padding: 32px 30px;
+            padding: 28px 30px;
             border-radius: 50px;
 
             @media #{$xxl} {
-                padding: 22px 30px;
+                padding: 18px 30px;
             }
 
             input {
@@ -591,10 +584,10 @@
                 background-color: transparent;
                 border: 0;
                 outline: 0;
+                font-size: 22px;
+                line-height: 1;
 
                 &::placeholder {
-                    font-size: 22px;
-                    line-height: 1;
                     color: rgba(17, 17, 17, 0.3);
                 }
             }

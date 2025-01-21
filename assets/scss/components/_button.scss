@@ -76,18 +76,23 @@
   position: relative;
   overflow: hidden;
   z-index: 5;
-  padding: 16.5px 33.4px;
-  background-color: black;
+  padding: 25px 43px;
+  border: 1px solid transparent;
+  background-color: var(--black);
   color: white;
-  // border: 1px solid transparent;
   border-radius: 100px;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 23px;
+  font-size: 18px;
+  line-height: 1;
   display: inline-flex;
   align-items: center;
   text-transform: capitalize;
+
+  @media #{$lg} {
+    padding: 18px 29px;
+
+  }
 
   &:after {
     display: block;
@@ -155,20 +160,20 @@
 
   &.btn-border {
     background-color: transparent;
-    border: 1px solid rgb(0 0 0 / 20%);
-    color: black;
+    border-color: rgb(0 0 0 / 20%);
+    color: var(--black);
 
     &::before {
-      background-color: black;
+      background-color: var(--black);
     }
 
     .btn-wrap {
       .text-one {
-        color: black;
+        color: var(--black);
       }
 
       .text-two {
-        color: black;
+        color: var(--black);
       }
     }
 
@@ -176,7 +181,7 @@
     &:focus {
 
       &::before {
-        background-color: black;
+        background-color: var(--black);
         height: 100%;
       }
 

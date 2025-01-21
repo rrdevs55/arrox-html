@@ -62,16 +62,33 @@
     position: relative;
     z-index: 2;
 
-    .hero-content {
-        padding-top: 161px;
-        padding-bottom: 320px;
 
-        @media #{$lg} {
-            padding-bottom: 150px;
+    .hero-content {
+        display: grid;
+        gap: 40px 100px;
+        grid-template-columns: 130px 1fr 560px;
+        margin-top: 61px;
+        margin-bottom: 220px;
+
+        @media #{$xxl} {
+            grid-template-columns: 130px 1fr 490px;
+            margin-bottom: 140px;
         }
 
-        @media #{$md} {
-            padding-bottom: 100px;
+        @media #{$xl} {
+            grid-template-columns: 130px 1fr 460px;
+            gap: 40px 80px;
+
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 130px 1fr;
+            margin-bottom: 0px;
+
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr;
         }
     }
 
@@ -162,29 +179,7 @@
         }
     }
 
-    .hero-content {
-        display: grid;
-        gap: 40px 100px;
-        grid-template-columns: 130px 1fr 560px;
 
-        @media #{$xxl} {
-            grid-template-columns: 130px 1fr 510px;
-        }
-
-        @media #{$xl} {
-            grid-template-columns: 130px 1fr 460px;
-            gap: 40px 80px;
-
-        }
-
-        @media #{$lg} {
-            grid-template-columns: 130px 1fr;
-        }
-
-        @media #{$sm} {
-            grid-template-columns: 1fr;
-        }
-    }
 
     .award-wrapper {
         position: relative;
@@ -236,6 +231,10 @@
             height: 190px;
             background-color: #F9E6DC;
 
+            @media #{$xxl} {
+                height: 150px;
+            }
+
             @media #{$sm} {
                 height: 130px;
             }
@@ -254,8 +253,8 @@
         grid-template-columns: repeat(2, 230px);
         justify-content: space-between;
 
-        @media #{$xl} {
-            grid-template-columns: repeat(2, 200px);
+        @media #{$xxl} {
+            grid-template-columns: repeat(2, 1fr);
 
         }
 
@@ -313,17 +312,9 @@ video.video-area {
 
     &-inner {
         height: 100vh;
-        padding-top: 100px;
-        padding-bottom: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
-
-        @media #{$sm} {
-            padding-top: 60px;
-            padding-bottom: 60px;
-
-        }
     }
 
     .section-title {
@@ -457,7 +448,7 @@ video.video-area {
 
     .section-header {
         display: grid;
-        gap: 10px 20px;
+        gap: 15px 20px;
         grid-template-columns: 1fr 2fr 1fr;
 
         @media #{$sm} {

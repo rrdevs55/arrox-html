@@ -402,12 +402,14 @@
   if (document.querySelectorAll(".circular-shape-wrapper").length > 0) {
     var cs = gsap.timeline({
       ease: "none",
+      backgroundColor: "#FCF7F3",
       scrollTrigger: {
         trigger: ".circular-shape-wrapper",
         start: "bottom bottom",
         end: "bottom top",
         pin: true,
         scrub: 1,
+        // markers: true
       }
     })
     cs.to(".shape-thumb img", { scale: 100, rotation: 90, autoAlpha: 1, delay: 0.1 })
@@ -611,7 +613,7 @@
           endTrigger: ".about-area-2 .year-wrapper",
           end: "bottom top",
           scrub: 3,
-          markers: true
+          // markers: true
         }
       });
 
@@ -650,7 +652,7 @@
           pin: ".year-since .last-text",
           pinSpacing: true,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -672,7 +674,7 @@
         scrub: 1,
         start: 'top 20%',
         end: "bottom 20%",
-        markers: true
+        // markers: true
       }
     });
   });
@@ -685,8 +687,8 @@
         pinSpacing: true,
         scrub: 1,
         start: "top 0%",
-        end: "bottom +=500",
-        markers: true
+        end: "bottom top",
+        // markers: true
       }
     })
       .fromTo(".actually-area .bg-area",
@@ -1241,78 +1243,129 @@
 
 
   // Animate on scroll
-  if (document.querySelectorAll(".approach-area").length > 0) {
+  const boxes = document.querySelectorAll(".approach-area .approach-box");
 
-    const boxes = document.querySelectorAll(".approach-area .approach-box");
+  gsap.from(boxes, {
+    x: "100%",
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out",
+    scrollTrigger: {
+      scrub: 2,
+      trigger: ".approach-wrapper-box",
+      start: "top 100%",
+      end: "bottom 40%",
+      toggleActions: "play none none reverse",
+    }
+  });
 
-    gsap.from(boxes, {
-      x: "100%",
-      duration: 1,
-      stagger: 0.3,
-      ease: "power2.out",
-      scrollTrigger: {
-        scrub: 2,
-        trigger: ".approach-wrapper-box",
-        start: "top 100%",
-        end: "bottom 40%",
-        toggleActions: "play none none reverse",
-      }
-    });
-  }
+
   // button hover animation
+  $('.rr-btn-circle').on('mouseenter', function (e) {
+    var x = e.pageX - $(this).offset().left;
+    var y = e.pageY - $(this).offset().top;
 
-  if (document.querySelectorAll(".rr-hover-btn-wrapper").length > 0) {
-    $('.rr-btn-circle').on('mouseenter', function (e) {
-      var x = e.pageX - $(this).offset().left;
-      var y = e.pageY - $(this).offset().top;
+    $(this).find('.rr-btn-circle-dot').css({
+      top: y,
+      left: x
+    });
+  });
 
-      $(this).find('.rr-btn-circle-dot').css({
-        top: y,
-        left: x
-      });
+  $('.rr-btn-circle').on('mouseout', function (e) {
+    var x = e.pageX - $(this).offset().left;
+    var y = e.pageY - $(this).offset().top;
+
+    $(this).find('.rr-btn-circle-dot').css({
+      top: y,
+      left: x
+    });
+  });
+
+
+  var hoverBtns = gsap.utils.toArray(".rr-hover-btn-wrapper");
+
+  const hoverBtnItem = gsap.utils.toArray(".rr-btn-circle");
+  hoverBtns.forEach((btn, i) => {
+    $(btn).mousemove(function (e) {
+      callParallax(e);
     });
 
-    $('.rr-btn-circle').on('mouseout', function (e) {
-      var x = e.pageX - $(this).offset().left;
-      var y = e.pageY - $(this).offset().top;
+    function callParallax(e) {
+      parallaxIt(e, hoverBtnItem[i], 80);
+    }
 
-      $(this).find('.rr-btn-circle-dot').css({
-        top: y,
-        left: x
+    function parallaxIt(e, target, movement) {
+      var $this = $(btn);
+      var relX = e.pageX - $this.offset().left;
+      var relY = e.pageY - $this.offset().top;
+
+      gsap.to(target, 0.5, {
+        x: ((relX - $this.width() / 2) / $this.width()) * movement,
+        y: ((relY - $this.height() / 2) / $this.height()) * movement,
+        ease: Power2.easeOut,
+      });
+    }
+    $(btn).mouseleave(function (e) {
+      gsap.to(hoverBtnItem[i], 0.5, {
+        x: 0,
+        y: 0,
+        ease: Power2.easeOut,
       });
     });
+  });
 
-    var hoverBtns = gsap.utils.toArray(".rr-hover-btn-wrapper");
 
-    const hoverBtnItem = gsap.utils.toArray(".rr-btn-circle");
-    hoverBtns.forEach((btn, i) => {
-      $(btn).mousemove(function (e) {
-        callParallax(e);
-      });
 
-      function callParallax(e) {
-        parallaxIt(e, hoverBtnItem[i], 80);
-      }
+  const races = document.querySelector(".service-area-4");
+  console.log(races.offsetWidth);
 
-      function parallaxIt(e, target, movement) {
-        var $this = $(btn);
-        var relX = e.pageX - $this.offset().left;
-        var relY = e.pageY - $this.offset().top;
-
-        gsap.to(target, 0.5, {
-          x: ((relX - $this.width() / 2) / $this.width()) * movement,
-          y: ((relY - $this.height() / 2) / $this.height()) * movement,
-          ease: Power2.easeOut,
-        });
-      }
-      $(btn).mouseleave(function (e) {
-        gsap.to(hoverBtnItem[i], 0.5, {
-          x: 0,
-          y: 0,
-          ease: Power2.easeOut,
-        });
-      });
-    });
+  function getScrollAmount() {
+    let racesWidth = races.scrollWidth;
+    return -(racesWidth - window.innerWidth);
   }
+
+  const tween = gsap.to(races, {
+    x: getScrollAmount,
+    duration: 3,
+    ease: "none"
+  });
+
+  ScrollTrigger.create({
+    trigger: ".service-area-4",
+    start: "top 0%",
+    end: () => `+=${getScrollAmount() * -1}`,
+    pin: true,
+    animation: tween,
+    scrub: 1,
+    invalidateOnRefresh: true,
+    markers: true
+  });
+
+  ScrollTrigger.observe({
+    target: ".service-area-4", // can be any element (selector text is fine)
+    type: "pointer,touch", // comma-delimited list of what to listen for ("wheel,touch,scroll,pointer")
+    // onUp: () => previous(),
+    // onDown: () => next(),
+
+    onDrag: (self) => {
+      console.warn(self.deltaX);
+      gsap.to(window, { scrollTo: { y: `+=${self.deltaX * 10}` } });
+    }
+  });
+
+  // gsap.utils.toArray('.services-wrapper-box').forEach((section, index) => {
+  //   const w = section.querySelector('.services-wrapper');
+  //   const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+  //   gsap.fromTo(w, { x }, {
+  //     x: xEnd,
+  //     scrollTrigger: {
+  //       trigger: section,
+  //       pin: true,
+  //       start: "top 10%",
+  //       scrub: 0.5,
+  //     }
+  //   });
+  // });
+
 
 })(jQuery);

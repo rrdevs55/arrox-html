@@ -115,7 +115,7 @@
         }
 
         @media #{$sm} {
-            font-size: 60px;
+            font-size: 56px;
             line-height: 0.95;
         }
 
@@ -140,10 +140,7 @@
 
             }
 
-            @media #{$md} {
-                height: 45px;
-                margin-top: -11px;
-            }
+
 
             @media #{$sm} {
                 display: none;
@@ -284,20 +281,10 @@
         }
     }
 
-    &-inner {
 
-        @media #{$xl} {
-            padding-top: 66px;
-        }
-
-        @media (min-width: 1200px) {
-            padding-top: 66px;
-        }
-
-    }
 
     .section-header {
-        margin-top: 49px;
+        margin-top: 69px;
     }
 
     .section-content {
@@ -663,8 +650,10 @@
 }
 
 .actually-area {
-    padding-top: 227px;
-    padding-bottom: 450px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &-inner {
         position: relative;
@@ -674,13 +663,6 @@
         max-width: 716px;
         text-align: center;
         margin-inline: auto;
-        position: relative;
-        z-index: 1;
-        background-color: white;
-        mix-blend-mode: exclusion;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
     }
 
     .t_line>div {
@@ -755,7 +737,7 @@
 
     .services-wrapper-box {
         background-color: var(--primary);
-        margin-top: -1px;
+        position: relative;
     }
 
     .service-box {
@@ -1352,26 +1334,5 @@
 
     .cta-area-2-inner {
         overflow: hidden;
-    }
-}
-
-
-
-
-
-
-
-.test-wraper {
-    background-color: white;
-
-    .section-title {
-        position: relative;
-        z-index: 1;
-        background-color: white;
-        mix-blend-mode: exclusion;
-        background-clip: text;
-        color: transparent;
-
-
     }
 }

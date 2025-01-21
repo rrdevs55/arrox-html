@@ -600,6 +600,67 @@
   });
   // video end
 
+  // // text-animation start
+  // mm.add("(min-width: 1201px)", () => {
+
+  //   if (document.querySelectorAll(".about-area-2").length > 0) {
+  //     var ab2 = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: ".about-area-2 .section-content",
+  //         pin: ".about-area-2",
+  //         pinSpacing: true,
+  //         start: "top top",
+  //         endTrigger: ".about-area-2 .year-wrapper",
+  //         end: "bottom top",
+  //         scrub: 3,
+  //         // markers: true
+  //       }
+  //     });
+
+  //     ab2.to(".year-since", {
+  //       right: "0",
+  //       delay: 0.5,
+  //       duration: 3,
+  //       ease: "power1.inOut",
+  //       position: "absolute",
+  //     });
+  //     ab2.to(".is-fading", {
+  //       opacity: 0,
+  //       delay: 0.1,
+  //       visibility: "hidden",
+  //       position: "absolute",
+
+  //     });
+  //     ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
+  //       x: "100", // Move 100px to the right
+  //       opacity: 0,
+  //       duration: 1,
+  //     }, "-=2");
+  //     ab2.to(".year-since .last-text", {
+  //       fontSize: 30,
+  //       lineHeight: "27px",
+  //       letterSpacing: "-0.1em",
+  //       position: "absolute",
+  //       top: 0,
+  //       duration: 9,
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: ".about-area-2 .year-wrapper",
+  //         start: "bottom top",
+  //         endTrigger: ".works-wrapper-head",
+  //         end: "top-=100 0%",
+  //         pin: ".year-since .last-text",
+  //         pinSpacing: true,
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //     });
+
+
+  //   }
+  // });
+  // // text-animation end
+
   // text-animation start
   mm.add("(min-width: 1201px)", () => {
 
@@ -610,23 +671,23 @@
           pin: ".about-area-2",
           pinSpacing: true,
           start: "top top",
-          endTrigger: ".about-area-2 .year-wrapper",
-          end: "bottom top",
+          // endTrigger: ".about-area-2 .year-wrapper",
+          end: "+=4000",
           scrub: 3,
-          // markers: true
+          markers: true
         }
       });
 
       ab2.to(".year-since", {
         right: "0",
-        delay: 0.5,
-        duration: 3,
+        // delay: 0.5,
+        // duration: 3,
         ease: "power1.inOut",
         position: "absolute",
       });
       ab2.to(".is-fading", {
         opacity: 0,
-        delay: 0.1,
+        // delay: 0.1,
         visibility: "hidden",
         position: "absolute",
 
@@ -634,28 +695,27 @@
       ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
         x: "100", // Move 100px to the right
         opacity: 0,
-        duration: 1,
-      }, "-=2");
+        // duration: 1,
+      });
       ab2.to(".year-since .last-text", {
         fontSize: 30,
         lineHeight: "27px",
         letterSpacing: "-0.1em",
         position: "absolute",
         top: 0,
-        duration: 9,
+        // duration: 9,
         ease: "none",
-        scrollTrigger: {
-          trigger: ".about-area-2 .year-wrapper",
-          start: "bottom top",
-          endTrigger: ".works-wrapper-head",
-          end: "top-=100 0%",
-          pin: ".year-since .last-text",
-          pinSpacing: true,
-          scrub: 1,
-          // markers: true,
-        },
+        // scrollTrigger: {
+        //   trigger: ".about-area-2 .year-wrapper",
+        //   start: "bottom top",
+        //   endTrigger: ".works-wrapper-head",
+        //   end: "top-=100 0%",
+        //   pin: ".year-since .last-text",
+        //   pinSpacing: true,
+        //   scrub: 1,
+        //   markers: true,
+        // },
       });
-
 
     }
   });

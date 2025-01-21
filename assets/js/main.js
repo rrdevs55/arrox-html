@@ -1340,20 +1340,21 @@
       animation: tween,
       scrub: 1,
       invalidateOnRefresh: true,
-      markers: true
+      markers: { startColor: "red", endColor: "red", fontSize: "18px", fontWeight: "bold", indent: 20 }
     });
 
     // Fade out spans in service-thumb-line-wrapper immediately
     ScrollTrigger.create({
       trigger: ".service-thumb-line-wrapper",
-      start: "top 80%",
-      end: "bottom 40%",
+      start: "top center",
+      end: "bottom center",
       scrub: 2,
-      markers: true,
+      markers: { startColor: "green", endColor: "green", fontSize: "28px", fontWeight: "bold", indent: 20 },
       animation: gsap.to(".service-thumb-line-wrapper span", {
         scaleX: "0",
         duration: 0.5,
         // stagger: 0.5,
+
       })
     });
 

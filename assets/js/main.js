@@ -859,7 +859,6 @@
         scrub: true
       }
     })
-
   }
 
 
@@ -1262,30 +1261,30 @@
 
 
   // button hover animation
-  $('.tp-hover-btn').on('mouseenter', function (e) {
+  $('.rr-btn-circle').on('mouseenter', function (e) {
     var x = e.pageX - $(this).offset().left;
     var y = e.pageY - $(this).offset().top;
 
-    $(this).find('.tp-btn-circle-dot').css({
+    $(this).find('.rr-btn-circle-dot').css({
       top: y,
       left: x
     });
   });
 
-  $('.tp-hover-btn').on('mouseout', function (e) {
+  $('.rr-btn-circle').on('mouseout', function (e) {
     var x = e.pageX - $(this).offset().left;
     var y = e.pageY - $(this).offset().top;
 
-    $(this).find('.tp-btn-circle-dot').css({
+    $(this).find('.rr-btn-circle-dot').css({
       top: y,
       left: x
     });
   });
 
 
-  var hoverBtns = gsap.utils.toArray(".tp-hover-btn-wrapper");
+  var hoverBtns = gsap.utils.toArray(".rr-hover-btn-wrapper");
 
-  const hoverBtnItem = gsap.utils.toArray(".tp-hover-btn-item");
+  const hoverBtnItem = gsap.utils.toArray(".rr-btn-circle");
   hoverBtns.forEach((btn, i) => {
     $(btn).mousemove(function (e) {
       callParallax(e);
@@ -1315,51 +1314,58 @@
     });
   });
 
-  //tp-btn-trigger-2
-  if ($('.tp-btn-trigger-2').length > 0) {
 
-    gsap.set(".tp-btn-bounce-2", {
-      y: -100,
-      opacity: 0
-    });
-    var mybtn = gsap.utils.toArray(".tp-btn-bounce-2");
-    mybtn.forEach((btn) => {
-      var $this = $(btn);
-      gsap.to(btn, {
-        scrollTrigger: {
-          trigger: $this.closest('.tp-btn-trigger-2'),
-          start: "bottom bottom",
-          markers: false
-        },
-        duration: 1,
-        ease: "bounce.out",
-        y: 0,
-        opacity: 1,
-      })
-    });
+
+  const races = document.querySelector(".service-area-4");
+  console.log(races.offsetWidth);
+
+  function getScrollAmount() {
+    let racesWidth = races.scrollWidth;
+    return -(racesWidth - window.innerWidth);
   }
 
-  // button hover animation
-  $('.tp-hover-btn').on('mouseenter', function (e) {
-    var x = e.pageX - $(this).offset().left;
-    var y = e.pageY - $(this).offset().top;
-
-    $(this).find('.tp-btn-circle-dot').css({
-      top: y,
-      left: x
-    });
+  const tween = gsap.to(races, {
+    x: getScrollAmount,
+    duration: 3,
+    ease: "none"
   });
 
-  $('.tp-hover-btn').on('mouseout', function (e) {
-    var x = e.pageX - $(this).offset().left;
-    var y = e.pageY - $(this).offset().top;
-
-    $(this).find('.tp-btn-circle-dot').css({
-      top: y,
-      left: x
-    });
+  ScrollTrigger.create({
+    trigger: ".service-area-4",
+    start: "top 0%",
+    end: () => `+=${getScrollAmount() * -1}`,
+    pin: true,
+    animation: tween,
+    scrub: 1,
+    invalidateOnRefresh: true,
+    markers: true
   });
 
+  ScrollTrigger.observe({
+    target: ".service-area-4", // can be any element (selector text is fine)
+    type: "pointer,touch", // comma-delimited list of what to listen for ("wheel,touch,scroll,pointer")
+    // onUp: () => previous(),
+    // onDown: () => next(),
+
+    onDrag: (self) => {
+      console.warn(self.deltaX);
+      gsap.to(window, { scrollTo: { y: `+=${self.deltaX * 10}` } });
+    }
+  });
+
+  // gsap.utils.toArray('.services-wrapper-box').forEach((section, index) => {
+  //   const w = section.querySelector('.services-wrapper');
+  //   const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+  //   gsap.fromTo(w, { x }, {
+  //     x: xEnd,
+  //     scrollTrigger: {
+  //       trigger: section,
+  //       pin: true,
+  //       start: "top 10%",
+  //       scrub: 0.5,
+  //     }
+  //   });
+  // });
 
 
 })(jQuery);

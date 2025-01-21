@@ -6170,8 +6170,13 @@ video.video-area {
 .about-area-2 .section-header {
   margin-top: 69px;
 }
-.about-area-2 .section-content .section-content {
-  min-height: 100vh;
+.about-area-2 .section-content {
+  min-height: 200vh;
+}
+@media only screen and (max-width: 1199px) {
+  .about-area-2 .section-content {
+    min-height: auto;
+  }
 }
 .about-area-2 .section-content .year-wrapper {
   position: relative;

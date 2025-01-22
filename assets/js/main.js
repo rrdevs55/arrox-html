@@ -655,7 +655,7 @@
 
 
   if (document.querySelectorAll(".actually-area").length > 0) {
-    gsap.timeline({
+    var tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".actually-area",
         pin: true,
@@ -664,11 +664,30 @@
         end: "bottom top",
         markers: true
       }
-    })
-      .to(".actually-area .section-title", {
-        scale: 10,
-        ease: "power4.inOut",
+    });
+    const t_line = new SplitText(".t_line", { type: "lines" });
+    t_line.lines.forEach((target) => {
+      tl.to(target, {
+        backgroundPositionX: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: target,
+          scrub: 1,
+          start: 'top 25%',
+          end: "center 25%",
+          markers: true
+        }
       });
+    });
+    tl.to(".actually-area .section-title", {
+      scale: 30,
+      ease: "power4.inOut",
+      delay: 0.35,
+      duration: 0.75,
+    });
+    tl.to(".actually-area", {
+      backgroundColor: "#111111",
+    }, "-=0.50");
   }
 
 

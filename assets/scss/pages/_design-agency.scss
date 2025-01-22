@@ -1335,6 +1335,7 @@
                 /* Default width */
                 height: 1000px;
                 background-color: #000;
+                transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
                 // @media (max-width: 1200px) {
                 //     scale: 0.75;

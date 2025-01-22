@@ -600,6 +600,67 @@
   });
   // video end
 
+  // // text-animation start
+  // mm.add("(min-width: 1201px)", () => {
+
+  //   if (document.querySelectorAll(".about-area-2").length > 0) {
+  //     var ab2 = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: ".about-area-2 .section-content",
+  //         pin: ".about-area-2",
+  //         pinSpacing: true,
+  //         start: "top top",
+  //         endTrigger: ".about-area-2 .year-wrapper",
+  //         end: "bottom top",
+  //         scrub: 3,
+  //         // markers: true
+  //       }
+  //     });
+
+  //     ab2.to(".year-since", {
+  //       right: "0",
+  //       delay: 0.5,
+  //       duration: 3,
+  //       ease: "power1.inOut",
+  //       position: "absolute",
+  //     });
+  //     ab2.to(".is-fading", {
+  //       opacity: 0,
+  //       delay: 0.1,
+  //       visibility: "hidden",
+  //       position: "absolute",
+
+  //     });
+  //     ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
+  //       x: "100", // Move 100px to the right
+  //       opacity: 0,
+  //       duration: 1,
+  //     }, "-=2");
+  //     ab2.to(".year-since .last-text", {
+  //       fontSize: 30,
+  //       lineHeight: "27px",
+  //       letterSpacing: "-0.1em",
+  //       position: "absolute",
+  //       top: 0,
+  //       duration: 9,
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: ".about-area-2 .year-wrapper",
+  //         start: "bottom top",
+  //         endTrigger: ".works-wrapper-head",
+  //         end: "top-=100 0%",
+  //         pin: ".year-since .last-text",
+  //         pinSpacing: true,
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //     });
+
+
+  //   }
+  // });
+  // // text-animation end
+
   // text-animation start
   mm.add("(min-width: 1201px)", () => {
 
@@ -608,54 +669,38 @@
         scrollTrigger: {
           trigger: ".about-area-2 .section-content",
           pin: ".about-area-2",
-          pinSpacing: true,
+          pinSpacing: false,
           start: "top top",
-          endTrigger: ".about-area-2 .year-wrapper",
-          end: "bottom top",
-          scrub: 3,
-          // markers: true
+          endTrigger: ".works-wrapper-head",
+          end: "-=100",
+          // end: "+=4000",
+          scrub: 2,
+          markers: true
         }
       });
 
       ab2.to(".year-since", {
         right: "0",
-        delay: 0.5,
-        duration: 3,
         ease: "power1.inOut",
         position: "absolute",
       });
       ab2.to(".is-fading", {
         opacity: 0,
-        delay: 0.1,
-        visibility: "hidden",
-        position: "absolute",
 
       });
       ab2.to([".about-area-2 .text-wrapper", ".about-area-2 .btn-wrapper"], {
-        x: "100", // Move 100px to the right
+        x: "100",
         opacity: 0,
-        duration: 1,
-      }, "-=2");
+      });
       ab2.to(".year-since .last-text", {
         fontSize: 30,
         lineHeight: "27px",
         letterSpacing: "-0.1em",
         position: "absolute",
         top: 0,
-        duration: 9,
+        right: 0,
         ease: "none",
-        scrollTrigger: {
-          trigger: ".about-area-2 .year-wrapper",
-          start: "bottom top",
-          endTrigger: ".works-wrapper-head",
-          end: "top-=100 0%",
-          pin: ".year-since .last-text",
-          pinSpacing: true,
-          scrub: 1,
-          // markers: true,
-        },
       });
-
 
     }
   });
@@ -1317,54 +1362,76 @@
     });
   });
 
-
   if (document.querySelectorAll(".service-area-4").length > 0) {
     const races = document.querySelector(".service-area-4");
     const racesScrollWidth = races.scrollWidth;
 
-    function getScrollAmount() {
-      return -(racesScrollWidth - window.innerWidth);
-    }
+    // Function to calculate scroll amount
+    const getScrollAmount = () => -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
 
+    // Create horizontal scroll animation using GSAP
     const tween = gsap.to(races, {
       x: getScrollAmount(),
       duration: 3,
-      ease: "none"
+      ease: "none",
     });
 
+    // ScrollTrigger for horizontal scroll effect
     ScrollTrigger.create({
       trigger: ".service-area-4",
-      start: "top 0",
-      end: () => `+=${getScrollAmount() * -1}`,
+      start: "top top",
+      end: () => `+=${-getScrollAmount()}`,
       pin: true,
       animation: tween,
       scrub: 1,
       invalidateOnRefresh: true,
-      markers: { startColor: "red", endColor: "red", fontSize: "18px", fontWeight: "bold", indent: 20 }
+      markers: {
+        startColor: "red",
+        endColor: "red",
+        fontSize: "18px",
+        fontWeight: "bold",
+        indent: 20,
+      },
     });
 
-    // Fade out spans in service-thumb-line-wrapper immediately
+    // ScrollTrigger for fading out spans in the service-thumb-line-wrapper
     ScrollTrigger.create({
       trigger: ".service-thumb-line-wrapper",
       start: "top center",
-      end: "bottom center",
+      end: "top 25%",
       scrub: 2,
-      markers: { startColor: "green", endColor: "green", fontSize: "28px", fontWeight: "bold", indent: 20 },
+      markers: {
+        startColor: "green",
+        endColor: "green",
+        fontSize: "28px",
+        fontWeight: "bold",
+        indent: 20,
+      },
       animation: gsap.to(".service-thumb-line-wrapper span", {
-        scaleX: "0",
+        scaleX: 0,
         duration: 0.5,
+        x: "-100%",
+        // translateX_value: 0,
         // stagger: 0.5,
-
-      })
+        // width: 0,
+        // opacity: 0
+        // scrub: true,
+      }),
     });
 
+    // ScrollTrigger observer for dragging functionality
     ScrollTrigger.observe({
       target: ".service-area-4",
       type: "pointer,touch",
       onDrag: (self) => {
-        gsap.to(window, { scrollTo: { y: `+=${self.deltaX * 10}` }, duration: 0.2 });
-      }
+        gsap.to(document.querySelector(".service-area-4"), {
+          scrollTo: { y: `+=${self.deltaX * 10}` },
+          duration: 0.2,
+        });
+      },
     });
   }
+
+
 
 })(jQuery);

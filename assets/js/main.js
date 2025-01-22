@@ -18,7 +18,6 @@
 (function ($) {
   "use strict";
 
-
   var windowOn = $(window);
 
   //  sticky header
@@ -27,7 +26,6 @@
 
     windowOn.on('scroll', function () {
       var currentScrollTop = $(this).scrollTop();
-
       if (currentScrollTop > lastScrollTop) {
         $('.header-sticky').removeClass('sticky');
         $('.header-sticky').addClass('transformed');
@@ -102,7 +100,6 @@
   if ('counterUp' in window) {
     const skill_counter = window.counterUp.default
     const skill_cb = entries => {
-
       entries.forEach(entry => {
         const el = entry.target
         if (entry.isIntersecting && !el.classList.contains('is-visible')) {
@@ -114,11 +111,9 @@
         }
       })
     }
-
     const IO = new IntersectionObserver(skill_cb, {
       threshold: 1
     })
-
     const els = document.querySelectorAll('.t-counter');
     els.forEach((el) => {
       IO.observe(el)
@@ -130,7 +125,6 @@
     $('.video-popup').magnificPopup({
       type: 'iframe',
     });
-
   }
 
   // testimonial slider
@@ -208,21 +202,18 @@
     const fadeArray = gsap.utils.toArray(".fade-anim")
     // gsap.set(fadeArray, {opacity:0})
     fadeArray.forEach((item, i) => {
-
       var fade_direction = "bottom"
       var onscroll_value = 1
       var duration_value = 1.15
       var fade_offset = 50
       var delay_value = 0.15
       var ease_value = "power2.out"
-
       if (item.getAttribute("data-offset")) {
         fade_offset = item.getAttribute("data-offset");
       }
       if (item.getAttribute("data-duration")) {
         duration_value = item.getAttribute("data-duration");
       }
-
       if (item.getAttribute("data-direction")) {
         fade_direction = item.getAttribute("data-direction");
       }
@@ -235,29 +226,24 @@
       if (item.getAttribute("data-ease")) {
         ease_value = item.getAttribute("data-ease");
       }
-
       let animation_settings = {
         opacity: 0,
         ease: ease_value,
         duration: duration_value,
         delay: delay_value,
       }
-
       if (fade_direction == "top") {
         animation_settings['y'] = -fade_offset
       }
       if (fade_direction == "left") {
         animation_settings['x'] = -fade_offset;
       }
-
       if (fade_direction == "bottom") {
         animation_settings['y'] = fade_offset;
       }
-
       if (fade_direction == "right") {
         animation_settings['x'] = fade_offset;
       }
-
       if (onscroll_value == 1) {
         animation_settings['scrollTrigger'] = {
           trigger: item,
@@ -275,7 +261,6 @@
 
   // Text Invert With Scroll 
   const split = new SplitText(".text-invert", { type: "lines" });
-
   split.lines.forEach((target) => {
     gsap.to(target, {
       backgroundPositionX: 0,
@@ -294,11 +279,9 @@
   let mm = gsap.matchMedia();
 
   mm.add("(min-width: 1024px)", () => {
-
     // Pin Active
     var pin_fixed = document.querySelector('.pin-element');
     if (pin_fixed && device_width > 991) {
-
       gsap.to(".pin-element", {
         scrollTrigger: {
           trigger: ".pin-area",
@@ -310,11 +293,8 @@
       });
     }
 
-
-
     // grow animation 
     var grow = document.querySelectorAll(".grow");
-
     grow.forEach((item) => {
       gsap.to(item, {
         width: "100%",
@@ -332,7 +312,6 @@
   // scale animation 
   var scale = document.querySelectorAll(".scale");
   var image = document.querySelectorAll(".scale img");
-
   scale.forEach((item) => {
     gsap.to(item, {
       scale: 1,
@@ -362,6 +341,7 @@
     });
   })
 
+  // cta text animation 
   if (document.querySelectorAll(".cta-area").length > 0) {
     var tl = gsap.timeline({
       ease: "none",
@@ -389,7 +369,6 @@
       hoverText.children[0].style.transform = `translate(${x}px, ${y}px)`;
     }
   }
-
   hoverText.forEach((item, i) => {
     item.addEventListener("mousemove", (e) => {
       setInterval(moveText(e, item), 100);
@@ -433,9 +412,7 @@
 
   // go-visible animation 
   if (document.querySelectorAll(".go-visible").length > 0) {
-
     var govisible = document.querySelectorAll(".go-visible");
-
     govisible.forEach((item) => {
       gsap.to(item, {
         opacity: "1",
@@ -472,19 +449,15 @@
   // Horizontal Gallery
   const panelsSections = gsap.utils.toArray(".panels");
   for (var i = 0; i < panelsSections.length; i++) {
-
     var thePanelsSection = panelsSections[i];
     const panels = gsap.utils.toArray(".panels-container .panel", thePanelsSection);
     const panelsContainer = thePanelsSection.querySelector(".panels-container");
-
     gsap.set(panelsContainer, { height: window.innerHeight });
     gsap.set(panels, { height: window.innerHeight });
-
     var totalPanelsWidth = 0;
     panels.forEach(function (panel) {
       totalPanelsWidth += $(panel).width();
     });
-
     gsap.set(panelsContainer, { width: totalPanelsWidth });
     gsap.to(panels, {
       x: - totalPanelsWidth + innerWidth,
@@ -536,7 +509,6 @@
 
   // video start
   mm.add("(min-width: 1200px)", () => {
-
     if (document.querySelectorAll(".hero-area").length > 0) {
       var ab2 = gsap.timeline({
         duration: 5,
@@ -546,20 +518,15 @@
           start: "top 100%",
           end: "bottom 0%",
           // markers: true,
-
         },
       });
-
       ab2.to(".big-text-wrapper .big-text", {
         scale: 0.1,
         color: "black",
         duration: 2,
         y: "76%",
         transformOrigin: "bottom center",
-
       });
-
-
       ab2.to(".about-area", {
         scrollTrigger: {
           trigger: ".about-area",
@@ -571,7 +538,6 @@
           // markers: true,
         },
       });
-
       ab2.to(".big-text-wrapper", {
         scrollTrigger: {
           trigger: ".about-area",
@@ -583,7 +549,6 @@
           // markers: true,
         },
       });
-
       gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
         y: "40",
         delay: 2,
@@ -617,7 +582,6 @@
           markers: true
         }
       });
-
       ab2.to(".year-since", {
         right: "0",
         ease: "power1.inOut",
@@ -643,52 +607,72 @@
         ease: "none",
         duration: 0.70,
       });
-
     }
   });
   // text-animation end
 
+  // // service-area-2 text and bg animation start
+  // const t_line = new SplitText(".t_line", { type: "lines" });
 
-  // service-area-2 text and bg animation start
-  const t_line = new SplitText(".t_line", { type: "lines" });
+  // t_line.lines.forEach((target) => {
+  //   gsap.to(target, {
+  //     backgroundPositionX: 0,
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: target,
+  //       scrub: 1,
+  //       start: 'top 20%',
+  //       end: "center 20%",
+  //       // markers: true
+  //     }
+  //   });
+  // });
 
-  t_line.lines.forEach((target) => {
-    gsap.to(target, {
-      backgroundPositionX: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: target,
-        scrub: 1,
-        start: 'top 20%',
-        end: "center 20%",
-        // markers: true
-      }
-    });
-  });
+  // if (document.querySelectorAll(".actually-area").length > 0) {
+  //   gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".actually-area",
+  //       pin: true,
+  //       pinSpacing: true,
+  //       scrub: 1,
+  //       start: "top 0%",
+  //       end: "bottom top",
+  //       // markers: true
+  //     }
+  //   })
+  //     .fromTo(".actually-area .bg-area",
+  //       { scale: 0 },
+  //       {
+  //         scale: 10,
+  //         duration: 2,
+  //         ease: "power4.inOut",
+  //         delay: 0.8
+  //       }
+  //     );
+  // }
+  // // service-area-2 text and bg animation end
+
+
 
   if (document.querySelectorAll(".actually-area").length > 0) {
     gsap.timeline({
       scrollTrigger: {
         trigger: ".actually-area",
         pin: true,
-        pinSpacing: true,
         scrub: 1,
-        start: "top 0%",
+        start: "top top",
         end: "bottom top",
-        // markers: true
+        markers: true
       }
     })
-      .fromTo(".actually-area .bg-area",
-        { scale: 0 },
-        {
-          scale: 10,
-          duration: 2,
-          ease: "power4.inOut",
-          delay: 0.8
-        }
-      );
+      .to(".actually-area .section-title", {
+        scale: 10,
+        ease: "power4.inOut",
+      });
   }
-  // service-area-2 text and bg animation end
+
+
+
 
 
   // work-area-2 box animation start

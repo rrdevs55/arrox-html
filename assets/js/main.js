@@ -688,6 +688,7 @@
     });
     tl.to(".actually-area", {
       backgroundColor: "#111111",
+      duration: 0.45,
     }, "-=0.50");
   }
 

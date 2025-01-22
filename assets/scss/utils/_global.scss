@@ -775,11 +775,15 @@
       min-width: 40px;
       height: 40px;
       display: inline-flex;
-      border: 1px solid var(--primary);
+      border: 1px solid var(--white-2);
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      color: var(--primary);
+      color: var(--white-2);
+    }
+
+    .text {
+      color: var(--white-2);
     }
   }
 }

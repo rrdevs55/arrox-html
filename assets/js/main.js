@@ -1307,53 +1307,76 @@
     });
   });
 
-
   if (document.querySelectorAll(".service-area-4").length > 0) {
     const races = document.querySelector(".service-area-4");
     const racesScrollWidth = races.scrollWidth;
 
-    function getScrollAmount() {
-      return -(racesScrollWidth - window.innerWidth);
-    }
+    // Function to calculate scroll amount
+    const getScrollAmount = () => -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
 
+    // Create horizontal scroll animation using GSAP
     const tween = gsap.to(races, {
       x: getScrollAmount(),
       duration: 3,
-      ease: "none"
+      ease: "none",
     });
 
+    // ScrollTrigger for horizontal scroll effect
     ScrollTrigger.create({
       trigger: ".service-area-4",
-      start: "top 0",
-      end: () => `+=${getScrollAmount() * -1}`,
+      start: "top top",
+      end: () => `+=${-getScrollAmount()}`,
       pin: true,
       animation: tween,
       scrub: 1,
       invalidateOnRefresh: true,
-      markers: true
+      markers: {
+        startColor: "red",
+        endColor: "red",
+        fontSize: "18px",
+        fontWeight: "bold",
+        indent: 20,
+      },
     });
 
-    // Fade out spans in service-thumb-line-wrapper immediately
+    // ScrollTrigger for fading out spans in the service-thumb-line-wrapper
     ScrollTrigger.create({
       trigger: ".service-thumb-line-wrapper",
-      start: "top 80%",
-      end: "bottom 40%",
+      start: "top center",
+      end: "top 25%",
       scrub: 2,
-      markers: true,
+      markers: {
+        startColor: "green",
+        endColor: "green",
+        fontSize: "28px",
+        fontWeight: "bold",
+        indent: 20,
+      },
       animation: gsap.to(".service-thumb-line-wrapper span", {
-        scaleX: "0",
+        scaleX: 0,
         duration: 0.5,
+        x: "-100%",
+        // translateX_value: 0,
         // stagger: 0.5,
-      })
+        // width: 0,
+        // opacity: 0
+        // scrub: true,
+      }),
     });
 
+    // ScrollTrigger observer for dragging functionality
     ScrollTrigger.observe({
       target: ".service-area-4",
       type: "pointer,touch",
       onDrag: (self) => {
-        gsap.to(window, { scrollTo: { y: `+=${self.deltaX * 10}` }, duration: 0.2 });
-      }
+        gsap.to(document.querySelector(".service-area-4"), {
+          scrollTo: { y: `+=${self.deltaX * 10}` },
+          duration: 0.2,
+        });
+      },
     });
   }
+
+
 
 })(jQuery);

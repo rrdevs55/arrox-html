@@ -680,7 +680,8 @@
       });
     });
     tl.to(".actually-area .section-title", {
-      scale: 30,
+      scale: 40,
+      opacity: 0,
       ease: "power4.inOut",
       delay: 0.35,
       duration: 0.75,

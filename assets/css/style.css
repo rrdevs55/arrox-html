@@ -947,21 +947,19 @@ h6 {
 }
 
 .offcanvas-overlay.overlay-open {
-  opacity: 0.4;
+  opacity: 0.5;
   visibility: visible;
 }
 
 .side-info-close {
-  background: none;
-  border: 0;
-  color: var(--clr-common-white);
   font-size: 24px;
   padding: 0;
   transition: all 0.3s linear;
-  background-color: var(--clr-theme-3);
-  color: var(--clr-common-white);
+  background-color: var(--white);
+  color: var(--black);
   width: 50px;
   height: 50px;
+  border: 1px solid var(--black);
   border-radius: 50%;
   line-height: 50px;
 }
@@ -970,7 +968,7 @@ h6 {
 }
 
 .side-info {
-  background: var(--bg);
+  background: var(--white);
   height: 100%;
   position: fixed;
   z-index: 999;
@@ -1038,11 +1036,11 @@ h6 {
   min-width: 40px;
   height: 40px;
   display: inline-flex;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--secondary);
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 /* mean menu customize */
@@ -1099,9 +1097,12 @@ h6 {
     font-size: 20px;
   }
 }
+.mobile-menu.mean-container .mean-nav ul li a:hover {
+  color: var(--primary);
+}
 .mobile-menu.mean-container .mean-nav ul li a.mean-expand {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   justify-content: center;
   font-weight: 300;
   border: none !important;
@@ -1940,8 +1941,7 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 5;
-  padding: 25px 43px;
-  border: 1px solid transparent;
+  padding: 26px 44px;
   background-color: var(--black);
   color: white;
   border-radius: 100px;
@@ -2034,6 +2034,36 @@ section {
 .rr-btn.btn-border-white {
   border: 1px solid rgba(252, 247, 243, 0.1);
   background-color: transparent;
+}
+
+.rr-btn-underline {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--primary);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 4px;
+  white-space: nowrap;
+}
+.rr-btn-underline:hover::before {
+  width: 0;
+}
+.rr-btn-underline::before {
+  position: absolute;
+  content: "";
+  inset-inline-start: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transition: 0.3s;
+}
+.rr-btn-underline i {
+  font-size: 10px;
 }
 
 @keyframes mask_animation {
@@ -5185,16 +5215,16 @@ video.video-area {
 /* capabilities area style  */
 .capabilities-area-inner {
   position: relative;
-  padding-bottom: 272px;
+  padding-bottom: 136px;
 }
 @media only screen and (max-width: 1919px) {
   .capabilities-area-inner {
-    padding-bottom: 212px;
+    padding-bottom: 106px;
   }
 }
 @media only screen and (max-width: 1199px) {
   .capabilities-area-inner {
-    padding-bottom: 172px;
+    padding-bottom: 86px;
   }
 }
 .capabilities-area .section-content-wrapper {
@@ -5204,6 +5234,7 @@ video.video-area {
   grid-template-columns: 1fr 1235px;
   border-top: 1px solid rgba(17, 17, 17, 0.1);
   padding-top: 45px;
+  margin-bottom: 50px;
 }
 @media only screen and (max-width: 1919px) {
   .capabilities-area .section-content-wrapper {
@@ -5310,21 +5341,21 @@ video.video-area {
     font-size: 35px;
   }
 }
-.capabilities-area .capability-box .title.t-btn-underline {
+.capabilities-area .capability-box .title.rr-btn-underline {
   padding-bottom: 0;
   color: rgba(17, 17, 17, 0.4);
 }
-.capabilities-area .capability-box .title.t-btn-underline::before {
+.capabilities-area .capability-box .title.rr-btn-underline::before {
   height: 5px;
   transition: 0.5s;
 }
 @media only screen and (max-width: 1399px) {
-  .capabilities-area .capability-box .title.t-btn-underline::before {
+  .capabilities-area .capability-box .title.rr-btn-underline::before {
     height: 3px;
   }
 }
 @media only screen and (max-width: 991px) {
-  .capabilities-area .capability-box .title.t-btn-underline::before {
+  .capabilities-area .capability-box .title.rr-btn-underline::before {
     height: 2px;
   }
 }
@@ -5412,22 +5443,27 @@ video.video-area {
     height: 70px;
   }
 }
-.client-area-4 .video-wrapper-box .t-btn-circle {
+.client-area-4 .video-wrapper-box .btn-circle {
   width: 90px;
   height: 90px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   background-color: #C4F012;
+  color: var(--black);
+  border-radius: 50%;
   font-size: 26px;
   outline: 5px solid var(--white);
   margin-left: -15px;
 }
 @media only screen and (max-width: 1919px) {
-  .client-area-4 .video-wrapper-box .t-btn-circle {
+  .client-area-4 .video-wrapper-box .btn-circle {
     width: 80px;
     height: 80px;
   }
 }
 @media only screen and (max-width: 1199px) {
-  .client-area-4 .video-wrapper-box .t-btn-circle {
+  .client-area-4 .video-wrapper-box .btn-circle {
     width: 70px;
     height: 70px;
   }
@@ -5468,10 +5504,6 @@ video.video-area {
 }
 
 /* about area 3 style  */
-.about-area-3 .section-content {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
 .about-area-3 .section-content .text {
   font-size: 30px;
   font-weight: 400;
@@ -5578,6 +5610,11 @@ video.video-area {
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 100/130;
+}
+@media only screen and (max-width: 991px) {
+  .about-area-3 .about-thumb .thumb-4 {
+    bottom: 28%;
+  }
 }
 
 /* award area 2 style  */
@@ -7569,7 +7606,7 @@ video.video-area {
   line-height: 26px;
   margin-top: 18px;
 }
-.service-area-3 .service-box .t-btn-underline {
+.service-area-3 .service-box .rr-btn-underline {
   text-transform: unset;
   font-size: 18px;
   color: #111111;
@@ -7577,7 +7614,7 @@ video.video-area {
   display: inline-block;
   position: relative;
 }
-.service-area-3 .service-box .t-btn-underline::before {
+.service-area-3 .service-box .rr-btn-underline::before {
   content: "";
   width: 100%;
   height: 1px;
@@ -7587,11 +7624,11 @@ video.video-area {
   bottom: 0;
   transition: all 0.4s;
 }
-.service-area-3 .service-box .t-btn-underline:hover::before {
+.service-area-3 .service-box .rr-btn-underline:hover::before {
   width: 0;
 }
 @media only screen and (max-width: 1919px) {
-  .service-area-3 .service-box .t-btn-underline {
+  .service-area-3 .service-box .rr-btn-underline {
     margin-top: 30px;
   }
 }
@@ -12718,14 +12755,12 @@ video.video-area {
     display: none;
   }
 }
-.header-area .t-btn-primary {
+.header-area .rr-btn {
   padding: 21px 38px;
-  font-size: 16px;
-  letter-spacing: -0.04em;
 }
 @media only screen and (max-width: 1199px) {
-  .header-area .t-btn-primary {
-    padding: 11px 28px;
+  .header-area .rr-btn {
+    padding: 16px 33px;
   }
 }
 .header-area .header__navicon i {

@@ -196,3 +196,40 @@
   }
 
 }
+
+
+.rr-btn-underline {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--primary);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 4px;
+  white-space: nowrap;
+
+
+  &:hover {
+    &::before {
+      width: 0;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset-inline-start: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transition: 0.3s;
+  }
+
+  i {
+    font-size: 10px;
+  }
+}

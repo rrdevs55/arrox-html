@@ -608,14 +608,14 @@
 .capabilities-area {
     &-inner {
         position: relative;
-        padding-bottom: 272px;
+        padding-bottom: 136px; //added padding for height of client-area-4
 
         @media #{$xxl} {
-            padding-bottom: 212px;
+            padding-bottom: 106px;
         }
 
         @media #{$lg} {
-            padding-bottom: 172px;
+            padding-bottom: 86px;
         }
 
     }
@@ -627,6 +627,7 @@
         grid-template-columns: 1fr 1235px;
         border-top: 1px solid rgba(17, 17, 17, 0.1);
         padding-top: 45px;
+        margin-bottom: 50px;
 
         @media #{$xxl} {
             grid-template-columns: 1fr 950px;
@@ -742,7 +743,7 @@
                 font-size: 35px;
             }
 
-            &.t-btn-underline {
+            &.rr-btn-underline {
                 padding-bottom: 0;
                 color: rgba(17, 17, 17, 0.4);
 

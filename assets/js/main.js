@@ -758,6 +758,8 @@
     });
   }
 
+
+
   // about 3 thumb animation 
   let about_3_thumb_anim = document.querySelector(".about_3__thumb-anim")
   if (about_3_thumb_anim) {
@@ -1339,6 +1341,7 @@
       },
     });
   }
+
 
 
 

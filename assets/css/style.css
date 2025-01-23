@@ -5806,6 +5806,7 @@ video.video-area {
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
+  align-items: center;
 }
 .service-area-4 .service-box {
   border-top: 1px solid var(--primary);
@@ -5918,9 +5919,9 @@ video.video-area {
   rotate: 180deg;
 }
 .service-area-4 .service-thumb-line-wrapper span {
-  width: 50px;
+  width: 70px;
   height: 1000px;
-  background-color: #000;
+  background-color: #fff;
   transform-origin: right center;
   margin-left: -1px;
 }

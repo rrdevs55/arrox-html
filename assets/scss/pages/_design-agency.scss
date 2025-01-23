@@ -1229,6 +1229,7 @@
         gap: 100px;
         width: fit-content;
         display: flex;
+        align-items: center;
     }
 
 
@@ -1342,9 +1343,9 @@
 
 
             span {
-                width: 50px;
+                width: 70px;
                 height: 1000px;
-                background-color: #000;
+                background-color: #fff;
                 transform-origin: right center;
                 margin-left: -1px;
             }

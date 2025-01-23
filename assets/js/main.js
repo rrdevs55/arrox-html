@@ -1305,19 +1305,15 @@
         {
           scaleX: 0,
           x: "-100%",
-          opacity: 0,
-          stagger: 0.01, // Slight delay between each span animation
+          // opacity: 0,
+          stagger: 0.04, // Slight delay between each span animation
           // duration: 1.2, // Slower, smoother animation per span
           ease: "power1.out", // Smooth fade-out easing
         },
-        "<" // Syncs with the horizontal scroll animation
+        "-=0.9" // Syncs with the horizontal scroll animation
       );
     }
   });
-
-
-
-
 
 
   // if (document.querySelectorAll(".service-area-4").length > 0) {

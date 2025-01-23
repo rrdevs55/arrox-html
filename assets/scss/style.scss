@@ -111,17 +111,13 @@
         }
     }
 
-    .t-btn-primary {
+    .rr-btn {
         padding: 21px 38px;
-        font-size: 16px;
-        letter-spacing: -0.04em;
-
 
         @media #{$lg} {
-            padding: 11px 28px;
+            padding: 16px 33px;
 
         }
-
     }
 
     .header__navicon {

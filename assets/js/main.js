@@ -579,7 +579,7 @@
           start: "top top",
           end: "bottom",
           scrub: 2,
-          markers: true
+          // markers: true
         }
       });
       ab2.to(".year-since", {

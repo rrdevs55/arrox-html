@@ -676,22 +676,20 @@
 }
 
 .offcanvas-overlay.overlay-open {
-  opacity: 0.4;
+  opacity: 0.5;
   visibility: visible;
 }
 
 
 .side-info-close {
-  background: none;
-  border: 0;
-  color: var(--clr-common-white);
   font-size: 24px;
   padding: 0;
   transition: all 0.3s linear;
-  background-color: var(--clr-theme-3);
-  color: var(--clr-common-white);
+  background-color: var(--white);
+  color: var(--black);
   width: 50px;
   height: 50px;
+  border: 1px solid var(--black);
   border-radius: 50%;
   line-height: 50px;
 
@@ -701,7 +699,7 @@
 }
 
 .side-info {
-  background: var(--bg);
+  background: var(--white);
   height: 100%;
   position: fixed;
   z-index: 999;
@@ -775,16 +773,13 @@
       min-width: 40px;
       height: 40px;
       display: inline-flex;
-      border: 1px solid var(--white-2);
+      border: 1px solid var(--secondary);
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      color: var(--white-2);
+      color: var(--secondary);
     }
 
-    .text {
-      color: var(--white-2);
-    }
   }
 }
 
@@ -847,9 +842,13 @@
             font-size: 20px;
           }
 
+          &:hover {
+            color: var(--primary);
+          }
+
           &.mean-expand {
-            width: 54px;
-            height: 54px;
+            width: 48px;
+            height: 48px;
             justify-content: center;
             font-weight: 300;
             border: none !important;

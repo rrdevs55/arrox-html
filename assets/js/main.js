@@ -1296,6 +1296,7 @@
       // Horizontal Scroll Animation (Integrated with scroll)
       wrapperTimeline.to(".services-wrapper", {
         x: getScrollAmount(),
+        delay: 0.1,
         ease: "power1.inOut", // Smooth easing
       });
 
@@ -1310,7 +1311,7 @@
           // duration: 1.2, // Slower, smoother animation per span
           ease: "power1.out", // Smooth fade-out easing
         },
-        "-=0.9" // Syncs with the horizontal scroll animation
+        "<" // Syncs with the horizontal scroll animation
       );
     }
   });

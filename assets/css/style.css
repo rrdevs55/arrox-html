@@ -5796,6 +5796,11 @@ video.video-area {
 }
 
 /* service area 4 style  */
+.service-area-4 {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
 .service-area-4 .services-wrapper {
   gap: 100px;
   width: -moz-fit-content;
@@ -5906,19 +5911,18 @@ video.video-area {
      object-fit: cover;
 }
 .service-area-4 .service-thumb-line-wrapper {
-  display: flex;
-  gap: 4px;
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  rotate: 180deg;
 }
 .service-area-4 .service-thumb-line-wrapper span {
-  display: inline-block;
   width: 50px;
-  /* Default width */
   height: 1000px;
   background-color: #000;
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: right center;
+  margin-left: -1px;
 }
 
 .body-creative-agency {

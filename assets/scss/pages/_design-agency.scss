@@ -844,10 +844,15 @@
             }
         }
 
-        .t-btn-circle {
+        .btn-circle {
             width: 90px;
             height: 90px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             background-color: #C4F012;
+            color: var(--black);
+            border-radius: 50%;
             font-size: 26px;
             outline: 5px solid var(--white);
             margin-left: -15px;
@@ -909,8 +914,6 @@
 .about-area-3 {
 
     .section-content {
-        margin-top: 100px;
-        margin-bottom: 100px;
 
         .text {
             font-size: 30px;
@@ -1018,6 +1021,10 @@
             width: 14%;
             object-fit: cover;
             aspect-ratio: 100/130;
+
+            @media #{$md} {
+                bottom: 28%;
+            }
         }
     }
 }

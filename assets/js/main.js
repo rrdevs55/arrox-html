@@ -579,7 +579,7 @@
           start: "top top",
           end: "bottom",
           scrub: 2,
-          markers: true
+          // markers: true
         }
       });
       ab2.to(".year-since", {
@@ -611,49 +611,7 @@
   });
   // text-animation end
 
-  // // service-area-2 text and bg animation start
-  // const t_line = new SplitText(".t_line", { type: "lines" });
-
-  // t_line.lines.forEach((target) => {
-  //   gsap.to(target, {
-  //     backgroundPositionX: 0,
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       trigger: target,
-  //       scrub: 1,
-  //       start: 'top 20%',
-  //       end: "center 20%",
-  //       // markers: true
-  //     }
-  //   });
-  // });
-
-  // if (document.querySelectorAll(".actually-area").length > 0) {
-  //   gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".actually-area",
-  //       pin: true,
-  //       pinSpacing: true,
-  //       scrub: 1,
-  //       start: "top 0%",
-  //       end: "bottom top",
-  //       // markers: true
-  //     }
-  //   })
-  //     .fromTo(".actually-area .bg-area",
-  //       { scale: 0 },
-  //       {
-  //         scale: 10,
-  //         duration: 2,
-  //         ease: "power4.inOut",
-  //         delay: 0.8
-  //       }
-  //     );
-  // }
-  // // service-area-2 text and bg animation end
-
-
-
+  // service-area-2 text and bg animation start
   if (document.querySelectorAll(".actually-area").length > 0) {
     var tl = gsap.timeline({
       scrollTrigger: {
@@ -662,7 +620,7 @@
         scrub: 1,
         start: "top top",
         end: "bottom top",
-        markers: true
+        // markers: true
       }
     });
     const t_line = new SplitText(".t_line", { type: "lines" });
@@ -675,7 +633,7 @@
           scrub: 1,
           start: 'top 25%',
           end: "center 25%",
-          markers: true
+          // markers: true
         }
       });
     });
@@ -688,8 +646,12 @@
     });
     tl.to(".actually-area", {
       backgroundColor: "#111111",
+      duration: 0.45,
     }, "-=0.50");
   }
+  // service-area-2 text and bg animation end
+
+
 
 
 

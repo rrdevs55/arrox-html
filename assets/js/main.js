@@ -1362,76 +1362,132 @@
     });
   });
 
-  if (document.querySelectorAll(".service-area-4").length > 0) {
-    const races = document.querySelector(".service-area-4");
-    const racesScrollWidth = races.scrollWidth;
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.querySelectorAll(".service-area-4").length > 0) {
+      const races = document.querySelector(".service-area-4");
+      const racesScrollWidth = races.scrollWidth;
 
-    // Function to calculate scroll amount
-    const getScrollAmount = () => -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
+      // Function to calculate scroll amount
+      const getScrollAmount = () => -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
 
-    // Create horizontal scroll animation using GSAP
-    const tween = gsap.to(races, {
-      x: getScrollAmount(),
-      duration: 3,
-      ease: "none",
-    });
+      // GSAP Timeline for horizontal scrolling and span animation
+      const wrapperTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".service-area-4",
+          start: "top -10%",
+          end: `+=${Math.abs(getScrollAmount())}`, // Makes scroll duration proportional to the horizontal width
+          scrub: 3, // Slower response to scroll, increases smoothness
+          pin: true,
+          markers: true, // Debug markers
 
-    // ScrollTrigger for horizontal scroll effect
-    ScrollTrigger.create({
-      trigger: ".service-area-4",
-      start: "top top",
-      end: () => `+=${-getScrollAmount()}`,
-      pin: true,
-      animation: tween,
-      scrub: 1,
-      invalidateOnRefresh: true,
-      markers: {
-        startColor: "red",
-        endColor: "red",
-        fontSize: "18px",
-        fontWeight: "bold",
-        indent: 20,
-      },
-    });
+        },
+      });
 
-    // ScrollTrigger for fading out spans in the service-thumb-line-wrapper
-    ScrollTrigger.create({
-      trigger: ".service-thumb-line-wrapper",
-      start: "top center",
-      end: "top 25%",
-      scrub: 2,
-      markers: {
-        startColor: "green",
-        endColor: "green",
-        fontSize: "28px",
-        fontWeight: "bold",
-        indent: 20,
-      },
-      animation: gsap.to(".service-thumb-line-wrapper span", {
-        scaleX: 0,
-        duration: 0.5,
-        x: "-100%",
-        // translateX_value: 0,
-        // stagger: 0.5,
-        // width: 0,
-        // opacity: 0
-        // scrub: true,
-      }),
-    });
+      // Horizontal Scroll Animation (Integrated with scroll)
+      wrapperTimeline.to(".services-wrapper", {
+        x: getScrollAmount(),
+        ease: "power1.inOut", // Smooth easing
+      });
 
-    // ScrollTrigger observer for dragging functionality
-    ScrollTrigger.observe({
-      target: ".service-area-4",
-      type: "pointer,touch",
-      onDrag: (self) => {
-        gsap.to(document.querySelector(".service-area-4"), {
-          scrollTo: { y: `+=${self.deltaX * 10}` },
-          duration: 0.2,
-        });
-      },
-    });
-  }
+      // Spans Animation (Synchronized with horizontal scroll)
+      wrapperTimeline.to(
+        ".service-thumb-line-wrapper span",
+        {
+          scaleX: 0,
+          x: "-100%",
+          opacity: 0,
+          stagger: 0.15, // Slight delay between each span animation
+          duration: 1.2, // Slower, smoother animation per span
+          ease: "power4.out", // Smooth fade-out easing
+        },
+        // "<" // Syncs with the horizontal scroll animation
+      );
+    }
+  });
 
+
+
+
+
+
+  // if (document.querySelectorAll(".service-area-4").length > 0) {
+  //   gsap.utils.toArray('.service-area-4').forEach((section, index) => {
+  //     const w = section.querySelector('.services-wrapper-box');
+  //     const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 400] : [0, section.offsetWidth - w.scrollWidth];
+  //     gsap.fromTo(w, { x }, {
+  //       x: xEnd,
+  //       scrollTrigger: {
+  //         trigger: section,
+  //         scrub: 3,
+  //         pin: true,
+  //       }
+  //     });
+  //     ScrollTrigger.create({
+  //       trigger: ".service-thumb-line-wrapper",
+  //       start: "top center",
+  //       end: "top 25%",
+  //       scrub: 2,
+  //       markers: {
+  //         startColor: "green",
+  //         endColor: "green",
+  //         fontSize: "28px",
+  //         fontWeight: "bold",
+  //         indent: 20,
+  //       },
+  //       animation: gsap.to(".service-thumb-line-wrapper span", {
+  //         scaleX: 0,
+  //         duration: 0.5,
+  //         x: "-100%",
+  //         // translateX_value: 0,
+  //         // stagger: 0.5,
+  //         // width: 0,
+  //         // opacity: 0
+  //         // scrub: true,
+  //       }),
+  //     });
+  //   });
+  // }
+
+  // if (document.querySelectorAll(".service-area-4").length > 0) {
+  //   // Main timeline for .service-area-4
+  //   gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".service-area-4",
+  //       start: "top 0",
+  //       end: "bottom 0",
+  //       scrub: 3,
+  //       pin: true,
+  //       invalidateOnRefresh: true,
+  //       markers: {
+  //         startColor: "red",
+  //         endColor: "red",
+  //         fontSize: "28px",
+  //         fontWeight: "bold",
+  //         indent: 1000,
+  //       },
+  //     },
+  //   }).to(".services-wrapper", { x: "-67%" });
+
+  //   // Animation for .service-thumb-line-wrapper span
+  //   gsap.to(".service-thumb-line-wrapper span", {
+  //     scaleX: 0,
+  //     duration: 1,
+  //     x: "-100%",
+  //     scrollTrigger: {
+  //       trigger: ".service-thumb", // Start when this element enters the viewport
+  //       start: "top 10%", // Adjust when the animation starts
+  //       end: "bottom 100%", // Adjust when the animation ends
+  //       scrub: 2, // Smooth animation controlled by scroll
+  //       markers: {
+  //         startColor: "blue",
+  //         endColor: "blue",
+  //         fontSize: "20px",
+  //         fontWeight: "bold",
+  //         indent: 20,
+  //       },
+  //     },
+  //   });
+  // }
 
 
 })(jQuery);

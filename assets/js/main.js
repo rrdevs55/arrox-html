@@ -1284,7 +1284,7 @@
       const wrapperTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".service-area-4",
-          start: "top -10%",
+          start: "top -9%",
           end: `+=${Math.abs(getScrollAmount())}`, // Makes scroll duration proportional to the horizontal width
           scrub: 3, // Slower response to scroll, increases smoothness
           pin: true,

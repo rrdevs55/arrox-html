@@ -1330,7 +1330,7 @@
             top: 0;
             left: 0;
             display: flex;
-            // rotate: 180deg;
+            rotate: 180deg;
 
 
             span {
@@ -1338,6 +1338,7 @@
                 height: 1000px;
                 background-color: #000;
                 transform-origin: right center;
+                margin-left: -1px;
             }
         }
     }

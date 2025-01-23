@@ -1396,11 +1396,11 @@
           scaleX: 0,
           x: "-100%",
           opacity: 0,
-          stagger: 0.15, // Slight delay between each span animation
-          duration: 1.2, // Slower, smoother animation per span
-          ease: "power4.out", // Smooth fade-out easing
+          stagger: 0.01, // Slight delay between each span animation
+          // duration: 1.2, // Slower, smoother animation per span
+          ease: "power1.out", // Smooth fade-out easing
         },
-        // "<" // Syncs with the horizontal scroll animation
+        "<" // Syncs with the horizontal scroll animation
       );
     }
   });

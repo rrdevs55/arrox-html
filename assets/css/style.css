@@ -5878,12 +5878,14 @@ video.video-area {
   top: 0;
   left: 0;
   display: flex;
+  rotate: 180deg;
 }
 .service-area-4 .service-thumb-line-wrapper span {
   width: 50px;
   height: 1000px;
   background-color: #000;
   transform-origin: right center;
+  margin-left: -1px;
 }
 
 .body-creative-agency {

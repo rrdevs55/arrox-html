@@ -318,3 +318,36 @@
     transition: box-shadow 0.2s;
     transition: box-shadow 0.2s, -webkit-box-shadow 0.2s, -moz-box-shadow 0.2s;
 }
+
+.cb-cursor.-green {
+    color: green;
+}
+
+.cb-cursor.-green:before {
+    background: green;
+}
+
+.cb-cursor.-red .cb-cursor-text {
+    color: white;
+    top: -10px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+}
+
+.cb-cursor.-red {
+    opacity: 0.90;
+    backdrop-filter: blur(10);
+    color: white;
+    background-color: #fff;
+    width: 5px;
+    height: 5px;
+}
+
+.cb-cursor.-red:before {
+    border-radius: 500px;
+    background: black;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+}

@@ -60,6 +60,25 @@
   font-weight: 400;
 }
 
+/* times now  */
+@font-face {
+  font-family: "BDOGrotesk-Regular";
+  src: url('../fonts/BDOGrotesk-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "BDOGrotesk-Regular";
+  src: url('../fonts/BDOGrotesk-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "BDOGrotesk-Regular";
+  src: url('../fonts/BDOGrotesk-DemiBold.ttf');
+  font-weight: 600;
+}
+
 
 
 :root {
@@ -69,6 +88,7 @@
   --font_sequelsansromanbody: "Sequel Sans Roman Body";
   --font_sequelsansmediumbody: "Sequel Sans Medium Body";
   --font_timesnow: "TimesNow-SemiLightItalic";
+  --font_bdogrotesk: "BDOGrotesk-Regular";
   --font_awesome: 'Font Awesome 6 Free';
 }
 
@@ -86,6 +106,10 @@
 
     &-thunder-regular {
       @include heading (var(--font_thunder), 400, 0.85);
+    }
+
+    &-bdogrotesk-regular {
+      @include heading (var(--font_bdogrotesk), 400, 0.95);
     }
 
   }

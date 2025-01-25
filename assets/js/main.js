@@ -1272,129 +1272,44 @@
     });
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
+
+  mm.add("(min-width: 1024px)", () => {
+
     if (document.querySelectorAll(".service-area-4").length > 0) {
       const races = document.querySelector(".service-area-4");
       const racesScrollWidth = races.scrollWidth;
 
-      // Function to calculate scroll amount
       const getScrollAmount = () => -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
 
-      // GSAP Timeline for horizontal scrolling and span animation
       const wrapperTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".service-area-4",
-          start: "top -9%",
-          end: `+=${Math.abs(getScrollAmount())}`, // Makes scroll duration proportional to the horizontal width
-          scrub: 3, // Slower response to scroll, increases smoothness
+          start: "top 0%",
+          end: `+=${Math.abs(getScrollAmount())}`,
+          scrub: 3,
           pin: true,
-          markers: true, // Debug markers
 
         },
       });
 
-      // Horizontal Scroll Animation (Integrated with scroll)
       wrapperTimeline.to(".services-wrapper", {
         x: getScrollAmount(),
-        delay: 0.1,
-        ease: "power1.inOut", // Smooth easing
+        delay: 0.04,
+        ease: "power1.inOut",
       });
 
-      // Spans Animation (Synchronized with horizontal scroll)
       wrapperTimeline.to(
         ".service-thumb-line-wrapper span",
         {
           scaleX: 0,
           x: "-100%",
-          // opacity: 0,
-          stagger: 0.04, // Slight delay between each span animation
-          // duration: 1.2, // Slower, smoother animation per span
-          ease: "power1.out", // Smooth fade-out easing
+          stagger: 0.04,
+          ease: "power1.out",
         },
-        "<" // Syncs with the horizontal scroll animation
+        "<"
       );
     }
   });
-
-
-  // if (document.querySelectorAll(".service-area-4").length > 0) {
-  //   gsap.utils.toArray('.service-area-4').forEach((section, index) => {
-  //     const w = section.querySelector('.services-wrapper-box');
-  //     const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 400] : [0, section.offsetWidth - w.scrollWidth];
-  //     gsap.fromTo(w, { x }, {
-  //       x: xEnd,
-  //       scrollTrigger: {
-  //         trigger: section,
-  //         scrub: 3,
-  //         pin: true,
-  //       }
-  //     });
-  //     ScrollTrigger.create({
-  //       trigger: ".service-thumb-line-wrapper",
-  //       start: "top center",
-  //       end: "top 25%",
-  //       scrub: 2,
-  //       markers: {
-  //         startColor: "green",
-  //         endColor: "green",
-  //         fontSize: "28px",
-  //         fontWeight: "bold",
-  //         indent: 20,
-  //       },
-  //       animation: gsap.to(".service-thumb-line-wrapper span", {
-  //         scaleX: 0,
-  //         duration: 0.5,
-  //         x: "-100%",
-  //         // translateX_value: 0,
-  //         // stagger: 0.5,
-  //         // width: 0,
-  //         // opacity: 0
-  //         // scrub: true,
-  //       }),
-  //     });
-  //   });
-  // }
-
-  // if (document.querySelectorAll(".service-area-4").length > 0) {
-  //   // Main timeline for .service-area-4
-  //   gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".service-area-4",
-  //       start: "top 0",
-  //       end: "bottom 0",
-  //       scrub: 3,
-  //       pin: true,
-  //       invalidateOnRefresh: true,
-  //       markers: {
-  //         startColor: "red",
-  //         endColor: "red",
-  //         fontSize: "28px",
-  //         fontWeight: "bold",
-  //         indent: 1000,
-  //       },
-  //     },
-  //   }).to(".services-wrapper", { x: "-67%" });
-
-  //   // Animation for .service-thumb-line-wrapper span
-  //   gsap.to(".service-thumb-line-wrapper span", {
-  //     scaleX: 0,
-  //     duration: 1,
-  //     x: "-100%",
-  //     scrollTrigger: {
-  //       trigger: ".service-thumb", // Start when this element enters the viewport
-  //       start: "top 10%", // Adjust when the animation starts
-  //       end: "bottom 100%", // Adjust when the animation ends
-  //       scrub: 2, // Smooth animation controlled by scroll
-  //       markers: {
-  //         startColor: "blue",
-  //         endColor: "blue",
-  //         fontSize: "20px",
-  //         fontWeight: "bold",
-  //         indent: 20,
-  //       },
-  //     },
-  //   });
-  // }
 
 
 

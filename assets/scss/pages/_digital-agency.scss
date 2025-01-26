@@ -51,6 +51,18 @@
                 font-size: 35px;
             }
         }
+
+        .rr-btn {
+            border-width: 0;
+
+            &::before {
+                background-color: var(--action);
+            }
+
+            &.btn-border {
+                border-width: 1px;
+            }
+        }
     }
 }
 

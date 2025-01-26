@@ -896,7 +896,6 @@ h6 {
   display: inline-block;
   text-transform: uppercase;
   color: var(--primary);
-  letter-spacing: 1px;
 }
 
 .section-title {
@@ -1316,7 +1315,6 @@ body {
 
 .body-wrapper {
   background-color: var(--white);
-  overflow: hidden;
 }
 
 .img_anim_reveal {
@@ -1850,6 +1848,7 @@ section {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  mix-blend-mode: exclusion;
 }
 
 .progress-wrap::after {
@@ -1877,7 +1876,7 @@ section {
 
 .progress-wrap svg.progress-circle path {
   fill: var(--white);
-  stroke: var(--theme);
+  stroke: transparent;
   stroke-width: 5;
   box-sizing: border-box;
   transition: all 200ms linear;
@@ -1968,9 +1967,10 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 5;
-  padding: 26px 44px;
+  padding: 26px 42px;
   background-color: var(--black);
   color: white;
+  border: 1px solid black;
   border-radius: 100px;
   font-style: normal;
   font-weight: 500;
@@ -1979,18 +1979,14 @@ section {
   display: inline-flex;
   align-items: center;
   text-transform: capitalize;
-  border: 1px solid transparent;
+  letter-spacing: -0.02em;
 }
 @media only screen and (max-width: 1199px) {
   .rr-btn {
     padding: 18px 29px;
   }
 }
-.rr-btn:hover, .rr-btn:focus {
-  background-color: #FF6A3A;
-}
 .rr-btn:hover::before, .rr-btn:focus::before {
-  background-color: #FF6A3A;
   height: 100%;
 }
 .rr-btn:hover .btn-wrap .text-one, .rr-btn:focus .btn-wrap .text-one {
@@ -1999,7 +1995,7 @@ section {
 .rr-btn:hover .btn-wrap .text-two, .rr-btn:focus .btn-wrap .text-two {
   top: 50%;
   transform: translateY(-50%);
-  color: #F9F9F9;
+  color: var(--black);
 }
 .rr-btn:after {
   display: block;
@@ -2007,7 +2003,7 @@ section {
   content: "";
 }
 .rr-btn::before {
-  background-color: #FF6A3A;
+  background-color: var(--white);
   content: "";
   width: 100%;
   height: 0;
@@ -2042,23 +2038,17 @@ section {
   transition: all 0.5s;
 }
 .rr-btn.btn-border {
+  border: 1px solid rgba(17, 17, 17, 0.15);
   background-color: transparent;
-  border-color: rgba(17, 17, 17, 0.15);
   color: var(--black);
+  padding: 25px 42px;
 }
 .rr-btn.btn-border:hover, .rr-btn.btn-border:focus {
   border-color: transparent;
   color: white;
 }
-.rr-btn.btn-border:hover::before, .rr-btn.btn-border:focus::before {
-  background-color: var(--black);
-  height: 100%;
-}
 .rr-btn.btn-border:hover .text-two, .rr-btn.btn-border:focus .text-two {
   color: #F9F9F9;
-}
-.rr-btn.btn-border::before {
-  background-color: var(--black);
 }
 .rr-btn.btn-border .btn-wrap .text-one {
   color: var(--black);
@@ -3441,6 +3431,15 @@ section {
   .body-digital-agency .section-title {
     font-size: 35px;
   }
+}
+.body-digital-agency .rr-btn {
+  border-width: 0;
+}
+.body-digital-agency .rr-btn::before {
+  background-color: var(--action);
+}
+.body-digital-agency .rr-btn.btn-border {
+  border-width: 1px;
 }
 
 /* hero area style  */
@@ -6205,6 +6204,9 @@ video.video-area {
     font-size: 36px;
   }
 }
+.body-creative-agency .rr-btn::before {
+  background-color: #FCF7F3;
+}
 
 /* hero area 2 style  */
 .hero-area-2-inner {
@@ -6777,6 +6779,9 @@ video.video-area {
 }
 
 /* service area style  */
+.service-area-2-inner {
+  margin-bottom: -2px;
+}
 .service-area-2 .section-header {
   position: relative;
   z-index: -1;
@@ -7433,6 +7438,7 @@ video.video-area {
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
+  text-transform: unset;
   display: inline-block;
   max-width: 208px;
   color: var(--primary);
@@ -13159,11 +13165,13 @@ video.video-area {
   }
 }
 .header-area .rr-btn {
-  padding: 21px 38px;
+  font-size: 16px;
+  padding: 22px 38px;
+  letter-spacing: -0.04em;
 }
 @media only screen and (max-width: 1199px) {
   .header-area .rr-btn {
-    padding: 16px 33px;
+    padding: 17px 33px;
   }
 }
 .header-area .header__navicon i {

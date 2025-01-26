@@ -580,7 +580,7 @@
           end: "bottom",
           scrub: 2,
           // markers: true
-        }
+        },
       });
       ab2.to(".year-since", {
         right: "0",
@@ -619,7 +619,7 @@
         pin: true,
         scrub: 1,
         start: "top top",
-        end: "bottom top",
+        end: "bottom+=1500 top",
         // markers: true
       }
     });

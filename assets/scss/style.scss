@@ -113,10 +113,12 @@
     }
 
     .rr-btn {
-        padding: 21px 38px;
+        font-size: 16px;
+        padding: 22px 38px;
+        letter-spacing: -0.04em;
 
         @media #{$lg} {
-            padding: 16px 33px;
+            padding: 17px 33px;
 
         }
     }

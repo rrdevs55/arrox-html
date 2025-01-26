@@ -80,6 +80,12 @@
                 }
             }
         }
+
+        .rr-btn {
+            &::before {
+                background-color: #FCF7F3;
+            }
+        }
     }
 }
 
@@ -703,6 +709,9 @@
 
 /* service area style  */
 .service-area-2 {
+    &-inner {
+        margin-bottom: -2px;
+    }
 
     .section-header {
         position: relative;

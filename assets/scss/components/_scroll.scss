@@ -130,6 +130,7 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  mix-blend-mode: exclusion;
 }
 
 .progress-wrap::after {
@@ -159,7 +160,7 @@
 
 .progress-wrap svg.progress-circle path {
   fill: var(--white);
-  stroke: var(--theme);
+  stroke: transparent;
   stroke-width: 5;
   box-sizing: border-box;
   transition: all 200ms linear;

@@ -1238,18 +1238,18 @@
       left: x
     });
   });
-
+  1
 
   var hoverBtns = gsap.utils.toArray(".rr-hover-btn-wrapper");
 
   const hoverBtnItem = gsap.utils.toArray(".rr-btn-circle");
-  hoverBtns.forEach((btn, i) => {
+  hoverBtns.forEach((btn, span) => {
     $(btn).mousemove(function (e) {
       callParallax(e);
     });
 
     function callParallax(e) {
-      parallaxIt(e, hoverBtnItem[i], 80);
+      parallaxIt(e, hoverBtnItem[span], 40);
     }
 
     function parallaxIt(e, target, movement) {
@@ -1264,7 +1264,7 @@
       });
     }
     $(btn).mouseleave(function (e) {
-      gsap.to(hoverBtnItem[i], 0.5, {
+      gsap.to(hoverBtnItem[span], 0.5, {
         x: 0,
         y: 0,
         ease: Power2.easeOut,

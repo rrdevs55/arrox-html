@@ -3333,28 +3333,26 @@ section {
 }
 
 .cb-cursor.-red .cb-cursor-text {
-  color: white;
-  top: -10px;
-  left: -10px;
-  width: 30px;
-  height: 30px;
+  color: black;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  text-transform: uppercase;
 }
 
 .cb-cursor.-red {
-  opacity: 0.9;
-  -webkit-backdrop-filter: blur(10);
-          backdrop-filter: blur(10);
-  color: white;
-  background-color: #fff;
+  color: black;
+  background-color: black;
   width: 5px;
   height: 5px;
 }
 
 .cb-cursor.-red:before {
   border-radius: 500px;
-  background: black;
-  width: 60px;
-  height: 60px;
+  background: white;
+  width: 100px;
+  height: 100px;
   color: #fff;
 }
 
@@ -5148,6 +5146,7 @@ video.video-area {
 }
 .featured-work-area-2 .rr-btn-circle {
   position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -5168,8 +5167,8 @@ video.video-area {
   border-color: transparent;
 }
 .featured-work-area-2 .rr-btn-circle:hover .rr-btn-circle-dot {
-  width: 170px;
-  height: 170px;
+  width: 400px;
+  height: 400px;
 }
 .featured-work-area-2 .rr-btn-circle-dot {
   position: absolute;

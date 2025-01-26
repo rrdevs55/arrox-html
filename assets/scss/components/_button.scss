@@ -87,10 +87,33 @@
   display: inline-flex;
   align-items: center;
   text-transform: capitalize;
+  border: 1px solid transparent;
 
   @media #{$lg} {
     padding: 18px 29px;
 
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #FF6A3A;
+
+    &::before {
+      background-color: #FF6A3A;
+      height: 100%;
+    }
+
+    .btn-wrap {
+      .text-one {
+        transform: translateY(-150%);
+      }
+
+      .text-two {
+        top: 50%;
+        transform: translateY(-50%);
+        color: #F9F9F9;
+      }
+    }
   }
 
   &:after {
@@ -139,28 +162,26 @@
     }
   }
 
-  &:hover,
-  &:focus {
-    .text-one {
-      transform: translateY(-150%);
-    }
-
-    &::before {
-      background-color: #FF6A3A;
-      height: 100%;
-    }
-
-    .text-two {
-      top: 50%;
-      transform: translateY(-50%);
-      color: #F9F9F9;
-    }
-  }
 
   &.btn-border {
     background-color: transparent;
-    border-color: rgb(0 0 0 / 20%);
+    border-color: rgba(17, 17, 17, 0.15);
     color: var(--black);
+
+    &:hover,
+    &:focus {
+      border-color: transparent;
+      color: white;
+
+      &::before {
+        background-color: var(--black);
+        height: 100%;
+      }
+
+      .text-two {
+        color: #F9F9F9;
+      }
+    }
 
     &::before {
       background-color: var(--black);
@@ -172,22 +193,11 @@
       }
 
       .text-two {
-        color: var(--black);
+        color: var(--white);
       }
     }
 
-    &:hover,
-    &:focus {
 
-      &::before {
-        background-color: var(--black);
-        height: 100%;
-      }
-
-      .text-two {
-        color: #F9F9F9;
-      }
-    }
   }
 
   &.btn-border-white {

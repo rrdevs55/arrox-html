@@ -3433,6 +3433,9 @@ section {
 .body-digital-agency .rr-btn {
   border-width: 0;
 }
+.body-digital-agency .rr-btn:hover .btn-wrap .text-two, .body-digital-agency .rr-btn:focus .btn-wrap .text-two {
+  color: var(--white);
+}
 .body-digital-agency .rr-btn::before {
   background-color: var(--action);
 }

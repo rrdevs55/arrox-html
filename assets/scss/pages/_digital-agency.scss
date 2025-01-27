@@ -55,6 +55,15 @@
         .rr-btn {
             border-width: 0;
 
+            &:hover,
+            &:focus {
+                .btn-wrap {
+                    .text-two {
+                        color: var(--white);
+                    }
+                }
+            }
+
             &::before {
                 background-color: var(--action);
             }
@@ -62,6 +71,7 @@
             &.btn-border {
                 border-width: 1px;
             }
+
         }
     }
 }

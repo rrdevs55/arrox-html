@@ -6412,39 +6412,30 @@ video.video-area {
   margin-top: 69px;
 }
 .about-area-2 .section-content {
-  min-height: 200vh;
+  min-height: 400vh;
 }
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 1399px) {
   .about-area-2 .section-content {
     min-height: auto;
   }
 }
 .about-area-2 .section-content .year-wrapper {
   position: relative;
-  height: 412px;
+  height: 355px;
 }
 @media only screen and (max-width: 1919px) {
   .about-area-2 .section-content .year-wrapper {
-    height: 284px;
+    height: 242px;
   }
 }
 @media only screen and (max-width: 1399px) {
   .about-area-2 .section-content .year-wrapper {
     height: 213px;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .about-area-2 .section-content .year-wrapper {
-    height: 128px;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .about-area-2 .section-content .year-wrapper {
     height: auto;
   }
 }
 .about-area-2 .section-content .year-since {
-  font-size: 580px;
+  font-size: 500px;
   font-weight: 315;
   line-height: 0.71;
   letter-spacing: -0.1em;
@@ -6457,25 +6448,20 @@ video.video-area {
 }
 @media only screen and (max-width: 1919px) {
   .about-area-2 .section-content .year-since {
-    font-size: 400px;
+    font-size: 340px;
   }
 }
 @media only screen and (max-width: 1399px) {
   .about-area-2 .section-content .year-since {
-    font-size: 300px;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .about-area-2 .section-content .year-since {
-    font-size: 280px;
+    font-size: 235px;
+    text-align: left;
+    position: relative;
+    white-space: wrap;
   }
 }
 @media only screen and (max-width: 1199px) {
   .about-area-2 .section-content .year-since {
     font-size: 180px;
-    text-align: left;
-    position: relative;
-    white-space: wrap;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -6499,7 +6485,7 @@ video.video-area {
   text-align: right;
   padding-right: 40px;
 }
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 1399px) {
   .about-area-2 .section-content .year-since .first-text {
     text-align: left;
     padding-right: 0;
@@ -6513,7 +6499,7 @@ video.video-area {
   position: relative;
   transform-origin: top center;
 }
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 1399px) {
   .about-area-2 .section-content .year-since .last-text {
     display: none;
   }
@@ -6532,11 +6518,12 @@ video.video-area {
 @media only screen and (max-width: 1919px) {
   .about-area-2 .section-content .text-wrapper {
     max-width: 570px;
+    margin-top: 61px;
   }
 }
 @media only screen and (max-width: 1399px) {
   .about-area-2 .section-content .text-wrapper {
-    margin-top: 61px;
+    max-width: 670px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -6558,6 +6545,11 @@ video.video-area {
 @media only screen and (max-width: 1919px) {
   .about-area-2 .section-content .btn-wrapper {
     max-width: 570px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .about-area-2 .section-content .btn-wrapper {
+    max-width: 670px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -6605,6 +6597,11 @@ video.video-area {
   letter-spacing: -0.1em;
   text-transform: uppercase;
   color: var(--primary);
+}
+@media only screen and (max-width: 1399px) {
+  .work-area-2 .works-wrapper-head .text {
+    font-size: 22px;
+  }
 }
 @media only screen and (max-width: 991px) {
   .work-area-2 .works-wrapper-head .text {

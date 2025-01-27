@@ -294,36 +294,29 @@
     }
 
     .section-content {
-        min-height: 200vh;
+        min-height: 400vh;
 
-        @media #{$lg} {
+        @media #{$xl} {
             min-height: auto;
         }
 
         .year-wrapper {
             position: relative;
-            height: 412px;
+            height: 355px;
 
             @media #{$xxl} {
-                height: 284px;
+                height: 242px;
             }
 
             @media #{$xl} {
                 height: 213px;
-            }
-
-            @media #{$lg} {
-                height: 128px;
-            }
-
-            @media #{$md} {
                 height: auto;
             }
 
         }
 
         .year-since {
-            font-size: 580px;
+            font-size: 500px;
             font-weight: 315;
             line-height: 0.71;
             letter-spacing: -0.1em;
@@ -335,23 +328,18 @@
             opacity: 1;
 
             @media #{$xxl} {
-                font-size: 400px;
+                font-size: 340px;
             }
 
             @media #{$xl} {
-                font-size: 300px;
-            }
-
-            @media #{$lg} {
-                font-size: 280px;
-
+                font-size: 235px;
+                text-align: left;
+                position: relative;
+                white-space: wrap;
             }
 
             @media #{$lg} {
                 font-size: 180px;
-                text-align: left;
-                position: relative;
-                white-space: wrap;
             }
 
             @media #{$md} {
@@ -373,7 +361,7 @@
                 text-align: right;
                 padding-right: 40px;
 
-                @media #{$lg} {
+                @media #{$xl} {
                     text-align: left;
                     padding-right: 0;
                     width: auto;
@@ -389,7 +377,7 @@
 
 
 
-                @media #{$lg} {
+                @media #{$xl} {
                     display: none;
                 }
             }
@@ -414,10 +402,11 @@
 
             @media #{$xxl} {
                 max-width: 570px;
+                margin-top: 61px;
             }
 
             @media #{$xl} {
-                margin-top: 61px;
+                max-width: 670px;
             }
 
             @media #{$lg} {
@@ -437,6 +426,10 @@
 
             @media #{$xxl} {
                 max-width: 570px;
+            }
+
+            @media #{$xl} {
+                max-width: 670px;
             }
 
             @media #{$lg} {
@@ -489,7 +482,9 @@
             text-transform: uppercase;
             color: var(--primary);
 
-
+            @media #{$xl} {
+                font-size: 22px;
+            }
 
             @media #{$md} {
                 font-size: 20px;

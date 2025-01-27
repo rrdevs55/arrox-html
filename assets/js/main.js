@@ -568,7 +568,7 @@
 
 
   // text-animation start
-  mm.add("(min-width: 1201px)", () => {
+  mm.add("(min-width: 1400px)", () => {
 
     if (document.querySelectorAll(".about-area-2").length > 0) {
       var ab2 = gsap.timeline({
@@ -578,7 +578,7 @@
           pinSpacing: false,
           start: "top top",
           end: "bottom",
-          scrub: 2,
+          scrub: 0.2,
           // markers: true
         },
       });

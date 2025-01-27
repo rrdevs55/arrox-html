@@ -45,6 +45,22 @@
                 font-size: 35px;
             }
         }
+
+        .rr-btn-underline {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+            text-transform: unset;
+            gap: 5px;
+
+            &::before {
+                height: 1px;
+            }
+
+            .icon {
+                width: 13px;
+            }
+        }
     }
 }
 
@@ -188,9 +204,8 @@
         padding-top: 35px;
 
         .btn-wrapper {
-            display: grid;
-            grid-template-columns: 1015px;
-            justify-content: flex-end;
+            max-width: 1015px;
+            margin-left: auto;
             margin-top: 44px;
         }
 
@@ -208,5 +223,75 @@
 
     .section-title {
         max-width: 700px;
+    }
+
+    .works-wrapper-box {
+        margin-top: 29px;
+    }
+
+    .works-wrapper {
+        display: grid;
+        gap: 85px 10px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .work-box {
+
+
+        .thumb {
+            border-radius: 15px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            margin-top: 24px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: -0.05em;
+        }
+
+        .tag {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: -0.05em;
+            display: block;
+            font-family: var(--font_bdogrotesk);
+            color: var(--primary);
+        }
+
+        .date {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: -0.05em;
+            display: block;
+            font-family: var(--font_bdogrotesk);
+            color: var(--primary);
+        }
+
+
+
+    }
+}
+
+/* marquee text area style  */
+.marquee-text-area {
+
+
+    .section-title {
+        font-size: 280px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.07em;
+        white-space: nowrap;
     }
 }

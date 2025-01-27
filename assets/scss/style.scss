@@ -7,6 +7,7 @@
 @import "pages/creative-agency";
 @import "pages/marketing-agency";
 @import "pages/startup-agency";
+@import "pages/portfolio-agency";
 @import "pages/404";
 @import "pages/about";
 @import "pages/blog-details";
@@ -1241,6 +1242,126 @@
 
                 &:hover {
                     color: var(--black);
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-area-6 {
+    padding-bottom: 40px;
+
+    .copyright-area-inner {
+        border-top: 1px solid var(--primary);
+        padding-top: 40px;
+
+    }
+
+    .copyright-socail-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 41px;
+        position: relative;
+        padding-bottom: 20px;
+
+        &::before {
+            width: 150px;
+            height: 1px;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            background-color: var(--primary);
+        }
+
+        li {
+            position: relative;
+
+            &:not(:last-child) {
+                &::before {
+                    content: "";
+                    width: 1px;
+                    height: 10px;
+                    right: -50%;
+                    position: absolute;
+                    background-color: #999999;
+                    transform: translate(-10px, 3px);
+                }
+            }
+
+
+            a {
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: var(--primary);
+                text-align: center;
+                position: relative;
+
+                &::before {
+                    width: 0;
+                    height: 1px;
+                    background-color: currentColor;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transition: all 0.5s;
+                }
+
+                &:hover {
+                    color: #999999;
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright-text {
+        padding-top: 20px;
+
+        .text {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--primary);
+            text-align: center;
+
+            @media #{$xl} {
+                font-size: 20px;
+            }
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
+
+            a {
+                transition: all 0.3s;
+                position: relative;
+
+                &::before {
+                    width: 0;
+                    height: 1px;
+                    background-color: currentColor;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transition: all 0.5s;
+                }
+
+                &:hover {
+                    color: #999999;
 
                     &::before {
                         width: 100%;

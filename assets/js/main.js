@@ -1238,18 +1238,18 @@
       left: x
     });
   });
-
+  1
 
   var hoverBtns = gsap.utils.toArray(".rr-hover-btn-wrapper");
 
   const hoverBtnItem = gsap.utils.toArray(".rr-btn-circle");
-  hoverBtns.forEach((btn, i) => {
+  hoverBtns.forEach((btn, span) => {
     $(btn).mousemove(function (e) {
       callParallax(e);
     });
 
     function callParallax(e) {
-      parallaxIt(e, hoverBtnItem[i], 80);
+      parallaxIt(e, hoverBtnItem[span], 100);
     }
 
     function parallaxIt(e, target, movement) {
@@ -1264,7 +1264,7 @@
       });
     }
     $(btn).mouseleave(function (e) {
-      gsap.to(hoverBtnItem[i], 0.5, {
+      gsap.to(hoverBtnItem[span], 0.5, {
         x: 0,
         y: 0,
         ease: Power2.easeOut,
@@ -1274,35 +1274,36 @@
 
 
   mm.add("(min-width: 1024px)", () => {
-
     if (document.querySelectorAll(".service-area-4").length > 0) {
       const races = document.querySelector(".service-area-4");
       const racesScrollWidth = races.scrollWidth;
 
-      const getScrollAmount = () => -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
+      const getScrollAmount = () =>
+        -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
 
       const wrapperTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".service-area-4",
-          start: "top 0%",
+          start: "top top",
           end: `+=${Math.abs(getScrollAmount())}`,
           scrub: 3,
           pin: true,
-
         },
       });
 
+      // Move the wrapper
       wrapperTimeline.to(".services-wrapper", {
         x: getScrollAmount(),
-        delay: 0.04,
+        delay: 0.05,
         ease: "power1.inOut",
       });
 
+      // Animate the spans
       wrapperTimeline.to(
         ".service-thumb-line-wrapper span",
         {
           scaleX: 0,
-          x: "-100%",
+          // x: "-100%",
           stagger: 0.04,
           ease: "power1.out",
         },
@@ -1311,6 +1312,27 @@
     }
   });
 
+
+
+  gsap.fromTo(
+    ".section-content__thumb img",
+    {
+      x: 350, // Move the image 100px to the right (off-screen)
+      // opacity: 0, // Start with opacity 0
+    },
+    {
+      x: 0, // Animate to its original position
+      opacity: 1, // Fade in
+      duration: 1, // Animation duration
+      ease: "power3.out", // Easing effect
+      scrollTrigger: {
+        trigger: ".section-content__thumb img", // The element to watch
+        start: "top 80%", // Trigger when the top of the image is 80% down the viewport
+        toggleActions: "play none none none", // Only play the animation
+        scrub: 2,
+      },
+    }
+  );
 
 
 })(jQuery);

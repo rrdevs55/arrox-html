@@ -6414,7 +6414,7 @@ video.video-area {
   margin-top: 69px;
 }
 .about-area-2 .section-content {
-  min-height: 400vh;
+  min-height: 300vh;
 }
 @media only screen and (max-width: 1399px) {
   .about-area-2 .section-content {

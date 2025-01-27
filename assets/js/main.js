@@ -605,7 +605,7 @@
         top: 0,
         right: 0,
         ease: "none",
-        duration: 0.70,
+        duration: 0.40,
       });
     }
   });

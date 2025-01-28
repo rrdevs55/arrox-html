@@ -213,9 +213,26 @@
                 margin-top: 34px;
             }
 
+            @media #{$xl} {
+                max-width: 700px;
+            }
+
             @media #{$lg} {
                 margin-top: 24px;
+                max-width: 600px;
+
             }
+
+            @media #{$md} {
+                max-width: 430px;
+
+            }
+
+            @media #{$sm} {
+                max-width: 100%;
+
+            }
+
         }
 
         .subtitle-wrapper {
@@ -225,12 +242,28 @@
 
     .section-title-wrapper {
         display: grid;
-        gap: 20px 60px;
+        gap: 15px 60px;
         grid-template-columns: 1fr 1015px;
 
         @media #{$xxl} {
             grid-template-columns: 1fr 815px;
 
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr 700px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 600px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr 430px;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr;
         }
     }
 
@@ -242,16 +275,43 @@
             max-width: 600px;
 
         }
+
+        @media #{$xl} {
+            max-width: 450px;
+
+        }
+
+        @media #{$lg} {
+            max-width: 350px;
+
+        }
     }
 
     .works-wrapper-box {
         margin-top: 29px;
+
+        @media #{$xl} {
+            margin-top: 9px;
+        }
     }
 
     .works-wrapper {
         display: grid;
         gap: 85px 10px;
         grid-template-columns: repeat(2, 1fr);
+
+        @media #{$xxl} {
+            gap: 65px 10px;
+        }
+
+        @media #{$lg} {
+            gap: 45px 10px;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: repeat(1, 1fr);
+
+        }
     }
 
     .work-box {
@@ -268,6 +328,11 @@
 
         .content {
             margin-top: 24px;
+
+            @media #{$lg} {
+                margin-top: 14px;
+
+            }
         }
 
         .title {
@@ -275,6 +340,10 @@
             font-weight: 400;
             line-height: 26px;
             letter-spacing: -0.05em;
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
         }
 
         .tag {
@@ -285,6 +354,10 @@
             display: block;
             font-family: var(--font_bdogrotesk);
             color: var(--primary);
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
         }
 
         .date {
@@ -295,6 +368,10 @@
             display: block;
             font-family: var(--font_bdogrotesk);
             color: var(--primary);
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
         }
     }
 }

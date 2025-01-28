@@ -1,0 +1,13 @@
+.body {
+    &-portfolio-agency {
+        background-color: #F8F8F8;
+
+        .container {
+            &.large {
+                @media (min-width: 1880px) {
+                    max-width: 1880px;
+                }
+            }
+        }
+    }
+}

@@ -149,8 +149,9 @@
         }
 
         &__video {
-            video.title-video {
+            img {
                 max-width: 240px;
+                height: 126px;
             }
         }
 
@@ -1153,6 +1154,7 @@
             }
         }
     }
+
 }
 
 /* award area 2 style  */

@@ -1,0 +1,27 @@
+<svg width="393" height="404" viewBox="0 0 393 404" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48.0903 173.703C42.6575 160.587 39.8613 146.529 39.8613 132.333H147.965L147.965 240.437C133.769 240.437 119.711 237.641 106.596 232.208C93.4799 226.775 81.5626 218.812 71.5243 208.774C61.4859 198.736 53.523 186.818 48.0903 173.703ZM48.0903 281.807C42.6575 268.691 39.8613 254.633 39.8613 240.437H147.965L147.965 348.541C133.769 348.541 119.711 345.745 106.596 340.312C93.4799 334.879 81.5626 326.916 71.5243 316.878C61.4859 306.84 53.523 294.922 48.0903 281.807ZM147.967 132.333C147.967 146.529 150.763 160.587 156.196 173.703C161.628 186.818 169.591 198.736 179.63 208.774C189.668 218.812 201.585 226.775 214.701 232.208C227.817 237.641 241.874 240.437 256.071 240.437V132.333H147.967ZM156.196 281.807C150.763 268.691 147.967 254.633 147.967 240.437H256.071V348.541C241.874 348.541 227.817 345.745 214.701 340.312C201.585 334.879 189.668 326.916 179.63 316.878C169.591 306.84 161.628 294.922 156.196 281.807Z" fill="#111111"/>
+<g style="mix-blend-mode:exclusion">
+<circle cx="256.069" cy="132.333" r="107.604" stroke="#F8F8F8" stroke-dasharray="4 4"/>
+</g>
+<g style="mix-blend-mode:exclusion">
+<circle cx="147.963" cy="132.333" r="107.604" stroke="#F8F8F8" stroke-dasharray="4 4"/>
+</g>
+<g style="mix-blend-mode:exclusion">
+<circle cx="147.963" cy="240.437" r="107.604" stroke="#F8F8F8" stroke-dasharray="4 4"/>
+</g>
+<g style="mix-blend-mode:exclusion">
+<circle cx="256.069" cy="240.437" r="107.604" stroke="#F8F8F8" stroke-dasharray="4 4"/>
+</g>
+<g style="mix-blend-mode:exclusion">
+<line x1="-4.37114e-08" y1="131.5" x2="393" y2="131.5" stroke="#F8F8F8" stroke-dasharray="4 4"/>
+</g>
+<g style="mix-blend-mode:exclusion">
+<line x1="0.000555994" y1="239.5" x2="393.001" y2="239.937" stroke="#F8F8F8" stroke-dasharray="4 4"/>
+</g>
+<g style="mix-blend-mode:exclusion">
+<line x1="148.482" y1="-2.18557e-08" x2="148.482" y2="404" stroke="#F8F8F8" stroke-dasharray="4 4"/>
+</g>
+<g style="mix-blend-mode:exclusion">
+<line x1="256.963" y1="-2.18557e-08" x2="256.963" y2="404" stroke="#F8F8F8" stroke-dasharray="4 4"/>
+</g>
+</svg>

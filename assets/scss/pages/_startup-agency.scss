@@ -204,33 +204,14 @@
         padding-top: 35px;
 
         .btn-wrapper {
-            max-width: 1015px;
-            margin-left: auto;
             margin-top: 44px;
 
             @media #{$xxl} {
-                max-width: 815px;
                 margin-top: 34px;
-            }
-
-            @media #{$xl} {
-                max-width: 700px;
             }
 
             @media #{$lg} {
                 margin-top: 24px;
-                max-width: 600px;
-
-            }
-
-            @media #{$md} {
-                max-width: 430px;
-
-            }
-
-            @media #{$sm} {
-                max-width: 100%;
-
             }
 
         }
@@ -284,6 +265,10 @@
         @media #{$lg} {
             max-width: 350px;
 
+        }
+
+        @media #{$sm} {
+            max-width: 100%;
         }
     }
 
@@ -423,4 +408,101 @@
     .moving-text {
         width: 100%;
     }
+}
+
+/* about area 4 style  */
+.about-area-4 {
+
+    .section-header {
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        padding-top: 35px;
+
+        .btn-wrapper {
+            display: flex;
+            gap: 20px 25px;
+            align-items: center;
+            margin-top: 73px;
+            flex-wrap: wrap;
+
+            @media #{$xxl} {
+                margin-top: 53px;
+            }
+
+            @media #{$lg} {
+                margin-top: 43px;
+            }
+        }
+
+        .subtitle-wrapper {
+            margin-top: 9px;
+        }
+    }
+
+    .section-title-wrapper {
+        display: grid;
+        gap: 15px 60px;
+        grid-template-columns: 1fr 1015px;
+
+        @media #{$xxl} {
+            grid-template-columns: 1fr 815px;
+
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr 700px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 600px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr 430px;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    .section-title {
+        max-width: 885px;
+
+        @media #{$xxl} {
+            max-width: 785px;
+
+        }
+
+        @media #{$xl} {
+            max-width: 585px;
+
+        }
+
+        @media #{$lg} {
+            max-width: 455px;
+
+        }
+
+        @media #{$sm} {
+            max-width: 100%;
+        }
+    }
+
+    .thumb {
+        margin-top: 80px;
+
+        @media #{$xxl} {
+            margin-top: 60px;
+        }
+
+        @media #{$lg} {
+            margin-top: 50px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
 }

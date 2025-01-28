@@ -483,8 +483,8 @@
       scrollTrigger: {
         trigger: section,
         scrub: 0.5,
-        start: "center bottom",
-        end: "center top",
+        start: "20% bottom",
+        end: "80% top",
       }
     });
   });

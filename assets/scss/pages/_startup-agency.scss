@@ -207,6 +207,15 @@
             max-width: 1015px;
             margin-left: auto;
             margin-top: 44px;
+
+            @media #{$xxl} {
+                max-width: 815px;
+                margin-top: 34px;
+            }
+
+            @media #{$lg} {
+                margin-top: 24px;
+            }
         }
 
         .subtitle-wrapper {
@@ -218,11 +227,21 @@
         display: grid;
         gap: 20px 60px;
         grid-template-columns: 1fr 1015px;
+
+        @media #{$xxl} {
+            grid-template-columns: 1fr 815px;
+
+        }
     }
 
 
     .section-title {
         max-width: 700px;
+
+        @media #{$xxl} {
+            max-width: 600px;
+
+        }
     }
 
     .works-wrapper-box {
@@ -277,15 +296,14 @@
             font-family: var(--font_bdogrotesk);
             color: var(--primary);
         }
-
-
-
     }
 }
 
 /* marquee text area style  */
 .marquee-text-area {
-
+    height: 100vh;
+    display: flex;
+    align-items: center;
 
     .section-title {
         font-size: 280px;
@@ -293,5 +311,38 @@
         line-height: 1;
         letter-spacing: -0.07em;
         white-space: nowrap;
+        margin-bottom: 50px;
+
+        @media #{$xxl} {
+            font-size: 210px;
+            margin-bottom: 40px;
+        }
+
+        @media #{$xl} {
+            font-size: 200px;
+        }
+
+        @media #{$lg} {
+            font-size: 150px;
+            margin-bottom: 30px;
+        }
+
+        @media #{$md} {
+            font-size: 110px;
+            margin-bottom: 20px;
+        }
+
+        @media #{$sm} {
+            font-size: 90px;
+        }
+
+        @media #{$xs} {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .moving-text {
+        width: 100%;
     }
 }

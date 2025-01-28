@@ -8914,6 +8914,7 @@ video.video-area {
 }
 .work-area-4 .work-box .thumb img {
   width: 100%;
+  cursor: none;
 }
 .work-area-4 .work-box .content {
   margin-top: 24px;

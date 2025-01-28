@@ -6221,7 +6221,6 @@ video.video-area {
   line-height: 0.85;
   letter-spacing: -0.09em;
   text-transform: uppercase;
-  max-width: 1134px;
   margin-left: 60px;
 }
 @media only screen and (max-width: 1919px) {
@@ -6231,12 +6230,13 @@ video.video-area {
 }
 @media only screen and (max-width: 1399px) {
   .hero-area-2 .section-title {
-    font-size: 100px;
+    font-size: 120px;
     margin-left: 30px;
   }
 }
 @media only screen and (max-width: 1199px) {
   .hero-area-2 .section-title {
+    font-size: 100px;
     margin-left: 0;
   }
 }
@@ -6264,6 +6264,12 @@ video.video-area {
 }
 @media only screen and (max-width: 1399px) {
   .hero-area-2 .section-title .title-shape-1 {
+    height: 86px;
+    margin-top: -23px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .hero-area-2 .section-title .title-shape-1 {
     height: 70px;
     margin-top: -18px;
   }
@@ -6277,16 +6283,26 @@ video.video-area {
   height: 150px;
   margin-right: 10px;
   margin-left: -60px;
+  display: inline-block;
+  margin-top: -40px;
 }
 @media only screen and (max-width: 1919px) {
   .hero-area-2 .section-title .title-video {
     height: 100px;
+    margin-top: -25px;
   }
 }
 @media only screen and (max-width: 1399px) {
   .hero-area-2 .section-title .title-video {
-    height: 70px;
+    height: 85px;
     margin-left: -30px;
+    margin-top: -22px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .hero-area-2 .section-title .title-video {
+    height: 70px;
+    margin-top: -18px;
   }
 }
 @media only screen and (max-width: 1199px) {

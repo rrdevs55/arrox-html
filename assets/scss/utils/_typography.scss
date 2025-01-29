@@ -79,6 +79,12 @@
   font-weight: 600;
 }
 
+@font-face {
+  font-family: "tartuffo-font-family-family";
+  src: url('../fonts/Tartuffo_Trial-MediumItalic.otf');
+  font-weight: 500;
+}
+
 
 
 :root {
@@ -89,6 +95,7 @@
   --font_sequelsansmediumbody: "Sequel Sans Medium Body";
   --font_timesnow: "TimesNow-SemiLightItalic";
   --font_bdogrotesk: "BDOGrotesk-Regular";
+  --font_tartuffo: "tartuffo-font-family";
   --font_awesome: 'Font Awesome 6 Free';
 }
 

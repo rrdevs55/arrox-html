@@ -1453,6 +1453,10 @@
         position: relative;
         padding-bottom: 20px;
 
+        @media #{$xs} {
+            gap: 30px;
+        }
+
         &::before {
             width: 150px;
             height: 1px;
@@ -1474,6 +1478,10 @@
                     position: absolute;
                     background-color: #999999;
                     transform: translate(-10px, 3px);
+
+                    @media #{$xs} {
+                        transform: translate(-17px, 3px);
+                    }
                 }
             }
 

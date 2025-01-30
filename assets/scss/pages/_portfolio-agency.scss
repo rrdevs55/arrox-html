@@ -14,6 +14,10 @@
 
 .hero-area-6 {
     overflow-x: clip;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
 
     .section-content-wrapper {
         display: grid;
@@ -297,6 +301,10 @@
                 font-family: var(--font_bdogrotesk);
                 font-style: normal;
                 padding-right: 40px;
+                display: inline-block;
+                z-index: 99;
+                transition: all 0.5s ease;
+
 
                 @media #{$sm} {
                     padding-right: 20px;
@@ -304,6 +312,18 @@
             }
         }
     }
+}
+
+.new-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 0;
+    color: var(--white);
+    text-align: center;
 }
 
 /* work area 4 style  */

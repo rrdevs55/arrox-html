@@ -1351,5 +1351,63 @@
     }
   );
 
+  // ===================================
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let ht = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".hero-area-6",
+      start: "top top",
+      end: "+=200%",
+      scrub: 3,
+      pin: true
+    }
+  });
+
+  // Step 1: Hide all content except `.plus`
+  ht.to(".hero-area-6 .section-content-wrapper", {
+    // opacity: 0,
+    duration: 0.5
+  });
+
+  // Step 2: Center `.plus`
+  ht.to(".plus", {
+    // position: "absolute",
+    opacity: 1,
+    // top: "50%",
+    // left: "50%",
+    x: "450%",
+    // transformOrigin: "center",
+    // y: "-50%",
+    // fontSize: "100vw",
+    duration: 1,
+    // rotate: "90",
+
+  });
+
+  // Step 3: Scale `.plus` to full screen
+  ht.to(".plus", {
+    scale: 30,
+    duration: 1.5,
+    // y: "-1000",
+    right: 0,
+    opacity: 1,
+    // height: "100vh",
+    ease: "power2.inOut",
+    // transformOrigin: "center",
+    // width: "100",
+    // fontSize: "1000"
+  });
+
+  // Step 4: Fade in new text after scaling
+  ht.fromTo(".new-text", {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 1,
+    ease: "power2.inOut"
+  });
+
 
 })(jQuery);

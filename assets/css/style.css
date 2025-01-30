@@ -9728,6 +9728,7 @@ video.video-area {
   font-family: var(--font_tartuffo);
   text-align: right;
   margin-right: 30px;
+  position: relative;
 }
 .hero-area-6 .section-title > *:nth-child(2) {
   position: relative;
@@ -9760,7 +9761,7 @@ video.video-area {
     display: none;
   }
 }
-.hero-area-6 .section-title > * .plus {
+.hero-area-6 .section-title .plus {
   font-weight: 600;
   font-family: var(--font_bdogrotesk);
   font-style: normal;
@@ -9768,10 +9769,12 @@ video.video-area {
   display: inline-block;
   z-index: 99;
   transition: all 0.5s ease;
-  opacity: 1 !important;
+  opacity: 1;
+  position: absolute;
+  left: 15%;
 }
 @media only screen and (max-width: 767px) {
-  .hero-area-6 .section-title > * .plus {
+  .hero-area-6 .section-title .plus {
     padding-right: 20px;
   }
 }

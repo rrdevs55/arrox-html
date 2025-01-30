@@ -1347,6 +1347,147 @@
     }
 }
 
+/* footer area 4 style  */
+.footer-area-4 {
+
+
+    .footer-widget-wrapper-box {
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-top: 50px;
+
+        @media #{$xxl} {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        @media #{$xl} {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+
+    .footer-widget-wrapper {
+        display: grid;
+        gap: 30px 170px;
+        grid-template-columns: 1fr auto;
+        justify-content: space-between;
+
+        @media #{$xl} {
+            gap: 30px 60px;
+        }
+
+
+        @media #{$sm} {
+            grid-template-columns: 1fr;
+        }
+
+
+    }
+
+    .footer-nav-list {
+        display: flex;
+        gap: 15px 40px;
+        flex-wrap: wrap;
+
+        @media #{$lg} {
+            gap: 15px 30px;
+        }
+
+        &:hover {
+
+            li a {
+                opacity: 0.3;
+            }
+        }
+
+        li {
+            font-size: 20px;
+            line-height: 28px;
+            color: var(--primary);
+            transition-property: opacity;
+            transition-duration: 500ms;
+
+            a {
+
+                &:hover {
+                    opacity: 1;
+
+                    a strong {
+                        opacity: 1;
+                        top: -23px;
+                    }
+                }
+
+                a strong {
+                    opacity: 0;
+                    transition-property: opacity, top;
+                    transition-duration: 250ms;
+                }
+            }
+
+        }
+    }
+
+    .copyright-area-inner {
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        padding-top: 36px;
+        padding-bottom: 55px;
+
+        @media #{$xxl} {
+            padding-top: 31px;
+            padding-bottom: 35px;
+
+        }
+
+        @media #{$lg} {
+            padding-top: 26px;
+            padding-bottom: 26px;
+
+        }
+    }
+
+    .copyright-text {
+        .text {
+            font-size: 20px;
+            line-height: 28px;
+            color: var(--primary);
+            text-align: center;
+
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
+
+            a {
+                color: #999999;
+                transition: all 0.3s;
+                position: relative;
+
+                &::before {
+                    width: 0;
+                    height: 1px;
+                    background-color: currentColor;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transition: all 0.5s;
+                }
+
+                &:hover {
+                    color: var(--black);
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .footer-area-6 {
 
     &-inner {

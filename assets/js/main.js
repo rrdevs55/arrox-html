@@ -1366,10 +1366,6 @@
   });
 
   // Step 1: Hide all content except `.plus`
-  ht.to(".hero-area-6 .section-content-wrapper", {
-    // opacity: 0,
-    duration: 0.5
-  });
 
   // Step 2: Center `.plus`
   ht.to(".plus", {
@@ -1384,6 +1380,10 @@
     duration: 1,
     // rotate: "90",
 
+  });
+  ht.to(".hero-area-6 .section-content-wrapper", {
+    opacity: 0,
+    duration: 0.5
   });
 
   // Step 3: Scale `.plus` to full screen

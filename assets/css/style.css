@@ -9432,6 +9432,7 @@ video.video-area {
   display: inline-block;
   z-index: 99;
   transition: all 0.5s ease;
+  opacity: 1 !important;
 }
 @media only screen and (max-width: 767px) {
   .hero-area-6 .section-title > * .plus {

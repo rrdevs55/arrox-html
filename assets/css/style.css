@@ -9239,15 +9239,13 @@ video.video-area {
 }
 @media only screen and (max-width: 1919px) {
   .service-area-5 .service-box {
-    padding-top: 16px;
-    padding-bottom: 24px;
+    padding-top: 11px;
+    padding-bottom: 19px;
   }
 }
 @media only screen and (max-width: 1399px) {
   .service-area-5 .service-box {
     grid-template-columns: 80px 1fr 225px;
-    padding-top: 11px;
-    padding-bottom: 19px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -9299,7 +9297,7 @@ video.video-area {
   line-height: 26px;
   margin-top: 28px;
   opacity: 0;
-  height: 0px;
+  max-height: 0px;
   transition: opacity 0.3s, height 0.5s;
   max-width: 370px;
 }
@@ -9316,7 +9314,7 @@ video.video-area {
 @media only screen and (max-width: 1199px) {
   .service-area-5 .service-box .text {
     opacity: 1;
-    height: 100%;
+    max-height: 100%;
   }
 }
 .service-area-5 .service-box .count {

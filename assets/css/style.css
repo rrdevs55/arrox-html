@@ -9466,9 +9466,11 @@ video.video-area {
 .hero-area-6 {
   overflow-x: clip;
   position: relative;
-  height: 100vh;
   display: flex;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* Ensure it takes up full viewport height */
 }
 .hero-area-6 .section-content-wrapper {
   display: grid;
@@ -9771,11 +9773,32 @@ video.video-area {
   opacity: 1;
   position: absolute;
   left: 15%;
+  font-size: 300px;
+  font-size: 200px;
 }
 @media only screen and (max-width: 767px) {
   .hero-area-6 .section-title .plus {
     padding-right: 20px;
   }
+}
+
+.contentt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100vw;
+  transform: translate(-50%, 0%);
+}
+.contentt span.plus {
+  font-size: 220px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -15.4px;
+  text-transform: uppercase;
+  color: var(--primary);
 }
 
 .new-text {
@@ -9786,6 +9809,7 @@ video.video-area {
   font-size: 40px;
   font-weight: bold;
   opacity: 0;
+  z-index: 99;
   color: var(--white);
   text-align: center;
 }

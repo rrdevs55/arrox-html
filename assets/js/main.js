@@ -1330,73 +1330,150 @@
   });
 
 
-
-  gsap.fromTo(
-    ".section-content__thumb img",
-    {
-      x: 350, // Move the image 100px to the right (off-screen)
-      // opacity: 0, // Start with opacity 0
-    },
-    {
-      x: 0, // Animate to its original position
-      opacity: 1, // Fade in
-      duration: 1, // Animation duration
-      ease: "power3.out", // Easing effect
-      scrollTrigger: {
-        trigger: ".section-content__thumb img", // The element to watch
-        start: "top 80%", // Trigger when the top of the image is 80% down the viewport
-        toggleActions: "play none none none", // Only play the animation
-        scrub: 2,
+  if (document.querySelectorAll(".service-area-4").length > 0) {
+    gsap.fromTo(
+      ".section-content__thumb img",
+      {
+        x: 350, // Move the image 100px to the right (off-screen)
+        // opacity: 0, // Start with opacity 0
       },
-    }
-  );
+      {
+        x: 0, // Animate to its original position
+        opacity: 1, // Fade in
+        duration: 1, // Animation duration
+        ease: "power3.out", // Easing effect
+        scrollTrigger: {
+          trigger: ".section-content__thumb img", // The element to watch
+          start: "top 80%", // Trigger when the top of the image is 80% down the viewport
+          toggleActions: "play none none none", // Only play the animation
+          scrub: 2,
+        },
+      }
+    );
+  }
 
   // ===================================
 
-  document.addEventListener("DOMContentLoaded", function () {
-    let ht = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero-area-6",
-        start: "top top",
-        end: "+=200%",
-        scrub: 3,
-        pin: true
-      }
-    });
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   let ht = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".hero-area-6",
+  //       start: "top top",
+  //       end: "+=200%",
+  //       scrub: 3,
+  //       pin: true
+  //     }
+  //   });
 
-    // Step 1: Hide all content except `.plus`
-    ht.set(".hero-video-wrapper", {});
+  //   // Step 1: Hide all content except `.plus`
+  //   ht.to([".hero-video-wrapper", ".hero-area-6 .line"], {
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     // onComplete: () => document.querySelector(".hero-video-wrapper").style.display = "none"
+  //   });
 
-    // Step 2: Center `.plus`
-    ht.to(".plus", {
-      opacity: 1,
-      x: "450%",
-      duration: 1,
-    });
+  //   // Step 2: Center `.plus`
+  //   ht.to(".plus", {
+  //     opacity: 1,
+  //     // x: "600",
+  //     transformOrigin: "center",
+  //     duration: 1,
+  //   });
 
-    ht.to(".hero-area-6 .line", {
-      opacity: 0,
-      duration: 0.5
-    });
+  //   // Step 3: Scale `.plus` to full screen
+  //   ht.to(".plus", {
+  //     scale: 60,
+  //     duration: 1.5,
+  //     // right: 0,
+  //     // y: -850,
+  //     opacity: 1,
+  //     ease: "power2.inOut",
+  //   });
 
-    // Step 3: Scale `.plus` to full screen
-    ht.to(".plus", {
-      scale: 30,
-      duration: 1.5,
-      right: 0,
-      opacity: 1,
-      ease: "power2.inOut",
-    });
+  //   // Step 4: Fade in new text after scaling
+  //   ht.fromTo(".new-text", {
+  //     opacity: 0
+  //   }, {
+  //     opacity: 1,
+  //     duration: 1,
+  //     ease: "power2.inOut"
+  //   });
+  // });
 
-    // Step 4: Fade in new text after scaling
-    ht.fromTo(".new-text", {
-      opacity: 0
-    }, {
-      opacity: 1,
-      duration: 1,
-      ease: "power2.inOut"
+
+
+  gsap.registerPlugin(ScrollTrigger, Flip);
+
+  let ball = document.querySelector(".plus"),
+    parentSection = document.querySelector(".hero-area-6"),
+    content = document.querySelector(".contentt"),
+    lines = document.querySelectorAll(".line"),
+    heroVideo = document.querySelector(".hero-video-wrapper"),
+    flipCtx;
+
+  // Function to create GSAP animation
+  const createTween = () => {
+    if (flipCtx) {
+      flipCtx.revert(); // Clear previous state
+      flipCtx = null;
+    }
+
+    flipCtx = gsap.context(() => {
+      // Ensure the ball starts from its initial position
+      gsap.set(ball, { x: "0vw", y: "0vh", opacity: 1 });
+      gsap.set(lines, { opacity: 1 }); // Set initial opacity to 0 for .line elements
+      gsap.set(heroVideo, { opacity: 1 }); // Set initial opacity to 0 for .hero-video
+
+      let state = Flip.getState(ball); // Capture initial position
+      content.appendChild(ball); // Move ball into new parent
+      Flip.fit(ball, state); // Maintain visual continuity
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: parentSection,
+          start: "top -10%",
+          end: "bottom 0%",
+          pin: true,
+          scrub: 2,
+          immediateRender: false,
+          markers: true // Debugging markers
+        }
+      })
+        .to(ball, { x: "50%", ease: "none" }) // Ball animation
+        .to(ball, { y: "0vh", ease: "none" }) // Ball animation
+
+        // Fade in lines and video while the scroll trigger is active
+        .to(lines, { opacity: 0, duration: 1, ease: "power1.out" }, 0)
+        .to(heroVideo, { opacity: 0, duration: 1, ease: "power1.out" }, 0)
+
+        // Scale and position the .plus element to full screen
+        .to(ball, {
+          scale: 20, // Increase scale to fill the screen
+          // x: "50%", // Center horizontally
+          // y: "-50%", // Center vertically
+          opacity: 1, // Ensure it's fully visible
+          // transformOrigin: "center", // Ensure scaling happens from the center
+          fontSize: "400",
+          // delay: 0.3,
+          zIndex: 9999, // Bring it to the front
+          duration: 1.5, // Adjust duration for the scaling effect
+          ease: "power4.out"
+        });
     });
+  };
+
+  // Initialize animation
+  createTween();
+
+  // Handle Resize with Debounce for Performance
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      createTween();
+    }, 250); // Delay re-triggering
   });
+
 
 
 

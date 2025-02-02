@@ -1402,79 +1402,117 @@
 
 
 
-  gsap.registerPlugin(ScrollTrigger, Flip);
+  // gsap.registerPlugin(ScrollTrigger, Flip);
 
-  let ball = document.querySelector(".plus"),
-    parentSection = document.querySelector(".hero-area-6"),
-    content = document.querySelector(".contentt"),
-    lines = document.querySelectorAll(".line"),
-    heroVideo = document.querySelector(".hero-video-wrapper"),
-    flipCtx;
+  // let ball = document.querySelector(".plus"),
+  //   parentSection = document.querySelector(".hero-area-6"),
+  //   content = document.querySelector(".contentt"),
+  //   lines = document.querySelectorAll(".line"),
+  //   heroVideo = document.querySelector(".hero-video-wrapper"),
+  //   flipCtx;
 
-  // Function to create GSAP animation
-  const createTween = () => {
-    if (flipCtx) {
-      flipCtx.revert(); // Clear previous state
-      flipCtx = null;
-    }
+  // // Function to create GSAP animation
+  // const createTween = () => {
+  //   if (flipCtx) {
+  //     flipCtx.revert(); // Clear previous state
+  //     flipCtx = null;
+  //   }
+
+  //   flipCtx = gsap.context(() => {
+  //     // Ensure the ball starts from its initial position
+  //     gsap.set(ball, { x: "0vw", y: "0vh", opacity: 1 });
+  //     gsap.set(lines, { opacity: 1 }); // Set initial opacity to 0 for .line elements
+  //     gsap.set(heroVideo, { opacity: 1 }); // Set initial opacity to 0 for .hero-video
+
+  //     let state = Flip.getState(ball); // Capture initial position
+  //     content.appendChild(ball); // Move ball into new parent
+  //     Flip.fit(ball, state); // Maintain visual continuity
+
+  //     gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: parentSection,
+  //         start: "top -10%",
+  //         end: "bottom 0%",
+  //         pin: true,
+  //         scrub: 2,
+  //         immediateRender: false,
+  //         markers: true // Debugging markers
+  //       }
+  //     })
+  //       .to(ball, { x: "0", ease: "none" }) // Ball animation
+  //       .to(ball, { y: "-25vh", ease: "none" }) // Ball animation
+
+  //       // Fade in lines and video while the scroll trigger is active
+  //       .to(lines, { opacity: 0, duration: 1, ease: "power1.out" }, 0)
+  //       .to(heroVideo, { opacity: 0, duration: 1, ease: "power1.out" }, 0)
+
+  //       // Scale and position the .plus element to full screen
+  //       .to(ball, {
+  //         scale: 10, // Increase scale to fill the screen
+  //         // x: "50%", // Center horizontally
+  //         // y: "-50%", // Center vertically
+  //         opacity: 1, // Ensure it's fully visible
+  //         transformOrigin: "center top", // Ensure scaling happens from the center
+  //         fontSize: "200",
+  //         // delay: 0.3,
+  //         // pin: true,
+  //         zIndex: 9999, // Bring it to the front
+  //         duration: 1.5, // Adjust duration for the scaling effect
+  //         ease: "power4.out"
+  //       });
+  //   });
+  // };
+
+  // // Initialize animation
+  // createTween();
+
+  // // Handle Resize with Debounce for Performance
+  // let resizeTimeout;
+  // window.addEventListener("resize", () => {
+  //   clearTimeout(resizeTimeout);
+  //   resizeTimeout = setTimeout(() => {
+  //     createTween();
+  //   }, 250); // Delay re-triggering
+  // });
+
+
+
+  console.clear();
+  gsap.registerPlugin(Flip, ScrollTrigger);
+
+  let flipCtx;
+
+  const createTimeline = () => {
+    flipCtx && flipCtx.revert();
 
     flipCtx = gsap.context(() => {
-      // Ensure the ball starts from its initial position
-      gsap.set(ball, { x: "0vw", y: "0vh", opacity: 1 });
-      gsap.set(lines, { opacity: 1 }); // Set initial opacity to 0 for .line elements
-      gsap.set(heroVideo, { opacity: 1 }); // Set initial opacity to 0 for .hero-video
+      const stepElement = [...document.querySelectorAll("[data-step]")];
+      const states = stepElement.map((step) => Flip.getState(step));
+      const flipConfig = {
+        ease: "none",
+        duration: 1
+      };
 
-      let state = Flip.getState(ball); // Capture initial position
-      content.appendChild(ball); // Move ball into new parent
-      Flip.fit(ball, state); // Maintain visual continuity
-
-      gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: parentSection,
-          start: "top -10%",
-          end: "bottom 0%",
-          pin: true,
-          scrub: 2,
-          immediateRender: false,
-          markers: true // Debugging markers
+          trigger: ".container.initial",
+          start: "clamp(top center)",
+          endTrigger: ".final",
+          end: "clamp(top center)",
+          scrub: 1,
+          markers: true
         }
-      })
-        .to(ball, { x: "50%", ease: "none" }) // Ball animation
-        .to(ball, { y: "0vh", ease: "none" }) // Ball animation
+      });
 
-        // Fade in lines and video while the scroll trigger is active
-        .to(lines, { opacity: 0, duration: 1, ease: "power1.out" }, 0)
-        .to(heroVideo, { opacity: 0, duration: 1, ease: "power1.out" }, 0)
-
-        // Scale and position the .plus element to full screen
-        .to(ball, {
-          scale: 20, // Increase scale to fill the screen
-          // x: "50%", // Center horizontally
-          // y: "-50%", // Center vertically
-          opacity: 1, // Ensure it's fully visible
-          // transformOrigin: "center", // Ensure scaling happens from the center
-          fontSize: "400",
-          // delay: 0.3,
-          zIndex: 9999, // Bring it to the front
-          duration: 1.5, // Adjust duration for the scaling effect
-          ease: "power4.out"
-        });
+      states.forEach((state, index) => {
+        tl.add(Flip.fit(".boxx", state, flipConfig), index === 0 ? 0 : "+=0.5");
+      });
     });
   };
 
-  // Initialize animation
-  createTween();
+  createTimeline();
 
-  // Handle Resize with Debounce for Performance
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      createTween();
-    }, 250); // Delay re-triggering
-  });
-
-
+  window.addEventListener("resize", createTimeline);
 
 
 })(jQuery);

@@ -532,3 +532,77 @@
         }
     }
 }
+
+
+.spacer {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    min-height: 800px;
+
+    .initial {
+        left: 60%;
+        top: 10%;
+    }
+
+    .boxx {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        z-index: 10;
+        border-radius: 10px;
+    }
+
+    .initial .boxx {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .second {
+        left: 10%;
+        top: 50%;
+    }
+
+    .marker {
+        border-radius: 10px;
+    }
+
+    .second .marker {
+        width: 100px;
+        height: 100px;
+    }
+
+    .third {
+        right: 10%;
+        bottom: 3rem;
+    }
+
+    .third .marker {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.containers {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--color-surface-white);
+    border-radius: 10px;
+}
+
+.gradient-blue {
+    background: var(--color-ui-gradient),
+        url("https://assets.codepen.io/16327/noise-e82662fe.png");
+    background-blend-mode: color-dodge;
+}

@@ -9962,6 +9962,70 @@ video.video-area {
   }
 }
 
+.spacer {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+}
+.main .initial {
+  left: 60%;
+  top: 10%;
+}
+.main .boxx {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+}
+.main .initial .boxx {
+  width: 100vw;
+  height: 100vh;
+}
+.main .second {
+  left: 10%;
+  top: 50%;
+}
+.main .marker {
+  border-radius: 10px;
+}
+.main .second .marker {
+  width: 100px;
+  height: 100px;
+}
+.main .third {
+  right: 10%;
+  bottom: 3rem;
+}
+.main .third .marker {
+  width: 100px;
+  height: 100px;
+}
+
+.containers {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-surface-white);
+  border-radius: 10px;
+}
+
+.gradient-blue {
+  background: var(--color-ui-gradient), url("https://assets.codepen.io/16327/noise-e82662fe.png");
+  background-blend-mode: color-dodge;
+}
+
 /* error area style  */
 .error-area-inner {
   height: 100vh;

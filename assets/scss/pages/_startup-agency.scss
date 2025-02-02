@@ -17,6 +17,62 @@
             text-transform: unset;
             display: inline-block;
             color: var(--primary);
+            padding-bottom: 10px;
+            position: relative;
+
+            svg {
+                position: absolute;
+                bottom: 0;
+                width: 100% !important;
+                left: 0;
+                height: 7px;
+            }
+
+
+
+
+            @-webkit-keyframes animate-svg-stroke-1 {
+                0% {
+                    stroke-dashoffset: 195.80113220214844px;
+                    stroke-dasharray: 195.80113220214844px;
+                }
+
+
+                20% {
+                    stroke-dashoffset: 391.6022644042969px;
+                    stroke-dasharray: 195.80113220214844px;
+                }
+
+                100% {
+                    stroke-dashoffset: 391.6022644042969px;
+                    stroke-dasharray: 195.80113220214844px;
+                }
+            }
+
+            @keyframes animate-svg-stroke-1 {
+                0% {
+                    stroke-dashoffset: 195.80113220214844px;
+                    stroke-dasharray: 195.80113220214844px;
+                }
+
+
+                20% {
+                    stroke-dashoffset: 391.6022644042969px;
+                    stroke-dasharray: 195.80113220214844px;
+                }
+
+                100% {
+                    stroke-dashoffset: 391.6022644042969px;
+                    stroke-dasharray: 195.80113220214844px;
+                }
+            }
+
+            .svg-elem-1 {
+                -webkit-animation: animate-svg-stroke-1 5s ease-in-out 0s both infinite;
+                animation: animate-svg-stroke-1 5s ease-in-out 0s both infinite;
+            }
+
+
         }
 
         .section-title {
@@ -368,6 +424,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 
     .section-title {
         font-size: 280px;
@@ -861,4 +918,15 @@
         }
     }
 
+}
+
+/* reveal animation style  */
+.img_anim_reveal {
+    visibility: hidden;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        transform-origin: top;
+    }
 }

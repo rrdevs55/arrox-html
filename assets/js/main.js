@@ -127,6 +127,32 @@
     });
   }
 
+
+  // Image Reveal Animation
+  let img_anim_reveal = document.querySelectorAll(".img_anim_reveal");
+
+  img_anim_reveal.forEach((img_reveal) => {
+    let image = img_reveal.querySelector("img");
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: img_reveal,
+        start: "top 50%",
+      }
+    });
+
+    tl.set(img_reveal, { autoAlpha: 1 });
+    tl.from(img_reveal, 1.5, {
+      yPercent: -100,
+      ease: Power2.out
+    });
+    tl.from(image, 1.5, {
+      yPercent: 100,
+      scale: 1.3,
+      delay: -1.5,
+      ease: Power2.out
+    });
+  });
+
   // testimonial slider
   if (('.testimonial-slider').length) {
     var testimonial_slider = new Swiper(".testimonial-slider", {
@@ -306,6 +332,31 @@
           end: "top center",
         }
       });
+    });
+
+
+
+  });
+
+  // go full width 
+  var go_full = document.querySelectorAll(".go_full");
+  go_full.forEach((item) => {
+    gsap.set(item, {
+      position: "relative",
+      left: "50%",
+      transform: "translate(-50%, 0)",
+      width: "auto",
+    });
+    gsap.to(item, {
+      width: "100vw",
+      ease: "none",
+      scrollTrigger: {
+        trigger: item,
+        scrub: 0,
+        start: "top bottom",
+        end: "bottom bottom",
+        // markers: true
+      }
     });
   });
 
@@ -1513,6 +1564,7 @@
   createTimeline();
 
   window.addEventListener("resize", createTimeline);
+
 
 
 })(jQuery);

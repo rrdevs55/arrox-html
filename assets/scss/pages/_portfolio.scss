@@ -1,0 +1,139 @@
+.portfolio {
+
+    &__item {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__content {
+        z-index: 9;
+        left: 50px;
+        bottom: 200px;
+        position: absolute;
+
+        &-title {
+            opacity: 0;
+            font-size: 100px;
+            line-height: 1.05;
+            color: var(--white);
+            transform: translateY(-130px);
+        }
+
+    }
+
+    &__list {
+        opacity: 0;
+        display: flex;
+        margin-top: 40px;
+        align-items: center;
+        transform: translateY(-150px);
+
+        li {
+            a {
+                font-size: 14px;
+                border-radius: 20px;
+                padding: 10px 17px;
+                border-radius: 20px;
+                color: var(--white);
+                text-transform: uppercase;
+                border: 1px solid rgba(255, 255, 255, 0.20);
+
+            }
+        }
+    }
+
+    .swiper-slide-active {
+        .portfolio {
+
+            &__content {
+
+                &-title {
+                    opacity: 1;
+                    transform: translatey(0px);
+                    transition: all 2200ms ease;
+                }
+            }
+
+            &__list {
+                opacity: 1;
+                transform: translatey(0px);
+                transition: all 2000ms ease;
+            }
+        }
+    }
+
+    &__slider {
+
+        &__arrow {
+            gap: 40px;
+            right: 50px;
+            bottom: 50px;
+            z-index: 99;
+            display: flex;
+            position: absolute;
+            align-items: center;
+
+            &-prev,
+            &-next {
+                gap: 8px;
+                display: flex;
+                font-size: 14px;
+                font-weight: 600;
+                align-items: center;
+                color: var(--white);
+            }
+        }
+
+    }
+
+    .portfolio-pagination {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        z-index: 9;
+        display: inline-block;
+    }
+
+    .swiper-pagination-bullet {
+        width: 150px;
+        height: 10px;
+        display: inline-block;
+        margin: 0 5px;
+        overflow: hidden;
+        transition: 0.4s;
+        position: relative;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.30);
+    }
+
+    .swiper-pagination-bullet::before {
+        content: "";
+        width: 150px;
+        height: 100%;
+        position: absolute;
+        transition: 0.6s;
+        z-index: 9;
+        left: 0;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.30);
+    }
+
+    .swiper-pagination-bullet::after {
+        content: "";
+        width: 0;
+        height: 100%;
+        position: absolute;
+        transition: 0.6s;
+        z-index: 8;
+        left: 0;
+        background-color: white;
+    }
+
+    .swiper-pagination-bullet-active::after {
+        opacity: 1;
+        width: 100%;
+    }
+}

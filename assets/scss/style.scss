@@ -9,6 +9,7 @@
 @import "pages/startup-agency";
 @import "pages/portfolio-agency";
 @import "pages/portfolio";
+@import "pages/portfolio-showcase";
 @import "pages/404";
 @import "pages/about";
 @import "pages/blog-details";
@@ -160,13 +161,13 @@
 
     .container {
         &.large {
-            @media (min-width: 1850px) {
-                max-width: 1850px;
+            .body-creative-agency {
+
+                @media (min-width: 1850px) {
+                    max-width: 1850px;
+                }
             }
         }
-
-
-
     }
 
     .sticky,

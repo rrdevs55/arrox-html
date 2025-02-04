@@ -20,6 +20,16 @@
 
   var windowOn = $(window);
 
+  /*======================================
+Data Css js
+========================================*/
+  $("[data-background]").each(function () {
+    $(this).css(
+      "background-image",
+      "url( " + $(this).attr("data-background") + "  )"
+    );
+  });
+
   //  sticky header
   function pinned_header() {
     var lastScrollTop = 0;
@@ -707,54 +717,55 @@
   }
   // work-area-2 box animation end
 
+  if (document.querySelectorAll(".section-title").length > 0) {
+    // Select the container and image elements
+    const categoriesWrapper = document.querySelector('.section-title');
+    const imageHover = document.querySelector('.image-hover');
 
-  // Select the container and image elements
-  const categoriesWrapper = document.querySelector('.section-title');
-  const imageHover = document.querySelector('.image-hover');
+    // Smooth mousemove for positioning
+    categoriesWrapper.addEventListener('mousemove', (e) => {
+      const { clientX: mouseX, clientY: mouseY } = e;
 
-  // Smooth mousemove for positioning
-  categoriesWrapper.addEventListener('mousemove', (e) => {
-    const { clientX: mouseX, clientY: mouseY } = e;
-
-    // Use GSAP to position the image relative to the cursor
-    gsap.to(imageHover, {
-      x: mouseX,
-      y: mouseY,
-      xPercent: -50, // Center the image horizontally
-      yPercent: -50, // Center the image vertically
-      ease: 'power3.out',
-      duration: 0.2,
-    });
-  });
-
-  // GSAP hover animations for .text-underline elements
-  gsap.utils.toArray('.text-underline').forEach((category) => {
-    const label = category.dataset.label;
-
-    category.addEventListener('mouseenter', () => {
-      const targetImage = document.querySelector(`.image-hover[data-image="${label}"]`);
-
-      gsap.to(targetImage, {
-        opacity: 1,
-        scale: 1,
-        duration: 0.3,
+      // Use GSAP to position the image relative to the cursor
+      gsap.to(imageHover, {
+        x: mouseX,
+        y: mouseY,
+        xPercent: -50, // Center the image horizontally
+        yPercent: -50, // Center the image vertically
         ease: 'power3.out',
+        duration: 0.2,
       });
-      gsap.set(targetImage, { zIndex: 1 });
     });
 
-    category.addEventListener('mouseleave', () => {
-      const targetImage = document.querySelector(`.image-hover[data-image="${label}"]`);
+    // GSAP hover animations for .text-underline elements
+    gsap.utils.toArray('.text-underline').forEach((category) => {
+      const label = category.dataset.label;
 
-      gsap.to(targetImage, {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.3,
-        ease: 'power3.out',
+      category.addEventListener('mouseenter', () => {
+        const targetImage = document.querySelector(`.image-hover[data-image="${label}"]`);
+
+        gsap.to(targetImage, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.3,
+          ease: 'power3.out',
+        });
+        gsap.set(targetImage, { zIndex: 1 });
       });
-      gsap.set(targetImage, { zIndex: -1 });
+
+      category.addEventListener('mouseleave', () => {
+        const targetImage = document.querySelector(`.image-hover[data-image="${label}"]`);
+
+        gsap.to(targetImage, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.3,
+          ease: 'power3.out',
+        });
+        gsap.set(targetImage, { zIndex: -1 });
+      });
     });
-  });
+  }
 
 
   //image animation in hero end
@@ -1334,18 +1345,18 @@
     gsap.fromTo(
       ".section-content__thumb img",
       {
-        x: 350, // Move the image 100px to the right (off-screen)
-        // opacity: 0, // Start with opacity 0
+        x: 350,
+
       },
       {
-        x: 0, // Animate to its original position
-        opacity: 1, // Fade in
-        duration: 1, // Animation duration
-        ease: "power3.out", // Easing effect
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: ".section-content__thumb img", // The element to watch
-          start: "top 80%", // Trigger when the top of the image is 80% down the viewport
-          toggleActions: "play none none none", // Only play the animation
+          trigger: ".section-content__thumb img",
+          start: "top 80%",
+          toggleActions: "play none none none",
           scrub: 2,
         },
       }
@@ -1477,42 +1488,81 @@
 
 
 
-  console.clear();
-  gsap.registerPlugin(Flip, ScrollTrigger);
+  if (document.querySelectorAll(".hero-area-6").length > 0) {
+    console.clear();
+    gsap.registerPlugin(Flip, ScrollTrigger);
 
-  let flipCtx;
+    let flipCtx;
 
-  const createTimeline = () => {
-    flipCtx && flipCtx.revert();
+    const createTimeline = () => {
+      flipCtx && flipCtx.revert();
 
-    flipCtx = gsap.context(() => {
-      const stepElement = [...document.querySelectorAll("[data-step]")];
-      const states = stepElement.map((step) => Flip.getState(step));
-      const flipConfig = {
-        ease: "none",
-        duration: 1
-      };
+      flipCtx = gsap.context(() => {
+        const stepElement = [...document.querySelectorAll("[data-step]")];
+        const states = stepElement.map((step) => Flip.getState(step));
+        const flipConfig = {
+          ease: "none",
+          duration: 1
+        };
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".container.initial",
-          start: "clamp(top center)",
-          endTrigger: ".final",
-          end: "clamp(top center)",
-          scrub: 1,
-          markers: true
-        }
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".hero-area-6-wrapper__line",
+            start: "clamp(top 10%)",
+            end: "clamp(bottom bottom)",
+            scrub: 3,
+            markers: true
+          }
+        });
+
+        states.forEach((state, index) => {
+          tl.add(Flip.fit(".boxx", state, flipConfig), index === 0 ? 0 : "+=0.5");
+
+          // Check if the current state is for .third container and change its styles
+          if (index === 1) { // Assuming the third container is second in the stepElement array
+            tl.to(".third", {
+              backgroundColor: "#FF6A3A",
+              // width: "100vw",
+              height: "100vh",
+              scale: "100vh",
+              width: "100vw",
+              fontSize: "500",
+              duration: 0.5,
+              // transformOrigin: "top center"
+            }, "+=0.2");
+          }
+        });
       });
+    };
 
-      states.forEach((state, index) => {
-        tl.add(Flip.fit(".boxx", state, flipConfig), index === 0 ? 0 : "+=0.5");
-      });
-    });
-  };
+    createTimeline();
 
-  createTimeline();
-
-  window.addEventListener("resize", createTimeline);
-
-
+    window.addEventListener("resize", createTimeline);
+  }
+  let banner_2__slider = new Swiper(".portfolio-activ", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    speed: 1000,
+    centeredSlides: true,
+    clickable: true,
+    //    effect: 'fade', 
+    // effect: 'cube',
+    // effect: 'coverflow',
+    // effect: 'flip',
+    // effect: 'morph-x',
+    // zoom: true,
+    // parallax: true,
+    // autoplay: {
+    //   delay: 3000,
+    // },
+    navigation: {
+      prevEl: ".portfolio__slider__arrow-prev",
+      nextEl: ".portfolio__slider__arrow-next",
+    },
+    pagination: {
+      el: ".portfolio-pagination",
+      clickable: true,
+    },
+  });
 })(jQuery);

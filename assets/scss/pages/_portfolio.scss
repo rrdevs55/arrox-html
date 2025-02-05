@@ -6,6 +6,7 @@
         position: relative;
         background-size: cover;
         background-repeat: no-repeat;
+        transition: .8s cubic-bezier(.37, .23, 0, .96)
     }
 
     &__content {
@@ -14,12 +15,20 @@
         bottom: 200px;
         position: absolute;
 
+        @media #{$xs} {
+            top: 120px;
+        }
+
         &-title {
             opacity: 0;
             font-size: 100px;
             line-height: 1.05;
             color: var(--white);
             transform: translateY(-130px);
+
+            @media #{$xs} {
+                font-size: 60px;
+            }
         }
 
     }
@@ -47,6 +56,12 @@
 
     .swiper-slide-active {
         .portfolio {
+
+            &__item {
+                animation-name: qodef-animate-slide-out;
+                animation-duration: 1.3s;
+                animation-fill-mode: forwards
+            }
 
             &__content {
 
@@ -76,6 +91,14 @@
             position: absolute;
             align-items: center;
 
+            @media #{$sm} {
+                left: 50px;
+            }
+
+            @media #{$xs} {
+                top: 150px;
+            }
+
             &-prev,
             &-next {
                 gap: 8px;
@@ -95,6 +118,10 @@
         left: 50px;
         z-index: 9;
         display: inline-block;
+
+        @media #{$xs} {
+            top: 350px;
+        }
     }
 
     .swiper-pagination-bullet {
@@ -107,6 +134,466 @@
         position: relative;
         border-radius: 5px;
         background: rgba(255, 255, 255, 0.30);
+
+        @media #{$sm} {
+            width: 100px;
+            bottom: 50px;
+        }
+    }
+
+    .swiper-pagination-bullet::before {
+        content: "";
+        width: 150px;
+        height: 100%;
+        position: absolute;
+        transition: 0.6s;
+        z-index: 9;
+        left: 0;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.30);
+    }
+
+    .swiper-pagination-bullet::after {
+        content: "";
+        width: 0;
+        height: 100%;
+        position: absolute;
+        transition: 0.6s;
+        z-index: 8;
+        left: 0;
+        background-color: white;
+    }
+
+    .swiper-pagination-bullet-active::after {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+// @keyframes qodef-animate-slide-out {
+//     0% {
+//         transform: scale(1) translateX(0);
+//         clip-path: inset(0 0 0 0);
+//         -webkit-clip-path: inset(0 0 0 0)
+//     }
+
+//     100% {
+//         transform: scale(1.1) translateX(-150px);
+//         clip-path: inset(0 100% 0 0);
+//         -webkit-clip-path: inset(0 100% 0 0)
+//     }
+// }
+
+// @keyframes qodef-animate-slide-in {
+//     0% {
+//         transform: scale(1.1) translateX(30px)
+//     }
+
+//     100% {
+//         transform: scale(1) translateX(0)
+//     }
+// }
+
+// @keyframes qodef-ie-animate-slide-out {
+//     0% {
+//         transform: scale(1) translateX(0);
+//         opacity: 1
+//     }
+
+//     100% {
+//         transform: scale(1.1) translateX(-20px);
+//         opacity: 0
+//     }
+// }
+
+// @keyframes qodef-ie-animate-slide-in {
+//     0% {
+//         transform: scale(1.1) translateX(30px)
+//     }
+
+//     100% {
+//         transform: scale(1) translateX(0)
+//     }
+// }
+
+// @keyframes qodef-animate-clicked {
+//     0% {
+//         clip-path: inset(0 0 0 0);
+//         -webkit-clip-path: inset(0 0 0 0)
+//     }
+
+//     100% {
+//         clip-path: inset(6%);
+//         -webkit-clip-path: inset(6%)
+//     }
+// }
+
+// @keyframes qodef-ie-animate-clicked {
+//     0% {
+//         transform: scale(1)
+//     }
+
+//     100% {
+//         transform: scale(.9)
+//     }
+// }
+
+
+
+
+
+
+// @keyframes qodef-animate-slide-out {
+//     0% {
+//         transform: scale(1) translateX(0);
+//         clip-path: inset(0 0 0 0);
+//         -webkit-clip-path: inset(0 0 0 0)
+//     }
+
+//     100% {
+//         transform: scale(1.1) translateX(-150px);
+//         clip-path: inset(0 100% 0 0);
+//         -webkit-clip-path: inset(0 100% 0 0)
+//     }
+// }
+
+// @keyframes qodef-animate-slide-in {
+//     0% {
+//         transform: scale(1.1) translateX(30px)
+//     }
+
+//     100% {
+//         transform: scale(1) translateX(0)
+//     }
+// }
+
+// @keyframes qodef-ie-animate-slide-out {
+//     0% {
+//         transform: scale(1) translateX(0);
+//         opacity: 1
+//     }
+
+//     100% {
+//         transform: scale(1.1) translateX(-20px);
+//         opacity: 0
+//     }
+// }
+
+// @keyframes qodef-ie-animate-slide-in {
+//     0% {
+//         transform: scale(1.1) translateX(30px)
+//     }
+
+//     100% {
+//         transform: scale(1) translateX(0)
+//     }
+// }
+
+// @keyframes qodef-animate-clicked {
+//     0% {
+//         clip-path: inset(0 0 0 0);
+//         -webkit-clip-path: inset(0 0 0 0)
+//     }
+
+//     100% {
+//         clip-path: inset(6%);
+//         -webkit-clip-path: inset(6%)
+//     }
+// }
+
+// @keyframes qodef-ie-animate-clicked {
+//     0% {
+//         transform: scale(1)
+//     }
+
+//     100% {
+//         transform: scale(.9)
+//     }
+// }
+/* Swiper container */
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Center slide content */
+.swiper-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image background */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Overlay Lines */
+.line-effect {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    transform: translate(25%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    rotate: 90deg;
+    transition: 0.8s ease-in-out;
+}
+
+/* Different Heights using nth-child */
+.line:nth-child(1) {
+    height: 1px;
+}
+
+.line:nth-child(2) {
+    height: 5px;
+}
+
+.line:nth-child(3) {
+    height: 10px;
+}
+
+.line:nth-child(4) {
+    height: 20px;
+}
+
+.line:nth-child(5) {
+    height: 30px;
+}
+
+.line:nth-child(6) {
+    height: 40px;
+}
+
+.line:nth-child(7) {
+    height: 50px;
+}
+
+.line:nth-child(8) {
+    height: 60px;
+}
+
+.line:nth-child(9) {
+    height: 70px;
+}
+
+.line:nth-child(10) {
+    height: 80px;
+}
+
+.line:nth-child(11) {
+    height: 90px;
+}
+
+.line:nth-child(12) {
+    height: 100px;
+}
+
+.line:nth-child(13) {
+    height: 100px;
+}
+
+.line:nth-child(14) {
+    height: 100px;
+}
+
+.line:nth-child(15) {
+    height: 100px;
+}
+
+.line:nth-child(16) {
+    height: 100px;
+}
+
+.line:nth-child(17) {
+    height: 100px;
+}
+
+.line:nth-child(18) {
+    height: 100px;
+}
+
+.line:nth-child(19) {
+    height: 100px;
+}
+
+.line:nth-child(20) {
+    height: 100px;
+}
+
+/* General Line Style */
+.line {
+    width: 100%;
+    background: #fff;
+    transition: transform 0.8s ease-in-out, height 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+/* Hide lines when active */
+.swiper-slide-active {
+
+    .line {
+        transform: scaleY(0);
+    }
+
+    .line-effect {
+        transform: scaleY(-50px);
+    }
+}
+
+
+.portfolio-2 {
+
+    &__item {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: .8s cubic-bezier(.37, .23, 0, .96)
+    }
+
+    &__content {
+        z-index: 9;
+        left: 50px;
+        bottom: 200px;
+        position: absolute;
+
+        @media #{$xs} {
+            top: 120px;
+        }
+
+        &-title {
+            opacity: 0;
+            font-size: 100px;
+            line-height: 1.05;
+            color: var(--white);
+            transform: translateY(-130px);
+
+            @media #{$xs} {
+                font-size: 60px;
+            }
+        }
+
+    }
+
+    &__list {
+        opacity: 0;
+        display: flex;
+        margin-top: 40px;
+        align-items: center;
+        transform: translateY(-150px);
+
+        li {
+            a {
+                font-size: 14px;
+                border-radius: 20px;
+                padding: 10px 17px;
+                border-radius: 20px;
+                color: var(--white);
+                text-transform: uppercase;
+                border: 1px solid rgba(255, 255, 255, 0.20);
+
+            }
+        }
+    }
+
+    .swiper-slide-active {
+        .portfolio-2 {
+
+            &__item {
+                animation-name: qodef-animate-slide-out;
+                animation-duration: 1.3s;
+                animation-fill-mode: forwards
+            }
+
+            &__content {
+
+                &-title {
+                    opacity: 1;
+                    transform: translatey(0px);
+                    transition: all 2200ms ease;
+                }
+            }
+
+            &__list {
+                opacity: 1;
+                transform: translatey(0px);
+                transition: all 2000ms ease;
+            }
+        }
+    }
+
+    &__slider {
+
+        &__arrow {
+            gap: 40px;
+            right: 50px;
+            bottom: 50px;
+            z-index: 99;
+            display: flex;
+            position: absolute;
+            align-items: center;
+
+            @media #{$sm} {
+                left: 50px;
+            }
+
+            @media #{$xs} {
+                top: 150px;
+            }
+
+            &-prev,
+            &-next {
+                gap: 8px;
+                display: flex;
+                font-size: 14px;
+                font-weight: 600;
+                align-items: center;
+                color: var(--white);
+            }
+        }
+
+    }
+
+    .portfolio-2-pagination {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        z-index: 9;
+        display: inline-block;
+
+        @media #{$xs} {
+            top: 350px;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        width: 150px;
+        height: 10px;
+        display: inline-block;
+        margin: 0 5px;
+        overflow: hidden;
+        transition: 0.4s;
+        position: relative;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.30);
+
+        @media #{$sm} {
+            width: 100px;
+            bottom: 50px;
+        }
     }
 
     .swiper-pagination-bullet::before {

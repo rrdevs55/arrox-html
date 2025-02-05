@@ -1590,14 +1590,16 @@ Data Css js
 
     window.addEventListener("resize", createTimeline);
   }
-  let banner_2__slider = new Swiper(".portfolio-activ", {
+
+
+  let portfolio_activ = new Swiper(".portfolio-activ", {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
     speed: 1000,
     centeredSlides: true,
     clickable: true,
-    //    effect: 'fade', 
+    // effect: 'fade',
     // effect: 'cube',
     // effect: 'coverflow',
     // effect: 'flip',
@@ -1607,6 +1609,90 @@ Data Css js
     // autoplay: {
     //   delay: 3000,
     // },
+
+    effect: "creative",
+
+    // creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     translate: [0, 0, -400],
+    //   },
+    //   next: {
+    //     translate: ["100%", 0, 0],
+    //   },
+    // },
+
+
+    // creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     translate: ["-120%", 0, -500],
+    //   },
+    //   next: {
+    //     shadow: true,
+    //     translate: ["120%", 0, -500],
+    //   },
+    // },
+
+    // creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     translate: ["-20%", 0, -1],
+    //   },
+    //   next: {
+    //     translate: ["100%", 0, 0],
+    //   },
+    // },
+
+
+    // creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     translate: [0, 0, -800],
+    //     rotate: [180, 0, 0],
+    //   },
+    //   next: {
+    //     shadow: true,
+    //     translate: [0, 0, -800],
+    //     rotate: [-180, 0, 0],
+    //   },
+    // },
+
+
+    // creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     translate: ["-125%", 0, -800],
+    //     rotate: [0, 0, -90],
+    //   },
+    //   next: {
+    //     shadow: true,
+    //     translate: ["125%", 0, -800],
+    //     rotate: [0, 0, 90],
+    //   },
+    // },
+
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        origin: "left center",
+        translate: ["-5%", 0, -200],
+        rotate: [0, 100, 0],
+      },
+      next: {
+        origin: "right center",
+        translate: ["5%", 0, -200],
+        rotate: [0, -100, 0],
+      },
+    },
+
+    // effect: 'fade',
+    // fadeEffect: {
+    //   crossFade: true
+    // },
+
+
     navigation: {
       prevEl: ".portfolio__slider__arrow-prev",
       nextEl: ".portfolio__slider__arrow-next",
@@ -1616,4 +1702,61 @@ Data Css js
       clickable: true,
     },
   });
+
+  let portfolio2_activ = new Swiper(".portfolio-2-activ", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    // speed: 1000,
+    centeredSlides: true,
+    clickable: true,
+    effect: 'fade',
+    on: {
+      slideChangeTransitionStart: function () {
+        document.querySelectorAll(".line").forEach(line => {
+          line.style.transform = "scaleY(1)";
+        });
+
+        setTimeout(() => {
+          document.querySelectorAll(".swiper-slide-active .line").forEach(line => {
+            line.style.transform = "scaleY(0)";
+          });
+        }, 10);
+      }
+    },
+
+    navigation: {
+      prevEl: ".portfolio-2__slider__arrow-prev",
+      nextEl: ".portfolio-2__slider__arrow-next",
+    },
+    pagination: {
+      el: ".portfolio-2-pagination",
+      clickable: true,
+    },
+  });
+
+
+  // Initialize Swiper
+  // const swiper = new Swiper('.swiper', {
+  //   loop: true,
+  //   slidesPerView: 1,
+  //   spaceBetween: 0,
+  //   // speed: 500,
+  //   effect: 'fade',
+  //   on: {
+  //     slideChangeTransitionStart: function () {
+  //       document.querySelectorAll(".line").forEach(line => {
+  //         line.style.transform = "scaleY(1)";
+  //       });
+
+  //       setTimeout(() => {
+  //         document.querySelectorAll(".swiper-slide-active .line").forEach(line => {
+  //           line.style.transform = "scaleY(0)";
+  //         });
+  //       }, 10);
+  //     }
+  //   }
+  // });
+
+
 })(jQuery);

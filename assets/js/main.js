@@ -1711,6 +1711,9 @@ Data Css js
     centeredSlides: true,
     clickable: true,
     effect: 'fade',
+    // mousewheel: {
+    //   releaseOnEdges: true,
+    // },
     on: {
       slideChangeTransitionStart: function () {
         document.querySelectorAll(".line").forEach(line => {
@@ -1736,27 +1739,112 @@ Data Css js
   });
 
 
-  // Initialize Swiper
-  // const swiper = new Swiper('.swiper', {
-  //   loop: true,
-  //   slidesPerView: 1,
-  //   spaceBetween: 0,
-  //   // speed: 500,
-  //   effect: 'fade',
-  //   on: {
-  //     slideChangeTransitionStart: function () {
-  //       document.querySelectorAll(".line").forEach(line => {
-  //         line.style.transform = "scaleY(1)";
-  //       });
+  // ==============================
 
-  //       setTimeout(() => {
-  //         document.querySelectorAll(".swiper-slide-active .line").forEach(line => {
-  //           line.style.transform = "scaleY(0)";
-  //         });
-  //       }, 10);
-  //     }
-  //   }
-  // });
+  document.addEventListener("DOMContentLoaded", function () {
+    // Generate grid effect for all slides
+    document.querySelectorAll('.grid-mask').forEach(gridMask => {
+      let blocks = [];
+      for (let i = 0; i < 32; i++) { // 8 cols × 4 rows = 32 squares
+        let block = document.createElement("div");
+        block.style.transitionDelay = `${Math.random() * 1.5}s`; // Random delay
+        blocks.push(block);
+      }
+      // Shuffle blocks before appending (for more randomness)
+      blocks.sort(() => Math.random() - 0.5);
+      blocks.forEach(block => gridMask.appendChild(block));
+    });
 
+    // Swiper Initialization
+    var swiper = new Swiper(".portfolio-3-activ", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      // speed: 1000,
+      centeredSlides: true,
+      clickable: true,
+      effect: 'fade',
+      // mousewheel: {
+      //   releaseOnEdges: true,
+      // },
+
+
+      navigation: {
+        prevEl: ".portfolio-3__slider__arrow-prev",
+        nextEl: ".portfolio-3__slider__arrow-next",
+      },
+      pagination: {
+        el: ".portfolio-3-pagination",
+        clickable: true,
+      },
+    });
+  });
+  // ===========================
+  document.addEventListener("DOMContentLoaded", function () {
+    // Generate grid effect for all slides
+    document.querySelectorAll('.grid-mask').forEach(gridMask => {
+      let blocks = [];
+      for (let i = 0; i < 32; i++) { // 8 cols × 4 rows = 32 squares
+        let block = document.createElement("div");
+        block.style.transitionDelay = `${Math.random() * 1.5}s`; // Random delay
+        blocks.push(block);
+      }
+      // Shuffle blocks before appending (for more randomness)
+      blocks.sort(() => Math.random() - 0.5);
+      blocks.forEach(block => gridMask.appendChild(block));
+    });
+
+  });
+  // ===========================
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const selectAll = (e) => document.querySelectorAll(e);
+    gsap.registerPlugin(ScrollTrigger);
+    const tracks = selectAll(".sticky-element");
+
+    tracks.forEach((track) => {
+      let trackWrapper = track.querySelectorAll(".track");
+      let allImgs = track.querySelectorAll(".image");
+
+      let trackWrapperWidth = () => {
+        let width = 0;
+        trackWrapper.forEach(el => width += el.offsetWidth);
+        return width;
+      };
+
+      gsap.defaults({ ease: "none" });
+
+      let scrollTween = gsap.to(trackWrapper, {
+        x: () => -trackWrapperWidth() + window.innerWidth,
+        scrollTrigger: {
+          trigger: track,
+          pin: true,
+          scrub: 3,
+          start: "center center",
+          end: () => "+=" + (track.scrollWidth - window.innerWidth),
+          onRefresh: self => self.getTween().resetTo("totalProgress", 0),
+          invalidateOnRefresh: true
+        },
+      });
+
+      allImgs.forEach((img) => {
+        gsap.fromTo(img, { transform: "translateX(-10vw)" }, {
+          transform: "translateX(5vw)",
+          scrollTrigger: {
+            trigger: img.parentNode,
+            containerAnimation: scrollTween,
+            start: "left right",
+            end: "right left",
+            scrub: true,
+            // invalidateOnRefresh: true,
+          },
+        });
+
+      });
+    });
+  });
 
 })(jQuery);
+

@@ -1073,44 +1073,46 @@
 //     transition: transform 0.1s linear;
 // }
 
-.sticky-element {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-}
+// ============================================
 
-.track {
-    width: fit-content;
-    flex: 0 0 auto;
-}
+// .sticky-element {
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     width: 100%;
+//     height: 100vh;
+//     overflow: hidden;
+//     position: relative;
+// }
 
-.track-flex {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    gap: 10px;
-}
+// .track {
+//     width: fit-content;
+//     flex: 0 0 auto;
+// }
 
-.panel-wide {
-    position: relative;
-    width: 500px;
-    height: 100%;
-    overflow: hidden;
-    background-size: cover;
-}
+// .track-flex {
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     height: 100vh;
+//     gap: 10px;
+// }
 
-.panel-wide img {
-    width: 100%;
-    /* Full width of the parent panel */
-    height: 100%;
-    /* Full height of the parent panel */
-    object-fit: cover;
-    /* Ensure the image scales proportionally and crops as needed */
-    transform: translateZ(0);
-    /* Improves rendering performance */
-}
+// .panel-wide {
+//     position: relative;
+//     width: 500px;
+//     height: 100%;
+//     overflow: hidden;
+//     background-size: cover;
+// }
+
+// .panel-wide img {
+//     width: 100%;
+//     /* Full width of the parent panel */
+//     height: 100%;
+//     /* Full height of the parent panel */
+//     object-fit: cover;
+//     /* Ensure the image scales proportionally and crops as needed */
+//     transform: translateZ(0);
+//     /* Improves rendering performance */
+// }

@@ -1798,36 +1798,87 @@ Data Css js
   // ===========================
 
 
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
+  //   const track = document.querySelector(".track");
+  //   const panels = gsap.utils.toArray(".panel-wide img");
+
+  //   // Get total width of the track
+  //   let trackWidth = track.scrollWidth - window.innerWidth;
+
+  //   // Scroll-triggered horizontal movement using `translateX`
+  //   gsap.to(track, {
+  //     x: (progress) => `translateX(-${progress * trackWidth}px)`, // Dynamic transform
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: ".parallax-slider-wrapper",
+  //       start: "top top",
+  //       end: () => `+=${trackWidth}`,
+  //       scrub: 3,
+  //       pin: true,
+  //       anticipatePin: 1,
+  //       invalidateOnRefresh: true
+  //     }
+  //   });
+
+  //   // Parallax effect for images
+  //   panels.forEach((img) => {
+  //     gsap.fromTo(img,
+  //       { x: "-1vw" },
+  //       {
+  //         x: "1vw",
+  //         scrollTrigger: {
+  //           trigger: img.parentNode,
+  //           start: "left right",
+  //           end: "right left",
+  //           scrub: true,
+  //         }
+  //       }
+  //     );
+  //   });
+  // });
+
+
+
+  ScrollTrigger.defaults({
+    markers: {
+      startColor: "grey",
+      endColor: "gold",
+      fontSize: "22px",
+      indent: 10
+    }
+  });
   document.addEventListener("DOMContentLoaded", () => {
     const selectAll = (e) => document.querySelectorAll(e);
     gsap.registerPlugin(ScrollTrigger);
-    const tracks = selectAll(".sticky-element");
+    const tracks = selectAll(".parallax-slider-wrapper");
 
     tracks.forEach((track) => {
-      let trackWrapper = track.querySelectorAll(".track");
+      let trackWrapper = track.querySelectorAll(".parallax-slider");
       let allImgs = track.querySelectorAll(".image");
 
       let trackWrapperWidth = () => {
         let width = 0;
-        trackWrapper.forEach(el => width += el.offsetWidth);
+        trackWrapper.forEach((el) => (width += el.offsetWidth));
         return width;
       };
 
       gsap.defaults({ ease: "none" });
-
+      const gap = window.innerWidth * 0.05;
       let scrollTween = gsap.to(trackWrapper, {
-        x: () => -trackWrapperWidth() + window.innerWidth,
+        x: () => -trackWrapperWidth() + window.innerWidth + gap,
         scrollTrigger: {
           trigger: track,
           pin: true,
           scrub: 3,
-          start: "center center",
+          start: "top 10%",
           end: () => "+=" + (track.scrollWidth - window.innerWidth),
-          onRefresh: self => self.getTween().resetTo("totalProgress", 0),
+          onRefresh: (self) => self.getTween().resetTo("totalProgress", 0),
           invalidateOnRefresh: true
-        },
+        }
       });
+
 
       allImgs.forEach((img) => {
         gsap.fromTo(img, { transform: "translateX(-10vw)" }, {
@@ -1845,6 +1896,7 @@ Data Css js
       });
     });
   });
+
 
 })(jQuery);
 

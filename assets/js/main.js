@@ -1616,15 +1616,15 @@ Data Css js
 
     effect: "creative",
 
-    // creativeEffect: {
-    //   prev: {
-    //     // shadow: true,
-    //     translate: [0, 0, -1],
-    //   },
-    //   next: {
-    //     translate: ["100%", 0, 0],
-    //   },
-    // },
+    creativeEffect: {
+      prev: {
+        // shadow: true,
+        translate: [0, 0, -1],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },
 
 
     // creativeEffect: {
@@ -1787,26 +1787,26 @@ Data Css js
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    // speed: 1000,
+    speed: 1500,
     centeredSlides: true,
     clickable: true,
-    effect: 'fade',
-    // mousewheel: {
-    //   releaseOnEdges: true,
-    // },
-    on: {
-      slideChangeTransitionStart: function () {
-        document.querySelectorAll(".line").forEach(line => {
-          line.style.transform = "scaleY(1)";
-        });
-
-        setTimeout(() => {
-          document.querySelectorAll(".swiper-slide-active .line").forEach(line => {
-            line.style.transform = "scaleY(0)";
-          });
-        }, 10);
-      }
+    // effect: 'parallax',
+    parallax: true,
+    effect: "parallax",
+    mousewheel: {
+      releaseOnEdges: true,
     },
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        // shadow: true,
+        translate: [0, "-100%", 0],
+      },
+      next: {
+        translate: [0, "100%", 0],
+      },
+    },
+
 
     navigation: {
       prevEl: ".portfolio-4__slider__arrow-prev",
@@ -1818,6 +1818,74 @@ Data Css js
     },
   });
 
+  let portfolio5_activ = new Swiper(".portfolio-5-activ", {
+    // slidesPerView: 1,
+    // spaceBetween: 0,
+    // loop: true,
+    // speed: 1500,
+    // centeredSlides: true,
+    // clickable: true,
+    // // effect: 'parallax',
+    // parallax: true,
+    // effect: "parallax",
+    // mousewheel: {
+    //   releaseOnEdges: true,
+    // },
+    // effect: "creative",
+    // creativeEffect: {
+    //   prev: {
+    //     // shadow: true,
+    //     translate: [0, "-100%", 0],
+    //   },
+    //   next: {
+    //     translate: [0, "100%", 0],
+    //   },
+    // },
+
+    modules: [EffectSlicer],
+    // specify "slicer" effect
+    effect: 'slicer',
+    loop: true,
+    clickable: true,
+    slicerEffect: {
+      split: 5,
+    },
+    direction: 'vertical',
+    speed: 600,
+
+    navigation: {
+      prevEl: ".portfolio-5__slider__arrow-prev",
+      nextEl: ".portfolio-5__slider__arrow-next",
+    },
+    pagination: {
+      el: ".portfolio-5-pagination",
+      clickable: true,
+    },
+  });
+
+
+  // const swiper = new Swiper('.portfolio-active', {
+  //   // pass EffectSlicer module to modules
+  //   modules: [EffectSlicer],
+  //   // specify "slicer" effect
+  //   effect: 'slicer',
+  //   loop: true,
+  //   clickable: true,
+  //   slicerEffect: {
+  //     split: 5,
+  //   },
+  //   direction: 'vertical',
+  //   speed: 600,
+
+  //   // grabCursor: true,
+  //   navigation: {
+  //     nextEl: '.portfolio-button-next',
+  //     prevEl: '.portfolio-button-prev',
+  //   },
+  //   pagination: {
+  //     el: '.portfolio-pagination',
+  //   },
+  // });
 
   // =========================== parallax slider
   ScrollTrigger.defaults({

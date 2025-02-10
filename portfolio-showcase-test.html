@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="assets/vendor/magnific-popup.css">
   <link rel="stylesheet" href="assets/vendor/animate.min.css">
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ashthornton/asscroll@2.0.11/css/index.min.css">
+
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -174,8 +177,121 @@
 
       <main>
 
+        <script type="x-shader/x-fragment" id="fragment">
+          varying vec2 vUv;
+      
+          uniform vec2 u_resolution;
+          uniform vec2 u_image_sizes;
+          uniform vec2 u_plane_sizes;
+          uniform sampler2D u_image;
+          uniform float u_time;
+          uniform vec2 hover;
+          uniform float hoverState;
+          
+          float circle(vec2 uv, vec2 disc_center, float disc_radius, float border_size) {
+              uv -= disc_center;
+              uv*=u_resolution;
+              float dist = sqrt(dot(uv, uv));
+              return smoothstep(disc_radius+border_size, disc_radius-border_size, dist);
+          }
+      
+      void main() {
+            vec2 newUV = vUv;
+      
+            vec2 ratio = vec2(
+              min((u_plane_sizes.x / u_plane_sizes.y) / (u_image_sizes.x / u_image_sizes.y), 1.0),
+              min((u_plane_sizes.y / u_plane_sizes.x) / (u_image_sizes.y / u_image_sizes.x), 1.0)
+            );
+      
+            vec2 uv = vec2(
+              vUv.x * (ratio.x) + (1.0 - ratio.x) * 0.5,
+              vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
+            );
+      
+          
+          float c = circle(vUv, hover, 0.0, hoverState);
+          
+          float r = texture2D(u_image, newUV.xy += c * (0.1 * .5)).x;
+          float g = texture2D(u_image, newUV.xy += c * (0.1 * .525)).y;
+          float b = texture2D(u_image, newUV.xy += c * (0.1 * .55)).z;
+          vec4 color = vec4(r, g, b, 1.);
+      
+      
+        //gl_FragColor.rgb = texture2D(u_image, uv).rgb;
+        //gl_FragColor.a = 1.0;
+          gl_FragColor = color;
+      }
+      </script>
+
+        <script type="x-shader/x-vertex" id="vertex">
+          varying vec2 vUv;
+          uniform float u_time;
+          uniform float hoverState;
+          uniform vec2 hover;
+          uniform float u_delta; 
+      
+      
+      void main() {
+        vUv = uv;
+        vec3 newPos = position;
+      
+        float dist = distance(uv, hover);
+        newPos.z += hoverState * sin(dist*2.0 + u_time);
+      
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(newPos, 1.0);
+      }
+      
+      </script>
+
+        <div asscroll-containerff>
+          <div id="pagegggg">
+            <img crossorigin="anonymous" src="assets/imgs/project/image-52.jpg" data-webgl-image />
+            <img crossorigin="anonymous" src="https://assets.codepen.io/2479807/adidas.jpg" data-webgl-image />
+            <img crossorigin="anonymous" src="https://assets.codepen.io/2479807/nike.jpg" data-webgl-image />
+            <img crossorigin="anonymous" src="assets/imgs/project/image-52.jpg" data-webgl-image />
+            <div class="canvas-container"></div>
+          </div>
+        </div>
+
         <!-- work area start  -->
         <section class="work-area-5">
+          <div class="container large">
+            <div class="work-area-5-inner section-spacing-bottom">
+              <div class="works-wrapper-box">
+                <div class="works-wrapper">
+                  <div class="section-header span-2">
+                    <div class="section-title-wrapper">
+                      <div class="title-wrapper">
+                        <h2 class="section-title">We’re Arrox®—a design and
+                          development agency based
+                          in Germany.</h2>
+                      </div>
+                    </div>
+                    <div class="header-shape-1">
+                      <img src="assets/imgs/shape/shape-21.png" alt="image">
+                    </div>
+                  </div>
+                  <div class="work-box">
+                    <div class="thumb">
+                      <img crossorigin="anonymous" src="assets/imgs/project/image-52.jpg" data-webgl-image />
+
+                      <a href="work-details.html"><img src="assets/imgs/project/image-52.jpg" alt="image"></a>
+                    </div>
+                  </div>
+                  <div class="work-box">
+                    <div class="thumb">
+                      <a href="work-details.html"><img src="assets/imgs/project/image-53.jpg" alt="image"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- work area end  -->
+
+        <!-- work area start  -->
+        <!-- <section class="work-area-5">
           <div class="container large">
             <div class="work-area-5-inner section-spacing-bottom">
               <div class="works-wrapper-box">
@@ -301,7 +417,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
         <!-- work area end  -->
 
       </main>
@@ -363,6 +479,11 @@
   <script src="assets/vendor/matter.js"></script>
   <script src="assets/vendor/throwable.js"></script>
   <script src="assets/js/magiccursor.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@ashthornton/asscroll@2.0.11/build/asscroll.min.js"></script> -->
+  <script src="assets/js/img-animation.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

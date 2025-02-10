@@ -17490,28 +17490,4 @@ video.video-area {
 }
 .team-area .team-box .content {
   margin-top: 19px;
-}
-
-canvas {
-  top: 0;
-  left: 0;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  z-index: 10;
-  pointer-events: none;
-}
-
-[data-webgl-image] {
-  opacity: 0.2;
-  position: relative;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-  margin: 10vh auto;
-  padding: 0 5vh;
 }/*# sourceMappingURL=style.css.map */

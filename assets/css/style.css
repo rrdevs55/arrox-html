@@ -10650,9 +10650,6 @@ video.video-area {
   width: 100%;
 }
 
-.portfolio-4 {
-  /* 🔹 Reveal Effect for Active Slide */
-}
 .portfolio-4__item {
   width: 100vw;
   height: 100vh;
@@ -10660,25 +10657,6 @@ video.video-area {
   background-size: cover;
   background-repeat: no-repeat;
   transition: 0.8s cubic-bezier(0.37, 0.23, 0, 0.96);
-}
-.portfolio-4 .grid-mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-}
-.portfolio-4 .grid-mask div {
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.6s ease-in-out;
-}
-.portfolio-4 .swiper-slide-active .grid-mask div {
-  opacity: 0;
 }
 .portfolio-4__content {
   z-index: 9;

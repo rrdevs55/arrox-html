@@ -1596,26 +1596,30 @@ Data Css js
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    speed: 1000,
+    speed: 1500,
     centeredSlides: true,
     clickable: true,
+
     // effect: 'fade',
     // effect: 'cube',
     // effect: 'coverflow',
-    // effect: 'flip',
+    effect: 'flip',
     // effect: 'morph-x',
     // zoom: true,
     // parallax: true,
     // autoplay: {
     //   delay: 3000,
     // },
+    mousewheel: {
+      releaseOnEdges: true,
+    },
 
     effect: "creative",
 
     // creativeEffect: {
     //   prev: {
-    //     shadow: true,
-    //     translate: [0, 0, -400],
+    //     // shadow: true,
+    //     translate: [0, 0, -1],
     //   },
     //   next: {
     //     translate: ["100%", 0, 0],
@@ -1672,20 +1676,20 @@ Data Css js
     //   },
     // },
 
-    effect: "creative",
-    creativeEffect: {
-      prev: {
-        shadow: true,
-        origin: "left center",
-        translate: ["-5%", 0, -200],
-        rotate: [0, 100, 0],
-      },
-      next: {
-        origin: "right center",
-        translate: ["5%", 0, -200],
-        rotate: [0, -100, 0],
-      },
-    },
+    // effect: "creative",
+    // creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     origin: "left center",
+    //     translate: ["-5%", 0, -200],
+    //     rotate: [0, 100, 0],
+    //   },
+    //   next: {
+    //     origin: "right center",
+    //     translate: ["5%", 0, -200],
+    //     rotate: [0, -100, 0],
+    //   },
+    // },
 
     // effect: 'fade',
     // fadeEffect: {
@@ -1707,10 +1711,10 @@ Data Css js
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    // speed: 1000,
+    speed: 1000,
     centeredSlides: true,
     clickable: true,
-    effect: 'fade',
+    // effect: 'fade',
     // mousewheel: {
     //   releaseOnEdges: true,
     // },
@@ -1737,7 +1741,6 @@ Data Css js
       clickable: true,
     },
   });
-
 
   // ==============================
 
@@ -1779,68 +1782,44 @@ Data Css js
       },
     });
   });
-  // ===========================
-  document.addEventListener("DOMContentLoaded", function () {
-    // Generate grid effect for all slides
-    document.querySelectorAll('.grid-mask').forEach(gridMask => {
-      let blocks = [];
-      for (let i = 0; i < 32; i++) { // 8 cols × 4 rows = 32 squares
-        let block = document.createElement("div");
-        block.style.transitionDelay = `${Math.random() * 1.5}s`; // Random delay
-        blocks.push(block);
+
+  let portfolio4_activ = new Swiper(".portfolio-4-activ", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    // speed: 1000,
+    centeredSlides: true,
+    clickable: true,
+    effect: 'fade',
+    // mousewheel: {
+    //   releaseOnEdges: true,
+    // },
+    on: {
+      slideChangeTransitionStart: function () {
+        document.querySelectorAll(".line").forEach(line => {
+          line.style.transform = "scaleY(1)";
+        });
+
+        setTimeout(() => {
+          document.querySelectorAll(".swiper-slide-active .line").forEach(line => {
+            line.style.transform = "scaleY(0)";
+          });
+        }, 10);
       }
-      // Shuffle blocks before appending (for more randomness)
-      blocks.sort(() => Math.random() - 0.5);
-      blocks.forEach(block => gridMask.appendChild(block));
-    });
+    },
 
+    navigation: {
+      prevEl: ".portfolio-4__slider__arrow-prev",
+      nextEl: ".portfolio-4__slider__arrow-next",
+    },
+    pagination: {
+      el: ".portfolio-4-pagination",
+      clickable: true,
+    },
   });
-  // ===========================
 
 
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   const track = document.querySelector(".track");
-  //   const panels = gsap.utils.toArray(".panel-wide img");
-
-  //   // Get total width of the track
-  //   let trackWidth = track.scrollWidth - window.innerWidth;
-
-  //   // Scroll-triggered horizontal movement using `translateX`
-  //   gsap.to(track, {
-  //     x: (progress) => `translateX(-${progress * trackWidth}px)`, // Dynamic transform
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       trigger: ".parallax-slider-wrapper",
-  //       start: "top top",
-  //       end: () => `+=${trackWidth}`,
-  //       scrub: 3,
-  //       pin: true,
-  //       anticipatePin: 1,
-  //       invalidateOnRefresh: true
-  //     }
-  //   });
-
-  //   // Parallax effect for images
-  //   panels.forEach((img) => {
-  //     gsap.fromTo(img,
-  //       { x: "-1vw" },
-  //       {
-  //         x: "1vw",
-  //         scrollTrigger: {
-  //           trigger: img.parentNode,
-  //           start: "left right",
-  //           end: "right left",
-  //           scrub: true,
-  //         }
-  //       }
-  //     );
-  //   });
-  // });
-
-
-
+  // =========================== parallax slider
   ScrollTrigger.defaults({
     markers: {
       startColor: "grey",
@@ -1896,6 +1875,12 @@ Data Css js
       });
     });
   });
+
+
+
+
+  // ==================================
+
 
 
 })(jQuery);

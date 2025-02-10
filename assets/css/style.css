@@ -10897,6 +10897,10 @@ video.video-area {
   max-width: 100vw;
   max-width: 100vw;
 }
+.portfolio-5 img {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .portfolio-5 .swiper-slicer-image {
   max-width: unset;
 }

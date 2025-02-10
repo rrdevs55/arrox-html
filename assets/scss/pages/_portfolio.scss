@@ -1094,6 +1094,11 @@
         max-width: 100vw;
     }
 
+    img {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     .swiper-slicer-image {
         max-width: unset;
     }

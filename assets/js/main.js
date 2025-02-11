@@ -1469,6 +1469,7 @@ Data Css js
   //   window.addEventListener("resize", createTimeline);
   // }
 
+
   // portfolio-slide
   // ====================================================
   if (document.querySelectorAll(".portfolio").length > 0) {
@@ -1491,49 +1492,16 @@ Data Css js
           translate: ["100%", 0, 0],
         },
       },
-      pagination: {
-        el: ".portfolio-pagination",
-        clickable: true,
-      },
       navigation: {
         prevEl: ".portfolio__slider__arrow-prev",
         nextEl: ".portfolio__slider__arrow-next",
       },
+      pagination: {
+        el: ".portfolio-pagination",
+        clickable: true,
+      },
     });
   }
-
-  // portfolio-slide
-  // ====================================================
-  // if (document.querySelectorAll(".portfolio").length > 0) {
-  //   let portfolio_activ = new Swiper(".portfolio-activ", {
-  //     slidesPerView: 1,
-  //     spaceBetween: 0,
-  //     loop: true,
-  //     speed: 1500,
-  //     centeredSlides: true,
-  //     clickable: true,
-  //     mousewheel: {
-  //       releaseOnEdges: true,
-  //     },
-  //     effect: "creative",
-  //     creativeEffect: {
-  //       prev: {
-  //         translate: [0, 0, -1],
-  //       },
-  //       next: {
-  //         translate: ["100%", 0, 0],
-  //       },
-  //     },
-  //     navigation: {
-  //       prevEl: ".portfolio__slider__arrow-prev",
-  //       nextEl: ".portfolio__slider__arrow-next",
-  //     },
-  //     pagination: {
-  //       el: ".portfolio-pagination",
-  //       clickable: true,
-  //     },
-  //   });
-  // }
 
   // portfolio-slide-2
   // ====================================================
@@ -1544,9 +1512,9 @@ Data Css js
     speed: 1000,
     centeredSlides: true,
     clickable: true,
-    // mousewheel: {
-    //   releaseOnEdges: true,
-    // },
+    mousewheel: {
+      releaseOnEdges: true,
+    },
     on: {
       slideChangeTransitionStart: function () {
         document.querySelectorAll(".line").forEach(line => {
@@ -1591,9 +1559,9 @@ Data Css js
       centeredSlides: true,
       clickable: true,
       effect: 'fade',
-      // mousewheel: {
-      //   releaseOnEdges: true,
-      // },
+      mousewheel: {
+        releaseOnEdges: true,
+      },
 
       navigation: {
         prevEl: ".portfolio-3__slider__arrow-prev",
@@ -1654,6 +1622,9 @@ Data Css js
       },
       direction: 'vertical',
       speed: 600,
+      mousewheel: {
+        releaseOnEdges: true,
+      },
 
       navigation: {
         prevEl: ".portfolio-5__slider__arrow-prev",

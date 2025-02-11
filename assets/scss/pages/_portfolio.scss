@@ -1,3 +1,16 @@
+.body {
+
+    &-portfolio-agency {
+        .header-area-7 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            right: 0;
+        }
+    }
+}
+
 .portfolio {
 
     &__item {
@@ -5,8 +18,9 @@
         height: 100vh;
         position: relative;
         background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
-        transition: .8s cubic-bezier(.37, .23, 0, .96)
+        transition: .8s cubic-bezier(.37, .23, 0, .96);
     }
 
     &__content {
@@ -17,6 +31,7 @@
 
         @media #{$xs} {
             top: 120px;
+            left: 30px;
         }
 
         &-title {
@@ -92,12 +107,16 @@
             position: absolute;
             align-items: center;
 
+            @media #{$md} {
+                gap: 20px;
+            }
+
             @media #{$sm} {
                 left: 50px;
             }
 
             @media #{$xs} {
-                top: 150px;
+                left: 30px;
             }
 
             &-prev,
@@ -121,7 +140,7 @@
         display: inline-block;
 
         @media #{$xs} {
-            top: 350px;
+            left: 30px;
         }
     }
 
@@ -136,9 +155,17 @@
         border-radius: 5px;
         background: rgba(255, 255, 255, 0.30);
 
+        @media #{$lg} {
+            width: 120px;
+        }
+
+        @media #{$md} {
+            width: 90px;
+        }
+
         @media #{$sm} {
-            width: 100px;
-            bottom: 50px;
+            width: 70px;
+            bottom: 45px;
         }
     }
 
@@ -295,8 +322,9 @@
         height: 100vh;
         position: relative;
         background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
-        transition: .8s cubic-bezier(.37, .23, 0, .96)
+        transition: .8s cubic-bezier(.37, .23, 0, .96);
     }
 
     &__content {
@@ -307,6 +335,7 @@
 
         @media #{$xs} {
             top: 120px;
+            left: 30px;
         }
 
         &-title {
@@ -381,12 +410,16 @@
             position: absolute;
             align-items: center;
 
+            @media #{$md} {
+                gap: 20px;
+            }
+
             @media #{$sm} {
                 left: 50px;
             }
 
             @media #{$xs} {
-                top: 150px;
+                left: 30px;
             }
 
             &-prev,
@@ -410,7 +443,7 @@
         display: inline-block;
 
         @media #{$xs} {
-            top: 350px;
+            left: 30px;
         }
     }
 
@@ -425,9 +458,17 @@
         border-radius: 5px;
         background: rgba(255, 255, 255, 0.30);
 
+        @media #{$lg} {
+            width: 120px;
+        }
+
+        @media #{$md} {
+            width: 90px;
+        }
+
         @media #{$sm} {
-            width: 100px;
-            bottom: 50px;
+            width: 70px;
+            bottom: 45px;
         }
     }
 
@@ -467,8 +508,9 @@
         height: 100vh;
         position: relative;
         background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
-        transition: .8s cubic-bezier(.37, .23, 0, .96)
+        transition: .8s cubic-bezier(.37, .23, 0, .96);
     }
 
     .grid-mask {
@@ -502,6 +544,7 @@
 
         @media #{$xs} {
             top: 120px;
+            left: 30px;
         }
 
         &-title {
@@ -576,12 +619,16 @@
             position: absolute;
             align-items: center;
 
+            @media #{$md} {
+                gap: 20px;
+            }
+
             @media #{$sm} {
                 left: 50px;
             }
 
             @media #{$xs} {
-                top: 150px;
+                left: 30px;
             }
 
             &-prev,
@@ -605,7 +652,7 @@
         display: inline-block;
 
         @media #{$xs} {
-            top: 350px;
+            left: 30px;
         }
     }
 
@@ -620,9 +667,17 @@
         border-radius: 5px;
         background: rgba(255, 255, 255, 0.30);
 
+        @media #{$lg} {
+            width: 120px;
+        }
+
+        @media #{$md} {
+            width: 90px;
+        }
+
         @media #{$sm} {
-            width: 100px;
-            bottom: 50px;
+            width: 70px;
+            bottom: 45px;
         }
     }
 
@@ -673,6 +728,7 @@
 
         @media #{$xs} {
             top: 120px;
+            left: 30px;
         }
 
         &-title {
@@ -747,12 +803,16 @@
             position: absolute;
             align-items: center;
 
+            @media #{$md} {
+                gap: 20px;
+            }
+
             @media #{$sm} {
                 left: 50px;
             }
 
             @media #{$xs} {
-                top: 150px;
+                left: 30px;
             }
 
             &-prev,
@@ -776,7 +836,7 @@
         display: inline-block;
 
         @media #{$xs} {
-            top: 350px;
+            left: 30px;
         }
     }
 
@@ -791,9 +851,17 @@
         border-radius: 5px;
         background: rgba(255, 255, 255, 0.30);
 
+        @media #{$lg} {
+            width: 120px;
+        }
+
+        @media #{$md} {
+            width: 90px;
+        }
+
         @media #{$sm} {
-            width: 100px;
-            bottom: 50px;
+            width: 70px;
+            bottom: 45px;
         }
     }
 
@@ -848,6 +916,7 @@
 
         @media #{$xs} {
             top: 120px;
+            left: 30px;
         }
 
         &-title {
@@ -924,12 +993,16 @@
             position: absolute;
             align-items: center;
 
+            @media #{$md} {
+                gap: 20px;
+            }
+
             @media #{$sm} {
                 left: 50px;
             }
 
             @media #{$xs} {
-                top: 150px;
+                left: 30px;
             }
 
             &-prev,
@@ -966,10 +1039,14 @@
         bottom: 50px;
         left: 50px;
         z-index: 9;
-        display: inline-block;
+        display: flex;
+        gap: 15px;
+        top: inherit;
+        right: 0;
+        transform: inherit;
 
         @media #{$xs} {
-            top: 350px;
+            left: 30px;
         }
     }
 
@@ -984,9 +1061,17 @@
         border-radius: 5px;
         background: rgba(255, 255, 255, 0.30);
 
+        @media #{$lg} {
+            width: 120px;
+        }
+
+        @media #{$md} {
+            width: 90px;
+        }
+
         @media #{$sm} {
-            width: 100px;
-            bottom: 50px;
+            width: 70px;
+            bottom: 45px;
         }
     }
 

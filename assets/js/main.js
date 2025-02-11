@@ -1275,10 +1275,10 @@ Data Css js
   });
 
 
-
+  // approach-area
+  // ====================================================
   if (document.querySelectorAll(".approach-area").length > 0) {
 
-    // Animate on scroll
     const boxes = document.querySelectorAll(".approach-area .approach-box");
 
     gsap.from(boxes, {
@@ -1297,7 +1297,8 @@ Data Css js
   }
 
 
-  // button hover animation
+  // button animation
+  // ====================================================
   $('.rr-btn-circle').on('mouseenter', function (e) {
     var x = e.pageX - $(this).offset().left;
     var y = e.pageY - $(this).offset().top;
@@ -1351,7 +1352,8 @@ Data Css js
     });
   });
 
-
+  // service-area-4
+  // ====================================================
   mm.add("(min-width: 1024px)", () => {
     if (document.querySelectorAll(".service-area-4").length > 0) {
       const races = document.querySelector(".service-area-4");
@@ -1370,14 +1372,12 @@ Data Css js
         },
       });
 
-      // Move the wrapper
       wrapperTimeline.to(".services-wrapper", {
         x: getScrollAmount(),
         delay: 0.05,
         ease: "power1.inOut",
       });
 
-      // Animate the spans
       wrapperTimeline.to(
         ".service-thumb-line-wrapper span",
         {
@@ -1391,7 +1391,8 @@ Data Css js
     }
   });
 
-
+  // service-area-4
+  // ====================================================
   if (document.querySelectorAll(".service-area-4").length > 0) {
     gsap.fromTo(
       ".section-content__thumb img",
@@ -1414,299 +1415,181 @@ Data Css js
     );
   }
 
-  // ===================================
+  // hero-6 animation
+  // ====================================================
+  // if (document.querySelectorAll(".hero-area-6").length > 0) {
+  //   console.clear();
+  //   gsap.registerPlugin(Flip, ScrollTrigger);
 
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   let ht = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".hero-area-6",
-  //       start: "top top",
-  //       end: "+=200%",
-  //       scrub: 3,
-  //       pin: true
-  //     }
-  //   });
+  //   let flipCtx;
 
-  //   // Step 1: Hide all content except `.plus`
-  //   ht.to([".hero-video-wrapper", ".hero-area-6 .line"], {
-  //     opacity: 0,
-  //     duration: 0.5,
-  //     // onComplete: () => document.querySelector(".hero-video-wrapper").style.display = "none"
-  //   });
+  //   const createTimeline = () => {
+  //     flipCtx && flipCtx.revert();
 
-  //   // Step 2: Center `.plus`
-  //   ht.to(".plus", {
-  //     opacity: 1,
-  //     // x: "600",
-  //     transformOrigin: "center",
-  //     duration: 1,
-  //   });
+  //     flipCtx = gsap.context(() => {
+  //       const stepElement = [...document.querySelectorAll("[data-step]")];
+  //       const states = stepElement.map((step) => Flip.getState(step));
+  //       const flipConfig = {
+  //         ease: "none",
+  //         duration: 1
+  //       };
 
-  //   // Step 3: Scale `.plus` to full screen
-  //   ht.to(".plus", {
-  //     scale: 60,
-  //     duration: 1.5,
-  //     // right: 0,
-  //     // y: -850,
-  //     opacity: 1,
-  //     ease: "power2.inOut",
-  //   });
-
-  //   // Step 4: Fade in new text after scaling
-  //   ht.fromTo(".new-text", {
-  //     opacity: 0
-  //   }, {
-  //     opacity: 1,
-  //     duration: 1,
-  //     ease: "power2.inOut"
-  //   });
-  // });
-
-
-
-  // gsap.registerPlugin(ScrollTrigger, Flip);
-
-  // let ball = document.querySelector(".plus"),
-  //   parentSection = document.querySelector(".hero-area-6"),
-  //   content = document.querySelector(".contentt"),
-  //   lines = document.querySelectorAll(".line"),
-  //   heroVideo = document.querySelector(".hero-video-wrapper"),
-  //   flipCtx;
-
-  // // Function to create GSAP animation
-  // const createTween = () => {
-  //   if (flipCtx) {
-  //     flipCtx.revert(); // Clear previous state
-  //     flipCtx = null;
-  //   }
-
-  //   flipCtx = gsap.context(() => {
-  //     // Ensure the ball starts from its initial position
-  //     gsap.set(ball, { x: "0vw", y: "0vh", opacity: 1 });
-  //     gsap.set(lines, { opacity: 1 }); // Set initial opacity to 0 for .line elements
-  //     gsap.set(heroVideo, { opacity: 1 }); // Set initial opacity to 0 for .hero-video
-
-  //     let state = Flip.getState(ball); // Capture initial position
-  //     content.appendChild(ball); // Move ball into new parent
-  //     Flip.fit(ball, state); // Maintain visual continuity
-
-  //     gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: parentSection,
-  //         start: "top -10%",
-  //         end: "bottom 0%",
-  //         pin: true,
-  //         scrub: 2,
-  //         immediateRender: false,
-  //         markers: true // Debugging markers
-  //       }
-  //     })
-  //       .to(ball, { x: "0", ease: "none" }) // Ball animation
-  //       .to(ball, { y: "-25vh", ease: "none" }) // Ball animation
-
-  //       // Fade in lines and video while the scroll trigger is active
-  //       .to(lines, { opacity: 0, duration: 1, ease: "power1.out" }, 0)
-  //       .to(heroVideo, { opacity: 0, duration: 1, ease: "power1.out" }, 0)
-
-  //       // Scale and position the .plus element to full screen
-  //       .to(ball, {
-  //         scale: 10, // Increase scale to fill the screen
-  //         // x: "50%", // Center horizontally
-  //         // y: "-50%", // Center vertically
-  //         opacity: 1, // Ensure it's fully visible
-  //         transformOrigin: "center top", // Ensure scaling happens from the center
-  //         fontSize: "200",
-  //         // delay: 0.3,
-  //         // pin: true,
-  //         zIndex: 9999, // Bring it to the front
-  //         duration: 1.5, // Adjust duration for the scaling effect
-  //         ease: "power4.out"
+  //       const tl = gsap.timeline({
+  //         scrollTrigger: {
+  //           trigger: ".hero-area-6-wrapper__line",
+  //           start: "clamp(top 10%)",
+  //           end: "clamp(bottom bottom)",
+  //           scrub: 3,
+  //           markers: true
+  //         }
   //       });
-  //   });
-  // };
 
-  // // Initialize animation
-  // createTween();
+  //       states.forEach((state, index) => {
+  //         tl.add(Flip.fit(".boxx", state, flipConfig), index === 0 ? 0 : "+=0.5");
 
-  // // Handle Resize with Debounce for Performance
-  // let resizeTimeout;
-  // window.addEventListener("resize", () => {
-  //   clearTimeout(resizeTimeout);
-  //   resizeTimeout = setTimeout(() => {
-  //     createTween();
-  //   }, 250); // Delay re-triggering
-  // });
+  //         // Check if the current state is for .third container and change its styles
+  //         if (index === 1) { // Assuming the third container is second in the stepElement array
+  //           tl.to(".third", {
+  //             backgroundColor: "#FF6A3A",
+  //             // width: "100vw",
+  //             height: "100vh",
+  //             scale: "100vh",
+  //             width: "100vw",
+  //             fontSize: "500",
+  //             duration: 0.5,
+  //             // transformOrigin: "top center"
+  //           }, "+=0.2");
+  //         }
+  //       });
+  //     });
+  //   };
+
+  //   createTimeline();
+
+  //   window.addEventListener("resize", createTimeline);
+  // }
+
+  // portfolio-slide
+  // ====================================================
+  if (document.querySelectorAll(".portfolio").length > 0) {
+    let portfolio_activ = new Swiper(".portfolio-activ", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      speed: 1500,
+      centeredSlides: true,
+      clickable: true,
+
+      // effect: 'fade',
+      // effect: 'cube',
+      // effect: 'coverflow',
+      effect: 'flip',
+      // effect: 'morph-x',
+      // zoom: true,
+      // parallax: true,
+      // autoplay: {
+      //   delay: 3000,
+      // },
+      mousewheel: {
+        releaseOnEdges: true,
+      },
+
+      effect: "creative",
+
+      creativeEffect: {
+        prev: {
+          // shadow: true,
+          translate: [0, 0, -1],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+      },
 
 
+      // creativeEffect: {
+      //   prev: {
+      //     shadow: true,
+      //     translate: ["-120%", 0, -500],
+      //   },
+      //   next: {
+      //     shadow: true,
+      //     translate: ["120%", 0, -500],
+      //   },
+      // },
 
-  if (document.querySelectorAll(".hero-area-6").length > 0) {
-    console.clear();
-    gsap.registerPlugin(Flip, ScrollTrigger);
+      // creativeEffect: {
+      //   prev: {
+      //     shadow: true,
+      //     translate: ["-20%", 0, -1],
+      //   },
+      //   next: {
+      //     translate: ["100%", 0, 0],
+      //   },
+      // },
 
-    let flipCtx;
 
-    const createTimeline = () => {
-      flipCtx && flipCtx.revert();
+      // creativeEffect: {
+      //   prev: {
+      //     shadow: true,
+      //     translate: [0, 0, -800],
+      //     rotate: [180, 0, 0],
+      //   },
+      //   next: {
+      //     shadow: true,
+      //     translate: [0, 0, -800],
+      //     rotate: [-180, 0, 0],
+      //   },
+      // },
 
-      flipCtx = gsap.context(() => {
-        const stepElement = [...document.querySelectorAll("[data-step]")];
-        const states = stepElement.map((step) => Flip.getState(step));
-        const flipConfig = {
-          ease: "none",
-          duration: 1
-        };
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".hero-area-6-wrapper__line",
-            start: "clamp(top 10%)",
-            end: "clamp(bottom bottom)",
-            scrub: 3,
-            markers: true
-          }
-        });
+      // creativeEffect: {
+      //   prev: {
+      //     shadow: true,
+      //     translate: ["-125%", 0, -800],
+      //     rotate: [0, 0, -90],
+      //   },
+      //   next: {
+      //     shadow: true,
+      //     translate: ["125%", 0, -800],
+      //     rotate: [0, 0, 90],
+      //   },
+      // },
 
-        states.forEach((state, index) => {
-          tl.add(Flip.fit(".boxx", state, flipConfig), index === 0 ? 0 : "+=0.5");
+      // effect: "creative",
+      // creativeEffect: {
+      //   prev: {
+      //     shadow: true,
+      //     origin: "left center",
+      //     translate: ["-5%", 0, -200],
+      //     rotate: [0, 100, 0],
+      //   },
+      //   next: {
+      //     origin: "right center",
+      //     translate: ["5%", 0, -200],
+      //     rotate: [0, -100, 0],
+      //   },
+      // },
 
-          // Check if the current state is for .third container and change its styles
-          if (index === 1) { // Assuming the third container is second in the stepElement array
-            tl.to(".third", {
-              backgroundColor: "#FF6A3A",
-              // width: "100vw",
-              height: "100vh",
-              scale: "100vh",
-              width: "100vw",
-              fontSize: "500",
-              duration: 0.5,
-              // transformOrigin: "top center"
-            }, "+=0.2");
-          }
-        });
-      });
-    };
+      // effect: 'fade',
+      // fadeEffect: {
+      //   crossFade: true
+      // },
 
-    createTimeline();
 
-    window.addEventListener("resize", createTimeline);
+      navigation: {
+        prevEl: ".portfolio__slider__arrow-prev",
+        nextEl: ".portfolio__slider__arrow-next",
+      },
+      pagination: {
+        el: ".portfolio-pagination",
+        clickable: true,
+      },
+    });
   }
 
-
-  let portfolio_activ = new Swiper(".portfolio-activ", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    speed: 1500,
-    centeredSlides: true,
-    clickable: true,
-
-    // effect: 'fade',
-    // effect: 'cube',
-    // effect: 'coverflow',
-    effect: 'flip',
-    // effect: 'morph-x',
-    // zoom: true,
-    // parallax: true,
-    // autoplay: {
-    //   delay: 3000,
-    // },
-    mousewheel: {
-      releaseOnEdges: true,
-    },
-
-    effect: "creative",
-
-    creativeEffect: {
-      prev: {
-        // shadow: true,
-        translate: [0, 0, -1],
-      },
-      next: {
-        translate: ["100%", 0, 0],
-      },
-    },
-
-
-    // creativeEffect: {
-    //   prev: {
-    //     shadow: true,
-    //     translate: ["-120%", 0, -500],
-    //   },
-    //   next: {
-    //     shadow: true,
-    //     translate: ["120%", 0, -500],
-    //   },
-    // },
-
-    // creativeEffect: {
-    //   prev: {
-    //     shadow: true,
-    //     translate: ["-20%", 0, -1],
-    //   },
-    //   next: {
-    //     translate: ["100%", 0, 0],
-    //   },
-    // },
-
-
-    // creativeEffect: {
-    //   prev: {
-    //     shadow: true,
-    //     translate: [0, 0, -800],
-    //     rotate: [180, 0, 0],
-    //   },
-    //   next: {
-    //     shadow: true,
-    //     translate: [0, 0, -800],
-    //     rotate: [-180, 0, 0],
-    //   },
-    // },
-
-
-    // creativeEffect: {
-    //   prev: {
-    //     shadow: true,
-    //     translate: ["-125%", 0, -800],
-    //     rotate: [0, 0, -90],
-    //   },
-    //   next: {
-    //     shadow: true,
-    //     translate: ["125%", 0, -800],
-    //     rotate: [0, 0, 90],
-    //   },
-    // },
-
-    // effect: "creative",
-    // creativeEffect: {
-    //   prev: {
-    //     shadow: true,
-    //     origin: "left center",
-    //     translate: ["-5%", 0, -200],
-    //     rotate: [0, 100, 0],
-    //   },
-    //   next: {
-    //     origin: "right center",
-    //     translate: ["5%", 0, -200],
-    //     rotate: [0, -100, 0],
-    //   },
-    // },
-
-    // effect: 'fade',
-    // fadeEffect: {
-    //   crossFade: true
-    // },
-
-
-    navigation: {
-      prevEl: ".portfolio__slider__arrow-prev",
-      nextEl: ".portfolio__slider__arrow-next",
-    },
-    pagination: {
-      el: ".portfolio-pagination",
-      clickable: true,
-    },
-  });
-
+  // portfolio-slide-2
+  // ====================================================
   let portfolio2_activ = new Swiper(".portfolio-2-activ", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -1742,10 +1625,9 @@ Data Css js
     },
   });
 
-  // ==============================
-
-  document.addEventListener("DOMContentLoaded", function () {
-    // Generate grid effect for all slides
+  // portfolio-slide-3
+  // ====================================================
+  if (document.querySelectorAll(".portfolio-3").length > 0) {
     document.querySelectorAll('.grid-mask').forEach(gridMask => {
       let blocks = [];
       for (let i = 0; i < 32; i++) { // 8 cols × 4 rows = 32 squares
@@ -1757,8 +1639,6 @@ Data Css js
       blocks.sort(() => Math.random() - 0.5);
       blocks.forEach(block => gridMask.appendChild(block));
     });
-
-    // Swiper Initialization
     var swiper = new Swiper(".portfolio-3-activ", {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -1781,122 +1661,99 @@ Data Css js
         clickable: true,
       },
     });
-  });
+  }
 
-  let portfolio4_activ = new Swiper(".portfolio-4-activ", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    speed: 1500,
-    centeredSlides: true,
-    clickable: true,
-    // effect: 'parallax',
-    parallax: true,
-    effect: "parallax",
-    mousewheel: {
-      releaseOnEdges: true,
-    },
-    effect: "creative",
-    creativeEffect: {
-      prev: {
-        // shadow: true,
-        translate: [0, "-100%", 0],
-      },
-      next: {
-        translate: [0, "100%", 0],
-      },
-    },
-
-
-    navigation: {
-      prevEl: ".portfolio-4__slider__arrow-prev",
-      nextEl: ".portfolio-4__slider__arrow-next",
-    },
-    pagination: {
-      el: ".portfolio-4-pagination",
+  // portfolio-slide-4
+  // ====================================================
+  if (document.querySelectorAll(".portfolio-4").length > 0) {
+    let portfolio4_activ = new Swiper(".portfolio-4-activ", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      speed: 1500,
+      centeredSlides: true,
       clickable: true,
-    },
-  });
+      // effect: 'parallax',
+      parallax: true,
+      effect: "parallax",
+      mousewheel: {
+        releaseOnEdges: true,
+      },
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          // shadow: true,
+          translate: [0, "-100%", 0],
+        },
+        next: {
+          translate: [0, "100%", 0],
+        },
+      },
 
-  let portfolio5_activ = new Swiper(".portfolio-5-activ", {
-    // slidesPerView: 1,
-    // spaceBetween: 0,
-    // loop: true,
-    // speed: 1500,
-    // centeredSlides: true,
-    // clickable: true,
-    // // effect: 'parallax',
-    // parallax: true,
-    // effect: "parallax",
-    // mousewheel: {
-    //   releaseOnEdges: true,
-    // },
-    // effect: "creative",
-    // creativeEffect: {
-    //   prev: {
-    //     // shadow: true,
-    //     translate: [0, "-100%", 0],
-    //   },
-    //   next: {
-    //     translate: [0, "100%", 0],
-    //   },
-    // },
 
-    modules: [EffectSlicer],
-    // specify "slicer" effect
-    effect: 'slicer',
-    loop: true,
-    clickable: true,
-    slicerEffect: {
-      split: 5,
-    },
-    direction: 'vertical',
-    speed: 600,
+      navigation: {
+        prevEl: ".portfolio-4__slider__arrow-prev",
+        nextEl: ".portfolio-4__slider__arrow-next",
+      },
+      pagination: {
+        el: ".portfolio-4-pagination",
+        clickable: true,
+      },
+    });
+  }
 
-    navigation: {
-      prevEl: ".portfolio-5__slider__arrow-prev",
-      nextEl: ".portfolio-5__slider__arrow-next",
-    },
-    pagination: {
-      el: ".portfolio-5-pagination",
+  // portfolio-slide-5
+  // ====================================================
+  if (document.querySelectorAll(".portfolio-5").length > 0) {
+    let portfolio5_activ = new Swiper(".portfolio-5-activ", {
+      // slidesPerView: 1,
+      // spaceBetween: 0,
+      // loop: true,
+      // speed: 1500,
+      // centeredSlides: true,
+      // clickable: true,
+      // // effect: 'parallax',
+      // parallax: true,
+      // effect: "parallax",
+      // mousewheel: {
+      //   releaseOnEdges: true,
+      // },
+      // effect: "creative",
+      // creativeEffect: {
+      //   prev: {
+      //     // shadow: true,
+      //     translate: [0, "-100%", 0],
+      //   },
+      //   next: {
+      //     translate: [0, "100%", 0],
+      //   },
+      // },
+
+      // specify "slicer" effect
+      modules: [EffectSlicer],
+      effect: 'slicer',
+      loop: true,
       clickable: true,
-    },
-  });
+      slicerEffect: {
+        split: 5,
+      },
+      direction: 'vertical',
+      speed: 600,
 
+      navigation: {
+        prevEl: ".portfolio-5__slider__arrow-prev",
+        nextEl: ".portfolio-5__slider__arrow-next",
+      },
+      pagination: {
+        el: ".portfolio-5-pagination",
+        clickable: true,
+      },
+    });
+  }
 
-  // const swiper = new Swiper('.portfolio-active', {
-  //   // pass EffectSlicer module to modules
-  //   modules: [EffectSlicer],
-  //   // specify "slicer" effect
-  //   effect: 'slicer',
-  //   loop: true,
-  //   clickable: true,
-  //   slicerEffect: {
-  //     split: 5,
-  //   },
-  //   direction: 'vertical',
-  //   speed: 600,
-
-  //   // grabCursor: true,
-  //   navigation: {
-  //     nextEl: '.portfolio-button-next',
-  //     prevEl: '.portfolio-button-prev',
-  //   },
-  //   pagination: {
-  //     el: '.portfolio-pagination',
-  //   },
-  // });
-
-  // =========================== parallax slider
-  ScrollTrigger.defaults({
-    markers: {
-      startColor: "grey",
-      endColor: "gold",
-      fontSize: "22px",
-      indent: 10
-    }
-  });
-  document.addEventListener("DOMContentLoaded", () => {
+  // parallax
+  // ====================================================
+  if (document.querySelectorAll(".parallax-slider-wrapper").length > 0) {
     const selectAll = (e) => document.querySelectorAll(e);
     gsap.registerPlugin(ScrollTrigger);
     const tracks = selectAll(".parallax-slider-wrapper");
@@ -1936,19 +1793,12 @@ Data Css js
             start: "left right",
             end: "right left",
             scrub: true,
-            // invalidateOnRefresh: true,
           },
         });
 
       });
     });
-  });
-
-
-
-
-  // ==================================
-
+  }
 
 
 })(jQuery);

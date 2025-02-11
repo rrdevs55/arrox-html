@@ -1415,61 +1415,6 @@ Data Css js
     );
   }
 
-  // hero-6 animation
-  // ====================================================
-  // if (document.querySelectorAll(".hero-area-6").length > 0) {
-  //   console.clear();
-  //   gsap.registerPlugin(Flip, ScrollTrigger);
-
-  //   let flipCtx;
-
-  //   const createTimeline = () => {
-  //     flipCtx && flipCtx.revert();
-
-  //     flipCtx = gsap.context(() => {
-  //       const stepElement = [...document.querySelectorAll("[data-step]")];
-  //       const states = stepElement.map((step) => Flip.getState(step));
-  //       const flipConfig = {
-  //         ease: "none",
-  //         duration: 1
-  //       };
-
-  //       const tl = gsap.timeline({
-  //         scrollTrigger: {
-  //           trigger: ".hero-area-6-wrapper__line",
-  //           start: "clamp(top 10%)",
-  //           end: "clamp(bottom bottom)",
-  //           scrub: 3,
-  //           markers: true
-  //         }
-  //       });
-
-  //       states.forEach((state, index) => {
-  //         tl.add(Flip.fit(".boxx", state, flipConfig), index === 0 ? 0 : "+=0.5");
-
-  //         // Check if the current state is for .third container and change its styles
-  //         if (index === 1) { // Assuming the third container is second in the stepElement array
-  //           tl.to(".third", {
-  //             backgroundColor: "#FF6A3A",
-  //             // width: "100vw",
-  //             height: "100vh",
-  //             scale: "100vh",
-  //             width: "100vw",
-  //             fontSize: "500",
-  //             duration: 0.5,
-  //             // transformOrigin: "top center"
-  //           }, "+=0.2");
-  //         }
-  //       });
-  //     });
-  //   };
-
-  //   createTimeline();
-
-  //   window.addEventListener("resize", createTimeline);
-  // }
-
-
   // portfolio-slide
   // ====================================================
   if (document.querySelectorAll(".portfolio").length > 0) {

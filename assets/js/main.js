@@ -1491,16 +1491,49 @@ Data Css js
           translate: ["100%", 0, 0],
         },
       },
-      navigation: {
-        prevEl: ".portfolio__slider__arrow-prev",
-        nextEl: ".portfolio__slider__arrow-next",
-      },
       pagination: {
         el: ".portfolio-pagination",
         clickable: true,
       },
+      navigation: {
+        prevEl: ".portfolio__slider__arrow-prev",
+        nextEl: ".portfolio__slider__arrow-next",
+      },
     });
   }
+
+  // portfolio-slide
+  // ====================================================
+  // if (document.querySelectorAll(".portfolio").length > 0) {
+  //   let portfolio_activ = new Swiper(".portfolio-activ", {
+  //     slidesPerView: 1,
+  //     spaceBetween: 0,
+  //     loop: true,
+  //     speed: 1500,
+  //     centeredSlides: true,
+  //     clickable: true,
+  //     mousewheel: {
+  //       releaseOnEdges: true,
+  //     },
+  //     effect: "creative",
+  //     creativeEffect: {
+  //       prev: {
+  //         translate: [0, 0, -1],
+  //       },
+  //       next: {
+  //         translate: ["100%", 0, 0],
+  //       },
+  //     },
+  //     navigation: {
+  //       prevEl: ".portfolio__slider__arrow-prev",
+  //       nextEl: ".portfolio__slider__arrow-next",
+  //     },
+  //     pagination: {
+  //       el: ".portfolio-pagination",
+  //       clickable: true,
+  //     },
+  //   });
+  // }
 
   // portfolio-slide-2
   // ====================================================
@@ -1658,13 +1691,12 @@ Data Css js
           trigger: track,
           pin: true,
           scrub: 3,
-          start: "top 10%",
+          start: "center center",
           end: () => "+=" + (track.scrollWidth - window.innerWidth),
           onRefresh: (self) => self.getTween().resetTo("totalProgress", 0),
           invalidateOnRefresh: true
         }
       });
-
 
       allImgs.forEach((img) => {
         gsap.fromTo(img, { transform: "translateX(-10vw)" }, {
@@ -1681,7 +1713,6 @@ Data Css js
       });
     });
   }
-
 
 })(jQuery);
 

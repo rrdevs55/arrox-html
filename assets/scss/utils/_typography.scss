@@ -60,7 +60,7 @@
   font-weight: 400;
 }
 
-/* times now  */
+/* bdo grotesk  */
 @font-face {
   font-family: "BDOGrotesk-Regular";
   src: url('../fonts/BDOGrotesk-Regular.ttf');
@@ -79,11 +79,32 @@
   font-weight: 600;
 }
 
+/* tartufffo trial */
+@font-face {
+  font-family: "Tartuffo_Trial";
+  src: url('../fonts/Tartuffo_Trial-Thin.otf');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Tartuffo_Trial";
+  src: url('../fonts/Tartuffo_Trial-Light.otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Tartuffo_Trial";
+  src: url('../fonts/Tartuffo_Trial-LightItalic.otf');
+  font-weight: 300;
+}
+
 @font-face {
   font-family: "tartuffo-font-family-family";
   src: url('../fonts/Tartuffo_Trial-MediumItalic.otf');
   font-weight: 500;
 }
+
+
 
 
 
@@ -96,6 +117,7 @@
   --font_timesnow: "TimesNow-SemiLightItalic";
   --font_bdogrotesk: "BDOGrotesk-Regular";
   --font_tartuffo: "tartuffo-font-family";
+  --font_tartuffotrial: "Tartuffo_Trial";
   --font_awesome: 'Font Awesome 6 Free';
 }
 
@@ -117,6 +139,10 @@
 
     &-bdogrotesk-regular {
       @include heading (var(--font_bdogrotesk), 400, 0.95);
+    }
+
+    &-tartuffotrial-thin {
+      @include heading (var(--font_tartuffotrial), 100, 1);
     }
 
   }

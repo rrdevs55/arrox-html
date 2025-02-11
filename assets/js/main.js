@@ -1479,104 +1479,18 @@ Data Css js
       speed: 1500,
       centeredSlides: true,
       clickable: true,
-
-      // effect: 'fade',
-      // effect: 'cube',
-      // effect: 'coverflow',
-      effect: 'flip',
-      // effect: 'morph-x',
-      // zoom: true,
-      // parallax: true,
-      // autoplay: {
-      //   delay: 3000,
-      // },
       mousewheel: {
         releaseOnEdges: true,
       },
-
       effect: "creative",
-
       creativeEffect: {
         prev: {
-          // shadow: true,
           translate: [0, 0, -1],
         },
         next: {
           translate: ["100%", 0, 0],
         },
       },
-
-
-      // creativeEffect: {
-      //   prev: {
-      //     shadow: true,
-      //     translate: ["-120%", 0, -500],
-      //   },
-      //   next: {
-      //     shadow: true,
-      //     translate: ["120%", 0, -500],
-      //   },
-      // },
-
-      // creativeEffect: {
-      //   prev: {
-      //     shadow: true,
-      //     translate: ["-20%", 0, -1],
-      //   },
-      //   next: {
-      //     translate: ["100%", 0, 0],
-      //   },
-      // },
-
-
-      // creativeEffect: {
-      //   prev: {
-      //     shadow: true,
-      //     translate: [0, 0, -800],
-      //     rotate: [180, 0, 0],
-      //   },
-      //   next: {
-      //     shadow: true,
-      //     translate: [0, 0, -800],
-      //     rotate: [-180, 0, 0],
-      //   },
-      // },
-
-
-      // creativeEffect: {
-      //   prev: {
-      //     shadow: true,
-      //     translate: ["-125%", 0, -800],
-      //     rotate: [0, 0, -90],
-      //   },
-      //   next: {
-      //     shadow: true,
-      //     translate: ["125%", 0, -800],
-      //     rotate: [0, 0, 90],
-      //   },
-      // },
-
-      // effect: "creative",
-      // creativeEffect: {
-      //   prev: {
-      //     shadow: true,
-      //     origin: "left center",
-      //     translate: ["-5%", 0, -200],
-      //     rotate: [0, 100, 0],
-      //   },
-      //   next: {
-      //     origin: "right center",
-      //     translate: ["5%", 0, -200],
-      //     rotate: [0, -100, 0],
-      //   },
-      // },
-
-      // effect: 'fade',
-      // fadeEffect: {
-      //   crossFade: true
-      // },
-
-
       navigation: {
         prevEl: ".portfolio__slider__arrow-prev",
         nextEl: ".portfolio__slider__arrow-next",
@@ -1597,7 +1511,6 @@ Data Css js
     speed: 1000,
     centeredSlides: true,
     clickable: true,
-    // effect: 'fade',
     // mousewheel: {
     //   releaseOnEdges: true,
     // },
@@ -1630,12 +1543,11 @@ Data Css js
   if (document.querySelectorAll(".portfolio-3").length > 0) {
     document.querySelectorAll('.grid-mask').forEach(gridMask => {
       let blocks = [];
-      for (let i = 0; i < 32; i++) { // 8 cols × 4 rows = 32 squares
+      for (let i = 0; i < 32; i++) {
         let block = document.createElement("div");
-        block.style.transitionDelay = `${Math.random() * 1.5}s`; // Random delay
+        block.style.transitionDelay = `${Math.random() * 1.5}s`;
         blocks.push(block);
       }
-      // Shuffle blocks before appending (for more randomness)
       blocks.sort(() => Math.random() - 0.5);
       blocks.forEach(block => gridMask.appendChild(block));
     });
@@ -1643,14 +1555,12 @@ Data Css js
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
-      // speed: 1000,
       centeredSlides: true,
       clickable: true,
       effect: 'fade',
       // mousewheel: {
       //   releaseOnEdges: true,
       // },
-
 
       navigation: {
         prevEl: ".portfolio-3__slider__arrow-prev",
@@ -1673,7 +1583,6 @@ Data Css js
       speed: 1500,
       centeredSlides: true,
       clickable: true,
-      // effect: 'parallax',
       parallax: true,
       effect: "parallax",
       mousewheel: {
@@ -1682,15 +1591,12 @@ Data Css js
       effect: "creative",
       creativeEffect: {
         prev: {
-          // shadow: true,
           translate: [0, "-100%", 0],
         },
         next: {
           translate: [0, "100%", 0],
         },
       },
-
-
       navigation: {
         prevEl: ".portfolio-4__slider__arrow-prev",
         nextEl: ".portfolio-4__slider__arrow-next",
@@ -1706,30 +1612,6 @@ Data Css js
   // ====================================================
   if (document.querySelectorAll(".portfolio-5").length > 0) {
     let portfolio5_activ = new Swiper(".portfolio-5-activ", {
-      // slidesPerView: 1,
-      // spaceBetween: 0,
-      // loop: true,
-      // speed: 1500,
-      // centeredSlides: true,
-      // clickable: true,
-      // // effect: 'parallax',
-      // parallax: true,
-      // effect: "parallax",
-      // mousewheel: {
-      //   releaseOnEdges: true,
-      // },
-      // effect: "creative",
-      // creativeEffect: {
-      //   prev: {
-      //     // shadow: true,
-      //     translate: [0, "-100%", 0],
-      //   },
-      //   next: {
-      //     translate: [0, "100%", 0],
-      //   },
-      // },
-
-      // specify "slicer" effect
       modules: [EffectSlicer],
       effect: 'slicer',
       loop: true,

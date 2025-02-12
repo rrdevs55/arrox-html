@@ -9995,6 +9995,10 @@ video.video-area {
   right: 0;
 }
 
+.portfolio {
+  width: 100vw;
+  height: 100vh;
+}
 .portfolio__item {
   width: 100vw;
   height: 100vh;
@@ -10043,6 +10047,30 @@ video.video-area {
   color: var(--white);
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.portfolio .swiper-slide {
+  overflow: hidden;
+}
+.portfolio-activ {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.portfolio .slide-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
 }
 .portfolio .swiper-slide-active .portfolio__item {
   animation-name: qodef-animate-slide-out;

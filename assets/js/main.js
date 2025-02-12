@@ -1418,38 +1418,65 @@ Data Css js
   // portfolio-slide
   // ====================================================
   if (document.querySelectorAll(".portfolio").length > 0) {
-    let portfolio_activ = new Swiper(".portfolio-activ", {
-      slidesPerView: 1,
-      spaceBetween: 0,
+    var menu = [];
+    jQuery('.swiper-slide').each(function (index) {
+      menu.push(jQuery(this).find('.slide-inner').attr("data-text"));
+    });
+    var interleaveOffset = 1;
+    var swiperOptions = {
       loop: true,
-      speed: 1500,
-      centeredSlides: true,
-      clickable: true,
+      speed: 1800,
+      parallax: true,
       mousewheel: {
         releaseOnEdges: true,
       },
-      effect: "creative",
-      creativeEffect: {
-        prev: {
-          translate: [0, 0, -1],
-        },
-        next: {
-          translate: ["100%", 0, 0],
-        },
+
+      pagination: {
+        el: '.portfolio-pagination',
+        clickable: true,
       },
+
       navigation: {
         prevEl: ".portfolio__slider__arrow-prev",
         nextEl: ".portfolio__slider__arrow-next",
       },
-      pagination: {
-        el: ".portfolio-pagination",
-        clickable: true,
-      },
-    });
+
+      on: {
+        progress: function () {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            var slideProgress = swiper.slides[i].progress;
+            var innerOffset = swiper.width * interleaveOffset;
+            var innerTranslate = slideProgress * innerOffset;
+            swiper.slides[i].querySelector(".slide-inner").style.transform =
+              "translate3d(" + innerTranslate + "px, 0, 0)";
+          }
+        },
+
+        touchStart: function () {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = "";
+          }
+        },
+
+        setTransition: function (speed) {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = speed + "ms";
+            swiper.slides[i].querySelector(".slide-inner").style.transition =
+              speed + "ms";
+          }
+        }
+      }
+    };
+
+    var swiper = new Swiper(".portfolio-activ", swiperOptions);
   }
 
   // portfolio-slide-2
   // ====================================================
+
   let portfolio2_activ = new Swiper(".portfolio-2-activ", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -1630,7 +1657,8 @@ Data Css js
     });
   }
 
-
+  // woking card
+  // ====================================================
   if (document.querySelectorAll(".work-area-5").length > 0) {
     const cards = document.querySelectorAll(".card-wrap");
 
@@ -1665,7 +1693,6 @@ Data Css js
       });
     });
   }
-
 
 
 })(jQuery);

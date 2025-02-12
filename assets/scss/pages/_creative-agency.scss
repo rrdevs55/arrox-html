@@ -1273,6 +1273,10 @@
 
 /* cta area 2 style  */
 .cta-area-2 {
+    &-inner {
+        overflow: hidden;
+    }
+
     .section-title {
         font-size: 200px;
         font-weight: 310;
@@ -1353,7 +1357,5 @@
         }
     }
 
-    .cta-area-2-inner {
-        overflow: hidden;
-    }
+
 }

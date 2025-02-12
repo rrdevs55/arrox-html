@@ -1630,5 +1630,43 @@ Data Css js
     });
   }
 
+
+  if (document.querySelectorAll(".work-area-5").length > 0) {
+    const cards = document.querySelectorAll(".card-wrap");
+
+    cards.forEach(card => {
+      const cardElement = card.querySelector(".card");
+      const cardBg = card.querySelector(".card-bg");
+
+      // Set background image dynamically
+      const imageUrl = card.getAttribute("data-image");
+      cardBg.style.backgroundImage = `url(${imageUrl})`;
+
+      let requestId = null;
+
+      card.addEventListener("mousemove", (e) => {
+        if (requestId) cancelAnimationFrame(requestId);
+        requestId = requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          const rotateX = (y / rect.height) * -30;
+          const rotateY = (x / rect.width) * 30;
+
+          cardElement.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+          cardBg.style.transform = `translateX(${x * -0.1}px) translateY(${y * -0.1}px)`;
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        if (requestId) cancelAnimationFrame(requestId);
+        cardElement.style.transform = "rotateY(0deg) rotateX(0deg)";
+        cardBg.style.transform = "translateX(0px) translateY(0px)";
+      });
+    });
+  }
+
+
+
 })(jQuery);
 

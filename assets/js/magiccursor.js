@@ -64,6 +64,12 @@ class Cursor {
         }).on('mouseleave', '[data-cursor-text-red]', function () {
             self.removeText();
             self.el.removeClass('-red'); // Remove red class
+        }).on('mouseenter', '[data-cursor-text-portfolio]', function () {
+            self.setText(this.dataset.cursorText);
+            self.el.addClass('-portfolio'); // Add class for red text
+        }).on('mouseleave', '[data-cursor-text-portfolio]', function () {
+            self.removeText();
+            self.el.removeClass('-portfolio'); // Remove red class
         }).on('mouseenter', '[data-cursor-stick]', function () {
             self.setStick(this.dataset.cursorStick);
         }).on('mouseleave', '[data-cursor-stick]', function () {

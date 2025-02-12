@@ -350,3 +350,45 @@
     height: 100px;
     color: #fff;
 }
+
+.cb-cursor.-portfolio {
+    &:before {
+        display: none;
+    }
+
+
+    .cb-cursor-text {
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        display: block;
+        text-align: start;
+    }
+
+    .content {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .title {
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 27px;
+        background-color: var(--white);
+        padding: 15px 20px 13px;
+    }
+
+    .meta {
+        font-family: var(--font_tartuffotrial);
+        font-weight: 300;
+        font-style: italic;
+        font-size: 16px;
+        line-height: 27px;
+        background-color: var(--white);
+        display: inline-block;
+        padding: 5px 15px 3px;
+        margin-top: 3px;
+    }
+}

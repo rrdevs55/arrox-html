@@ -1481,7 +1481,7 @@ Data Css js
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    speed: 1000,
+    speed: 2000,
     centeredSlides: true,
     clickable: true,
     mousewheel: {

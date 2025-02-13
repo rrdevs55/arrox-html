@@ -1417,11 +1417,65 @@ Data Css js
 
   // portfolio-slide
   // ====================================================
+  // if (document.querySelectorAll(".portfolio").length > 0) {
+  //   var menu = [];
+  //   jQuery('.swiper-slide').each(function (index) {
+  //     menu.push(jQuery(this).find('.slide-inner').attr("data-text"));
+  //   });
+  //   var interleaveOffset = 1;
+  //   var swiperOptions = {
+  //     loop: true,
+  //     speed: 1800,
+  //     parallax: true,
+  //     mousewheel: {
+  //       releaseOnEdges: true,
+  //     },
+
+  //     pagination: {
+  //       el: '.portfolio-pagination',
+  //       clickable: true,
+  //     },
+
+  //     navigation: {
+  //       prevEl: ".portfolio__slider__arrow-prev",
+  //       nextEl: ".portfolio__slider__arrow-next",
+  //     },
+
+  //     on: {
+  //       progress: function () {
+  //         var swiper = this;
+  //         for (var i = 0; i < swiper.slides.length; i++) {
+  //           var slideProgress = swiper.slides[i].progress;
+  //           var innerOffset = swiper.width * interleaveOffset;
+  //           var innerTranslate = slideProgress * innerOffset;
+  //           swiper.slides[i].querySelector(".slide-inner").style.transform =
+  //             "translate3d(" + innerTranslate + "px, 0, 0)";
+  //         }
+  //       },
+
+  //       touchStart: function () {
+  //         var swiper = this;
+  //         for (var i = 0; i < swiper.slides.length; i++) {
+  //           swiper.slides[i].style.transition = "";
+  //         }
+  //       },
+
+  //       setTransition: function (speed) {
+  //         var swiper = this;
+  //         for (var i = 0; i < swiper.slides.length; i++) {
+  //           swiper.slides[i].style.transition = speed + "ms";
+  //           swiper.slides[i].querySelector(".slide-inner").style.transition =
+  //             speed + "ms";
+  //         }
+  //       }
+  //     }
+  //   };
+
+  //   var swiper = new Swiper(".portfolio-activ", swiperOptions);
+  // }
+
+
   if (document.querySelectorAll(".portfolio").length > 0) {
-    var menu = [];
-    jQuery('.swiper-slide').each(function (index) {
-      menu.push(jQuery(this).find('.slide-inner').attr("data-text"));
-    });
     var interleaveOffset = 1;
     var swiperOptions = {
       loop: true,
@@ -1467,13 +1521,21 @@ Data Css js
             swiper.slides[i].querySelector(".slide-inner").style.transition =
               speed + "ms";
           }
+        },
+
+        slideChange: function () {
+          var bullets = document.querySelectorAll(".swiper-pagination-bullet");
+          bullets.forEach((bullet, index) => {
+            if (index <= this.realIndex) {
+              bullet.classList.add("swiper-pagination-bullet-active");
+            }
+          });
         }
       }
     };
 
     var swiper = new Swiper(".portfolio-activ", swiperOptions);
   }
-
   // portfolio-slide-2
   // ====================================================
 
@@ -1484,6 +1546,7 @@ Data Css js
     speed: 2000,
     centeredSlides: true,
     clickable: true,
+    effect: 'fade',
     mousewheel: {
       releaseOnEdges: true,
     },
@@ -1498,6 +1561,15 @@ Data Css js
             line.style.transform = "scaleY(0)";
           });
         }, 10);
+      },
+
+      slideChange: function () {
+        var bullets = document.querySelectorAll(".swiper-pagination-bullet");
+        bullets.forEach((bullet, index) => {
+          if (index <= this.realIndex) {
+            bullet.classList.add("swiper-pagination-bullet-active");
+          }
+        });
       }
     },
 
@@ -1510,6 +1582,7 @@ Data Css js
       clickable: true,
     },
   });
+
 
   // portfolio-slide-3
   // ====================================================
@@ -1524,6 +1597,7 @@ Data Css js
       blocks.sort(() => Math.random() - 0.5);
       blocks.forEach(block => gridMask.appendChild(block));
     });
+
     var swiper = new Swiper(".portfolio-3-activ", {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -1543,33 +1617,34 @@ Data Css js
         el: ".portfolio-3-pagination",
         clickable: true,
       },
+
+      on: {
+        slideChange: function () {
+          var bullets = document.querySelectorAll(".swiper-pagination-bullet");
+          bullets.forEach((bullet, index) => {
+            if (index <= this.realIndex) {
+              bullet.classList.add("swiper-pagination-bullet-active");
+            }
+          });
+        }
+      }
     });
   }
 
   // portfolio-slide-4
   // ====================================================
   if (document.querySelectorAll(".portfolio-4").length > 0) {
+    const interleaveOffset = 0.75;
+
     let portfolio4_activ = new Swiper(".portfolio-4-activ", {
-      slidesPerView: 1,
-      spaceBetween: 0,
       loop: true,
-      speed: 1500,
-      centeredSlides: true,
-      clickable: true,
-      parallax: true,
-      effect: "parallax",
-      mousewheel: {
-        releaseOnEdges: true,
-      },
-      effect: "creative",
-      creativeEffect: {
-        prev: {
-          translate: [0, "-100%", 0],
-        },
-        next: {
-          translate: [0, "100%", 0],
-        },
-      },
+      direction: "vertical",
+      autoplay: false,
+      speed: 2000,
+      // grabCursor: true,
+      watchSlidesProgress: true,
+      mousewheelControl: true,
+      mousewheel: true,
       navigation: {
         prevEl: ".portfolio-4__slider__arrow-prev",
         nextEl: ".portfolio-4__slider__arrow-next",
@@ -1578,8 +1653,50 @@ Data Css js
         el: ".portfolio-4-pagination",
         clickable: true,
       },
+
+      on: {
+        progress: function () {
+          let swiper = this;
+
+          for (let i = 0; i < swiper.slides.length; i++) {
+            let slideProgress = swiper.slides[i].progress;
+            let innerOffset = swiper.height * interleaveOffset;
+            let innerTranslate = slideProgress * innerOffset;
+
+            //TweenMax.set(swiper.slides[i], {
+            //skewY: `${innerTranslate*0.025}deg`,
+            //});
+            TweenMax.set(swiper.slides[i].querySelector(".slide-inner"), {
+              y: innerTranslate,
+            });
+          }
+        },
+        touchStart: function () {
+          let swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = "";
+          }
+        },
+        setTransition: function (speed) {
+          let swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = speed + "ms";
+            swiper.slides[i].querySelector(".slide-inner").style.transition =
+              speed + "ms";
+          }
+        },
+        slideChange: function () {
+          var bullets = document.querySelectorAll(".swiper-pagination-bullet");
+          bullets.forEach((bullet, index) => {
+            if (index <= this.realIndex) {
+              bullet.classList.add("swiper-pagination-bullet-active");
+            }
+          });
+        }
+      }
     });
   }
+
 
   // portfolio-slide-5
   // ====================================================
@@ -1606,8 +1723,20 @@ Data Css js
         el: ".portfolio-5-pagination",
         clickable: true,
       },
+
+      on: {
+        slideChange: function () {
+          var bullets = document.querySelectorAll(".swiper-pagination-bullet");
+          bullets.forEach((bullet, index) => {
+            if (index <= this.realIndex) {
+              bullet.classList.add("swiper-pagination-bullet-active");
+            }
+          });
+        }
+      }
     });
   }
+
 
   // parallax
   // ====================================================

@@ -827,7 +827,7 @@
             grid-template-columns: 1fr auto;
             justify-content: space-between;
 
-            @media #{$sm} {
+            @media #{$xs} {
                 grid-template-columns: 1fr;
 
             }

@@ -1523,6 +1523,10 @@
             transition-property: opacity;
             transition-duration: 500ms;
 
+            @media #{$lg} {
+                font-size: 18px;
+            }
+
             a {
 
                 &:hover {

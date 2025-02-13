@@ -3428,8 +3428,8 @@ section {
 }
 .cb-cursor.-portfolio .content {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  top: 0px;
+  left: 0px;
 }
 .cb-cursor.-portfolio .title {
   font-weight: 300;
@@ -11426,6 +11426,7 @@ video.video-area {
 }
 .work-area-7 .work-box .thumb img {
   width: 100%;
+  cursor: none;
 }
 .work-area-7 .work-box .content {
   position: absolute;

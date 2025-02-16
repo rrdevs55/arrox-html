@@ -503,31 +503,7 @@ Data Css js
     }
   }
 
-  // Horizontal Gallery
-  const panelsSections = gsap.utils.toArray(".panels");
-  for (var i = 0; i < panelsSections.length; i++) {
-    var thePanelsSection = panelsSections[i];
-    const panels = gsap.utils.toArray(".panels-container .panel", thePanelsSection);
-    const panelsContainer = thePanelsSection.querySelector(".panels-container");
-    gsap.set(panelsContainer, { height: window.innerHeight });
-    gsap.set(panels, { height: window.innerHeight });
-    var totalPanelsWidth = 0;
-    panels.forEach(function (panel) {
-      totalPanelsWidth += $(panel).width();
-    });
-    gsap.set(panelsContainer, { width: totalPanelsWidth });
-    gsap.to(panels, {
-      x: - totalPanelsWidth + innerWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: panelsContainer,
-        pin: true,
-        start: "top top",
-        scrub: 1,
-        end: (st) => "+=" + (st.vars.trigger.offsetWidth - innerWidth),
-      }
-    });
-  }
+
 
 
   // Moving text		

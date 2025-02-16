@@ -12401,44 +12401,6 @@ video.video-area {
   width: 30vw;
 }
 
-/*--------------------------------------------------
-	Horizontal Panels
----------------------------------------------------*/
-.panels {
-  position: relative;
-}
-
-.panels-container {
-  position: relative;
-  display: flex;
-  gap: 0 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  padding: 0;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.panels-container > .panel {
-  position: relative;
-  width: auto;
-  height: -moz-max-content;
-  height: max-content;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  box-sizing: border-box;
-  flex-direction: column;
-}
-
-.panels-container .panel img {
-  width: auto;
-  height: 60%;
-  display: block;
-  max-width: none;
-}
-
 /* approach area about page style  */
 .approach-area-about-page .section-title {
   max-width: 845px;

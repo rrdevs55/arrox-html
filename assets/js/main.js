@@ -764,9 +764,9 @@ Data Css js
   }
   // work-area-2 box animation end
 
-  if (document.querySelectorAll(".hover-image-wpper").length > 0) {
+  if (document.querySelectorAll(".hover-image-wrpper").length > 0) {
     // Select the container and image elements
-    const categoriesWrapper = document.querySelector('.hover-image-wpper');
+    const categoriesWrapper = document.querySelector('.hover-image-wrpper');
     const imageHover = document.querySelector('.image-hover');
 
     // Smooth mousemove for positioning

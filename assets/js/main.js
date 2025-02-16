@@ -764,9 +764,9 @@ Data Css js
   }
   // work-area-2 box animation end
 
-  if (document.querySelectorAll(".title-wrapper").length > 0) {
+  if (document.querySelectorAll(".hover-image-wpper").length > 0) {
     // Select the container and image elements
-    const categoriesWrapper = document.querySelector('.title-wrapper');
+    const categoriesWrapper = document.querySelector('.hover-image-wpper');
     const imageHover = document.querySelector('.image-hover');
 
     // Smooth mousemove for positioning
@@ -833,8 +833,6 @@ Data Css js
       });
     }
   }
-
-
 
   // about 3 thumb animation 
   if (document.querySelectorAll(".about_3__thumb-anim").length > 0) {

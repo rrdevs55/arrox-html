@@ -235,7 +235,6 @@ Data Css js
   let fadeArray_items = document.querySelectorAll(".fade-anim");
   if (fadeArray_items.length > 0) {
     const fadeArray = gsap.utils.toArray(".fade-anim")
-    // gsap.set(fadeArray, {opacity:0})
     fadeArray.forEach((item, i) => {
       var fade_direction = "bottom"
       var onscroll_value = 1
@@ -360,7 +359,6 @@ Data Css js
           scrub: 0,
           start: "top bottom",
           end: "bottom bottom",
-          // markers: true
         }
       });
     });
@@ -446,7 +444,6 @@ Data Css js
         end: "bottom top",
         pin: true,
         scrub: 1,
-        // markers: true
       }
     })
     cs.to(".shape-thumb img", { scale: 100, rotation: 90, autoAlpha: 1, delay: 0.1 })
@@ -486,7 +483,6 @@ Data Css js
   // video Active
   if (document.querySelectorAll(".video-element").length > 0) {
     var video_fixed = document.querySelector('.video-element');
-    // gsap.set(video_fixed, { width: "unset" });
     if (video_fixed && device_width > 991) {
       gsap.to(".video-element", {
         width: "100vw",
@@ -596,7 +592,6 @@ Data Css js
           scrub: 2,
           start: "top 100%",
           end: "bottom 0%",
-          // markers: true,
         },
       });
       ab2.to(".big-text-wrapper .big-text", {
@@ -614,7 +609,6 @@ Data Css js
           pin: ".about-area",
           pinSpacing: false,
           scrub: 1,
-          // markers: true,
         },
       });
       ab2.to(".big-text-wrapper", {
@@ -625,7 +619,6 @@ Data Css js
           pin: ".big-text-wrapper",
           pinSpacing: false,
           scrub: 1,
-          // markers: true,
         },
       });
       gsap.to([".about-area .text-wrapper", ".about-area .btn-wrapper"], {
@@ -645,7 +638,6 @@ Data Css js
   // video end
 
 
-
   // text-animation start
   mm.add("(min-width: 1400px)", () => {
 
@@ -658,7 +650,6 @@ Data Css js
           start: "top top",
           end: "bottom",
           scrub: 0.2,
-          // markers: true
         },
       });
       ab2.to(".year-since", {
@@ -699,7 +690,6 @@ Data Css js
         scrub: 1,
         start: "top top",
         end: "bottom+=1500 top",
-        // markers: true
       }
     });
     const t_line = new SplitText(".t_line", { type: "lines" });
@@ -712,7 +702,6 @@ Data Css js
           scrub: 1,
           start: 'top 25%',
           end: "center 25%",
-          // markers: true
         }
       });
     });
@@ -733,8 +722,6 @@ Data Css js
 
   // work-area-2 box animation start
   if (document.querySelectorAll(".work-area-2").length > 0) {
-
-    // document.addEventListener("DOMContentLoaded", function () {
     const workBoxes = document.querySelectorAll(".work-area-2 .work-box");
     gsap.fromTo(
       workBoxes,
@@ -760,25 +747,19 @@ Data Css js
         },
       }
     );
-    // });
   }
   // work-area-2 box animation end
 
   if (document.querySelectorAll(".hover-image-wrpper").length > 0) {
-    // Select the container and image elements
     const categoriesWrapper = document.querySelector('.hover-image-wrpper');
     const imageHover = document.querySelector('.image-hover');
-
-    // Smooth mousemove for positioning
     categoriesWrapper.addEventListener('mousemove', (e) => {
       const { clientX: mouseX, clientY: mouseY } = e;
-
-      // Use GSAP to position the image relative to the cursor
       gsap.to(imageHover, {
         x: mouseX,
         y: mouseY,
-        xPercent: -50, // Center the image horizontally
-        yPercent: -50, // Center the image vertically
+        xPercent: -50,
+        yPercent: -50,
         ease: 'power3.out',
         duration: 0.2,
       });
@@ -813,7 +794,6 @@ Data Css js
       });
     });
   }
-
   //image animation in hero end
 
   //Client Pin Active
@@ -1277,6 +1257,7 @@ Data Css js
     });
 
   }
+
   // approach-area
   // ====================================================
   if (document.querySelectorAll(".approach-area").length > 0) {
@@ -1298,10 +1279,28 @@ Data Css js
     });
   }
 
+  // approach-area
+  // ====================================================
+  if (document.querySelectorAll(".approach-area-service-details-page").length > 0) {
+    const boxes = document.querySelectorAll(".approach-box");
+    gsap.from(boxes, {
+      x: "100%",
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        scrub: 2,
+        trigger: ".approach-wrapper-box",
+        start: "top 100%",
+        end: "bottom 40%",
+        toggleActions: "play none none reverse",
+      }
+    });
+  }
+
 
   // button animation
   // ====================================================
-
   $('.rr-btn-circle').on('mouseenter', function (e) {
     var x = e.pageX - $(this).offset().left;
     var y = e.pageY - $(this).offset().top;
@@ -1395,6 +1394,7 @@ Data Css js
       }
     });
   }
+
   // service-area-4
   // ====================================================
   if (document.querySelectorAll(".service-area-4").length > 0) {
@@ -1586,7 +1586,6 @@ Data Css js
       direction: "vertical",
       autoplay: false,
       speed: 2000,
-      // grabCursor: true,
       watchSlidesProgress: true,
       mousewheelControl: true,
       mousewheel: true,
@@ -1607,10 +1606,6 @@ Data Css js
             let slideProgress = swiper.slides[i].progress;
             let innerOffset = swiper.height * interleaveOffset;
             let innerTranslate = slideProgress * innerOffset;
-
-            //TweenMax.set(swiper.slides[i], {
-            //skewY: `${innerTranslate*0.025}deg`,
-            //});
             TweenMax.set(swiper.slides[i].querySelector(".slide-inner"), {
               y: innerTranslate,
             });
@@ -1641,7 +1636,6 @@ Data Css js
       }
     });
   }
-
 
   // portfolio-slide-5
   // ====================================================
@@ -1681,7 +1675,6 @@ Data Css js
       }
     });
   }
-
 
   // parallax
   // ====================================================

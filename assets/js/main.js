@@ -103,9 +103,6 @@ Data Css js
 
 
 
-
-
-
   // Counter active
   if ('counterUp' in window) {
     const skill_counter = window.counterUp.default
@@ -217,18 +214,20 @@ Data Css js
   }
 
   // client slider 
-  if ('.client-slider-active') {
-    var client_slider_active = new Swiper(".client-slider-active", {
-      slidesPerView: 'auto',
-      loop: true,
-      autoplay: true,
-      spaceBetween: 0,
-      speed: 5000,
-      allowTouchMove: false,
-      autoplay: {
-        delay: 1,
-      },
-    });
+  if (document.querySelectorAll(".client-slider-active").length > 0) {
+    if ('.client-slider-active') {
+      var client_slider_active = new Swiper(".client-slider-active", {
+        slidesPerView: 'auto',
+        loop: true,
+        autoplay: true,
+        spaceBetween: 0,
+        speed: 5000,
+        allowTouchMove: false,
+        autoplay: {
+          delay: 1,
+        },
+      });
+    }
   }
 
 
@@ -290,11 +289,6 @@ Data Css js
     })
   }
 
-
-
-
-
-
   // Text Invert With Scroll 
   const split = new SplitText(".text-invert", { type: "lines" });
   split.lines.forEach((target) => {
@@ -349,27 +343,28 @@ Data Css js
   });
 
   // go full width 
-  var go_full = document.querySelectorAll(".go_full");
-  go_full.forEach((item) => {
-    gsap.set(item, {
-      position: "relative",
-      left: "50%",
-      transform: "translate(-50%, 0)",
-      width: "auto",
+  if (document.querySelectorAll(".go_full").length > 0) {
+    var go_full = document.querySelectorAll(".go_full");
+    go_full.forEach((item) => {
+      gsap.set(item, {
+        position: "relative",
+        left: "50%",
+        transform: "translate(-50%, 0)",
+        width: "auto",
+      });
+      gsap.to(item, {
+        width: "100vw",
+        ease: "none",
+        scrollTrigger: {
+          trigger: item,
+          scrub: 0,
+          start: "top bottom",
+          end: "bottom bottom",
+          // markers: true
+        }
+      });
     });
-    gsap.to(item, {
-      width: "100vw",
-      ease: "none",
-      scrollTrigger: {
-        trigger: item,
-        scrub: 0,
-        start: "top bottom",
-        end: "bottom bottom",
-        // markers: true
-      }
-    });
-  });
-
+  }
   // scale animation 
   var scale = document.querySelectorAll(".scale");
   var image = document.querySelectorAll(".scale img");
@@ -421,20 +416,22 @@ Data Css js
 
 
   // hover reveal start
-  const hoverText = document.querySelectorAll(".hover-reveal");
-  function moveText(e, hoverText) {
-    const item = hoverText.getBoundingClientRect();
-    const x = e.clientX - item.x;
-    const y = e.clientY - item.y;
-    if (hoverText.children[0]) {
-      hoverText.children[0].style.transform = `translate(${x}px, ${y}px)`;
+  if (document.querySelectorAll(".hover-reveal").length > 0) {
+    const hoverText = document.querySelectorAll(".hover-reveal");
+    function moveText(e, hoverText) {
+      const item = hoverText.getBoundingClientRect();
+      const x = e.clientX - item.x;
+      const y = e.clientY - item.y;
+      if (hoverText.children[0]) {
+        hoverText.children[0].style.transform = `translate(${x}px, ${y}px)`;
+      }
     }
-  }
-  hoverText.forEach((item, i) => {
-    item.addEventListener("mousemove", (e) => {
-      setInterval(moveText(e, item), 100);
+    hoverText.forEach((item, i) => {
+      item.addEventListener("mousemove", (e) => {
+        setInterval(moveText(e, item), 100);
+      });
     });
-  });
+  }
   // hover reveal end
 
 
@@ -456,7 +453,6 @@ Data Css js
   }
 
 
-
   if (document.querySelectorAll(".funfact-area-2").length > 0) {
     gsap.to(".funfact-area-2 .thumb img", {
       scale: "1",
@@ -469,7 +465,6 @@ Data Css js
       }
     })
   }
-
 
   // go-visible animation 
   if (document.querySelectorAll(".go-visible").length > 0) {
@@ -489,22 +484,24 @@ Data Css js
   }
 
   // video Active
-  var video_fixed = document.querySelector('.video-element');
-  // gsap.set(video_fixed, { width: "unset" });
-  if (video_fixed && device_width > 991) {
-    gsap.to(".video-element", {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: "0",
-      scrollTrigger: {
-        trigger: ".video-area",
-        start: "top top",
-        end: "bottom bottom",
-        pin: ".video-element",
-        pinSpacing: false,
-        scrub: true
-      }
-    });
+  if (document.querySelectorAll(".video-element").length > 0) {
+    var video_fixed = document.querySelector('.video-element');
+    // gsap.set(video_fixed, { width: "unset" });
+    if (video_fixed && device_width > 991) {
+      gsap.to(".video-element", {
+        width: "100vw",
+        height: "100vh",
+        borderRadius: "0",
+        scrollTrigger: {
+          trigger: ".video-area",
+          start: "top top",
+          end: "bottom bottom",
+          pin: ".video-element",
+          pinSpacing: false,
+          scrub: true
+        }
+      });
+    }
   }
 
   // Horizontal Gallery
@@ -535,34 +532,38 @@ Data Css js
 
 
   // Moving text		
-  gsap.utils.toArray('.moving-text').forEach((section, index) => {
-    const w = section.querySelector('.wrapper-text');
-    const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
-    gsap.fromTo(w, { x }, {
-      x: xEnd,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        scrub: 0.5,
-        start: "20% bottom",
-        end: "80% top",
-      }
+  if (document.querySelectorAll(".moving-text").length > 0) {
+    gsap.utils.toArray('.moving-text').forEach((section, index) => {
+      const w = section.querySelector('.wrapper-text');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          scrub: 0.5,
+          start: "20% bottom",
+          end: "80% top",
+        }
+      });
     });
-  });
+  }
 
 
   // Moving Gallery		
-  gsap.utils.toArray('.moving-gallery').forEach((section, index) => {
-    const w = section.querySelector('.wrapper-gallery');
-    const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
-    gsap.fromTo(w, { x }, {
-      x: xEnd,
-      scrollTrigger: {
-        trigger: section,
-        scrub: 0.5,
-      }
+  if (document.querySelectorAll(".moving-gallery").length > 0) {
+    gsap.utils.toArray('.moving-gallery').forEach((section, index) => {
+      const w = section.querySelector('.wrapper-gallery');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        scrollTrigger: {
+          trigger: section,
+          scrub: 0.5,
+        }
+      });
     });
-  });
+  }
 
   // moving testimonial 
   if (document.querySelectorAll(".moving-testimonial").length > 0) {
@@ -730,11 +731,6 @@ Data Css js
   // service-area-2 text and bg animation end
 
 
-
-
-
-
-
   // work-area-2 box animation start
   if (document.querySelectorAll(".work-area-2").length > 0) {
 
@@ -818,463 +814,471 @@ Data Css js
     });
   }
 
-
   //image animation in hero end
 
   //Client Pin Active
-  var pin_fixed = document.querySelector('.client-pin-element');
-  if (pin_fixed && device_width > 0) {
+  if (document.querySelectorAll(".client-pin-element").length > 0) {
+    var pin_fixed = document.querySelector('.client-pin-element');
+    if (pin_fixed && device_width > 0) {
 
-    gsap.to(".client-pin-element", {
-      scrollTrigger: {
-        trigger: ".client-pin-element",
-        pin: ".client-pin-element",
-        start: "bottom bottom",
-        endTrigger: ".client-pin-area",
-        end: "bottom bottom",
-        pinSpacing: false,
-      }
-    });
+      gsap.to(".client-pin-element", {
+        scrollTrigger: {
+          trigger: ".client-pin-element",
+          pin: ".client-pin-element",
+          start: "bottom bottom",
+          endTrigger: ".client-pin-area",
+          end: "bottom bottom",
+          pinSpacing: false,
+        }
+      });
+    }
   }
 
 
 
   // about 3 thumb animation 
-  let about_3_thumb_anim = document.querySelector(".about_3__thumb-anim")
-  if (about_3_thumb_anim) {
-    let about_3_thumb_1 = document.querySelector(".thumb-1")
-    let about_3_thumb_2 = document.querySelector(".thumb-2")
-    let about_3_thumb_3 = document.querySelector(".thumb-3")
-    let about_3_thumb_4 = document.querySelector(".thumb-4")
+  if (document.querySelectorAll(".about_3__thumb-anim").length > 0) {
+    let about_3_thumb_anim = document.querySelector(".about_3__thumb-anim")
+    if (about_3_thumb_anim) {
+      let about_3_thumb_1 = document.querySelector(".thumb-1")
+      let about_3_thumb_2 = document.querySelector(".thumb-2")
+      let about_3_thumb_3 = document.querySelector(".thumb-3")
+      let about_3_thumb_4 = document.querySelector(".thumb-4")
 
-    gsap.to(about_3_thumb_1, {
-      xPercent: -26,
-      yPercent: 0,
-      scrollTrigger: {
-        trigger: about_3_thumb_anim,
-        start: "top bottom",
-        end: "bottom center",
-        pinSpacing: false,
-        scrub: true
-      }
-    })
+      gsap.to(about_3_thumb_1, {
+        xPercent: -26,
+        yPercent: 0,
+        scrollTrigger: {
+          trigger: about_3_thumb_anim,
+          start: "top bottom",
+          end: "bottom center",
+          pinSpacing: false,
+          scrub: true
+        }
+      })
 
-    gsap.to(about_3_thumb_2, {
-      xPercent: 0,
-      yPercent: 10,
-      scrollTrigger: {
-        trigger: about_3_thumb_anim,
-        start: "top bottom",
-        end: "bottom center",
-        pinSpacing: false,
-        scrub: true
-      }
-    })
+      gsap.to(about_3_thumb_2, {
+        xPercent: 0,
+        yPercent: 10,
+        scrollTrigger: {
+          trigger: about_3_thumb_anim,
+          start: "top bottom",
+          end: "bottom center",
+          pinSpacing: false,
+          scrub: true
+        }
+      })
 
-    gsap.to(about_3_thumb_3, {
-      xPercent: 30,
-      yPercent: 0,
-      scrollTrigger: {
-        trigger: about_3_thumb_anim,
-        start: "top bottom",
-        end: "bottom center",
-        pinSpacing: false,
-        scrub: true
-      }
-    })
-    gsap.to(about_3_thumb_4, {
-      xPercent: -172,
-      yPercent: 34,
-      scrollTrigger: {
-        trigger: about_3_thumb_anim,
-        start: "top bottom",
-        end: "bottom center",
-        pinSpacing: false,
-        scrub: true
-      }
-    })
+      gsap.to(about_3_thumb_3, {
+        xPercent: 30,
+        yPercent: 0,
+        scrollTrigger: {
+          trigger: about_3_thumb_anim,
+          start: "top bottom",
+          end: "bottom center",
+          pinSpacing: false,
+          scrub: true
+        }
+      })
+      gsap.to(about_3_thumb_4, {
+        xPercent: -172,
+        yPercent: 34,
+        scrollTrigger: {
+          trigger: about_3_thumb_anim,
+          start: "top bottom",
+          end: "bottom center",
+          pinSpacing: false,
+          scrub: true
+        }
+      })
+    }
   }
 
 
   //GSAP title animation
-  if ($('.rr_title_anim').length > 0) {
-    let splitTitleLines = gsap.utils.toArray(".rr_title_anim");
-    splitTitleLines.forEach(splitTextLine => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: splitTextLine,
-          start: 'top 90%',
-          end: 'bottom 60%',
-          scrub: false,
-          markers: false,
-          toggleActions: 'play none none reverse'
-        }
-      });
+  if (document.querySelectorAll(".rr_title_anim").length > 0) {
+    if ($('.rr_title_anim').length > 0) {
+      let splitTitleLines = gsap.utils.toArray(".rr_title_anim");
+      splitTitleLines.forEach(splitTextLine => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: splitTextLine,
+            start: 'top 90%',
+            end: 'bottom 60%',
+            scrub: false,
+            markers: false,
+            toggleActions: 'play none none reverse'
+          }
+        });
 
-      const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
-      gsap.set(splitTextLine, { perspective: 400 });
-      itemSplitted.split({ type: "lines" })
-      tl.from(itemSplitted.lines, {
-        duration: 1,
-        delay: 0.3,
-        opacity: 0,
-        rotationX: -80,
-        force3D: true,
-        transformOrigin: "top center -50",
-        stagger: 0.1
+        const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
+        gsap.set(splitTextLine, { perspective: 400 });
+        itemSplitted.split({ type: "lines" })
+        tl.from(itemSplitted.lines, {
+          duration: 1,
+          delay: 0.3,
+          opacity: 0,
+          rotationX: -80,
+          force3D: true,
+          transformOrigin: "top center -50",
+          stagger: 0.1
+        });
       });
-    });
+    }
   }
 
 
   // Animation Word
-  let animation_word_anim_items = document.querySelectorAll(".word-anim");
+  if (document.querySelectorAll(".word-anim").length > 0) {
+    let animation_word_anim_items = document.querySelectorAll(".word-anim");
 
-  animation_word_anim_items.forEach((word_anim_item) => {
+    animation_word_anim_items.forEach((word_anim_item) => {
 
-    var stagger_value = 0.04
-    var translateX_value = false
-    var translateY_value = false
-    var onscroll_value = 1
-    var data_delay = 0.1
-    var data_duration = 0.75
+      var stagger_value = 0.04
+      var translateX_value = false
+      var translateY_value = false
+      var onscroll_value = 1
+      var data_delay = 0.1
+      var data_duration = 0.75
 
-    if (word_anim_item.getAttribute("data-stagger")) {
-      stagger_value = word_anim_item.getAttribute("data-stagger");
-    }
-    if (word_anim_item.getAttribute("data-translateX")) {
-      translateX_value = word_anim_item.getAttribute("data-translateX");
-    }
-
-    if (word_anim_item.getAttribute("data-translateY")) {
-      translateY_value = word_anim_item.getAttribute("data-translateY");
-    }
-
-    if (word_anim_item.getAttribute("data-on-scroll")) {
-      onscroll_value = word_anim_item.getAttribute("data-on-scroll");
-    }
-    if (word_anim_item.getAttribute("data-delay")) {
-      data_delay = word_anim_item.getAttribute("data-delay");
-    }
-    if (word_anim_item.getAttribute("data-duration")) {
-      data_duration = word_anim_item.getAttribute("data-duration");
-    }
-
-    if (onscroll_value == 1) {
-      if (translateX_value && !translateY_value) {
-        let split_word = new SplitText(word_anim_item, {
-          type: "chars, words"
-        })
-        gsap.from(split_word.words, {
-          duration: data_duration,
-          x: translateX_value,
-          autoAlpha: 0,
-          stagger: stagger_value,
-          delay: data_delay,
-          scrollTrigger: {
-            trigger: word_anim_item,
-            start: 'top 90%'
-          }
-        });
+      if (word_anim_item.getAttribute("data-stagger")) {
+        stagger_value = word_anim_item.getAttribute("data-stagger");
+      }
+      if (word_anim_item.getAttribute("data-translateX")) {
+        translateX_value = word_anim_item.getAttribute("data-translateX");
       }
 
-      if (translateY_value && !translateX_value) {
-        let split_word = new SplitText(word_anim_item, {
-          type: "chars, words"
-        })
-        gsap.from(split_word.words, {
-          duration: 1,
-          delay: data_delay,
-          y: translateY_value,
-          autoAlpha: 0,
-          stagger: stagger_value,
-          scrollTrigger: {
-            trigger: word_anim_item,
-            start: 'top 90%'
-          }
-        });
+      if (word_anim_item.getAttribute("data-translateY")) {
+        translateY_value = word_anim_item.getAttribute("data-translateY");
       }
 
-      if (translateY_value && translateX_value) {
-        let split_word = new SplitText(word_anim_item, {
-          type: "chars, words"
-        })
-        gsap.from(split_word.words, {
-          duration: 1,
-          delay: data_delay,
-          x: translateX_value,
-          y: translateY_value,
-          autoAlpha: 0,
-          stagger: stagger_value,
-          scrollTrigger: {
-            trigger: word_anim_item,
-            start: 'top 90%'
-          }
-        });
+      if (word_anim_item.getAttribute("data-on-scroll")) {
+        onscroll_value = word_anim_item.getAttribute("data-on-scroll");
+      }
+      if (word_anim_item.getAttribute("data-delay")) {
+        data_delay = word_anim_item.getAttribute("data-delay");
+      }
+      if (word_anim_item.getAttribute("data-duration")) {
+        data_duration = word_anim_item.getAttribute("data-duration");
       }
 
-      if (!translateX_value && !translateY_value) {
-        let split_word = new SplitText(word_anim_item, {
-          type: "chars, words"
-        })
-        gsap.from(split_word.words, {
-          duration: 1,
-          delay: data_delay,
-          x: 20,
-          autoAlpha: 0,
-          stagger: stagger_value,
-          scrollTrigger: {
-            trigger: word_anim_item,
-            start: 'top 85%',
-          }
-        });
-      }
-    } else {
-      if (translateX_value > 0 && !translateY_value) {
-        let split_word = new SplitText(word_anim_item, {
-          type: "chars, words"
-        })
-        gsap.from(split_word.words, {
-          duration: 1,
-          delay: data_delay,
-          x: translateX_value,
-          autoAlpha: 0,
-          stagger: stagger_value
-        });
+      if (onscroll_value == 1) {
+        if (translateX_value && !translateY_value) {
+          let split_word = new SplitText(word_anim_item, {
+            type: "chars, words"
+          })
+          gsap.from(split_word.words, {
+            duration: data_duration,
+            x: translateX_value,
+            autoAlpha: 0,
+            stagger: stagger_value,
+            delay: data_delay,
+            scrollTrigger: {
+              trigger: word_anim_item,
+              start: 'top 90%'
+            }
+          });
+        }
+
+        if (translateY_value && !translateX_value) {
+          let split_word = new SplitText(word_anim_item, {
+            type: "chars, words"
+          })
+          gsap.from(split_word.words, {
+            duration: 1,
+            delay: data_delay,
+            y: translateY_value,
+            autoAlpha: 0,
+            stagger: stagger_value,
+            scrollTrigger: {
+              trigger: word_anim_item,
+              start: 'top 90%'
+            }
+          });
+        }
+
+        if (translateY_value && translateX_value) {
+          let split_word = new SplitText(word_anim_item, {
+            type: "chars, words"
+          })
+          gsap.from(split_word.words, {
+            duration: 1,
+            delay: data_delay,
+            x: translateX_value,
+            y: translateY_value,
+            autoAlpha: 0,
+            stagger: stagger_value,
+            scrollTrigger: {
+              trigger: word_anim_item,
+              start: 'top 90%'
+            }
+          });
+        }
+
+        if (!translateX_value && !translateY_value) {
+          let split_word = new SplitText(word_anim_item, {
+            type: "chars, words"
+          })
+          gsap.from(split_word.words, {
+            duration: 1,
+            delay: data_delay,
+            x: 20,
+            autoAlpha: 0,
+            stagger: stagger_value,
+            scrollTrigger: {
+              trigger: word_anim_item,
+              start: 'top 85%',
+            }
+          });
+        }
+      } else {
+        if (translateX_value > 0 && !translateY_value) {
+          let split_word = new SplitText(word_anim_item, {
+            type: "chars, words"
+          })
+          gsap.from(split_word.words, {
+            duration: 1,
+            delay: data_delay,
+            x: translateX_value,
+            autoAlpha: 0,
+            stagger: stagger_value
+          });
+        }
+
+        if (translateY_value > 0 && !translateX_value) {
+          let split_word = new SplitText(word_anim_item, {
+            type: "chars, words"
+          })
+          gsap.from(split_word.words, {
+            duration: 1,
+            delay: data_delay,
+            y: translateY_value,
+            autoAlpha: 0,
+            stagger: stagger_value
+          });
+        }
+
+        if (translateY_value > 0 && translateX_value > 0) {
+          let split_word = new SplitText(word_anim_item, {
+            type: "chars, words"
+          })
+          gsap.from(split_word.words, {
+            duration: 1,
+            delay: data_delay,
+            x: translateX_value,
+            y: translateY_value,
+            autoAlpha: 0,
+            stagger: stagger_value
+          });
+        }
+
+        if (!translateX_value && !translateY_value) {
+          let split_word = new SplitText(word_anim_item, {
+            type: "chars, words"
+          })
+          gsap.from(split_word.words, {
+            duration: 1,
+            delay: data_delay,
+            x: 20,
+            autoAlpha: 0,
+            stagger: stagger_value
+          });
+        }
+
       }
 
-      if (translateY_value > 0 && !translateX_value) {
-        let split_word = new SplitText(word_anim_item, {
-          type: "chars, words"
-        })
-        gsap.from(split_word.words, {
-          duration: 1,
-          delay: data_delay,
-          y: translateY_value,
-          autoAlpha: 0,
-          stagger: stagger_value
-        });
-      }
-
-      if (translateY_value > 0 && translateX_value > 0) {
-        let split_word = new SplitText(word_anim_item, {
-          type: "chars, words"
-        })
-        gsap.from(split_word.words, {
-          duration: 1,
-          delay: data_delay,
-          x: translateX_value,
-          y: translateY_value,
-          autoAlpha: 0,
-          stagger: stagger_value
-        });
-      }
-
-      if (!translateX_value && !translateY_value) {
-        let split_word = new SplitText(word_anim_item, {
-          type: "chars, words"
-        })
-        gsap.from(split_word.words, {
-          duration: 1,
-          delay: data_delay,
-          x: 20,
-          autoAlpha: 0,
-          stagger: stagger_value
-        });
-      }
-
-    }
-
-  });
+    });
+  }
 
   // Full Character Setup 
-  var animation_char_come_items = document.querySelectorAll(".char-anim")
-  animation_char_come_items.forEach((item) => {
+  if (document.querySelectorAll(".char-anim").length > 0) {
+    var animation_char_come_items = document.querySelectorAll(".char-anim")
+    animation_char_come_items.forEach((item) => {
 
-    var stagger_value = 0.05
-    var translateX_value = 20
-    var translateY_value = false
-    var onscroll_value = 1
-    var data_delay = 0.1
-    var data_duration = 1
-    var ease_value = "power2.out"
+      var stagger_value = 0.05
+      var translateX_value = 20
+      var translateY_value = false
+      var onscroll_value = 1
+      var data_delay = 0.1
+      var data_duration = 1
+      var ease_value = "power2.out"
 
-    if (item.getAttribute("data-stagger")) {
-      stagger_value = item.getAttribute("data-stagger");
-    }
-    if (item.getAttribute("data-translateX")) {
-      translateX_value = item.getAttribute("data-translateX");
-    }
-    if (item.getAttribute("data-translateY")) {
-      translateY_value = item.getAttribute("data-translateY");
-    }
-    if (item.getAttribute("data-on-scroll")) {
-      onscroll_value = item.getAttribute("data-on-scroll");
-    }
-    if (item.getAttribute("data-delay")) {
-      data_delay = item.getAttribute("data-delay");
-    }
-    if (item.getAttribute("data-ease")) {
-      ease_value = item.getAttribute("data-ease");
-    }
-    if (item.getAttribute("data-duration")) {
-      data_duration = item.getAttribute("data-duration");
-    }
+      if (item.getAttribute("data-stagger")) {
+        stagger_value = item.getAttribute("data-stagger");
+      }
+      if (item.getAttribute("data-translateX")) {
+        translateX_value = item.getAttribute("data-translateX");
+      }
+      if (item.getAttribute("data-translateY")) {
+        translateY_value = item.getAttribute("data-translateY");
+      }
+      if (item.getAttribute("data-on-scroll")) {
+        onscroll_value = item.getAttribute("data-on-scroll");
+      }
+      if (item.getAttribute("data-delay")) {
+        data_delay = item.getAttribute("data-delay");
+      }
+      if (item.getAttribute("data-ease")) {
+        ease_value = item.getAttribute("data-ease");
+      }
+      if (item.getAttribute("data-duration")) {
+        data_duration = item.getAttribute("data-duration");
+      }
 
-    if (onscroll_value == 1) {
-      if (translateX_value > 0 && !translateY_value) {
-        let split_char = new SplitText(item, {
-          type: "chars, words"
-        });
-        gsap.from(split_char.chars, {
-          duration: data_duration,
-          delay: data_delay,
-          x: translateX_value,
-          autoAlpha: 0,
-          stagger: stagger_value,
-          ease: ease_value,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-          }
-        });
+      if (onscroll_value == 1) {
+        if (translateX_value > 0 && !translateY_value) {
+          let split_char = new SplitText(item, {
+            type: "chars, words"
+          });
+          gsap.from(split_char.chars, {
+            duration: data_duration,
+            delay: data_delay,
+            x: translateX_value,
+            autoAlpha: 0,
+            stagger: stagger_value,
+            ease: ease_value,
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 85%',
+            }
+          });
+        }
+        if (translateY_value > 0 && !translateX_value) {
+          let split_char = new SplitText(item, {
+            type: "chars, words"
+          });
+          gsap.from(split_char.chars, {
+            duration: data_duration,
+            delay: data_delay,
+            y: translateY_value,
+            autoAlpha: 0,
+            ease: ease_value,
+            stagger: stagger_value,
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 85%',
+            }
+          });
+        }
+        if (translateX_value && translateY_value) {
+          let split_char = new SplitText(item, {
+            type: "chars, words"
+          });
+          gsap.from(split_char.chars, {
+            duration: 2,
+            delay: data_delay,
+            y: translateY_value,
+            x: translateX_value,
+            autoAlpha: 0,
+            ease: ease_value,
+            stagger: stagger_value,
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 85%',
+            }
+          });
+        }
+        if (!translateX_value && !translateY_value) {
+          let split_char = new SplitText(item, {
+            type: "chars, words"
+          });
+          gsap.from(split_char.chars, {
+            duration: 1,
+            delay: data_delay,
+            x: 50,
+            autoAlpha: 0,
+            stagger: stagger_value,
+            ease: ease_value,
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 85%',
+            }
+          });
+        }
+      } else {
+        if (translateX_value > 0 && !translateY_value) {
+          let split_char = new SplitText(item, {
+            type: "chars, words"
+          });
+          gsap.from(split_char.chars, {
+            duration: 1,
+            delay: data_delay,
+            x: translateX_value,
+            ease: ease_value,
+            autoAlpha: 0,
+            stagger: stagger_value
+          });
+        }
+        if (translateY_value > 0 && !translateX_value) {
+          let split_char = new SplitText(item, {
+            type: "chars, words"
+          });
+          gsap.from(split_char.chars, {
+            duration: 1,
+            delay: data_delay,
+            y: translateY_value,
+            autoAlpha: 0,
+            ease: ease_value,
+            stagger: stagger_value
+          });
+        }
+        if (translateX_value && translateY_value) {
+          let split_char = new SplitText(item, {
+            type: "chars, words"
+          });
+          gsap.from(split_char.chars, {
+            duration: 1,
+            delay: data_delay,
+            y: translateY_value,
+            x: translateX_value,
+            ease: ease_value,
+            autoAlpha: 0,
+            stagger: stagger_value
+          });
+        }
+        if (!translateX_value && !translateY_value) {
+          let split_char = new SplitText(item, {
+            type: "chars, words"
+          });
+          gsap.from(split_char.chars, {
+            duration: 1,
+            delay: data_delay,
+            ease: ease_value,
+            x: 50,
+            autoAlpha: 0,
+            stagger: stagger_value
+          });
+        }
       }
-      if (translateY_value > 0 && !translateX_value) {
-        let split_char = new SplitText(item, {
-          type: "chars, words"
-        });
-        gsap.from(split_char.chars, {
-          duration: data_duration,
-          delay: data_delay,
-          y: translateY_value,
-          autoAlpha: 0,
-          ease: ease_value,
-          stagger: stagger_value,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-          }
-        });
-      }
-      if (translateX_value && translateY_value) {
-        let split_char = new SplitText(item, {
-          type: "chars, words"
-        });
-        gsap.from(split_char.chars, {
-          duration: 2,
-          delay: data_delay,
-          y: translateY_value,
-          x: translateX_value,
-          autoAlpha: 0,
-          ease: ease_value,
-          stagger: stagger_value,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-          }
-        });
-      }
-      if (!translateX_value && !translateY_value) {
-        let split_char = new SplitText(item, {
-          type: "chars, words"
-        });
-        gsap.from(split_char.chars, {
-          duration: 1,
-          delay: data_delay,
-          x: 50,
-          autoAlpha: 0,
-          stagger: stagger_value,
-          ease: ease_value,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-          }
-        });
-      }
-    } else {
-      if (translateX_value > 0 && !translateY_value) {
-        let split_char = new SplitText(item, {
-          type: "chars, words"
-        });
-        gsap.from(split_char.chars, {
-          duration: 1,
-          delay: data_delay,
-          x: translateX_value,
-          ease: ease_value,
-          autoAlpha: 0,
-          stagger: stagger_value
-        });
-      }
-      if (translateY_value > 0 && !translateX_value) {
-        let split_char = new SplitText(item, {
-          type: "chars, words"
-        });
-        gsap.from(split_char.chars, {
-          duration: 1,
-          delay: data_delay,
-          y: translateY_value,
-          autoAlpha: 0,
-          ease: ease_value,
-          stagger: stagger_value
-        });
-      }
-      if (translateX_value && translateY_value) {
-        let split_char = new SplitText(item, {
-          type: "chars, words"
-        });
-        gsap.from(split_char.chars, {
-          duration: 1,
-          delay: data_delay,
-          y: translateY_value,
-          x: translateX_value,
-          ease: ease_value,
-          autoAlpha: 0,
-          stagger: stagger_value
-        });
-      }
-      if (!translateX_value && !translateY_value) {
-        let split_char = new SplitText(item, {
-          type: "chars, words"
-        });
-        gsap.from(split_char.chars, {
-          duration: 1,
-          delay: data_delay,
-          ease: ease_value,
-          x: 50,
-          autoAlpha: 0,
-          stagger: stagger_value
-        });
-      }
-    }
 
-  });
-
-
-  let revealContainers = document.querySelectorAll(".return");
-
-  revealContainers.forEach((container) => {
-    let image = container.querySelector("img");
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        toggleActions: "restart none none reset"
-      }
     });
 
-    tl.set(container, { autoAlpha: 1 });
-    tl.from(container, 1.5, {
-      xPercent: -100,
-      ease: Power2.out
-    });
-    tl.from(image, 1.5, {
-      xPercent: 100,
-      scale: 1.3,
-      delay: -1.5,
-      ease: Power2.out
-    });
-  });
 
+    let revealContainers = document.querySelectorAll(".return");
 
+    revealContainers.forEach((container) => {
+      let image = container.querySelector("img");
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          toggleActions: "restart none none reset"
+        }
+      });
+
+      tl.set(container, { autoAlpha: 1 });
+      tl.from(container, 1.5, {
+        xPercent: -100,
+        ease: Power2.out
+      });
+      tl.from(image, 1.5, {
+        xPercent: 100,
+        scale: 1.3,
+        delay: -1.5,
+        ease: Power2.out
+      });
+    });
+
+  }
   // approach-area
   // ====================================================
   if (document.querySelectorAll(".approach-area").length > 0) {
@@ -1299,6 +1303,7 @@ Data Css js
 
   // button animation
   // ====================================================
+
   $('.rr-btn-circle').on('mouseenter', function (e) {
     var x = e.pageX - $(this).offset().left;
     var y = e.pageY - $(this).offset().top;
@@ -1354,43 +1359,44 @@ Data Css js
 
   // service-area-4
   // ====================================================
-  mm.add("(min-width: 1024px)", () => {
-    if (document.querySelectorAll(".service-area-4").length > 0) {
-      const races = document.querySelector(".service-area-4");
-      const racesScrollWidth = races.scrollWidth;
+  if (document.querySelectorAll(".portfolio-3").length > 0) {
+    mm.add("(min-width: 1024px)", () => {
+      if (document.querySelectorAll(".service-area-4").length > 0) {
+        const races = document.querySelector(".service-area-4");
+        const racesScrollWidth = races.scrollWidth;
 
-      const getScrollAmount = () =>
-        -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
+        const getScrollAmount = () =>
+          -(racesScrollWidth - document.querySelector(".service-area-4").offsetWidth);
 
-      const wrapperTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".service-area-4",
-          start: "top top",
-          end: `+=${Math.abs(getScrollAmount())}`,
-          scrub: 3,
-          pin: true,
-        },
-      });
+        const wrapperTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".service-area-4",
+            start: "top top",
+            end: `+=${Math.abs(getScrollAmount())}`,
+            scrub: 3,
+            pin: true,
+          },
+        });
 
-      wrapperTimeline.to(".services-wrapper", {
-        x: getScrollAmount(),
-        delay: 0.05,
-        ease: "power1.inOut",
-      });
+        wrapperTimeline.to(".services-wrapper", {
+          x: getScrollAmount(),
+          delay: 0.05,
+          ease: "power1.inOut",
+        });
 
-      wrapperTimeline.to(
-        ".service-thumb-line-wrapper span",
-        {
-          scaleX: 0,
-          // x: "-100%",
-          stagger: 0.04,
-          ease: "power1.out",
-        },
-        "<"
-      );
-    }
-  });
-
+        wrapperTimeline.to(
+          ".service-thumb-line-wrapper span",
+          {
+            scaleX: 0,
+            // x: "-100%",
+            stagger: 0.04,
+            ease: "power1.out",
+          },
+          "<"
+        );
+      }
+    });
+  }
   // service-area-4
   // ====================================================
   if (document.querySelectorAll(".service-area-4").length > 0) {
@@ -1416,65 +1422,6 @@ Data Css js
   }
 
   // portfolio-slide
-  // ====================================================
-  // if (document.querySelectorAll(".portfolio").length > 0) {
-  //   var menu = [];
-  //   jQuery('.swiper-slide').each(function (index) {
-  //     menu.push(jQuery(this).find('.slide-inner').attr("data-text"));
-  //   });
-  //   var interleaveOffset = 1;
-  //   var swiperOptions = {
-  //     loop: true,
-  //     speed: 1800,
-  //     parallax: true,
-  //     mousewheel: {
-  //       releaseOnEdges: true,
-  //     },
-
-  //     pagination: {
-  //       el: '.portfolio-pagination',
-  //       clickable: true,
-  //     },
-
-  //     navigation: {
-  //       prevEl: ".portfolio__slider__arrow-prev",
-  //       nextEl: ".portfolio__slider__arrow-next",
-  //     },
-
-  //     on: {
-  //       progress: function () {
-  //         var swiper = this;
-  //         for (var i = 0; i < swiper.slides.length; i++) {
-  //           var slideProgress = swiper.slides[i].progress;
-  //           var innerOffset = swiper.width * interleaveOffset;
-  //           var innerTranslate = slideProgress * innerOffset;
-  //           swiper.slides[i].querySelector(".slide-inner").style.transform =
-  //             "translate3d(" + innerTranslate + "px, 0, 0)";
-  //         }
-  //       },
-
-  //       touchStart: function () {
-  //         var swiper = this;
-  //         for (var i = 0; i < swiper.slides.length; i++) {
-  //           swiper.slides[i].style.transition = "";
-  //         }
-  //       },
-
-  //       setTransition: function (speed) {
-  //         var swiper = this;
-  //         for (var i = 0; i < swiper.slides.length; i++) {
-  //           swiper.slides[i].style.transition = speed + "ms";
-  //           swiper.slides[i].querySelector(".slide-inner").style.transition =
-  //             speed + "ms";
-  //         }
-  //       }
-  //     }
-  //   };
-
-  //   var swiper = new Swiper(".portfolio-activ", swiperOptions);
-  // }
-
-
   if (document.querySelectorAll(".portfolio").length > 0) {
     var interleaveOffset = 1;
     var swiperOptions = {
@@ -1536,9 +1483,9 @@ Data Css js
 
     var swiper = new Swiper(".portfolio-activ", swiperOptions);
   }
+
   // portfolio-slide-2
   // ====================================================
-
   let portfolio2_activ = new Swiper(".portfolio-2-activ", {
     slidesPerView: 1,
     spaceBetween: 0,

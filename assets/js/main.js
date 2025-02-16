@@ -764,9 +764,9 @@ Data Css js
   }
   // work-area-2 box animation end
 
-  if (document.querySelectorAll(".section-title").length > 0) {
+  if (document.querySelectorAll(".title-wrapper").length > 0) {
     // Select the container and image elements
-    const categoriesWrapper = document.querySelector('.section-title');
+    const categoriesWrapper = document.querySelector('.title-wrapper');
     const imageHover = document.querySelector('.image-hover');
 
     // Smooth mousemove for positioning
@@ -1359,7 +1359,7 @@ Data Css js
 
   // service-area-4
   // ====================================================
-  if (document.querySelectorAll(".portfolio-3").length > 0) {
+  if (document.querySelectorAll(".service-area-4").length > 0) {
     mm.add("(min-width: 1024px)", () => {
       if (document.querySelectorAll(".service-area-4").length > 0) {
         const races = document.querySelector(".service-area-4");

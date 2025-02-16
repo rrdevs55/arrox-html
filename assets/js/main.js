@@ -2,14 +2,56 @@
 ==================== JS INDEX ======================
 ****************************************************
 
-// sticky header 
-// Smooth active
-// Preloader
-// Side Info Js
-// meanmenu activation 
-// Register GSAP Plugins
-// Counter active
-// testimonial slider
+  // Data Css js
+  //  sticky header
+  // Register GSAP Plugins
+  // Smooth active
+  // Preloader
+  // Side Info Js
+  // meanmenu activation 
+  // Counter active
+  // Magnific Video popup
+  // Image Reveal Animation
+  // testimonial slider
+  // text slider 
+  // client slider 
+  // GSAP Fade Animation 
+  // Text Invert With Scroll 
+  // Pin Active
+  // grow animation 
+  // go full width 
+  // scale animation 
+  // cta text animation 
+  // hover reveal start
+  // go-visible animation 
+  // video Active
+  // Moving text		
+  // Moving Gallery		
+  // moving testimonial 
+  // capability hover active 
+  // video start
+  // text-animation start
+  // service-area-2 text and bg animation start
+  // work-area-2 box animation start
+  // hover reveal image animation 
+  // GSAP hover animations for .text-underline elements
+  // Client Pin Active
+  // about 3 thumb animation 
+  // GSAP title animation
+  // Animation Word
+  // Full Character Setup 
+  // approach-area
+  // approach-area service details page
+  // button animation
+  // service-area-4
+  // service-area-4 image
+  // portfolio-slide
+  // portfolio-slide-2
+  // portfolio-slide-3
+  // portfolio-slide-4
+  // portfolio-slide-5
+  // parallax
+  // woking card
 
 
 
@@ -19,10 +61,10 @@
   "use strict";
 
   var windowOn = $(window);
+  let mm = gsap.matchMedia();
 
-  /*======================================
-Data Css js
-========================================*/
+
+  // Data Css js
   $("[data-background]").each(function () {
     $(this).css(
       "background-image",
@@ -308,7 +350,6 @@ Data Css js
 
 
 
-  let mm = gsap.matchMedia();
 
   mm.add("(min-width: 1024px)", () => {
     // Pin Active
@@ -729,6 +770,7 @@ Data Css js
   }
   // work-area-2 box animation end
 
+  // hover reveal image animation 
   if (document.querySelectorAll(".hover-image-wrpper").length > 0) {
     const categoriesWrapper = document.querySelector('.hover-image-wrpper');
     const imageHover = document.querySelector('.image-hover');
@@ -773,9 +815,9 @@ Data Css js
       });
     });
   }
-  //image animation in hero end
+  // image animation in hero end
 
-  //Client Pin Active
+  // Client Pin Active
   if (document.querySelectorAll(".client-pin-element").length > 0) {
     var pin_fixed = document.querySelector('.client-pin-element');
     if (pin_fixed && device_width > 0) {
@@ -852,7 +894,7 @@ Data Css js
   }
 
 
-  //GSAP title animation
+  // GSAP title animation
   if (document.querySelectorAll(".rr_title_anim").length > 0) {
     if ($('.rr_title_anim').length > 0) {
       let splitTitleLines = gsap.utils.toArray(".rr_title_anim");
@@ -1238,7 +1280,6 @@ Data Css js
   }
 
   // approach-area
-  // ====================================================
   if (document.querySelectorAll(".approach-area").length > 0) {
 
     const boxes = document.querySelectorAll(".approach-area .approach-box");
@@ -1258,8 +1299,7 @@ Data Css js
     });
   }
 
-  // approach-area
-  // ====================================================
+  // approach-area service details page
   if (document.querySelectorAll(".approach-area-service-details-page").length > 0) {
     const boxes = document.querySelectorAll(".approach-box");
     gsap.from(boxes, {
@@ -1279,7 +1319,6 @@ Data Css js
 
 
   // button animation
-  // ====================================================
   $('.rr-btn-circle').on('mouseenter', function (e) {
     var x = e.pageX - $(this).offset().left;
     var y = e.pageY - $(this).offset().top;
@@ -1334,7 +1373,6 @@ Data Css js
   });
 
   // service-area-4
-  // ====================================================
   if (document.querySelectorAll(".service-area-4").length > 0) {
     mm.add("(min-width: 1024px)", () => {
       if (document.querySelectorAll(".service-area-4").length > 0) {
@@ -1374,8 +1412,7 @@ Data Css js
     });
   }
 
-  // service-area-4
-  // ====================================================
+  // service-area-4 image
   if (document.querySelectorAll(".service-area-4").length > 0) {
     gsap.fromTo(
       ".section-content__thumb img",
@@ -1462,7 +1499,6 @@ Data Css js
   }
 
   // portfolio-slide-2
-  // ====================================================
   let portfolio2_activ = new Swiper(".portfolio-2-activ", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -1509,7 +1545,6 @@ Data Css js
 
 
   // portfolio-slide-3
-  // ====================================================
   if (document.querySelectorAll(".portfolio-3").length > 0) {
     document.querySelectorAll('.grid-mask').forEach(gridMask => {
       let blocks = [];
@@ -1556,7 +1591,6 @@ Data Css js
   }
 
   // portfolio-slide-4
-  // ====================================================
   if (document.querySelectorAll(".portfolio-4").length > 0) {
     const interleaveOffset = 0.75;
 
@@ -1617,7 +1651,6 @@ Data Css js
   }
 
   // portfolio-slide-5
-  // ====================================================
   if (document.querySelectorAll(".portfolio-5").length > 0) {
     let portfolio5_activ = new Swiper(".portfolio-5-activ", {
       modules: [EffectSlicer],
@@ -1656,7 +1689,6 @@ Data Css js
   }
 
   // parallax
-  // ====================================================
   if (document.querySelectorAll(".parallax-slider-wrapper").length > 0) {
     const selectAll = (e) => document.querySelectorAll(e);
     gsap.registerPlugin(ScrollTrigger);
@@ -1704,7 +1736,6 @@ Data Css js
   }
 
   // woking card
-  // ====================================================
   if (document.querySelectorAll(".work-area-5").length > 0) {
     const cards = document.querySelectorAll(".card-wrap");
 

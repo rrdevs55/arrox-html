@@ -1024,6 +1024,7 @@
 
             .swiper-wrapper {
                 transition-timing-function: linear !important;
+                display: flex !important;
             }
         }
     }

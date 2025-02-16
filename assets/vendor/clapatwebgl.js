@@ -1,11 +1,11 @@
 function ScrollEffects() {
-    if (setTimeout(function() {
-            var e = document.getElementById("app");
-            e.className += "active", $("body").append(e)
-        }, 1500), $("#canvas-slider").length > 0 && setTimeout(function() {
-            var e = document.getElementById("canvas-slider");
-            e.className += " active", $("body").append(e)
-        }, 1500), $("#project-nav").length > 0 && ($("#main-content").addClass("color-page"), $("#main-page-content").addClass("project-page")), $(window).width() < 1025) {
+    if (setTimeout(function () {
+        var e = document.getElementById("app");
+        e.className += "active", $("body").append(e)
+    }, 1500), $("#canvas-slider").length > 0 && setTimeout(function () {
+        var e = document.getElementById("canvas-slider");
+        e.className += " active", $("body").append(e)
+    }, 1500), $("#project-nav").length > 0 && ($("#main-content").addClass("color-page"), $("#main-page-content").addClass("project-page")), $(window).width() < 1025) {
         var e, a = $(window).height(),
             t = $("footer").height();
 
@@ -24,32 +24,32 @@ function ScrollEffects() {
             "margin-bottom": a - t
         }), $("#project-nav").css({
             bottom: -a
-        }), $(".icon-wrap").removeClass("parallax-wrap"), $(window).resize(function() {
+        }), $(".icon-wrap").removeClass("parallax-wrap"), $(window).resize(function () {
             clearTimeout(e), e = setTimeout(o, 100)
         })
     }
-    if ($("figure").hasClass("has-parallax") && $("figure.has-parallax>img").each(function() {
-            $(this).parent().css({
-                height: $(this).height() - 50
-            })
-        }), $("body").hasClass("smooth-scroll")) {
+    if ($("figure").hasClass("has-parallax") && $("figure.has-parallax>img").each(function () {
+        $(this).parent().css({
+            height: $(this).height() - 50
+        })
+    }), $("body").hasClass("smooth-scroll")) {
         const e = document.querySelector("#content-scroll");
         var n = window.Scrollbar,
             r = this && this.__extends || (i = Object.setPrototypeOf || {
-                    __proto__: []
-                }
-                instanceof Array && function(e, a) {
+                __proto__: []
+            }
+                instanceof Array && function (e, a) {
                     e.__proto__ = a
-                } || function(e, a) {
+                } || function (e, a) {
                     for (var t in a) a.hasOwnProperty(t) && (e[t] = a[t])
                 },
-                function(e, a) {
+                function (e, a) {
                     function t() {
                         this.constructor = e
                     }
                     i(e, a), e.prototype = null === a ? Object.create(a) : (t.prototype = a.prototype, new t)
                 }),
-            s = function(e) {
+            s = function (e) {
                 function a() {
                     var a = null !== e && e.apply(this, arguments) || this;
                     return a._remainMomentum = {
@@ -57,7 +57,7 @@ function ScrollEffects() {
                         y: 0
                     }, a
                 }
-                return r(a, e), a.prototype.transformDelta = function(e) {
+                return r(a, e), a.prototype.transformDelta = function (e) {
                     var a = this.scrollbar,
                         t = a.limit,
                         o = a.offset,
@@ -67,7 +67,7 @@ function ScrollEffects() {
                         x: 0,
                         y: 0
                     }
-                }, a.prototype.onRender = function(e) {
+                }, a.prototype.onRender = function (e) {
                     Object.assign(this._remainMomentum, e)
                 }, a.pluginName = "edgeEasing", a
             }(Scrollbar.ScrollbarPlugin);
@@ -78,7 +78,7 @@ function ScrollEffects() {
             continuousScrolling: !0,
             syncCallbacks: !0
         });
-        $(window).width() > 1024 && $("body").hasClass("drag-scroll") && setTimeout(function() {
+        $(window).width() > 1024 && $("body").hasClass("drag-scroll") && setTimeout(function () {
             var e = n.getSize().content,
                 a = n.getSize().container;
             console.log("container height is: " + a.height), console.log("scrollbar limit is: " + n.limit.y);
@@ -93,17 +93,17 @@ function ScrollEffects() {
                 autoScroll: 2,
                 dragResistance: -2,
                 edgeResistance: 1,
-                onPress: function(e) {
+                onPress: function (e) {
                     return console.log("Draggable - on press"), window.innerWidth <= 1024 ? (e.dragCancelled = !0, void this.endDrag(e)) : 2 == e.button ? (e.dragCancelled = !0, void this.endDrag(e)) : null != e.target && $(e.target).parents(".disable-drag").length ? (e.dragCancelled = !0, void this.endDrag(e)) : ($("body").addClass("scale-up"), void TweenMax.to("#ball", .2, {
                         borderWidth: "2px",
                         borderColor: "#999",
                         scale: 1
                     }))
                 },
-                onClick: function() {
+                onClick: function () {
                     console.log("Draggable - on click")
                 },
-                onDragStart: function() {
+                onDragStart: function () {
                     if (console.log("Draggable - drag start"), this.minY != -n.limit.y) {
                         n.getSize().content, n.getSize().container;
                         this.applyBounds({
@@ -114,20 +114,20 @@ function ScrollEffects() {
                         })
                     }
                 },
-                onDrag: function() {
+                onDrag: function () {
                     console.log("Draggable - drag, y value: " + this.y + ", scrollbar offset: " + n.scrollTop + ", minY: " + this.minY + ", maxY: " + this.maxY), TweenLite.to(n, 1, {
                         scrollTo: -this.y,
                         ease: Power4.easeOut
                     })
                 },
-                onDragEnd: function(e) {
-                    console.log("Draggable - drag end"), e.dragCancelled ? console.log("Draggable - drag cancelled") : document.getElementById("content-scroll").addEventListener("wheel", function() {
+                onDragEnd: function (e) {
+                    console.log("Draggable - drag end"), e.dragCancelled ? console.log("Draggable - drag cancelled") : document.getElementById("content-scroll").addEventListener("wheel", function () {
                         TweenLite.set(n, {
                             scrollTo: -this.y
                         })
                     })
                 },
-                onRelease: function(e) {
+                onRelease: function (e) {
                     console.log("Draggable - release"), e.dragCancelled || ($("body").removeClass("scale-up"), TweenMax.to("#ball", 1, {
                         borderWidth: "4px",
                         scale: .5,
@@ -136,7 +136,7 @@ function ScrollEffects() {
                     }))
                 }
             });
-            n.addListener(function(e) {
+            n.addListener(function (e) {
                 TweenLite.set(t[0].target, {
                     x: 0,
                     y: -n.scrollTop
@@ -153,7 +153,7 @@ function ScrollEffects() {
         scrollTo: 120,
         delay: .7,
         ease: Power4.easeInOut
-    })), $(".autocenter").on("click", function() {
+    })), $(".autocenter").on("click", function () {
         var e = $(window),
             a = $(this),
             t = a.offset().top,
@@ -168,7 +168,7 @@ function ScrollEffects() {
         } else $("html, body").animate({
             scrollTop: r
         }, 350)
-    }), $("#backtotop").on("click", function() {
+    }), $("#backtotop").on("click", function () {
         $("body").hasClass("smooth-scroll") ? (TweenLite.to(n, 1.5, {
             scrollTop: 0,
             delay: .1,
@@ -186,7 +186,7 @@ function ScrollEffects() {
             borderColor: "#999999",
             delay: .15
         }))
-    }), $(".scroll-down").on("click", function() {
+    }), $(".scroll-down").on("click", function () {
         var e = $("#hero").height();
         $("body").hasClass("smooth-scroll") ? (TweenLite.to(n, 1.5, {
             scrollTop: e,
@@ -206,11 +206,11 @@ function ScrollEffects() {
         }))
     });
     var l = TweenMax.to(".parallax-scroll-effect", 1, {
-            top: "5%",
-            scale: 1.1,
-            opacity: 1,
-            ease: Linear.easeNone
-        }),
+        top: "5%",
+        scale: 1.1,
+        opacity: 1,
+        ease: Linear.easeNone
+    }),
         c = TweenMax.to("#hero-caption.parallax-onscroll", .5, {
             yPercent: 10,
             opacity: 0,
@@ -283,7 +283,7 @@ function ScrollEffects() {
         }).setTween(u).addTo(w);
     $("body").hasClass("smooth-scroll") && n.addListener(() => {
         f.refresh(), m.refresh(), y.refresh(), v.refresh(), b.refresh(), T.refresh(), C.refresh()
-    }), $(".has-parallax").each(function() {
+    }), $(".has-parallax").each(function () {
         var e = $(this),
             a = 2 * window.innerHeight,
             t = e.find("img"),
@@ -301,15 +301,15 @@ function ScrollEffects() {
         $("body").hasClass("smooth-scroll") && n.addListener(() => {
             r.refresh()
         })
-    }), $(".has-animation").each(function() {
+    }), $(".has-animation").each(function () {
         var e = $(this),
             a = $(this).height(),
             t = new ScrollMagic.Scene({
                 triggerElement: e[0],
                 duration: a
             }).addTo(w);
-        t.triggerHook(1), t.on("enter", function() {
-            e.delay(e.attr("data-delay")).queue(function(a) {
+        t.triggerHook(1), t.on("enter", function () {
+            e.delay(e.attr("data-delay")).queue(function (a) {
                 TweenMax.to(e, .6, {
                     force3D: !0,
                     opacity: 1,
@@ -322,27 +322,27 @@ function ScrollEffects() {
         }), $("body").hasClass("smooth-scroll") && n.addListener(() => {
             t.refresh()
         })
-    }), $("body").find(".has-scale").each(function(e) {
+    }), $("body").find(".has-scale").each(function (e) {
         $(this).wrap("<div class='figure-wrapper'></div>")
-    }), $(".has-mask").each(function() {
+    }), $(".has-mask").each(function () {
         var e = $(this).text().split(" "),
             a = e.length;
         for ($(this).empty(), index = 0; index < a; index++) $(this).append($("<span /> ").text(e[index]))
-    }), $(".has-mask span").each(function() {
+    }), $(".has-mask span").each(function () {
         var e = $(this).text().split(" "),
             a = e.length;
         for ($(this).empty(), index = 0; index < a; index++) $(this).append($("<span /> ").text(e[index]))
-    }), $(".has-mask").each(function() {
+    }), $(".has-mask").each(function () {
         var e = $(this),
             a = $(this).height(),
             t = new ScrollMagic.Scene({
                 triggerElement: e[0],
                 duration: a
             }).addTo(w);
-        t.triggerHook(1), t.on("enter", function() {
-            e.delay(e.attr("data-delay")).queue(function(a) {
+        t.triggerHook(1), t.on("enter", function () {
+            e.delay(e.attr("data-delay")).queue(function (a) {
                 var t = new TimelineLite;
-                e.find("span > span").each(function(e, a) {
+                e.find("span > span").each(function (e, a) {
                     t.to(a, .6, {
                         y: 0,
                         opacity: 1,
@@ -354,43 +354,43 @@ function ScrollEffects() {
         }), $("body").hasClass("smooth-scroll") && n.addListener(() => {
             t.refresh()
         })
-    }), $(".portfolio .item").each(function() {
+    }), $(".portfolio .item").each(function () {
         var e = $(this),
             a = $(this).height(),
             t = new ScrollMagic.Scene({
                 triggerElement: e[0],
                 duration: a
             }).addTo(w);
-        t.triggerHook(.9), t.on("enter", function() {
+        t.triggerHook(.9), t.on("enter", function () {
             e.addClass("active")
         }), $("body").hasClass("smooth-scroll") && n.addListener(() => {
             t.refresh()
         })
-    }), $(".white-section").each(function(e) {
-        $(this).hasClass("large") ? $(this).wrap("<div class='white-section-wrapper large'><div class='white-section-container'></div></div>") : $(this).wrap("<div class='white-section-wrapper'><div class='white-section-container'></div></div>"), $("body").find(".white-section-wrapper").each(function(e) {
-            $(this).css("background-color", function() {
+    }), $(".white-section").each(function (e) {
+        $(this).hasClass("large") ? $(this).wrap("<div class='white-section-wrapper large'><div class='white-section-container'></div></div>") : $(this).wrap("<div class='white-section-wrapper'><div class='white-section-container'></div></div>"), $("body").find(".white-section-wrapper").each(function (e) {
+            $(this).css("background-color", function () {
                 return $(this).children().children().data("bgcolor")
             })
         })
-    }), $(".half-white-section").each(function(e) {
-        $(this).wrap("<div class='half-white-section-wrapper'></div>"), $(this).hasClass("first") ? $(this).parent(".half-white-section-wrapper").addClass("first") : $(this).hasClass("second") && $(this).parent(".half-white-section-wrapper").addClass("second"), $("body").find(".half-white-section-wrapper").each(function(e) {
-            $(this).css("background-color", function() {
+    }), $(".half-white-section").each(function (e) {
+        $(this).wrap("<div class='half-white-section-wrapper'></div>"), $(this).hasClass("first") ? $(this).parent(".half-white-section-wrapper").addClass("first") : $(this).hasClass("second") && $(this).parent(".half-white-section-wrapper").addClass("second"), $("body").find(".half-white-section-wrapper").each(function (e) {
+            $(this).css("background-color", function () {
                 return $(this).children().data("bgcolor")
             })
         })
-    }), $(".dark-section").each(function(e) {
-        $(this).hasClass("large") ? $(this).wrap("<div class='dark-section-wrapper large'><div class='dark-section-container'></div></div>") : $(this).wrap("<div class='dark-section-wrapper'><div class='dark-section-container'></div></div>"), $("body").find(".dark-section-wrapper").each(function(e) {
-            $(this).css("background-color", function() {
+    }), $(".dark-section").each(function (e) {
+        $(this).hasClass("large") ? $(this).wrap("<div class='dark-section-wrapper large'><div class='dark-section-container'></div></div>") : $(this).wrap("<div class='dark-section-wrapper'><div class='dark-section-container'></div></div>"), $("body").find(".dark-section-wrapper").each(function (e) {
+            $(this).css("background-color", function () {
                 return $(this).children().children().data("bgcolor")
             })
         })
-    }), $(".half-dark-section").each(function(e) {
-        $(this).wrap("<div class='half-dark-section-wrapper'></div>"), $(this).hasClass("first") ? $(this).parent(".half-dark-section-wrapper").addClass("first") : $(this).hasClass("second") && $(this).parent(".half-dark-section-wrapper").addClass("second"), $("body").find(".half-dark-section-wrapper").each(function(e) {
-            $(this).css("background-color", function() {
+    }), $(".half-dark-section").each(function (e) {
+        $(this).wrap("<div class='half-dark-section-wrapper'></div>"), $(this).hasClass("first") ? $(this).parent(".half-dark-section-wrapper").addClass("first") : $(this).hasClass("second") && $(this).parent(".half-dark-section-wrapper").addClass("second"), $("body").find(".half-dark-section-wrapper").each(function (e) {
+            $(this).css("background-color", function () {
                 return $(this).children().data("bgcolor")
             })
         })
-    }), $("#project-nav.change-header").each(function() {
+    }), $("#project-nav.change-header").each(function () {
         const e = $("#page-content");
         $(this);
         var a = $(this).outerHeight(!0),
@@ -398,14 +398,14 @@ function ScrollEffects() {
                 triggerElement: this,
                 duration: a
             }).addTo(w);
-        t.triggerHook(.08), t.on("enter", function() {
+        t.triggerHook(.08), t.on("enter", function () {
             e.removeClass("light-content")
-        }), t.on("leave", function() {
+        }), t.on("leave", function () {
             e.addClass("light-content")
         }), $("body").hasClass("smooth-scroll") && n.addListener(() => {
             t.refresh()
         })
-    }), $("#page-content").hasClass("light-content") || $("#project-nav").hasClass("change-header") || $("#project-nav").each(function() {
+    }), $("#page-content").hasClass("light-content") || $("#project-nav").hasClass("change-header") || $("#project-nav").each(function () {
         const e = $("#page-content");
         $(this);
         var a = $(this).outerHeight(!0),
@@ -413,16 +413,16 @@ function ScrollEffects() {
                 triggerElement: this,
                 duration: a
             }).addTo(w);
-        t.triggerHook(.08), t.on("enter", function() {
+        t.triggerHook(.08), t.on("enter", function () {
             e.addClass("light-content")
-        }), t.on("leave", function() {
+        }), t.on("leave", function () {
             e.removeClass("light-content")
         }), $("body").hasClass("smooth-scroll") && n.addListener(() => {
             t.refresh()
         })
     }), $(".change-header-color").length > 0 && $("body").waitForImages({
-        finished: function() {
-            $(".change-header-color").each(function() {
+        finished: function () {
+            $(".change-header-color").each(function () {
                 const e = $("header");
                 $(this);
                 var a = $(this).outerHeight(!0),
@@ -430,11 +430,11 @@ function ScrollEffects() {
                         triggerElement: this,
                         duration: a
                     }).addTo(w);
-                t.triggerHook(.08), t.on("enter", function() {
-                    setTimeout(function() {
+                t.triggerHook(.08), t.on("enter", function () {
+                    setTimeout(function () {
                         e.addClass("white-header")
                     }, 10)
-                }), t.on("leave", function() {
+                }), t.on("leave", function () {
                     e.removeClass("white-header")
                 }), $("body").hasClass("smooth-scroll") && n.addListener(() => {
                     t.refresh()
@@ -444,7 +444,7 @@ function ScrollEffects() {
         waitForAll: !0
     }), $("header").removeClass("white-header");
     var S = window.innerHeight;
-    $(".scattered-grid .item").each(function() {
+    $(".scattered-grid .item").each(function () {
         var e = $(this),
             a = $(this).height() + S,
             t = e.find(".item-parallax.enabled"),
@@ -462,7 +462,7 @@ function ScrollEffects() {
         $("body").hasClass("smooth-scroll") && n.addListener(() => {
             r.refresh()
         })
-    }), $(".content-carousel").each(function() {
+    }), $(".content-carousel").each(function () {
         $(this);
         var e = $(this).outerHeight(!0),
             a = new TimelineLite;
@@ -474,8 +474,8 @@ function ScrollEffects() {
             triggerElement: this,
             duration: e
         }).addTo(w);
-        t.triggerHook(1), t.on("enter", function() {
-            $(".content-carousel .swiper-slide").each(function(e, t) {
+        t.triggerHook(1), t.on("enter", function () {
+            $(".content-carousel .swiper-slide").each(function (e, t) {
                 a.to(t, 1.4, {
                     x: 0,
                     opacity: 1,
@@ -491,9 +491,9 @@ function ScrollEffects() {
 
 function AjaxLoad() {
     var e = {
-            x: 0,
-            y: 0
-        },
+        x: 0,
+        y: 0
+    },
         t = {
             x: 0,
             y: 0
@@ -514,10 +514,10 @@ function AjaxLoad() {
         yPercent: -50,
         scale: .5,
         borderWidth: "4px"
-    }), document.addEventListener("mousemove", function(t) {
+    }), document.addEventListener("mousemove", function (t) {
         var o = window.pageYOffset || document.documentElement.scrollTop;
         e.x = t.pageX, e.y = t.pageY - o
-    }), TweenLite.ticker.addEventListener("tick", a), $(".sticky.left").mouseenter(function(e) {
+    }), TweenLite.ticker.addEventListener("tick", a), $(".sticky.left").mouseenter(function (e) {
         var t = $(this)[0].getBoundingClientRect(),
             o = t.left - i,
             n = t.top + t.height / 2;
@@ -527,7 +527,7 @@ function AjaxLoad() {
             scale: .9,
             borderWidth: "2px"
         }), TweenMax.ticker.removeEventListener("tick", a)
-    }), $(".sticky.right").mouseenter(function(e) {
+    }), $(".sticky.right").mouseenter(function (e) {
         var t = $(this)[0].getBoundingClientRect(),
             o = t.right + i,
             n = t.top + t.height / 2;
@@ -537,7 +537,7 @@ function AjaxLoad() {
             scale: .9,
             borderWidth: "2px"
         }), TweenMax.ticker.removeEventListener("tick", a)
-    }), $("#main .sticky.left").mouseenter(function(e) {
+    }), $("#main .sticky.left").mouseenter(function (e) {
         var t = $(this)[0].getBoundingClientRect(),
             o = t.left - i + 10,
             n = t.top + t.height / 2;
@@ -549,7 +549,7 @@ function AjaxLoad() {
             borderWidth: "6px",
             borderColor: "#999999"
         }), TweenMax.ticker.removeEventListener("tick", a)
-    }), $("#main .sticky.right").mouseenter(function(e) {
+    }), $("#main .sticky.right").mouseenter(function (e) {
         var t = $(this)[0].getBoundingClientRect(),
             o = t.right + i - 10,
             n = t.top + t.height / 2;
@@ -561,14 +561,14 @@ function AjaxLoad() {
             borderWidth: "6px",
             borderColor: "#999999"
         }), TweenMax.ticker.removeEventListener("tick", a)
-    }), $(".sticky").mouseleave(function(e) {
+    }), $(".sticky").mouseleave(function (e) {
         TweenLite.to(r, .2, {
             scale: .5,
             borderWidth: "4px",
             borderColor: "#999999",
             opacity: 1
         }), TweenMax.ticker.addEventListener("tick", a)
-    }), $(".sticky-titles .slide-title").mouseenter(function(e) {
+    }), $(".sticky-titles .slide-title").mouseenter(function (e) {
         var t = $(this)[0].getBoundingClientRect(),
             o = t.right + i + 10,
             n = t.top + t.height - 30;
@@ -580,14 +580,14 @@ function AjaxLoad() {
             borderWidth: "6px",
             borderColor: $("body").data("cursor-color")
         }), TweenMax.ticker.removeEventListener("tick", a)
-    }), $(".sticky-titles .slide-title").mouseleave(function(e) {
+    }), $(".sticky-titles .slide-title").mouseleave(function (e) {
         TweenLite.to(r, .2, {
             scale: .5,
             borderWidth: "4px",
             borderColor: "#999999",
             opacity: 1
         }), TweenMax.ticker.addEventListener("tick", a)
-    }), $(".parallax-wrap").mouseenter(function(e) {
+    }), $(".parallax-wrap").mouseenter(function (e) {
         TweenMax.to(this, .3, {
             scale: 2
         }), TweenMax.to(r, .3, {
@@ -597,20 +597,20 @@ function AjaxLoad() {
         }), TweenMax.to($(this).children(), .3, {
             scale: .5
         }), n = !0
-    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function(e) {
+    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             scale: .7,
             borderWidth: "6px",
             opacity: .6,
             borderColor: "#999"
         })
-    }), $(".parallax-wrap.bigger").mouseenter(function(e) {
+    }), $(".parallax-wrap.bigger").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             scale: 1.35,
             borderWidth: "2px",
             opacity: 1
         })
-    }), $(".parallax-wrap").mouseleave(function(e) {
+    }), $(".parallax-wrap").mouseleave(function (e) {
         TweenMax.to(this, .3, {
             scale: 1
         }), TweenMax.to(r, .3, {
@@ -623,60 +623,60 @@ function AjaxLoad() {
             x: 0,
             y: 0
         }), n = !1
-    }), $("#magic-cursor").hasClass("light-content") ? ($(".sticky").mouseenter(function(e) {
+    }), $("#magic-cursor").hasClass("light-content") ? ($(".sticky").mouseenter(function (e) {
         TweenLite.to(r, .5, {
             borderColor: $("body").data("cursor-hover-color")
         })
-    }), $("#main .sticky").mouseenter(function(e) {
+    }), $("#main .sticky").mouseenter(function (e) {
         TweenLite.to(r, .5, {
             borderColor: "#999"
         })
-    }), $("#main .sticky-titles .slide-title").mouseenter(function(e) {
+    }), $("#main .sticky-titles .slide-title").mouseenter(function (e) {
         TweenLite.to(r, .5, {
             borderColor: $("body").data("cursor-hover-color")
         })
-    }), $(".parallax-wrap").mouseenter(function(e) {
+    }), $(".parallax-wrap").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             borderColor: $("body").data("cursor-hover-color")
         })
-    }), $(".parallax-wrap.bigger").mouseenter(function(e) {
+    }), $(".parallax-wrap.bigger").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             borderColor: "#fff"
         })
-    }), $(".white-section .parallax-wrap.bigger").mouseenter(function(e) {
+    }), $(".white-section .parallax-wrap.bigger").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             borderColor: "#000"
         })
-    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function(e) {
+    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             borderColor: "#999"
         })
-    })) : ($(".sticky").mouseenter(function(e) {
+    })) : ($(".sticky").mouseenter(function (e) {
         TweenLite.to(r, .5, {
             borderColor: $("body").data("cursor-hover-color")
         })
-    }), $("#main .sticky").mouseenter(function(e) {
+    }), $("#main .sticky").mouseenter(function (e) {
         TweenLite.to(r, .5, {
             borderColor: "#999"
         })
-    }), $("#main .sticky-titles .slide-title").mouseenter(function(e) {
+    }), $("#main .sticky-titles .slide-title").mouseenter(function (e) {
         TweenLite.to(r, .5, {
             borderColor: $("body").data("cursor-hover-color")
         })
-    }), $(".parallax-wrap").mouseenter(function(e) {
+    }), $(".parallax-wrap").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             borderColor: $("body").data("cursor-hover-color")
         })
-    }), $(".parallax-wrap.bigger").mouseenter(function(e) {
+    }), $(".parallax-wrap.bigger").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             borderColor: "#000"
         })
-    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function(e) {
+    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function (e) {
         TweenMax.to(r, .3, {
             borderColor: "#999"
         })
-    })), $(".parallax-wrap").mousemove(function(e) {
-        ! function(e, o, n) {
+    })), $(".parallax-wrap").mousemove(function (e) {
+        ! function (e, o, n) {
             var i = o.getBoundingClientRect(),
                 a = e.pageX - i.left,
                 l = e.pageY - i.top,
@@ -686,32 +686,32 @@ function AjaxLoad() {
                 y: t.y
             })
         }(e, this, 2),
-        function(e, t) {
-            ! function(e, t, o, n) {
-                var r = t.getBoundingClientRect(),
-                    i = e.pageX - r.left,
-                    a = e.pageY - r.top,
-                    l = window.pageYOffset || document.documentElement.scrollTop;
-                TweenMax.to(o, .3, {
-                    x: (i - r.width / 2) / r.width * n,
-                    y: (a - r.height / 2 - l) / r.height * n,
-                    ease: Power2.easeOut
-                })
-            }(e, t, t.querySelector(".parallax-element"), 20)
-        }(e, this)
-    }), $(".hide-ball").mouseenter(function(e) {
+            function (e, t) {
+                ! function (e, t, o, n) {
+                    var r = t.getBoundingClientRect(),
+                        i = e.pageX - r.left,
+                        a = e.pageY - r.top,
+                        l = window.pageYOffset || document.documentElement.scrollTop;
+                    TweenMax.to(o, .3, {
+                        x: (i - r.width / 2) / r.width * n,
+                        y: (a - r.height / 2 - l) / r.height * n,
+                        ease: Power2.easeOut
+                    })
+                }(e, t, t.querySelector(".parallax-element"), 20)
+            }(e, this)
+    }), $(".hide-ball").mouseenter(function (e) {
         TweenMax.to("#ball", .2, {
             borderWidth: "1px",
             scale: 1,
             opacity: 0
         })
-    }), $(".hide-ball").mouseleave(function(e) {
+    }), $(".hide-ball").mouseleave(function (e) {
         TweenMax.to("#ball", .3, {
             borderWidth: "4px",
             scale: .5,
             opacity: 1
         })
-    }), $(".link").mouseenter(function(e) {
+    }), $(".link").mouseenter(function (e) {
         TweenMax.to("#ball", .2, {
             borderWidth: "0px",
             scale: 1.5,
@@ -722,7 +722,7 @@ function AjaxLoad() {
             top: 4,
             left: 4
         })
-    }), $(".link").mouseleave(function(e) {
+    }), $(".link").mouseleave(function (e) {
         TweenMax.to("#ball", .3, {
             borderWidth: "4px",
             scale: .5,
@@ -733,12 +733,12 @@ function AjaxLoad() {
             top: 0,
             left: 0
         })
-    }), jQuery(document).ready(function() {
+    }), jQuery(document).ready(function () {
         var e = !1,
             o = "";
 
         function l(t, n) {
-            e = !0, $("body").addClass("page-is-changing"), $(".cd-cover-layer").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+            e = !0, $("body").addClass("page-is-changing"), $(".cd-cover-layer").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function () {
                 c(t, n), o = t, $(".cd-cover-layer").off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend")
             }), s() || (c(t, n), o = t)
         }
@@ -746,15 +746,15 @@ function AjaxLoad() {
         function c(o, l) {
             o = "" == o ? "index.html" : o;
             var c = $('<div class="cd-main-content "></div>');
-            c.load(o + " .cd-main-content > *", function(d) {
+            c.load(o + " .cd-main-content > *", function (d) {
                 $("main").html(c);
                 var u = d.match(/<title[^>]*>([^<]+)<\/title>/)[1];
                 $("head title").html(u), $("html, body").scrollTop(0);
                 var p = s() ? 30 : 0;
-                setTimeout(function() {
-                    $("body").removeClass("page-is-changing"), $(".cd-cover-layer").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+                setTimeout(function () {
+                    $("body").removeClass("page-is-changing"), $(".cd-cover-layer").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function () {
                         e = !1, $(".cd-cover-layer").off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend")
-                    }), LoadViaAjax(), $(".sticky.left").mouseenter(function(e) {
+                    }), LoadViaAjax(), $(".sticky.left").mouseenter(function (e) {
                         var t = $(this)[0].getBoundingClientRect(),
                             o = t.left - i,
                             n = t.top + t.height / 2;
@@ -764,7 +764,7 @@ function AjaxLoad() {
                             scale: .9,
                             borderWidth: "2px"
                         }), TweenMax.ticker.removeEventListener("tick", a)
-                    }), $(".sticky.right").mouseenter(function(e) {
+                    }), $(".sticky.right").mouseenter(function (e) {
                         var t = $(this)[0].getBoundingClientRect(),
                             o = t.right + i,
                             n = t.top + t.height / 2;
@@ -774,7 +774,7 @@ function AjaxLoad() {
                             scale: .9,
                             borderWidth: "2px"
                         }), TweenMax.ticker.removeEventListener("tick", a)
-                    }), $("#main .sticky.left").mouseenter(function(e) {
+                    }), $("#main .sticky.left").mouseenter(function (e) {
                         var t = $(this)[0].getBoundingClientRect(),
                             o = t.left - i + 10,
                             n = t.top + t.height / 2;
@@ -786,7 +786,7 @@ function AjaxLoad() {
                             borderWidth: "6px",
                             borderColor: "#999999"
                         }), TweenMax.ticker.removeEventListener("tick", a)
-                    }), $("#main .sticky.right").mouseenter(function(e) {
+                    }), $("#main .sticky.right").mouseenter(function (e) {
                         var t = $(this)[0].getBoundingClientRect(),
                             o = t.right + i - 10,
                             n = t.top + t.height / 2;
@@ -798,14 +798,14 @@ function AjaxLoad() {
                             borderWidth: "6px",
                             borderColor: "#999999"
                         }), TweenMax.ticker.removeEventListener("tick", a)
-                    }), $(".sticky").mouseleave(function(e) {
+                    }), $(".sticky").mouseleave(function (e) {
                         TweenLite.to(r, .2, {
                             scale: .5,
                             borderWidth: "4px",
                             borderColor: "#999999",
                             opacity: 1
                         }), TweenMax.ticker.addEventListener("tick", a)
-                    }), $(".sticky-titles .slide-title").mouseenter(function(e) {
+                    }), $(".sticky-titles .slide-title").mouseenter(function (e) {
                         var t = $(this)[0].getBoundingClientRect(),
                             o = t.right + i + 10,
                             n = t.top + t.height - 30;
@@ -817,14 +817,14 @@ function AjaxLoad() {
                             borderWidth: "6px",
                             borderColor: $("body").data("cursor-color")
                         }), TweenMax.ticker.removeEventListener("tick", a)
-                    }), $(".sticky-titles .slide-title").mouseleave(function(e) {
+                    }), $(".sticky-titles .slide-title").mouseleave(function (e) {
                         TweenLite.to(r, .2, {
                             scale: .5,
                             borderWidth: "4px",
                             borderColor: "#999999",
                             opacity: 1
                         }), TweenMax.ticker.addEventListener("tick", a)
-                    }), $(".parallax-wrap").mouseenter(function(e) {
+                    }), $(".parallax-wrap").mouseenter(function (e) {
                         TweenMax.to(this, .3, {
                             scale: 2
                         }), TweenMax.to(r, .3, {
@@ -834,20 +834,20 @@ function AjaxLoad() {
                         }), TweenMax.to($(this).children(), .3, {
                             scale: .5
                         }), n = !0
-                    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function(e) {
+                    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             scale: .7,
                             borderWidth: "6px",
                             opacity: .6,
                             borderColor: "#999"
                         })
-                    }), $(".parallax-wrap.bigger").mouseenter(function(e) {
+                    }), $(".parallax-wrap.bigger").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             scale: 1.35,
                             borderWidth: "2px",
                             opacity: 1
                         })
-                    }), $(".parallax-wrap").mouseleave(function(e) {
+                    }), $(".parallax-wrap").mouseleave(function (e) {
                         TweenMax.to(this, .3, {
                             scale: 1
                         }), TweenMax.to(r, .3, {
@@ -860,60 +860,60 @@ function AjaxLoad() {
                             x: 0,
                             y: 0
                         }), n = !1
-                    }), $("#magic-cursor").hasClass("light-content") ? ($(".sticky").mouseenter(function(e) {
+                    }), $("#magic-cursor").hasClass("light-content") ? ($(".sticky").mouseenter(function (e) {
                         TweenLite.to(r, .5, {
                             borderColor: $("body").data("cursor-hover-color")
                         })
-                    }), $("#main .sticky").mouseenter(function(e) {
+                    }), $("#main .sticky").mouseenter(function (e) {
                         TweenLite.to(r, .5, {
                             borderColor: "#999"
                         })
-                    }), $("#main .sticky-titles .slide-title").mouseenter(function(e) {
+                    }), $("#main .sticky-titles .slide-title").mouseenter(function (e) {
                         TweenLite.to(r, .5, {
                             borderColor: $("body").data("cursor-hover-color")
                         })
-                    }), $(".parallax-wrap").mouseenter(function(e) {
+                    }), $(".parallax-wrap").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             borderColor: $("body").data("cursor-hover-color")
                         })
-                    }), $(".parallax-wrap.bigger").mouseenter(function(e) {
+                    }), $(".parallax-wrap.bigger").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             borderColor: "#fff"
                         })
-                    }), $(".white-section .parallax-wrap.bigger").mouseenter(function(e) {
+                    }), $(".white-section .parallax-wrap.bigger").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             borderColor: "#000"
                         })
-                    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function(e) {
+                    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             borderColor: "#999"
                         })
-                    })) : ($(".sticky").mouseenter(function(e) {
+                    })) : ($(".sticky").mouseenter(function (e) {
                         TweenLite.to(r, .5, {
                             borderColor: $("body").data("cursor-hover-color")
                         })
-                    }), $("#main .sticky").mouseenter(function(e) {
+                    }), $("#main .sticky").mouseenter(function (e) {
                         TweenLite.to(r, .5, {
                             borderColor: "#999"
                         })
-                    }), $("#main .sticky-titles .slide-title").mouseenter(function(e) {
+                    }), $("#main .sticky-titles .slide-title").mouseenter(function (e) {
                         TweenLite.to(r, .5, {
                             borderColor: $("body").data("cursor-hover-color")
                         })
-                    }), $(".parallax-wrap").mouseenter(function(e) {
+                    }), $(".parallax-wrap").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             borderColor: $("body").data("cursor-hover-color")
                         })
-                    }), $(".parallax-wrap.bigger").mouseenter(function(e) {
+                    }), $(".parallax-wrap.bigger").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             borderColor: "#000"
                         })
-                    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function(e) {
+                    }), $("#main .parallax-wrap.icon-wrap").mouseenter(function (e) {
                         TweenMax.to(r, .3, {
                             borderColor: "#999"
                         })
-                    })), $(".parallax-wrap").mousemove(function(e) {
-                        ! function(e, o, n) {
+                    })), $(".parallax-wrap").mousemove(function (e) {
+                        ! function (e, o, n) {
                             var i = o.getBoundingClientRect(),
                                 a = e.pageX - i.left,
                                 l = e.pageY - i.top,
@@ -923,32 +923,32 @@ function AjaxLoad() {
                                 y: t.y
                             })
                         }(e, this, 2),
-                        function(e, t) {
-                            ! function(e, t, o, n) {
-                                var r = t.getBoundingClientRect(),
-                                    i = e.pageX - r.left,
-                                    a = e.pageY - r.top,
-                                    l = window.pageYOffset || document.documentElement.scrollTop;
-                                TweenMax.to(o, .3, {
-                                    x: (i - r.width / 2) / r.width * n,
-                                    y: (a - r.height / 2 - l) / r.height * n,
-                                    ease: Power2.easeOut
-                                })
-                            }(e, t, t.querySelector(".parallax-element"), 20)
-                        }(e, this)
-                    }), $(".hide-ball").mouseenter(function(e) {
+                            function (e, t) {
+                                ! function (e, t, o, n) {
+                                    var r = t.getBoundingClientRect(),
+                                        i = e.pageX - r.left,
+                                        a = e.pageY - r.top,
+                                        l = window.pageYOffset || document.documentElement.scrollTop;
+                                    TweenMax.to(o, .3, {
+                                        x: (i - r.width / 2) / r.width * n,
+                                        y: (a - r.height / 2 - l) / r.height * n,
+                                        ease: Power2.easeOut
+                                    })
+                                }(e, t, t.querySelector(".parallax-element"), 20)
+                            }(e, this)
+                    }), $(".hide-ball").mouseenter(function (e) {
                         TweenMax.to("#ball", .2, {
                             borderWidth: "1px",
                             scale: 1,
                             opacity: 0
                         })
-                    }), $(".hide-ball").mouseleave(function(e) {
+                    }), $(".hide-ball").mouseleave(function (e) {
                         TweenMax.to("#ball", .3, {
                             borderWidth: "4px",
                             scale: .5,
                             opacity: 1
                         })
-                    }), $(".link").mouseenter(function(e) {
+                    }), $(".link").mouseenter(function (e) {
                         TweenMax.to("#ball", .2, {
                             borderWidth: "0px",
                             scale: 1.5,
@@ -959,7 +959,7 @@ function AjaxLoad() {
                             top: 4,
                             left: 4
                         })
-                    }), $(".link").mouseleave(function(e) {
+                    }), $(".link").mouseleave(function (e) {
                         TweenMax.to("#ball", .3, {
                             borderWidth: "4px",
                             scale: .5,
@@ -980,11 +980,11 @@ function AjaxLoad() {
         function s() {
             return $("html").hasClass("csstransitions")
         }
-        firstLoad = !1, $("main").on("click", '[data-type="page-transition"]', function(t) {
+        firstLoad = !1, $("main").on("click", '[data-type="page-transition"]', function (t) {
             t.preventDefault();
             var o = $(this).attr("href");
             e || l(o, !0), firstLoad = !0
-        }), $(window).on("popstate", function() {
+        }), $(window).on("popstate", function () {
             if (firstLoad) {
                 var t = location.href;
                 e || o == t || l(t, !1)
@@ -1074,31 +1074,31 @@ function ShowcaseWebgl() {
             fragment: "\n\t\t\t\tvarying vec2 vUv;\n\n\t\t\t\tuniform sampler2D currentImage;\n\t\t\t\tuniform sampler2D nextImage;\n\t\t\t\tuniform sampler2D disp;\n\t\t\t\tuniform float dispFactor;\n\t\t\t\tuniform float effectFactor;\n\t\t\t\tuniform vec4 resolution;\n\n\t\t\t\tvoid main() {\n\n\t\t\t\t\tvec2 uv = (vUv - vec2(0.5))*resolution.zw + vec2(0.5);\n\n\t\t\t\t\tvec4 disp = texture2D(disp, uv);\n\t\t\t\t\tvec2 distortedPosition = vec2(uv.x + dispFactor * (disp.r*effectFactor), uv.y);\n\t\t\t\t\tvec2 distortedPosition2 = vec2(uv.x - (1.0 - dispFactor) * (disp.r*effectFactor), uv.y);\n\t\t\t\t\tvec4 _currentImage = texture2D(currentImage, distortedPosition);\n\t\t\t\t\tvec4 _nextImage = texture2D(nextImage, distortedPosition2);\n\t\t\t\t\tvec4 finalTexture = mix(_currentImage, _nextImage, dispFactor);\n\n\t\t\t\t\tgl_FragColor = finalTexture; }\n\n\t\t\t\t"
         });
         e = Array.from(document.getElementById("trigger-slides").querySelectorAll(".slide-wrap")), t.isRunning = !1, e.forEach(e => {
-            e.addEventListener("click", function() {
+            e.addEventListener("click", function () {
                 if (!t.isRunning) {
                     t.isRunning = !0, document.getElementById("trigger-slides").querySelectorAll(".active")[0].className = "", this.className = "active";
                     var e = parseInt(this.dataset.slide, 10);
                     t.material.uniforms.nextImage.value = t.textures[e], t.material.uniforms.nextImage.needsUpdate = !0, TweenLite.to(t.material.uniforms.dispFactor, 1, {
                         value: 1,
                         ease: "Sine.easeInOut",
-                        onComplete: function() {
+                        onComplete: function () {
                             t.material.uniforms.currentImage.value = t.textures[e], t.material.uniforms.currentImage.needsUpdate = !0, t.material.uniforms.dispFactor.value = 0, t.isRunning = !1
                         }
                     })
                 }
             })
         });
-        ! function() {
+        ! function () {
             var e = Array.from(document.getElementById("quick-projects").querySelectorAll(".slide-wrap"));
             t.isRunning = !1, e.forEach(e => {
-                e.addEventListener("mousemove", function() {
+                e.addEventListener("mousemove", function () {
                     if (!$(this).hasClass("active") && !t.isRunning) {
                         t.isRunning = !0, document.getElementById("quick-projects").querySelectorAll(".active")[0].className = "", this.className = "active";
                         var e = parseInt(this.dataset.slide, 10);
                         t.material.uniforms.nextImage.value = t.textures[e], t.material.uniforms.nextImage.needsUpdate = !0, TweenLite.to(t.material.uniforms.dispFactor, .5, {
                             value: 1,
                             ease: "Sine.easeInOut",
-                            onComplete: function() {
+                            onComplete: function () {
                                 t.material.uniforms.currentImage.value = t.textures[e], t.material.uniforms.currentImage.needsUpdate = !0, t.material.uniforms.dispFactor.value = 0, t.isRunning = !1
                             }
                         })

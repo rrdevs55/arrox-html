@@ -1637,7 +1637,6 @@ Data Css js
     });
   }
 
-
   // portfolio-slide-5
   // ====================================================
   if (document.querySelectorAll(".portfolio-5").length > 0) {
@@ -1676,7 +1675,6 @@ Data Css js
       }
     });
   }
-
 
   // parallax
   // ====================================================

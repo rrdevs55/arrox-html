@@ -3,6 +3,10 @@
         background-color: #F8F8F8;
         color: var(--secondary);
 
+        &.dark {
+            background-color: #111111;
+        }
+
         .container {
             &.large {
                 @media (min-width: 1800px) {
@@ -80,6 +84,10 @@
     background-color: rgba(255, 129, 58, 0.15);
     position: relative;
     z-index: 2;
+
+    @include dark {
+        background-color: #171717;
+    }
 
 
     .hero-content {

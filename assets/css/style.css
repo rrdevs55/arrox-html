@@ -28,6 +28,11 @@
   --white-2: #999999;
   --action: #FF6A3A;
 }
+:root .dark {
+  --primary: #ffffff;
+  --secondary: #999999;
+  --border: rgba(255, 255, 255, 0.1);
+}
 
 /*----------------------------------------*/
 /* TYPOGRAPHY CSS START
@@ -1371,6 +1376,9 @@ body {
 .body-wrapper {
   background-color: var(--white);
 }
+.body-wrapper.dark {
+  background-color: var(--black);
+}
 
 .img_anim_reveal {
   visibility: hidden;
@@ -1433,12 +1441,6 @@ body {
 }
 .zi--1 {
   z-index: -1;
-}
-
-.box-layout {
-  max-width: 1600px;
-  margin: 0 auto;
-  overflow: hidden !important;
 }
 
 .text-underline {
@@ -3481,6 +3483,9 @@ section {
   background-color: #F8F8F8;
   color: var(--secondary);
 }
+.body-digital-agency.dark {
+  background-color: #111111;
+}
 @media (min-width: 1800px) {
   .body-digital-agency .container.large {
     max-width: 1750px;
@@ -3544,6 +3549,9 @@ section {
   background-color: rgba(255, 129, 58, 0.15);
   position: relative;
   z-index: 2;
+}
+.dark .hero-area {
+  background-color: #171717;
 }
 .hero-area .hero-content {
   display: grid;

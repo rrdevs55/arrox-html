@@ -36,6 +36,10 @@ body {
 
 .body-wrapper {
   background-color: var(--white);
+
+  &.dark {
+    background-color: var(--black);
+  }
 }
 
 .img_anim_reveal {
@@ -126,12 +130,7 @@ body {
 }
 
 
-// Box Layout
-.box-layout {
-  max-width: 1600px;
-  margin: 0 auto;
-  overflow: hidden !important;
-}
+
 
 
 // Text Border

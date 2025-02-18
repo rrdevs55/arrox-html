@@ -12,3 +12,10 @@
     line-height: $line_height;
   }
 }
+
+// dark 
+@mixin dark {
+  .dark & {
+    @content;
+  }
+}

@@ -197,7 +197,7 @@
             margin-top: 62px;
             display: flex;
             gap: 10px;
-            align-items: center;
+            align-items: flex-start;
 
             @media #{$xl} {
                 margin-top: 42px;
@@ -216,6 +216,7 @@
         .tags {
             display: flex;
             gap: 5px;
+            flex-wrap: wrap;
 
             .tag {
                 font-size: 14px;

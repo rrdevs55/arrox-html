@@ -30,7 +30,7 @@
         }
 
         @media #{$xs} {
-            font-size: 95px;
+            font-size: 90px;
         }
     }
 
@@ -235,22 +235,42 @@
 
     .moving-gallery li:nth-child(1) {
         width: 30vw;
+
+        @media #{$xs} {
+            width: 60vw;
+        }
     }
 
     .moving-gallery li:nth-child(2) {
         width: 25vw;
+
+        @media #{$xs} {
+            width: 50vw;
+        }
     }
 
     .moving-gallery li:nth-child(3) {
         width: 20vw;
+
+        @media #{$xs} {
+            width: 40vw;
+        }
     }
 
     .moving-gallery li:nth-child(4) {
         width: 25vw;
+
+        @media #{$xs} {
+            width: 50vw;
+        }
     }
 
     .moving-gallery li:nth-child(5) {
         width: 30vw;
+
+        @media #{$xs} {
+            width: 60vw;
+        }
     }
 }
 

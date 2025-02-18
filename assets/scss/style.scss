@@ -285,14 +285,15 @@
     }
 
 
-    .main-menu li a {
+    .menu li a {
         font-size: 18px;
         font-weight: 400;
         line-height: 22px;
         padding: 0 0;
+        color: var(--primary);
     }
 
-    .main-menu>ul {
+    .menu>ul {
         display: block;
     }
 

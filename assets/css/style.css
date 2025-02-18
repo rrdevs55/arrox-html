@@ -1012,16 +1012,16 @@ h6 {
 }
 
 .side-info-close {
-  font-size: 24px;
+  font-size: 20px;
   padding: 0;
   transition: all 0.3s linear;
   background-color: var(--white);
   color: var(--black);
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--black);
   border-radius: 50%;
-  line-height: 50px;
+  line-height: 38px;
 }
 .side-info-close:hover {
   transform: rotate(90deg);
@@ -1059,11 +1059,11 @@ h6 {
   align-items: center;
 }
 .offset-logo {
-  width: 150px;
+  width: 95px;
 }
 @media (max-width: 575px) {
   .offset-logo {
-    width: 130px;
+    width: 95px;
   }
 }
 .offset-logo img {
@@ -16606,13 +16606,14 @@ video.video-area {
 .header-area-3 .header__logo img {
   width: 100%;
 }
-.header-area-3 .main-menu li a {
+.header-area-3 .menu li a {
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
   padding: 0 0;
+  color: var(--primary);
 }
-.header-area-3 .main-menu > ul {
+.header-area-3 .menu > ul {
   display: block;
 }
 .header-area-3 .main-menu ul:hover li {

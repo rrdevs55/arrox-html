@@ -145,6 +145,11 @@
     meanMenuContainer: '.mobile-menu',
     meanMenuCloseSize: '28px',
   });
+  $('.main-menu-all').meanmenu({
+    meanScreenWidth: "5000",
+    meanMenuContainer: '.mobile-menu',
+    meanMenuCloseSize: '28px',
+  });
 
 
 

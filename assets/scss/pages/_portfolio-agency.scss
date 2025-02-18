@@ -18,7 +18,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 
     .section-content-wrapper {
         display: grid;
@@ -241,6 +240,11 @@
             letter-spacing: 0;
         }
 
+        @media #{$xs} {
+            font-size: 45px;
+            letter-spacing: 0;
+        }
+
 
         >* {
             display: block;
@@ -264,6 +268,10 @@
                 text-align: right;
                 margin-right: 30px;
                 position: relative;
+
+                @media #{$xs} {
+                    text-align: left;
+                }
             }
 
             &:nth-child(2) {
@@ -308,6 +316,10 @@
 
             @media #{$sm} {
                 padding-right: 20px;
+            }
+
+            @media #{$xs} {
+                padding-right: 0;
             }
         }
     }

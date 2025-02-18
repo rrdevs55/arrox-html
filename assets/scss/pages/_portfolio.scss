@@ -235,22 +235,47 @@
 
 .portfolio-2 {
 
-    /* Overlay Lines */
     .line-effect {
         position: absolute;
         top: 0;
         left: -50%;
         transform: translate(25%, -50%);
         width: 100%;
-        height: 100%;
+        height: 100vh;
         display: flex;
         gap: 10px;
         flex-direction: column;
         rotate: 90deg;
         transition: 0.8s ease-in-out;
+
+        @media #{$xxl} {
+            transform: translate(0%, -0%);
+            left: -30%;
+        }
+
+        @media #{$md} {
+            transform: translate(0%, -0%);
+            left: -30%;
+            height: 100vw;
+            width: 100vh;
+            top: 48px;
+        }
+
+        @media #{$sm} {
+            transform: translate(0%, 0%);
+            left: -90%;
+            height: 100vw;
+            width: 100vh;
+            top: 220px;
+        }
+
+        @media #{$xs} {
+            left: -110%;
+            top: 222px;
+            width: 106vh;
+        }
     }
 
-    /* Different Heights using nth-child */
     .line:nth-child(1) {
         height: 1px;
     }
@@ -331,7 +356,6 @@
         height: 100px;
     }
 
-    /* General Line Style */
     .line {
         width: 100%;
         background: #fff;
@@ -339,7 +363,6 @@
         transform-origin: center;
     }
 
-    /* Hide lines when active */
     .swiper-slide-active {
 
         .line {
@@ -939,7 +962,7 @@
         }
 
         @media #{$sm} {
-            width: 70px;
+            width: 60px;
             bottom: 45px;
         }
     }

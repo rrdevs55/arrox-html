@@ -9591,7 +9591,6 @@ video.video-area {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 .hero-area-6 .section-content-wrapper {
   display: grid;
@@ -9827,6 +9826,12 @@ video.video-area {
     letter-spacing: 0;
   }
 }
+@media (max-width: 575px) {
+  .hero-area-6 .section-title {
+    font-size: 45px;
+    letter-spacing: 0;
+  }
+}
 .hero-area-6 .section-title > * {
   display: block;
   font-weight: 600;
@@ -9851,6 +9856,11 @@ video.video-area {
   text-align: right;
   margin-right: 30px;
   position: relative;
+}
+@media (max-width: 575px) {
+  .hero-area-6 .section-title > *:last-child {
+    text-align: left;
+  }
 }
 .hero-area-6 .section-title > *:nth-child(2) {
   position: relative;
@@ -9892,6 +9902,11 @@ video.video-area {
 @media only screen and (max-width: 767px) {
   .hero-area-6 .section-title .plus {
     padding-right: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .hero-area-6 .section-title .plus {
+    padding-right: 0;
   }
 }
 
@@ -10243,24 +10258,49 @@ video.video-area {
   width: 100%;
 }
 
-.portfolio-2 {
-  /* Overlay Lines */
-  /* Different Heights using nth-child */
-  /* General Line Style */
-  /* Hide lines when active */
-}
 .portfolio-2 .line-effect {
   position: absolute;
   top: 0;
   left: -50%;
   transform: translate(25%, -50%);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   gap: 10px;
   flex-direction: column;
   rotate: 90deg;
   transition: 0.8s ease-in-out;
+}
+@media only screen and (max-width: 1919px) {
+  .portfolio-2 .line-effect {
+    transform: translate(0%, 0%);
+    left: -30%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .portfolio-2 .line-effect {
+    transform: translate(0%, 0%);
+    left: -30%;
+    height: 100vw;
+    width: 100vh;
+    top: 48px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .portfolio-2 .line-effect {
+    transform: translate(0%, 0%);
+    left: -90%;
+    height: 100vw;
+    width: 100vh;
+    top: 220px;
+  }
+}
+@media (max-width: 575px) {
+  .portfolio-2 .line-effect {
+    left: -110%;
+    top: 222px;
+    width: 106vh;
+  }
 }
 .portfolio-2 .line:nth-child(1) {
   height: 1px;
@@ -10841,7 +10881,7 @@ video.video-area {
 }
 @media only screen and (max-width: 767px) {
   .portfolio-4 .swiper-pagination-bullet {
-    width: 70px;
+    width: 60px;
     bottom: 45px;
   }
 }
@@ -11097,7 +11137,7 @@ video.video-area {
   background-size: cover;
 }
 .parallax-slider-item img {
-  height: 700px;
+  height: 80%;
   min-width: 750px;
   -o-object-fit: cover;
      object-fit: cover;

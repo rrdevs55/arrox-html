@@ -829,10 +829,10 @@
           width: 100%;
           padding: 15px 0;
           padding-inline-start: 0px;
-          font-weight: 400;
+          font-weight: 500;
           font-size: 18px;
           line-height: 1;
-          color: var(--secondary);
+          color: var(--black);
           text-transform: capitalize;
           border-top: 1px solid var(--border);
           display: flex;
@@ -850,7 +850,7 @@
           }
 
           &:hover {
-            color: var(--primary);
+            color: var(--secondary);
           }
 
           &.mean-expand {

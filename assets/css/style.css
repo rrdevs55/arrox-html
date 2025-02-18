@@ -1028,19 +1028,22 @@ h6 {
 }
 
 .side-info {
-  background: var(--white);
-  height: 100%;
+  background: var(--white) none repeat scroll 0 0;
+  padding: 40px 45px;
   position: fixed;
-  z-index: 999;
-  inset-inline-end: -100%;
+  right: 0;
   top: 0;
   width: 500px;
-  padding: 40px 45px;
-  overflow-y: scroll;
-  transition: all 0.5s;
+  height: 100%;
+  transform: translateX(calc(100% + 80px));
+  transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+  z-index: 9999;
   overflow-y: scroll;
   overscroll-behavior-y: contain;
   scrollbar-width: none;
+}
+.side-info ::-webkit-scrollbar {
+  display: none;
 }
 @media (max-width: 575px) {
   .side-info {
@@ -1048,9 +1051,9 @@ h6 {
     padding: 30px 30px;
   }
 }
-
 .side-info.info-open {
-  inset-inline-end: 0;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .offset-header {
@@ -1084,7 +1087,7 @@ h6 {
 .offset-widget-box .title {
   font-size: 24px;
   line-height: 1.33;
-  margin-bottom: 42px;
+  margin-bottom: 15px;
 }
 @media only screen and (max-width: 1919px) {
   .offset-widget-box .title {
@@ -1099,16 +1102,23 @@ h6 {
   align-items: center;
   gap: 14px;
 }
+.offset-widget-box .contact-item span {
+  color: var(--black);
+  font-weight: 500;
+}
+.offset-widget-box .contact-item span a:hover {
+  color: var(--secondary);
+}
 .offset-widget-box .contact-item .icon {
   width: 40px;
   min-width: 40px;
   height: 40px;
   display: inline-flex;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--black);
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: var(--secondary);
+  color: var(--black);
 }
 
 /* mean menu customize */

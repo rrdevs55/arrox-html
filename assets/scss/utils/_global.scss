@@ -698,31 +698,42 @@
 }
 
 .side-info {
-  background: var(--white);
-  height: 100%;
+  background: var(--white) none repeat scroll 0 0;
+  padding: 40px 45px;
   position: fixed;
-  z-index: 999;
-  inset-inline-end: -100%;
+  right: 0;
   top: 0;
   width: 500px;
-  padding: 40px 45px;
-  overflow-y: scroll;
-  transition: all 0.5s;
+  height: 100%;
+  -webkit-transform: translateX(calc(100% + 80px));
+  -moz-transform: translateX(calc(100% + 80px));
+  -ms-transform: translateX(calc(100% + 80px));
+  -o-transform: translateX(calc(100% + 80px));
+  transform: translateX(calc(100% + 80px));
+  -webkit-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+  -moz-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+  transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+  z-index: 9999;
   overflow-y: scroll;
   overscroll-behavior-y: contain;
   scrollbar-width: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   @media #{$xs} {
     width: 100%;
     padding: 30px 30px;
   }
 
+  &.info-open {
+    opacity: 1;
+    transform: (translateX(0));
+  }
 
 }
 
-.side-info.info-open {
-  inset-inline-end: 0;
-}
 
 .offset {
   &-header {
@@ -758,7 +769,7 @@
   .title {
     font-size: 24px;
     line-height: 1.33;
-    margin-bottom: 42px;
+    margin-bottom: 15px;
 
     @media #{$xxl} {
       margin-bottom: 22px;
@@ -775,16 +786,27 @@
     align-items: center;
     gap: 14px;
 
+    span {
+      color: var(--black);
+      font-weight: 500;
+
+      a {
+        &:hover {
+          color: var(--secondary);
+        }
+      }
+    }
+
     .icon {
       width: 40px;
       min-width: 40px;
       height: 40px;
       display: inline-flex;
-      border: 1px solid var(--secondary);
+      border: 1px solid var(--black);
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      color: var(--secondary);
+      color: var(--black);
     }
 
   }

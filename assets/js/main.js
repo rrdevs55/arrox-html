@@ -138,6 +138,12 @@
     $(".offcanvas-overlay").addClass("overlay-open");
   });
 
+  $(window).scroll(function () {
+    if ($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
+      $(".side-info").removeClass("info-open");
+      $(".offcanvas-overlay").removeClass("overlay-open");
+    }
+  });
 
   // meanmenu activation 
   $('.main-menu').meanmenu({

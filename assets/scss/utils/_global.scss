@@ -647,7 +647,7 @@
 /* inverted text style  */
 .text-invert>div {
   background-image: linear-gradient(to right,
-      #111111 50%,
+      var(--primary) 50%,
       #CDC9C6 51%);
   background-size: 200% 100%;
   background-position-x: 100%;

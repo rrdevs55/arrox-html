@@ -3,12 +3,12 @@
   align-items: center;
   cursor: none;
   display: flex;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   justify-content: center;
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
   z-index: 900;
 
   .animation-preloader {

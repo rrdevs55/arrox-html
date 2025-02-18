@@ -685,7 +685,7 @@
 
     .t_line>div {
         background-image: linear-gradient(to right,
-                #111111 50%,
+                var(--primary) 50%,
                 #CDC9C6 51%);
         background-size: 200% 100%;
         background-position-x: 100%;
@@ -703,7 +703,7 @@
         left: 51%;
         transform: translate(-50%, -50%) scale(0);
         /* Start with scale 0 */
-        background-color: #111111;
+        background-color: var(--primary);
         // background-color: red;
         width: 250px;
         /* Adjust width as needed */

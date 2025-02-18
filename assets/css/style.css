@@ -986,7 +986,7 @@ h6 {
 
 /* inverted text style  */
 .text-invert > div {
-  background-image: linear-gradient(to right, #111111 50%, #CDC9C6 51%);
+  background-image: linear-gradient(to right, var(--primary) 50%, #CDC9C6 51%);
   background-size: 200% 100%;
   background-position-x: 100%;
   color: transparent;
@@ -1683,12 +1683,12 @@ section {
   align-items: center;
   cursor: none;
   display: flex;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   justify-content: center;
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
   z-index: 900;
 }
 .container-preloader .animation-preloader {
@@ -6859,7 +6859,7 @@ video.video-area {
   margin-inline: auto;
 }
 .actually-area .t_line > div {
-  background-image: linear-gradient(to right, #111111 50%, #CDC9C6 51%);
+  background-image: linear-gradient(to right, var(--primary) 50%, #CDC9C6 51%);
   background-size: 200% 100%;
   background-position-x: 100%;
   color: transparent;
@@ -6872,7 +6872,7 @@ video.video-area {
   left: 51%;
   transform: translate(-50%, -50%) scale(0);
   /* Start with scale 0 */
-  background-color: #111111;
+  background-color: var(--primary);
   width: 250px;
   /* Adjust width as needed */
   height: 250px;
@@ -7920,7 +7920,7 @@ video.video-area {
 .service-area-3 .service-box .rr-btn-underline {
   text-transform: unset;
   font-size: 18px;
-  color: #111111;
+  color: var(--primary);
   margin-top: 50px;
   display: inline-block;
   position: relative;
@@ -8589,7 +8589,7 @@ video.video-area {
   height: 25px;
   transition: all 0.3s;
   border-radius: 50%;
-  border: 2px solid #111111;
+  border: 2px solid var(--primary);
   transform: translate(0px, -1px);
   margin-left: 5px;
 }
@@ -13572,7 +13572,7 @@ video.video-area {
   height: 25px;
   transition: all 0.3s;
   border-radius: 50%;
-  border: 2px solid #111111;
+  border: 2px solid var(--primary);
   transform: translate(0px, -1px);
   margin-left: 5px;
 }
@@ -13886,7 +13886,7 @@ video.video-area {
   height: 25px;
   transition: all 0.3s;
   border-radius: 50%;
-  border: 2px solid #111111;
+  border: 2px solid var(--primary);
   transform: translate(0px, -1px);
   margin-left: 5px;
 }

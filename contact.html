@@ -47,7 +47,7 @@
   </div>
 
 
-
+  <div class="loading-form">Loading...</div>
 
   <!-- Sroll to top -->
   <div class="progress-wrap">
@@ -88,7 +88,7 @@
             </div>
             <div class="contact-item">
               <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-              <span class="text"><a href="mailto:bill.sanders@example.com">bill.sanders@example.com</a></span>
+              <span class="text"><a href="mailto:hello@arroxagency.com">hello@arroxagency.com</a></span>
             </div>
             <div class="contact-item">
               <span class="icon"><i class="fa-solid fa-phone"></i></span>
@@ -231,19 +231,19 @@
                   </div>
                 </div>
                 <div class="contact-wrap">
-                  <form action="#">
+                  <form id="contact__form" method="POST" action="./mail.php">
                     <div class="contact-formwrap">
                       <div class="contact-formfield">
-                        <input type="text" name="Name" id="Name" placeholder="Name*">
+                        <input type="text" name="name" id="name" placeholder="Name*">
                       </div>
                       <div class="contact-formfield">
-                        <input type="text" name="Email" id="Email" placeholder="Email*">
+                        <input type="text" name="email" id="email" placeholder="Email*">
                       </div>
                       <div class="contact-formfield">
-                        <input type="text" name="Phone" id="Phone" placeholder="Phone*">
+                        <input type="text" name="phone" id="phone" placeholder="Phone*">
                       </div>
                       <div class="contact-formfield">
-                        <input type="text" name="Company" id="Company" placeholder="Company">
+                        <input type="text" name="company" id="company" placeholder="Company">
                       </div>
                       <div class="contact-formfield">
                         <select name="Budget" id="Budget">
@@ -256,10 +256,10 @@
                         </select>
                       </div>
                       <div class="contact-formfield">
-                        <input type="text" name="Solution" id="Solution" placeholder="Solution*">
+                        <input type="text" name="solution" id="solution" placeholder="Solution*">
                       </div>
                       <div class="contact-formfield message">
-                        <input type="text" name="Message" id="Message" placeholder="Message*">
+                        <input type="text" name="message" id="message" placeholder="Message*">
                       </div>
                     </div>
                     <div class="submit-btn">
@@ -270,6 +270,7 @@
                         </span>
                       </button>
                     </div>
+                    <div id="response-message"></div>
                   </form>
                 </div>
               </div>

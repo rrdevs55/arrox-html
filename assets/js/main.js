@@ -138,6 +138,12 @@
     $(".offcanvas-overlay").addClass("overlay-open");
   });
 
+  $(window).scroll(function () {
+    if ($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
+      $(".side-info").removeClass("info-open");
+      $(".offcanvas-overlay").removeClass("overlay-open");
+    }
+  });
 
   // meanmenu activation 
   $('.main-menu').meanmenu({
@@ -1775,6 +1781,31 @@
       });
     });
   }
+
+  // contact-form-daynamic
+  $(document).ready(function () {
+    $('#contact__form').submit(function (event) {
+      event.preventDefault();
+      var form = $(this);
+      $('.loading-form').show();
+
+      setTimeout(function () {
+        $.ajax({
+          type: form.attr('method'),
+          url: form.attr('action'),
+          data: form.serialize()
+        }).done(function (data) {
+          $('.loading-form').hide();
+          $('#response-message').html('<p class="success-message">Your message has been sent successfully.</p>');
+          form[0].reset();
+        }).fail(function () {
+          $('.loading-form').hide();
+          $('#response-message').html('<p class="error-message">Something went wrong. Please try again later.</p>');
+        });
+      }, 1000);
+    });
+  });
+
 
 
 })(jQuery);

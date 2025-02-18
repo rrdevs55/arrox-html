@@ -16748,14 +16748,15 @@ video.video-area {
 .header-area-5 .header__logo img {
   width: 100%;
 }
-.header-area-5 .main-menu li a {
+.header-area-5 .menu li a {
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
   padding: 0 0;
   position: relative;
+  color: var(--primary);
 }
-.header-area-5 .main-menu li a::before {
+.header-area-5 .menu li a::before {
   width: 0;
   height: 1px;
   background-color: currentColor;
@@ -16765,13 +16766,14 @@ video.video-area {
   bottom: 0;
   transition: all 0.5s;
 }
-.header-area-5 .main-menu li a:hover {
+.header-area-5 .menu li a:hover {
   color: var(--black);
 }
-.header-area-5 .main-menu li a:hover::before {
+.header-area-5 .menu li a:hover::before {
   width: 100%;
 }
-.header-area-5 .main-menu > ul {
+.header-area-5 .menu > ul {
+  display: flex;
   gap: 40px;
 }
 .header-area-5 .side-toggle {
@@ -16854,6 +16856,7 @@ video.video-area {
 }
 .header-area-6 .header__navicon button {
   text-transform: uppercase;
+  font-size: 14px;
 }
 
 /* header area 8 style  */

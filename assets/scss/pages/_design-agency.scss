@@ -751,7 +751,7 @@
         display: grid;
         gap: 40px 60px;
         grid-template-columns: 1fr 1235px;
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 45px;
         margin-bottom: 50px;
 
@@ -810,13 +810,13 @@
 
     .capability-wrapper {
         @media #{$sm} {
-            border-top: 1px solid rgba(17, 17, 17, 0.1);
+            border-top: 1px solid var(--border);
         }
     }
 
     .capability-box {
         @media #{$sm} {
-            border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+            border-bottom: 1px solid var(--border);
             padding-bottom: 20px;
             padding-top: 20px;
         }
@@ -943,8 +943,8 @@
     z-index: 1;
 
     &-inner {
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
-        border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
         display: flex;
         align-items: center;
         overflow: hidden;
@@ -997,7 +997,7 @@
     }
 
     .clients-wrapper-box {
-        border-left: 1px solid rgba(17, 17, 17, 0.1);
+        border-left: 1px solid var(--border);
         padding-left: 30px;
         margin-left: 30px;
         padding-top: 50px;

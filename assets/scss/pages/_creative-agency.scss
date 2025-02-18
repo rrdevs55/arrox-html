@@ -1200,7 +1200,7 @@
 
     .awards-wrapper-box {
         margin-top: 93px;
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 32px;
 
         @media #{$xxl} {

@@ -40,7 +40,7 @@
 
     .section-header {
         margin-top: 28px;
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 37px;
 
         @media #{$md} {
@@ -103,7 +103,7 @@
     }
 
     .service-box {
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 30px;
         padding-bottom: 30px;
         display: grid;

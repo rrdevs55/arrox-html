@@ -376,7 +376,7 @@
         grid-template-columns: 110px 1fr;
         align-items: flex-start;
         padding-top: 12px;
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         position: relative;
 
         @media #{$xxl} {

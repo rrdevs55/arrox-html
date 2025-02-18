@@ -40,7 +40,7 @@
 
     .section-header {
         margin-top: 28px;
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 37px;
 
         @media #{$md} {
@@ -165,7 +165,7 @@
 
 
     .section-content-wrapper {
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 22px;
         margin-top: 64px;
         max-width: 1235px;
@@ -296,7 +296,7 @@
 
     .section-header {
         margin-top: 50px;
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 37px;
 
         @media #{$md} {
@@ -419,7 +419,7 @@
 
 /* info area style  */
 .info-area-page-about {
-    background-color: var(--primary);
+    background-color: var(--bg);
 
 
     .section-header {
@@ -537,7 +537,7 @@
 
 /* client area page about style  */
 .client-area-page-about {
-    background-color: var(--black);
+    background-color: var(--bg);
     margin-bottom: -1px;
 
     .section-header {
@@ -604,7 +604,7 @@
 
 /* media area page about style  */
 .media-area-page-about {
-    background-color: var(--primary);
+    background-color: var(--bg);
 
     .section-content-wrapper {
         display: grid;
@@ -678,9 +678,31 @@
             margin-top: 43px;
         }
 
-        .t-btn-primary {
+        .rr-btn {
+            background-color: #1D1C1C;
             border-color: rgba(255, 255, 255, 0.2);
-            color: var(--white);
+
+            &:hover {
+                border-color: var(--white);
+            }
+
+            &:before {
+                @include dark {
+                    background-color: var(--white);
+                }
+            }
+
+            .text-one {
+                color: var(--white);
+            }
+
+            .text-two {
+                color: var(--black);
+
+                @include dark {
+                    color: var(--black);
+                }
+            }
         }
     }
 
@@ -689,7 +711,7 @@
 
 /* award area page about style  */
 .award-area-page-about {
-    background-color: var(--black);
+    background-color: var(--bg);
 
     .section-subtitle {
         color: var(--white);
@@ -815,7 +837,7 @@
 
     .section-header {
         margin-top: 50px;
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 37px;
 
         @media #{$md} {

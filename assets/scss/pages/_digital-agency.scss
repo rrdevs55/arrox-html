@@ -271,7 +271,7 @@
 
     .features-wrapper-box {
         padding-bottom: 36px;
-        border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+        border-bottom: 1px solid var(--border);
     }
 
     .features-wrapper {
@@ -688,7 +688,7 @@ video.video-area {
     }
 
     .service-box {
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 30px;
         padding-bottom: 30px;
         display: grid;
@@ -1392,7 +1392,7 @@ video.video-area {
 .text-slider {
     padding-top: 35px;
     padding-bottom: 35px;
-    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+    border-bottom: 1px solid var(--border);
 
     @media #{$lg} {
         padding-top: 25px;
@@ -1411,7 +1411,7 @@ video.video-area {
 
 .text-slider-box {
     padding-bottom: 3px;
-    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+    border-bottom: 1px solid var(--border);
 }
 
 .text-slider-item {

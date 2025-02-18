@@ -77,9 +77,9 @@
   overflow: hidden;
   z-index: 5;
   padding: 26px 42px;
-  background-color: var(--black);
-  color: white;
-  border: 1px solid black;
+  background-color: var(--primary);
+  color: var(--white);
+  border: 1px solid var(--primary);
   border-radius: 100px;
   font-style: normal;
   font-weight: 500;
@@ -89,6 +89,10 @@
   align-items: center;
   text-transform: capitalize;
   letter-spacing: -0.02em;
+
+  @include dark {
+    color: var(--black);
+  }
 
   @media #{$lg} {
     padding: 18px 29px;
@@ -111,6 +115,10 @@
         top: 50%;
         transform: translateY(-50%);
         color: var(--black);
+
+        @include dark {
+          color: var(--white);
+        }
       }
     }
   }
@@ -129,6 +137,10 @@
     bottom: 0;
     position: absolute;
     transition: all 0.5s;
+
+    @include dark {
+      background-color: var(--black);
+    }
   }
 
   .btn-wrap {
@@ -148,16 +160,24 @@
     .text-one {
       position: relative;
       display: block;
-      color: white;
+      color: var(--white);
       transition: all 0.5s;
+
+      @include dark {
+        color: var(--black);
+      }
     }
 
     .text-two {
       position: absolute;
       top: 100%;
       display: block;
-      color: white;
+      color: var(--white);
       transition: all 0.5s;
+
+      @include dark {
+        color: var(--black);
+      }
     }
   }
 

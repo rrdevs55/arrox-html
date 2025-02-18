@@ -204,8 +204,8 @@
         }
 
         .text-btn-wrapper {
-            border-top: 1px solid rgba(17, 17, 17, 0.1);
-            border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
             margin-top: 43px;
             display: grid;
             grid-template-columns: 330px 1fr;
@@ -232,7 +232,7 @@
         }
 
         .btn-wrapper {
-            border-left: 1px solid rgba(17, 17, 17, 0.1);
+            border-left: 1px solid var(--border);
             margin-left: 74px;
             padding-left: 28px;
             padding-top: 90px;
@@ -261,7 +261,7 @@
 .work-area-4 {
 
     .section-header {
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 35px;
 
         .btn-wrapper {
@@ -476,7 +476,7 @@
 .about-area-4 {
 
     .section-header {
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 35px;
 
         .btn-wrapper {
@@ -573,7 +573,7 @@
 .service-area-5 {
 
     .section-header {
-        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        border-top: 1px solid var(--border);
         padding-top: 35px;
 
         .subtitle-wrapper {

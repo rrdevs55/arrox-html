@@ -131,6 +131,8 @@
   visibility: visible;
   transform: translateY(0);
   mix-blend-mode: exclusion;
+  background-color: var(--black);
+
 }
 
 .progress-wrap::after {

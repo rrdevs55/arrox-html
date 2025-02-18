@@ -72,6 +72,11 @@
     z-index: 10;
     transition: all 0.5s;
 
+    &.col-2 {
+      column-count: 2;
+      width: 480px;
+    }
+
     ul {
       background: var(--black);
       padding: 18px 0px;

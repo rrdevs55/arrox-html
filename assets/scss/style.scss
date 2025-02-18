@@ -115,6 +115,12 @@
         }
     }
 
+    .header__button {
+        @media #{$xs} {
+            display: none;
+        }
+    }
+
     .rr-btn {
         font-size: 16px;
         padding: 22px 38px;
@@ -202,6 +208,12 @@
     }
 
     .header__meta {
+        @media #{$xs} {
+            display: none;
+        }
+    }
+
+    .header__button {
         @media #{$xs} {
             display: none;
         }
@@ -1647,11 +1659,11 @@
 
     .footer-nav-list {
         display: flex;
-        gap: 15px 40px;
+        gap: 5px 40px;
         flex-wrap: wrap;
 
         @media #{$lg} {
-            gap: 15px 30px;
+            gap: 5px 30px;
         }
 
         &:hover {
@@ -1667,6 +1679,10 @@
             color: var(--primary);
             transition-property: opacity;
             transition-duration: 500ms;
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
 
             a {
 
@@ -1944,12 +1960,13 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        gap: 41px;
+        gap: 10px 41px;
         position: relative;
         padding-bottom: 20px;
+        flex-wrap: wrap;
 
         @media #{$xs} {
-            gap: 30px;
+            gap: 10px 30px;
         }
 
         &::before {
@@ -2022,14 +2039,6 @@
             text-transform: uppercase;
             color: var(--primary);
             text-align: center;
-
-            @media #{$xl} {
-                font-size: 20px;
-            }
-
-            @media #{$lg} {
-                font-size: 18px;
-            }
 
             a {
                 transition: all 0.3s;
@@ -2223,9 +2232,13 @@
                 background-color: transparent;
                 border: 0;
                 outline: 0;
+                font-size: 22px;
+
+                @media #{$lg} {
+                    font-size: 18px;
+                }
 
                 &::placeholder {
-                    font-size: 22px;
                     line-height: 1;
                     color: rgba(17, 17, 17, 0.3);
                 }
@@ -2319,6 +2332,10 @@
             color: var(--primary);
             transition-property: opacity;
             transition-duration: 500ms;
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
 
             a {
 

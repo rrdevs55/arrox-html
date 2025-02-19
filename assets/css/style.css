@@ -1934,6 +1934,9 @@ section {
   transition: all 200ms linear;
   border-radius: 50px;
 }
+.dark .progress-wrap::after {
+  color: var(--black);
+}
 
 .progress-wrap svg path {
   fill: var(--black-6);
@@ -3709,7 +3712,7 @@ section {
   content: "";
   width: 1px;
   height: 100%;
-  background-color: rgba(17, 17, 17, 0.1);
+  background-color: var(--border);
   top: 0;
   left: calc(50% - 2px);
   z-index: -1;
@@ -3724,7 +3727,7 @@ section {
   content: "";
   width: 1px;
   height: 100%;
-  background-color: rgba(17, 17, 17, 0.1);
+  background-color: var(--border);
   top: 0;
   left: calc(50% + 1px);
   z-index: -1;
@@ -3738,6 +3741,9 @@ section {
   width: 130px;
   height: 190px;
   background-color: #F9E6DC;
+}
+.dark .hero-area .award-wrapper .circle-text {
+  background-color: var(--bg);
 }
 @media only screen and (max-width: 1919px) {
   .hero-area .award-wrapper .circle-text {
@@ -4560,6 +4566,9 @@ video.video-area {
   background-color: var(--black);
   border-radius: 100%;
   z-index: -1;
+}
+.dark .cta-area-inner .area-bg {
+  background-color: var(--theme);
 }
 @media only screen and (max-width: 1919px) {
   .cta-area-inner .area-bg {
@@ -17154,6 +17163,9 @@ video.video-area {
 .footer-area .footer-top-inner .info-link a:hover {
   color: var(--black);
 }
+.dark .footer-area .footer-top-inner .info-link a:hover {
+  color: var(--white);
+}
 .footer-area .footer-top-inner .info-link a:hover::before {
   width: 0;
 }
@@ -17234,6 +17246,9 @@ video.video-area {
   padding: 28px 30px;
   border-radius: 50px;
 }
+.dark .footer-area .subscribe-form .input-field {
+  background-color: rgba(255, 255, 255, 0.05);
+}
 @media only screen and (max-width: 1919px) {
   .footer-area .subscribe-form .input-field {
     padding: 18px 30px;
@@ -17252,6 +17267,15 @@ video.video-area {
 }
 .footer-area .subscribe-form .input-field input::placeholder {
   color: rgba(17, 17, 17, 0.3);
+}
+.dark .footer-area .subscribe-form .input-field input {
+  color: rgba(255, 255, 255, 0.3);
+}
+.dark .footer-area .subscribe-form .input-field input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.dark .footer-area .subscribe-form .input-field input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
 }
 .footer-area .subscription-text {
   margin-top: 23px;
@@ -17365,6 +17389,9 @@ video.video-area {
 }
 .footer-area .copyright-text .text a:hover {
   color: var(--black);
+}
+.dark .footer-area .copyright-text .text a:hover {
+  color: var(--white);
 }
 .footer-area .copyright-text .text a:hover::before {
   width: 100%;

@@ -1193,6 +1193,10 @@
             padding: 28px 30px;
             border-radius: 50px;
 
+            @include dark {
+                background-color: #1D1D1D;
+            }
+
             @media #{$xxl} {
                 padding: 22px 30px;
             }
@@ -1208,6 +1212,7 @@
                 outline: 0;
                 font-size: 22px;
                 line-height: 1;
+                color: var(--primary);
 
                 @media #{$lg} {
                     font-size: 18px;
@@ -1216,6 +1221,10 @@
 
                 &::placeholder {
                     color: rgba(17, 17, 17, 0.3);
+
+                    @include dark {
+                        color: rgba(252, 247, 243, 0.3);
+                    }
                 }
             }
         }
@@ -1272,6 +1281,10 @@
             margin-bottom: 30px;
             color: var(--black-2);
             font-family: var(--font_dmsans);
+
+            @include dark {
+                color: #555555;
+            }
 
             @media #{$xxl} {
                 margin-bottom: 20px;
@@ -1365,6 +1378,10 @@
                 transition: all 0.3s;
                 position: relative;
 
+                @include dark {
+                    color: #555555;
+                }
+
                 &::before {
                     width: 0;
                     height: 1px;
@@ -1377,7 +1394,7 @@
                 }
 
                 &:hover {
-                    color: var(--black);
+                    color: var(--primary);
 
                     &::before {
                         width: 100%;

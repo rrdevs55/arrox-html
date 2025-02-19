@@ -6265,6 +6265,15 @@ video.video-area {
   z-index: 100;
   background-color: #FCF7F3;
 }
+.body-creative-agency.dark {
+  --primary: #FCF7F3;
+}
+.body-creative-agency.dark .rr-btn::before {
+  background-color: var(--black);
+}
+.body-creative-agency.dark .rr-btn.btn-border-white {
+  border-color: rgba(17, 17, 17, 0.1);
+}
 .body-creative-agency .body-bg {
   position: absolute;
   width: 100%;
@@ -6979,6 +6988,9 @@ video.video-area {
   background-color: var(--primary);
   transition: all 0.5s;
 }
+.dark .service-area-2 .service-box {
+  border-color: #EAE3DD;
+}
 @media only screen and (max-width: 1919px) {
   .service-area-2 .service-box {
     grid-template-columns: 215px 1fr 395px;
@@ -7011,8 +7023,14 @@ video.video-area {
 .service-area-2 .service-box:last-child {
   border-bottom: 1px solid #292828;
 }
+.dark .service-area-2 .service-box:last-child {
+  border-color: #EAE3DD;
+}
 .service-area-2 .service-box-wrapper {
   background-color: #292828;
+}
+.dark .service-area-2 .service-box-wrapper {
+  background-color: #EAE3DD;
 }
 .service-area-2 .service-box-wrapper:hover .service-box {
   border-radius: 120px;
@@ -7043,12 +7061,18 @@ video.video-area {
   margin-top: 12px;
   transition: all 0.5s;
 }
+.dark .service-area-2 .service-box .number {
+  color: var(--black);
+}
 .service-area-2 .service-box .title {
   font-size: 110px;
   font-weight: 310;
   line-height: 0.9;
   letter-spacing: -0.07em;
   color: var(--white);
+}
+.dark .service-area-2 .service-box .title {
+  color: var(--black);
 }
 @media only screen and (max-width: 1919px) {
   .service-area-2 .service-box .title {
@@ -7082,6 +7106,9 @@ video.video-area {
   color: var(--white);
   max-width: 370px;
   margin-top: 7px;
+}
+.dark .service-area-2 .service-box .text {
+  color: var(--black);
 }
 .service-area-2 .service-content {
   display: grid;
@@ -7125,6 +7152,9 @@ video.video-area {
 .service-area-2 .service-content .text.text-invert > div {
   background-image: linear-gradient(to right, rgb(252, 247, 243) 50%, rgba(252, 247, 243, 0.3) 51%);
 }
+.dark .service-area-2 .service-content .text.text-invert > div {
+  background-image: linear-gradient(to right, rgb(17, 17, 17) 50%, rgba(17, 17, 17, 0.3) 51%);
+}
 .service-area-2 .service-content .btn-wrapper {
   margin-top: 54px;
 }
@@ -7159,7 +7189,7 @@ video.video-area {
   color: var(--white);
 }
 .service-area-2 .service-content-wrapper {
-  background-color: var(--black);
+  background-color: var(--primary);
 }
 
 /* testimonial area style  */
@@ -7175,12 +7205,15 @@ video.video-area {
 }
 
 .testimonial-area {
-  background-color: var(--black);
+  background-color: var(--primary);
 }
 .testimonial-area .section-title {
   max-width: 1000px;
   margin-left: auto;
   color: var(--white);
+}
+.dark .testimonial-area .section-title {
+  color: var(--black);
 }
 .testimonial-area .section-header {
   margin-top: 46px;
@@ -7293,7 +7326,7 @@ video.video-area {
 
 /* client area 2 style  */
 .client-area-2 {
-  background-color: var(--black);
+  background-color: var(--primary);
   margin-bottom: -1px;
   position: relative;
   z-index: 1;
@@ -7306,6 +7339,9 @@ video.video-area {
   max-width: 340px;
   color: #FCF7F3;
   margin-inline: auto;
+}
+.dark .client-area-2 .section-header .text {
+  color: var(--black);
 }
 .client-area-2 .clients-wrapper-box {
   margin-top: 63px;
@@ -7337,6 +7373,9 @@ video.video-area {
   justify-content: center;
   align-items: center;
 }
+.dark .client-area-2 .client-box {
+  border-color: rgba(17, 17, 17, 0.1);
+}
 @media only screen and (max-width: 1919px) {
   .client-area-2 .client-box {
     width: 155px;
@@ -7353,7 +7392,7 @@ video.video-area {
 /* circular shape area style  */
 .circular-shape-wrapper {
   height: 100vh;
-  background-color: var(--black);
+  background-color: var(--primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17506,6 +17545,9 @@ video.video-area {
   padding: 28px 30px;
   border-radius: 50px;
 }
+.dark .footer-area-2 .subscribe-form .input-field {
+  background-color: #1D1D1D;
+}
 @media only screen and (max-width: 1919px) {
   .footer-area-2 .subscribe-form .input-field {
     padding: 22px 30px;
@@ -17523,6 +17565,7 @@ video.video-area {
   outline: 0;
   font-size: 22px;
   line-height: 1;
+  color: var(--primary);
 }
 @media only screen and (max-width: 1199px) {
   .footer-area-2 .subscribe-form .input-field input {
@@ -17534,6 +17577,12 @@ video.video-area {
 }
 .footer-area-2 .subscribe-form .input-field input::placeholder {
   color: rgba(17, 17, 17, 0.3);
+}
+.dark .footer-area-2 .subscribe-form .input-field input::-moz-placeholder {
+  color: rgba(252, 247, 243, 0.3);
+}
+.dark .footer-area-2 .subscribe-form .input-field input::placeholder {
+  color: rgba(252, 247, 243, 0.3);
 }
 .footer-area-2 .subscription-text {
   margin-top: 23px;
@@ -17576,6 +17625,9 @@ video.video-area {
   margin-bottom: 30px;
   color: var(--black-2);
   font-family: var(--font_dmsans);
+}
+.dark .footer-area-2 .footer-widget-box .title {
+  color: #555555;
 }
 @media only screen and (max-width: 1919px) {
   .footer-area-2 .footer-widget-box .title {
@@ -17650,6 +17702,9 @@ video.video-area {
   transition: all 0.3s;
   position: relative;
 }
+.dark .footer-area-2 .copyright-text .text a {
+  color: #555555;
+}
 .footer-area-2 .copyright-text .text a::before {
   width: 0;
   height: 1px;
@@ -17661,7 +17716,7 @@ video.video-area {
   transition: all 0.5s;
 }
 .footer-area-2 .copyright-text .text a:hover {
-  color: var(--black);
+  color: var(--primary);
 }
 .footer-area-2 .copyright-text .text a:hover::before {
   width: 100%;

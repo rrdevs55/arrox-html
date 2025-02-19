@@ -152,6 +152,10 @@
   z-index: 1;
   transition: all 200ms linear;
   border-radius: 50px;
+
+  @include dark {
+    color: var(--black);
+  }
 }
 
 

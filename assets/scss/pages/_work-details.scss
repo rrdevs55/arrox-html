@@ -283,8 +283,29 @@
             }
 
             &:hover {
-                background-color: var(--action);
-                border-color: var(--action);
+                background-color: var(--primary);
+                border-color: transparent;
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+
+                svg {
+                    * {
+                        fill: var(--white);
+
+                        @include dark {
+                            fill: var(--black);
+                        }
+                    }
+                }
+            }
+
+            svg {
+                * {
+                    fill: var(--primary);
+                }
             }
         }
     }

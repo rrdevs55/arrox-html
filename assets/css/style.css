@@ -13419,6 +13419,9 @@ video.video-area {
   color: var(--primary);
   font-size: 18px;
 }
+.dark .blog-details-area .section-details .comment-formfield input {
+  border-color: rgba(255, 255, 255, 0.2);
+}
 @media only screen and (max-width: 1199px) {
   .blog-details-area .section-details .comment-formfield input {
     font-size: 16px;
@@ -13600,7 +13603,7 @@ video.video-area {
   transform: scale(1.1);
 }
 .blog-area-3 .blog:hover .title .arrow {
-  background-color: var(--black);
+  background-color: var(--primary);
 }
 .blog-area-3 .blog:hover .title .arrow svg {
   transform: rotate(60deg);
@@ -13608,12 +13611,15 @@ video.video-area {
 .blog-area-3 .blog:hover .title .arrow svg * {
   fill: var(--white);
 }
+.dark .blog-area-3 .blog:hover .title .arrow svg * {
+  fill: var(--black);
+}
 .blog-area-3 .blog:before {
   position: absolute;
   content: "";
   width: 1px;
   height: 100%;
-  background-color: rgba(17, 17, 17, 0.1);
+  background-color: var(--border);
   top: 0;
   left: -30px;
 }
@@ -13704,6 +13710,9 @@ video.video-area {
     width: 7px;
   }
 }
+.blog-area-3 .blog .title .arrow svg * {
+  fill: var(--primary);
+}
 .blog-area-3 .blog .meta {
   display: flex;
   gap: 5px;
@@ -13719,6 +13728,7 @@ video.video-area {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
+  color: var(--secondary);
 }
 .blog-area-3 .blog .meta span.has-left-line {
   padding-inline-start: 15px;
@@ -13914,7 +13924,7 @@ video.video-area {
   transform: scale(1.1);
 }
 .blog-area-2 .blog:hover .title .arrow {
-  background-color: var(--black);
+  background-color: var(--primary);
 }
 .blog-area-2 .blog:hover .title .arrow svg {
   transform: rotate(60deg);
@@ -13922,12 +13932,15 @@ video.video-area {
 .blog-area-2 .blog:hover .title .arrow svg * {
   fill: var(--white);
 }
+.dark .blog-area-2 .blog:hover .title .arrow svg * {
+  fill: var(--black);
+}
 .blog-area-2 .blog:before {
   position: absolute;
   content: "";
   width: 1px;
   height: 100%;
-  background-color: rgba(17, 17, 17, 0.1);
+  background-color: var(--border);
   top: 0;
   left: -30px;
 }
@@ -14018,6 +14031,9 @@ video.video-area {
     width: 7px;
   }
 }
+.blog-area-2 .blog .title .arrow svg * {
+  fill: var(--primary);
+}
 .blog-area-2 .blog .meta {
   display: flex;
   gap: 5px;
@@ -14033,6 +14049,7 @@ video.video-area {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
+  color: var(--secondary);
 }
 .blog-area-2 .blog .meta span.has-left-line {
   padding-inline-start: 15px;
@@ -14865,7 +14882,7 @@ video.video-area {
 
 /* feature area style  */
 .feature-area {
-  background-color: var(--black);
+  background-color: var(--bg);
 }
 .feature-area .features-wrapper-box {
   margin-top: 44px;
@@ -14969,7 +14986,7 @@ video.video-area {
 
 /* value area style  */
 .value-area {
-  background-color: var(--black);
+  background-color: var(--bg);
 }
 .value-area .section-content-wrapper {
   margin-top: 32px;
@@ -15169,7 +15186,7 @@ video.video-area {
   }
 }
 .faq-area .accordion {
-  border-top: 1px solid #E5E0DC;
+  border-top: 1px solid var(--border);
   counter-reset: accordion;
 }
 .faq-area .accordion-button {
@@ -15211,7 +15228,7 @@ video.video-area {
 .faq-area .accordion-item {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #E5E0DC;
+  border-bottom: 1px solid var(--border);
   position: relative;
   padding-left: 130px;
   transition: all 0.5s;
@@ -15234,6 +15251,7 @@ video.video-area {
   font-weight: 310;
   line-height: 1.16;
   letter-spacing: -0.07em;
+  color: var(--primary);
   position: absolute;
   top: 30px;
   left: 0;
@@ -16229,8 +16247,21 @@ video.video-area {
   }
 }
 .work-details-area .pagination a:hover {
-  background-color: var(--action);
-  border-color: var(--action);
+  background-color: var(--primary);
+  border-color: transparent;
+  color: var(--white);
+}
+.dark .work-details-area .pagination a:hover {
+  color: var(--black);
+}
+.work-details-area .pagination a:hover svg * {
+  fill: var(--white);
+}
+.dark .work-details-area .pagination a:hover svg * {
+  fill: var(--black);
+}
+.work-details-area .pagination a svg * {
+  fill: var(--primary);
 }
 
 /* work area work page style  */

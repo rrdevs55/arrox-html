@@ -239,6 +239,11 @@
 
             &.text-invert>div {
                 background-image: linear-gradient(to right, rgba(17, 17, 17, 1) 50%, rgba(17, 17, 17, 0.3) 51%);
+
+                @include dark {
+                    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.3) 51%);
+
+                }
             }
         }
 

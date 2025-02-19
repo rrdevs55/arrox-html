@@ -14358,6 +14358,12 @@ video.video-area {
   width: 100%;
   max-width: 100%;
 }
+.dark .contact-area-contact-page .contact-formfield select option {
+  background-color: var(--black);
+}
+.contact-area-contact-page .contact-formfield select option[disabled] {
+  background-color: var(--black) !important;
+}
 .contact-area-contact-page .submit-btn {
   margin-top: 50px;
 }
@@ -14486,7 +14492,7 @@ video.video-area {
   }
 }
 .faq-area-faq-page .accordion {
-  border-top: 1px solid #E5E0DC;
+  border-top: 1px solid var(--border);
   counter-reset: accordion;
 }
 .faq-area-faq-page .accordion-button {
@@ -14528,7 +14534,7 @@ video.video-area {
 .faq-area-faq-page .accordion-item {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #E5E0DC;
+  border-bottom: 1px solid var(--border);
   position: relative;
   padding-left: 130px;
   transition: all 0.5s;
@@ -14555,6 +14561,7 @@ video.video-area {
   top: 30px;
   left: 0;
   transition: all 0.5s;
+  color: var(--primary);
 }
 @media only screen and (max-width: 1919px) {
   .faq-area-faq-page .accordion-item:before {
@@ -15780,6 +15787,9 @@ video.video-area {
   border-top: 1px dashed #878482;
   display: grid;
 }
+.dark .team-details-area .social-links {
+  border-color: #6F6D6C;
+}
 @media only screen and (max-width: 1399px) {
   .team-details-area .social-links {
     margin-top: 43px;
@@ -15801,9 +15811,15 @@ video.video-area {
   padding: 11px 0;
   transition: all 0.5s;
 }
+.dark .team-details-area .social-links a {
+  border-color: #6F6D6C;
+}
 .team-details-area .social-links a:hover {
   background-color: #F7F7FA;
   padding-left: 20px;
+}
+.dark .team-details-area .social-links a:hover {
+  background-color: #171717;
 }
 .team-details-area .social-links a:before {
   content: "+";
@@ -15907,6 +15923,9 @@ video.video-area {
   height: 60px;
   border-radius: 50%;
   outline: 3px solid var(--white);
+}
+.dark .team-area-team-page .team-info .team-group img {
+  outline-color: var(--black);
 }
 @media only screen and (max-width: 1919px) {
   .team-area-team-page .team-info .team-group img {

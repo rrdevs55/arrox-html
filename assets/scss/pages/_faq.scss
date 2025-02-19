@@ -113,7 +113,7 @@
 
 
     .accordion {
-        border-top: 1px solid #E5E0DC;
+        border-top: 1px solid var(--border);
         counter-reset: accordion;
     }
 
@@ -159,7 +159,7 @@
     .accordion-item {
         background-color: transparent;
         border: none;
-        border-bottom: 1px solid #E5E0DC;
+        border-bottom: 1px solid var(--border);
         position: relative;
         padding-left: 130px;
         transition: all 0.5s;
@@ -184,6 +184,7 @@
             top: 30px;
             left: 0;
             transition: all 0.5s;
+            color: var(--primary);
 
             @media #{$xxl} {
                 top: 20px;

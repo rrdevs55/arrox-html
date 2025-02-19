@@ -92,6 +92,10 @@
         border-top: 1px dashed #878482;
         display: grid;
 
+        @include dark {
+            border-color: #6F6D6C;
+        }
+
         @media #{$xl} {
             margin-top: 43px;
         }
@@ -111,9 +115,17 @@
             padding: 11px 0;
             transition: all 0.5s;
 
+            @include dark {
+                border-color: #6F6D6C;
+            }
+
             &:hover {
                 background-color: #F7F7FA;
                 padding-left: 20px;
+
+                @include dark {
+                    background-color: #171717;
+                }
             }
 
             &:before {

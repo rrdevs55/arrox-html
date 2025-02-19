@@ -297,6 +297,14 @@
             option {
                 width: 100%;
                 max-width: 100%;
+
+                @include dark {
+                    background-color: var(--black);
+                }
+
+                &[disabled] {
+                    background-color: var(--black) !important;
+                }
             }
         }
     }

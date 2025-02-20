@@ -2,6 +2,10 @@
     &-marketing-agency {
         background-color: #FCF7F3;
 
+        &.dark {
+            --border: rgba(252, 247, 243, 0.1);
+        }
+
         .container {
             &.large {
                 @media (min-width: 1850px) {
@@ -164,6 +168,10 @@
             text-underline-offset: 12px;
             position: relative;
             cursor: pointer;
+
+            @include dark {
+                color: rgba(252, 247, 243, 0.2);
+            }
 
             @media #{$xxl} {
                 text-decoration-thickness: 6px;
@@ -401,7 +409,7 @@
             content: "";
             width: 1px;
             height: 100%;
-            background-color: rgba(17, 17, 17, 0.1);
+            background-color: var(--border);
             top: 0;
             left: -30px;
 
@@ -696,6 +704,10 @@
 
         span {
             color: rgba(17, 17, 17, 0.3);
+
+            @include dark {
+                color: rgba(252, 247, 243, 0.3);
+            }
         }
     }
 
@@ -812,7 +824,7 @@
 
 /* funfact area 2 style  */
 .funfact-area-2 {
-    background-color: var(--black);
+    background-color: var(--bg);
 
     .section-header {
         margin-top: 50px;
@@ -985,7 +997,7 @@
 
 /* client area 3 style  */
 .client-area-3 {
-    background-color: var(--black);
+    background-color: var(--bg);
 
     .section-header {
         margin-top: 69px;
@@ -1110,7 +1122,7 @@
 
             .title {
                 .arrow {
-                    background-color: var(--black);
+                    background-color: var(--primary);
 
                     svg {
                         transform: rotate(60deg);
@@ -1118,6 +1130,9 @@
                         * {
                             fill: var(--white);
 
+                            @include dark {
+                                fill: var(--black);
+                            }
                         }
                     }
                 }
@@ -1129,7 +1144,7 @@
             content: "";
             width: 1px;
             height: 100%;
-            background-color: rgba(17, 17, 17, 0.1);
+            background-color: var(--border);
             top: 0;
             left: -30px;
 
@@ -1215,6 +1230,9 @@
                         width: 7px;
                     }
 
+                    * {
+                        fill: var(--primary);
+                    }
                 }
             }
         }
@@ -1234,6 +1252,7 @@
                 font-size: 14px;
                 font-weight: 400;
                 line-height: 24px;
+                color: var(--secondary);
 
                 &.has-left-line {
                     padding-inline-start: 15px;

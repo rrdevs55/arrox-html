@@ -676,13 +676,13 @@
     }
 
     .services-wrapper {
-        border-top: 1px solid #E7E7E7;
+        border-top: 1px solid var(--border);
         margin-top: 6px;
 
     }
 
     .service-box {
-        border-bottom: 1px solid #E7E7E7;
+        border-bottom: 1px solid var(--border);
         padding-top: 21px;
         padding-bottom: 29px;
         display: grid;

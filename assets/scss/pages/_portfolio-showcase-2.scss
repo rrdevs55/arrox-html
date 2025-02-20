@@ -69,6 +69,10 @@
 
         span {
             color: rgba(17, 17, 17, 0.3);
+
+            @include dark {
+                color: rgba(255, 255, 255, 0.3);
+            }
         }
     }
 
@@ -245,6 +249,7 @@
             line-height: 0.9;
             background-color: var(--white);
             padding: 15px 20px 13px;
+            color: var(--black);
 
             @media #{$lg} {
                 font-size: 26px;
@@ -262,6 +267,7 @@
             display: inline-block;
             padding: 5px 15px 3px;
             margin-top: 3px;
+            color: var(--black);
         }
     }
 
@@ -438,6 +444,10 @@
                 color: rgba(17, 17, 17, 0.3);
                 text-transform: unset;
 
+                @include dark {
+                    color: rgba(255, 255, 255, 0.3);
+                }
+
                 &::before {
                     height: 3px;
                     transition: 0.5s;
@@ -591,11 +601,11 @@
     }
 
     .award-wrapper {
-        border-top: 1px solid #E7E7E7;
+        border-top: 1px solid var(--border);
     }
 
     .award-box {
-        border-bottom: 1px solid #E7E7E7;
+        border-bottom: 1px solid var(--border);
         padding-top: 40px;
         padding-bottom: 40px;
         display: grid;
@@ -620,6 +630,10 @@
 
         &:hover {
             background-color: #F9F9F9;
+
+            @include dark {
+                background-color: #171717;
+            }
 
             @media #{$sm} {
                 background-color: transparent;

@@ -16120,6 +16120,7 @@ video.video-area {
 }
 .cta-area-team-page .section-content .btn-wrapper {
   margin-top: 45px;
+  margin-bottom: 1px;
 }
 @media only screen and (max-width: 1199px) {
   .cta-area-team-page .section-content .btn-wrapper {
@@ -16387,6 +16388,7 @@ video.video-area {
   display: flex;
   gap: 10px;
   justify-content: center;
+  margin-bottom: 1px;
 }
 .work-details-area .pagination a {
   border: 1px solid var(--border);
@@ -17052,7 +17054,7 @@ video.video-area {
   transition: all 0.5s;
 }
 .header-area-5 .menu li a:hover {
-  color: var(--black);
+  color: var(--primary);
 }
 .header-area-5 .menu li a:hover::before {
   width: 100%;

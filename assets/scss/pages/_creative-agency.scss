@@ -17,6 +17,10 @@
                     border-color: rgba(17, 17, 17, 0.1);
                 }
             }
+
+            .header-area-2 .side-toggle {
+                background-color: var(--white);
+            }
         }
 
         .body-bg {
@@ -1069,6 +1073,10 @@
         padding: 38px 45px 45px;
         min-width: 398px;
 
+        @include dark {
+            background-color: var(--black);
+        }
+
         @media #{$xxl} {
             min-width: 358px;
         }
@@ -1090,12 +1098,16 @@
         &.light {
             background-color: #FCF7F3;
 
+            @include dark {
+                background-color: #EAE3DD;
+            }
+
             .text {
-                color: var(--primary);
+                color: var(--black);
             }
 
             .name {
-                color: var(--primary);
+                color: var(--black);
             }
 
             .post {
@@ -1250,6 +1262,12 @@
 
 /* award area style  */
 .award-area {
+    background-color: #FCF7F3;
+    position: relative;
+
+    @include dark {
+        background-color: var(--black);
+    }
 
     .section-title {
         max-width: 1190px;

@@ -1491,7 +1491,7 @@ section {
 }
 
 .mb--1 {
-  margin-bottom: -1px;
+  margin-bottom: -5px;
 }
 
 .dir-rtl {
@@ -6329,6 +6329,9 @@ video.video-area {
 .body-creative-agency.dark .rr-btn.btn-border-white {
   border-color: rgba(17, 17, 17, 0.1);
 }
+.body-creative-agency.dark .header-area-2 .side-toggle {
+  background-color: var(--white);
+}
 .body-creative-agency .body-bg {
   position: absolute;
   width: 100%;
@@ -7301,6 +7304,9 @@ video.video-area {
   padding: 38px 45px 45px;
   min-width: 398px;
 }
+.dark .testimonial-area .testimonial-item {
+  background-color: var(--black);
+}
 @media only screen and (max-width: 1919px) {
   .testimonial-area .testimonial-item {
     min-width: 358px;
@@ -7324,11 +7330,14 @@ video.video-area {
 .testimonial-area .testimonial-item.light {
   background-color: #FCF7F3;
 }
+.dark .testimonial-area .testimonial-item.light {
+  background-color: #EAE3DD;
+}
 .testimonial-area .testimonial-item.light .text {
-  color: var(--primary);
+  color: var(--black);
 }
 .testimonial-area .testimonial-item.light .name {
-  color: var(--primary);
+  color: var(--black);
 }
 .testimonial-area .testimonial-item.light .post {
   color: rgba(17, 17, 17, 0.4);
@@ -7459,6 +7468,13 @@ video.video-area {
 }
 
 /* award area style  */
+.award-area {
+  background-color: #FCF7F3;
+  position: relative;
+}
+.dark .award-area {
+  background-color: var(--black);
+}
 .award-area .section-title {
   max-width: 1190px;
 }

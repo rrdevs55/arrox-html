@@ -294,6 +294,11 @@
                 &::placeholder {
                     color: var(--primary);
                 }
+
+                &:-webkit-autofill,
+                &:-webkit-autofill:focus {
+                    transition: background-color 0s 600000s, color 0s 600000s !important;
+                }
             }
 
             select {

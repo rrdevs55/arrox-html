@@ -5569,6 +5569,9 @@ video.video-area {
     padding-bottom: 86px;
   }
 }
+.capabilities-area-inner .pin-spacer {
+  pointer-events: none;
+}
 .capabilities-area .section-content-wrapper {
   margin-top: 50px;
   display: grid;
@@ -5758,6 +5761,7 @@ video.video-area {
   left: 0;
   background-color: var(--white);
   z-index: 1;
+  pointer-events: auto;
 }
 .dark .client-area-4 {
   background-color: var(--black);
@@ -10434,47 +10438,21 @@ video.video-area {
 }
 
 .portfolio-2 .line-effect {
-  position: absolute;
   top: 0;
-  left: -50%;
-  transform: translate(25%, -50%);
-  width: 100%;
-  height: 100vh;
-  display: flex;
+  left: 0;
   gap: 10px;
+  width: 100vh;
+  height: 50vw;
+  display: flex;
+  position: absolute;
   flex-direction: column;
-  rotate: 90deg;
   transition: 0.8s ease-in-out;
-}
-@media only screen and (max-width: 1919px) {
-  .portfolio-2 .line-effect {
-    transform: translate(0%, 0%);
-    left: -30%;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .portfolio-2 .line-effect {
-    transform: translate(0%, 0%);
-    left: -30%;
-    height: 100vw;
-    width: 100vh;
-    top: 48px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .portfolio-2 .line-effect {
-    transform: translate(0%, 0%);
-    left: -90%;
-    height: 100vw;
-    width: 100vh;
-    top: 220px;
-  }
+  transform-origin: bottom left;
+  transform: translateY(-100%) rotate(90deg);
 }
 @media (max-width: 575px) {
   .portfolio-2 .line-effect {
-    left: -110%;
-    top: 222px;
-    width: 106vh;
+    gap: 1px;
   }
 }
 .portfolio-2 .line:nth-child(1) {
@@ -13582,6 +13560,10 @@ video.video-area {
 .blog-details-area .section-details .comment-formfield input::placeholder {
   color: var(--primary);
 }
+.blog-details-area .section-details .comment-formfield input:-webkit-autofill, .blog-details-area .section-details .comment-formfield input:-webkit-autofill:focus {
+  -webkit-transition: background-color 0s 600000s, color 0s 600000s !important;
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
 .blog-details-area .section-details .comment-formfield select {
   width: 100%;
   height: 40px;
@@ -14486,6 +14468,10 @@ video.video-area {
 }
 .contact-area-contact-page .contact-formfield input::placeholder {
   color: var(--primary);
+}
+.contact-area-contact-page .contact-formfield input:-webkit-autofill, .contact-area-contact-page .contact-formfield input:-webkit-autofill:focus {
+  -webkit-transition: background-color 0s 600000s, color 0s 600000s !important;
+  transition: background-color 0s 600000s, color 0s 600000s !important;
 }
 .contact-area-contact-page .contact-formfield select {
   width: 100%;

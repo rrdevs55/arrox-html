@@ -704,6 +704,9 @@
             padding-bottom: 86px;
         }
 
+        .pin-spacer {
+            pointer-events: none;
+        }
     }
 
     .section-content-wrapper {
@@ -905,6 +908,7 @@
     left: 0;
     background-color: var(--white);
     z-index: 1;
+    pointer-events: auto;
 
     @include dark {
         background-color: var(--black);

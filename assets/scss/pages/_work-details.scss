@@ -177,7 +177,7 @@
             }
         }
 
-        img {
+        .image {
             border-radius: 20px;
 
             @media #{$sm} {
@@ -247,7 +247,7 @@
             padding: 0 10px;
         }
 
-        img {
+        .image {
             border-radius: 20px;
 
             @media #{$sm} {

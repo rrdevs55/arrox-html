@@ -16309,11 +16309,11 @@ video.video-area {
 .work-details-area .gallery-wrapper > *:nth-child(3) {
   grid-column: span 3;
 }
-.work-details-area .gallery-wrapper img {
+.work-details-area .gallery-wrapper .image {
   border-radius: 20px;
 }
 @media only screen and (max-width: 767px) {
-  .work-details-area .gallery-wrapper img {
+  .work-details-area .gallery-wrapper .image {
     border-radius: 5px;
   }
 }
@@ -16376,11 +16376,11 @@ video.video-area {
     padding: 0 10px;
   }
 }
-.work-details-area .gallery-wrapper-2 img {
+.work-details-area .gallery-wrapper-2 .image {
   border-radius: 20px;
 }
 @media only screen and (max-width: 767px) {
-  .work-details-area .gallery-wrapper-2 img {
+  .work-details-area .gallery-wrapper-2 .image {
     border-radius: 5px;
   }
 }

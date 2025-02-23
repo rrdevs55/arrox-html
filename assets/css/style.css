@@ -6878,6 +6878,9 @@ video.video-area {
   background-clip: text;
   -webkit-background-clip: text;
 }
+.dark .actually-area .t_line > div {
+  background-image: linear-gradient(to right, var(--primary) 50%, #464646 51%);
+}
 .actually-area .bg-area {
   position: absolute;
   top: 40%;

@@ -716,7 +716,11 @@
         background-clip: text;
         -webkit-background-clip: text;
 
-
+        @include dark {
+            background-image: linear-gradient(to right,
+                    var(--primary) 50%,
+                    #464646 51%);
+        }
     }
 
 

@@ -292,6 +292,10 @@
         line-height: 22px;
         padding: 0 0;
         color: var(--primary);
+
+        &:hover {
+            color: var(--secondary);
+        }
     }
 
     .menu>ul {

@@ -16798,6 +16798,9 @@ video.video-area {
   padding: 0 0;
   color: var(--primary);
 }
+.header-area-3 .menu li a:hover {
+  color: var(--secondary);
+}
 .header-area-3 .menu > ul {
   display: block;
 }

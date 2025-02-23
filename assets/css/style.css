@@ -9,10 +9,43 @@
 -----------------------------------------------------------------------------------
 
 /************ TABLE OF CONTENTS ***************
+variable css
+typography css
+animation css
+global css
+theme css
+Preloader css
+scroll css
+button css
+button animation css
+menu css
+modal css
+cursor css
+digital agency page css
+design agency page css
+creative agency page css
+marketing agency page css
+startup agency page css
+portfolio agency page css
+portfolio page css
+parallax carousal page css
+portfolio showcase page css
+portfolio showcase 2 page css
+404 page css
+about page css
+blog details page css
+blog page css
+contact page css
+faq page css
+service details page css
+sercices page css
+team details page css
+work details page css
+work page css
 
 
 /*----------------------------------------*/
-/* VARIBALES CSS START
+/* variable css  */
 /*----------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
@@ -36,7 +69,7 @@
 }
 
 /*----------------------------------------*/
-/* TYPOGRAPHY CSS START
+/* typography css  */
 /*----------------------------------------*/
 /* dm sans  */
 /* instrument sans  */
@@ -313,7 +346,7 @@ h6 {
 }
 
 /*----------------------------------------*/
-/* ANIMATION CSS START
+/* animation css */
 /*----------------------------------------*/
 .t_parallax_image {
   overflow: hidden;
@@ -409,7 +442,7 @@ h6 {
   }
 }
 /*----------------------------------------*/
-/*  01. Global CSS START
+/* global css */
 /*----------------------------------------*/
 .body-overlay {
   position: fixed;
@@ -1354,7 +1387,7 @@ h6 {
 }
 
 /*----------------------------------------*/
-/* THEME CSS START
+/* theme css  */
 /*----------------------------------------*/
 html {
   --container-max-widths: 1320px;
@@ -1529,180 +1562,7 @@ section {
   border-inline-start: 0 !important;
 }
 
-.hover-zoom li a:hover {
-  transform: scale(1.1);
-}
-.hover-rotate li a i {
-  transition: all 1s;
-}
-.hover-rotate li a:hover i {
-  transform: rotate(360deg);
-}
-.hover-space li a:hover {
-  letter-spacing: 1px;
-}
-.hover-border-move li a {
-  position: relative;
-  transition: all 0.5s;
-}
-.hover-border-move li a:hover::after {
-  width: 100%;
-  left: auto;
-  right: 0;
-}
-.hover-border-move li a::after {
-  position: absolute;
-  content: "";
-  width: 0%;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  transition: all 0.5s;
-  background-color: currentColor;
-}
-
-.menu-hover-default li a:hover {
-  color: var(--primary);
-}
-.menu-hover-space li a:hover {
-  letter-spacing: 1px;
-}
-
-.blog-img-leftmove img {
-  transform: scale(1.1);
-  transition: all 0.5s;
-}
-.blog-img-leftmove:hover img {
-  transform: scale(1.1) translateX(4%);
-}
-.blog-img-zoom {
-  overflow: hidden;
-}
-.blog-img-zoom img {
-  transform: scale(1);
-  transition: all 1s;
-}
-.blog-img-zoom:hover img {
-  transform: scale(1.1);
-}
-
-.anim_img_zoom img {
-  transform: scale(1);
-  transition: all 1s;
-}
-.anim_img_zoom:hover img {
-  transform: scale(1.1);
-}
-
-.title-hover-flip {
-  overflow: hidden;
-  perspective: 1000px;
-}
-.title-hover-flip strong {
-  font-weight: 400;
-  position: relative;
-  display: inline-block;
-  transition: transform 0.5s;
-  transform-origin: 50% 0;
-  transform-style: preserve-3d;
-}
-.title-hover-flip strong:before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: attr(data-hover);
-  transition: all 0.5s;
-  transform: rotateX(-90deg);
-  transform-origin: 50% 0;
-}
-.title-hover-flip:hover strong {
-  transform: rotateX(90deg) translateY(-22px);
-}
-
-.service-hover-default:hover {
-  background-color: var(--white-6);
-}
-.service-rollover-right {
-  position: relative;
-  transition: all 0.5s;
-}
-.service-rollover-right::after {
-  position: absolute;
-  content: "";
-  width: 0%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--white-6);
-  transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
-}
-.service-rollover-right:hover::after {
-  width: 100%;
-  left: auto;
-  right: 0%;
-}
-.service-rollover-left {
-  position: relative;
-  transition: all 0.5s;
-}
-.service-rollover-left::after {
-  position: absolute;
-  content: "";
-  width: 0%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  background-color: var(--white-6);
-  transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1);
-  z-index: -1;
-}
-.service-rollover-left:hover::after {
-  width: 100%;
-  right: auto;
-  left: 0%;
-}
-.service-rollover-top {
-  position: relative;
-  transition: all 0.5s;
-}
-.service-rollover-top::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0%;
-  left: 0;
-  bottom: 0;
-  background-color: var(--white-6);
-  transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
-}
-.service-rollover-top:hover::after {
-  height: 100%;
-  bottom: auto;
-  top: 0%;
-}
-.service-rollover-bottom {
-  position: relative;
-  transition: all 0.5s;
-}
-.service-rollover-bottom::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0%;
-  top: 0;
-  left: 0;
-  background-color: var(--white-6);
-  transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
-}
-.service-rollover-bottom:hover::after {
-  height: 100%;
-  top: auto;
-  bottom: 0%;
-}
-
-/* Preloader */
+/* Preloader css */
 .container-preloader {
   align-items: center;
   cursor: none;
@@ -1815,6 +1675,7 @@ section {
   transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
 }
 
+/* scroll css */
 .scroll__down {
   display: flex;
   gap: 20px;
@@ -1994,7 +1855,7 @@ section {
 }
 
 /*----------------------------------------*/
-/*  01. Button CSS START
+/* button css  */
 /*----------------------------------------*/
 .rr-btn-group {
   display: inline-flex;
@@ -2245,6 +2106,7 @@ section {
   z-index: -1;
 }
 
+/* button animation css */
 @keyframes mask_animation {
   from {
     -webkit-mask-position: 0 0;
@@ -2534,7 +2396,7 @@ section {
 }
 
 /*----------------------------------------*/
-/*  01. MENU CSS START
+/* menu css  */
 /*----------------------------------------*/
 .main-menu.menu-dark > ul > li > a {
   color: var(--black);
@@ -3196,7 +3058,7 @@ section {
 }
 
 /*----------------------------------------*/
-/*  01. MODAL CSS START
+/* modal css  */
 /*----------------------------------------*/
 .modal__dialog {
   width: 760px;
@@ -3310,6 +3172,7 @@ section {
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* cursor css  */
 .cb-cursor {
   position: fixed;
   top: 0;
@@ -3577,6 +3440,7 @@ section {
   color: var(--black);
 }
 
+/* digital agency page css */
 .body-digital-agency {
   background-color: #F8F8F8;
   color: var(--secondary);
@@ -4929,6 +4793,7 @@ video.video-area {
   display: inline-block;
 }
 
+/* design agency page css */
 @media (min-width: 1650px) {
   .body-design-agency .container.large {
     max-width: 1650px;
@@ -6345,6 +6210,7 @@ video.video-area {
   background-color: var(--black);
 }
 
+/* creative agency page css */
 .body-creative-agency {
   position: relative;
   z-index: 100;
@@ -7667,6 +7533,7 @@ video.video-area {
   transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* marketing agency page css */
 .body-marketing-agency {
   background-color: #FCF7F3;
 }
@@ -8908,6 +8775,7 @@ video.video-area {
   }
 }
 
+/* startup agency page css */
 .body-startup-agency {
   background-color: #FFFFFF;
 }
@@ -9781,6 +9649,7 @@ video.video-area {
   transform-origin: top;
 }
 
+/* portfolio agency page css */
 .body-portfolio-agency {
   background-color: #F8F8F8;
 }
@@ -10263,6 +10132,7 @@ video.video-area {
   }
 }
 
+/* portfolio page css */
 .body-portfolio-agency .header-area-7 {
   position: fixed;
   top: 0;
@@ -11279,6 +11149,7 @@ video.video-area {
   width: 100%;
 }
 
+/* parallax carousal page css */
 .body-parallax-carosole .header-area-8 {
   position: fixed;
   top: 0;
@@ -11372,6 +11243,7 @@ video.video-area {
   }
 }
 
+/* portfolio showcase page css */
 @media (min-width: 1650px) {
   .body-portfolio-showcase .container.large {
     max-width: 1650px;
@@ -11590,6 +11462,7 @@ video.video-area {
   pointer-events: none;
 }
 
+/* portfolio showcase 2 page css */
 @media (min-width: 1850px) {
   .body-portfolio-showcase-2 .container.large {
     max-width: 1850px;
@@ -12328,7 +12201,7 @@ video.video-area {
   transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* error area style  */
+/* 404 page css */
 .error-area-inner {
   height: 100vh;
   display: flex;
@@ -12421,6 +12294,7 @@ video.video-area {
   }
 }
 
+/* about page css */
 /* about area details style  */
 .about-area-details {
   /* moving gallery style  */
@@ -13310,6 +13184,7 @@ video.video-area {
   margin-top: 19px;
 }
 
+/* blog details page css */
 /* blog details area style  */
 .blog-details-area .section-title {
   max-width: 1130px;
@@ -13895,6 +13770,7 @@ video.video-area {
   color: var(--primary);
 }
 
+/* blog page css */
 /* blog area 2 style  */
 .blog-area-2 .page-title {
   font-family: var(--font_thunder);
@@ -14216,6 +14092,7 @@ video.video-area {
   color: var(--primary);
 }
 
+/* contact page css */
 /* contact area contact page style  */
 /* Loading effect */
 .loading-form {
@@ -14531,6 +14408,7 @@ video.video-area {
   }
 }
 
+/* faq page css */
 /* faq area faq page style  */
 .faq-area-faq-page .page-title {
   font-family: var(--font_thunder);
@@ -14741,6 +14619,7 @@ video.video-area {
   border: none;
 }
 
+/* service details page css */
 /* hero area service details style  */
 .hero-area-service-details .service-meta {
   display: grid;
@@ -15442,6 +15321,7 @@ video.video-area {
   border: none;
 }
 
+/* sercices page css */
 /* service area style  */
 .service-area-service-page .page-title {
   font-family: var(--font_thunder);
@@ -15856,6 +15736,7 @@ video.video-area {
   }
 }
 
+/* team details page css */
 /* team details area style  */
 .team-details-area .section-content-wrapper {
   margin-top: 17px;
@@ -16150,6 +16031,7 @@ video.video-area {
   }
 }
 
+/* work details page css */
 /* work details area style  */
 .work-details-area .section-header {
   margin-top: 17px;
@@ -16443,6 +16325,7 @@ video.video-area {
   fill: var(--primary);
 }
 
+/* work page css */
 /* work area work page style  */
 .work-area-work-page .page-title {
   font-family: var(--font_thunder);

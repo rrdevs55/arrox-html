@@ -24,6 +24,17 @@
       border-top-color: var(--white);
       margin: 0 auto 3.5em auto;
 
+
+      @include dark {
+        border-top-color: var(--black);
+      }
+
+      @media #{$xxl} {
+        height: 5em;
+        width: 5em;
+        border-width: 5px;
+      }
+
       @media #{$sm} {
         margin: 0 auto .2em auto;
       }
@@ -84,6 +95,10 @@
     position: fixed;
     top: 0;
     width: calc(50% + 1px);
+
+    @include dark {
+      background-color: var(--black);
+    }
 
 
 

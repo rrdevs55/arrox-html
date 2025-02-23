@@ -1728,6 +1728,16 @@ section {
   border-top-color: var(--white);
   margin: 0 auto 3.5em auto;
 }
+.dark .container-preloader .animation-preloader .spinner {
+  border-top-color: var(--black);
+}
+@media only screen and (max-width: 1919px) {
+  .container-preloader .animation-preloader .spinner {
+    height: 5em;
+    width: 5em;
+    border-width: 5px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .container-preloader .animation-preloader .spinner {
     margin: 0 auto 0.2em auto;
@@ -1781,6 +1791,9 @@ section {
   position: fixed;
   top: 0;
   width: calc(50% + 1px);
+}
+.dark .container-preloader .loader-section {
+  background-color: var(--black);
 }
 .container-preloader .loader-section.section-left {
   left: 0;
@@ -3665,6 +3678,11 @@ section {
 }
 @media only screen and (max-width: 767px) {
   .hero-area .hero-content {
+    margin-top: 31px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hero-area .hero-content {
     grid-template-columns: 1fr;
   }
 }
@@ -3704,7 +3722,15 @@ section {
 }
 @media only screen and (max-width: 1399px) {
   .hero-area .section-title .title-shape-1 {
-    width: 40px;
+    width: 55px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .hero-area .section-title .title-shape-1 {
+    width: 45px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: -2px;
   }
 }
 .hero-area .feature-box .number {

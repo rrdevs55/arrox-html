@@ -115,6 +115,10 @@
         }
 
         @media #{$sm} {
+            margin-top: 31px;
+        }
+
+        @media #{$sm} {
             grid-template-columns: 1fr;
         }
     }
@@ -151,7 +155,15 @@
             }
 
             @media #{$xl} {
-                width: 40px;
+                width: 55px;
+
+            }
+
+            @media #{$lg} {
+                width: 45px;
+                margin-left: 5px;
+                margin-right: 5px;
+                margin-top: -2px;
             }
         }
     }

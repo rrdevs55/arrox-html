@@ -872,7 +872,7 @@
             font-size: 18px;
             font-weight: 400;
             line-height: 18px;
-            color: var(--white);
+            color: #FCF7F3;
             margin-top: 12px;
             transition: all 0.5s;
 
@@ -886,7 +886,7 @@
             font-weight: 310;
             line-height: 0.9;
             letter-spacing: -0.07em;
-            color: var(--white);
+            color: #FCF7F3;
 
             @include dark {
                 color: var(--black);
@@ -917,7 +917,7 @@
             font-size: 20px;
             font-weight: 400;
             line-height: 28px;
-            color: var(--white);
+            color: #FCF7F3;
             max-width: 370px;
             margin-top: 7px;
 

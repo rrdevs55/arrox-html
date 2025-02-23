@@ -49,6 +49,10 @@
                 color: rgba(17, 17, 17, 0.4);
                 display: inline-block;
                 line-height: 0;
+
+                @include dark {
+                    color: rgba(255, 255, 255, 0.4);
+                }
             }
         }
 

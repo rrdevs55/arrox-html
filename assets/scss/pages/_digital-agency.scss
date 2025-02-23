@@ -753,9 +753,14 @@ video.video-area {
                 font-size: 30px;
                 font-weight: 500;
                 line-height: 1;
+                color: var(--primary);
 
                 @media #{$md} {
                     font-size: 24px;
+                }
+
+                a:hover {
+                    color: var(--secondary);
                 }
             }
         }
@@ -768,6 +773,10 @@ video.video-area {
                 font-weight: 400;
                 line-height: 30px;
                 color: var(--primary);
+
+                a:hover {
+                    color: var(--secondary);
+                }
             }
         }
 

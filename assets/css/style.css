@@ -4127,11 +4127,15 @@ video.video-area {
   font-size: 30px;
   font-weight: 500;
   line-height: 1;
+  color: var(--primary);
 }
 @media only screen and (max-width: 991px) {
   .service-area .service-box .content .title {
     font-size: 24px;
   }
+}
+.service-area .service-box .content .title a:hover {
+  color: var(--secondary);
 }
 .service-area .service-box .service-list {
   margin-top: 22px;
@@ -4141,6 +4145,9 @@ video.video-area {
   font-weight: 400;
   line-height: 30px;
   color: var(--primary);
+}
+.service-area .service-box .service-list li a:hover {
+  color: var(--secondary);
 }
 .service-area .service-box .thumb {
   border-radius: 20px;
@@ -4841,6 +4848,9 @@ video.video-area {
   color: rgba(17, 17, 17, 0.4);
   display: inline-block;
   line-height: 0;
+}
+.dark .body-design-agency .section-title span {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .hero-area-4 {
@@ -7014,7 +7024,7 @@ video.video-area {
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
-  color: var(--white);
+  color: #FCF7F3;
   margin-top: 12px;
   transition: all 0.5s;
 }
@@ -7026,7 +7036,7 @@ video.video-area {
   font-weight: 310;
   line-height: 0.9;
   letter-spacing: -0.07em;
-  color: var(--white);
+  color: #FCF7F3;
 }
 .dark .service-area-2 .service-box .title {
   color: var(--black);
@@ -7060,7 +7070,7 @@ video.video-area {
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
-  color: var(--white);
+  color: #FCF7F3;
   max-width: 370px;
   margin-top: 7px;
 }

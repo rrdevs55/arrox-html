@@ -627,7 +627,7 @@
       });
       ab2.to(".big-text-wrapper .big-text", {
         scale: 0.1,
-        color: "#FFFFFF",
+        color: "#111111",
         duration: 2,
         y: "76%",
         transformOrigin: "bottom center",
@@ -744,7 +744,7 @@
       duration: 0.75,
     });
     tl.to(".actually-area", {
-      backgroundColor: "#FCF7F3",
+      backgroundColor: "#111111",
       duration: 0.45,
     }, "-=0.50");
   }

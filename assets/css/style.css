@@ -1071,7 +1071,7 @@ h6 {
 }
 
 .side-info {
-  background: var(--bg) none repeat scroll 0 0;
+  background: var(--white) none repeat scroll 0 0;
   padding: 40px 45px;
   position: fixed;
   right: 0;
@@ -1084,6 +1084,9 @@ h6 {
   overflow-y: scroll;
   overscroll-behavior-y: contain;
   scrollbar-width: none;
+}
+.dark .side-info {
+  background-color: var(--black);
 }
 .side-info ::-webkit-scrollbar {
   display: none;
@@ -4801,6 +4804,9 @@ video.video-area {
 }
 
 /* design agency page css */
+.body-design-agency.dark .section-title span {
+  color: rgba(255, 255, 255, 0.4);
+}
 @media (min-width: 1650px) {
   .body-design-agency .container.large {
     max-width: 1650px;
@@ -4848,9 +4854,6 @@ video.video-area {
   color: rgba(17, 17, 17, 0.4);
   display: inline-block;
   line-height: 0;
-}
-.dark .body-design-agency .section-title span {
-  color: rgba(255, 255, 255, 0.4);
 }
 
 .hero-area-4 {
@@ -11207,6 +11210,7 @@ video.video-area {
   margin-left: -50px;
   background-size: cover;
   background-position: center;
+  cursor: none;
 }
 .parallax-slider-item .content {
   margin-top: 24px;
@@ -11460,6 +11464,7 @@ video.video-area {
   border-radius: 10px;
   transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   will-change: transform;
+  border: none;
 }
 
 .card-bg {
@@ -17096,15 +17101,15 @@ video.video-area {
 .header-area-7 .header__nav {
   margin-right: -50%;
 }
-.header-area-7 .main-menu li a {
+.header-area-7 .main-menu > ul > li > a {
   font-size: 14px;
   font-weight: 600;
   padding: 21px 25px;
   text-transform: uppercase;
   color: var(--white);
 }
-.header-area-7 .main-menu li a:hover {
-  opacity: 0.9;
+.header-area-7 .main-menu > ul > li > a:hover {
+  opacity: 0.8;
 }
 .header-area-7 .search-icon {
   color: var(--primary);

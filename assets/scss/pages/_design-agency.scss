@@ -1,6 +1,14 @@
 /* design agency page css */
 .body {
     &-design-agency {
+        &.dark {
+            .section-title {
+                span {
+                    color: rgba(255, 255, 255, 0.4);
+                }
+            }
+        }
+
         .container {
             &.large {
                 @media (min-width: 1650px) {
@@ -50,9 +58,7 @@
                 display: inline-block;
                 line-height: 0;
 
-                @include dark {
-                    color: rgba(255, 255, 255, 0.4);
-                }
+
             }
         }
 

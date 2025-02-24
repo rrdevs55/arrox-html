@@ -233,6 +233,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     border-radius: 10px;
     transition: 1s $returnEasing;
     will-change: transform;
+    border: none;
 }
 
 .card-bg {

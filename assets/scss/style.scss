@@ -676,7 +676,7 @@
     }
 
 
-    .main-menu li a {
+    .main-menu>ul>li>a {
         font-size: 14px;
         font-weight: 600;
         padding: 21px 25px;
@@ -684,7 +684,7 @@
         color: var(--white);
 
         &:hover {
-            opacity: 0.9;
+            opacity: 0.8;
         }
     }
 

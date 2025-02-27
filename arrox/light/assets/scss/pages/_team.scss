@@ -1,0 +1,180 @@
+/* team area team page style  */
+.team-area-team-page {
+    .page-title {
+        font-family: var(--font_thunder);
+        font-size: 495px;
+        font-weight: 600;
+        line-height: 0.80;
+        letter-spacing: -0.02em;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media #{$xxl} {
+            font-size: 385px;
+        }
+
+        @media #{$xl} {
+            font-size: 325px;
+        }
+
+        @media #{$lg} {
+            font-size: 265px;
+        }
+
+        @media #{$md} {
+            font-size: 185px;
+        }
+
+        @media #{$sm} {
+            font-size: 125px;
+        }
+
+        @media #{$xs} {
+            font-size: 90px;
+        }
+    }
+
+    .page-title-wrapper {
+        margin-top: 68px;
+    }
+
+    .section-header {
+        margin-top: 28px;
+        border-top: 1px solid var(--border);
+        padding-top: 37px;
+
+        @media #{$md} {
+            margin-top: 10px;
+            padding-top: 7px;
+        }
+    }
+
+    .section-title-wrapper {
+        display: grid;
+        gap: 20px 60px;
+        grid-template-columns: 325px 1fr;
+
+        @media #{$xxl} {
+            grid-template-columns: 275px 1fr;
+
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .subtitle-wrapper {
+        margin-top: 8px;
+    }
+
+    .section-title {
+        max-width: 530px;
+
+        @media #{$xxl} {
+            max-width: 430px;
+        }
+
+        @media #{$xl} {
+            max-width: 350px;
+        }
+    }
+
+
+    .team-info {
+        margin-top: 13px;
+
+        .team-group {
+            display: inline-flex;
+            align-items: center;
+
+            img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                outline: 3px solid var(--white);
+
+                @include dark {
+                    outline-color: var(--black);
+                }
+
+                @media #{$xxl} {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                &:not(:first-child) {
+                    margin-left: -10px;
+                }
+            }
+        }
+
+        .text {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 20px;
+            max-width: 275px;
+
+            span {
+                font-weight: 500;
+                color: var(--primary);
+            }
+        }
+
+        .text-wrapper {
+            margin-top: 16px;
+        }
+    }
+
+    .title-wrapper {
+        .text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            max-width: 580px;
+            margin-top: 54px;
+
+
+            @media #{$xxl} {
+                margin-top: 44px;
+
+            }
+
+            @media #{$xl} {
+                margin-top: 24px;
+
+            }
+        }
+    }
+
+
+
+}
+
+/* cta area team page style  */
+.cta-area-team-page {
+    .section-content {
+        margin-top: 32px;
+        text-align: center;
+
+        .btn-wrapper {
+            margin-top: 45px;
+            margin-bottom: 1px;
+
+            @media #{$lg} {
+                margin-top: 35px;
+            }
+        }
+    }
+
+
+    .section-title {
+        max-width: 920px;
+        margin-inline: auto;
+
+        @media (min-width:1200px) {
+            font-size: 50px;
+            line-height: 50px;
+        }
+    }
+}

@@ -834,14 +834,14 @@
             transform: translateY(-14px);
 
             .t-btn-primary {
-                color: var(--white);
-                border-color: var(--white);
+                color: #FCF7F3;
+                border-color: #FCF7F3;
                 background-color: var(--black);
             }
 
             .t-btn-circle {
-                color: var(--white);
-                border-color: var(--white);
+                color: #FCF7F3;
+                border-color: #FCF7F3;
                 background-color: var(--black);
             }
         }
@@ -849,7 +849,7 @@
 
     .section-title {
         max-width: 820px;
-        color: var(--white);
+        color: #FCF7F3;
 
         @media #{$xl} {
             max-width: 500px;

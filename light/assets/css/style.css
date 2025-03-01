@@ -4948,6 +4948,7 @@ video.video-area {
   }
 }
 .hero-area-4 .section-content__right .section-title span {
+  color: rgba(17, 17, 17, 0.5);
   font-style: italic;
   font-weight: 400;
 }
@@ -6864,7 +6865,7 @@ video.video-area {
   content: "";
   width: 6px;
   height: 1px;
-  background-color: inherit;
+  background-color: currentColor;
   display: inline-block;
   margin-inline-end: 5px;
 }
@@ -7180,7 +7181,7 @@ video.video-area {
 .testimonial-area .section-title {
   max-width: 1000px;
   margin-left: auto;
-  color: var(--white);
+  color: #FCF7F3;
 }
 .dark .testimonial-area .section-title {
   color: var(--black);
@@ -8332,18 +8333,18 @@ video.video-area {
   transform: translateY(-14px);
 }
 .funfact-area-2 .section-header .t-btn-group .t-btn-primary {
-  color: var(--white);
-  border-color: var(--white);
+  color: #FCF7F3;
+  border-color: #FCF7F3;
   background-color: var(--black);
 }
 .funfact-area-2 .section-header .t-btn-group .t-btn-circle {
-  color: var(--white);
-  border-color: var(--white);
+  color: #FCF7F3;
+  border-color: #FCF7F3;
   background-color: var(--black);
 }
 .funfact-area-2 .section-title {
   max-width: 820px;
-  color: var(--white);
+  color: #FCF7F3;
 }
 @media only screen and (max-width: 1399px) {
   .funfact-area-2 .section-title {
@@ -13140,6 +13141,19 @@ video.video-area {
 @media only screen and (max-width: 991px) {
   .team-area-about-page .section-title-wrapper {
     grid-template-columns: 1fr;
+  }
+}
+.team-area-about-page .section-title {
+  max-width: 765px;
+}
+@media only screen and (max-width: 1919px) {
+  .team-area-about-page .section-title {
+    max-width: 665px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .team-area-about-page .section-title {
+    max-width: 465px;
   }
 }
 .team-area-about-page .team-wrapper-box {

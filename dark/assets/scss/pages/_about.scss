@@ -876,6 +876,20 @@
         }
     }
 
+    .section-title {
+        max-width: 765px;
+
+        @media #{$xxl} {
+            max-width: 665px;
+
+        }
+
+        @media #{$xl} {
+            max-width: 465px;
+
+        }
+    }
+
     .team-wrapper-box {
         margin-top: 94px;
 

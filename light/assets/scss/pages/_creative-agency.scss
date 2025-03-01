@@ -679,7 +679,7 @@
                     content: "";
                     width: 6px;
                     height: 1px;
-                    background-color: inherit;
+                    background-color: currentColor;
                     display: inline-block;
                     margin-inline-end: 5px;
                 }
@@ -1036,7 +1036,7 @@
     .section-title {
         max-width: 1000px;
         margin-left: auto;
-        color: var(--white);
+        color: #FCF7F3;
 
         @include dark {
             color: var(--black);

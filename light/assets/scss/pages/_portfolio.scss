@@ -203,6 +203,10 @@
             width: 70px;
             bottom: 45px;
         }
+
+        @media #{$xs} {
+            width: 40px;
+        }
     }
 
     .swiper-pagination-bullet::before {

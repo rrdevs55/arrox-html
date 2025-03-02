@@ -754,14 +754,14 @@
   }
 
   &-logo {
-    width: 95px;
+    width: 120px;
 
     @media #{$xs} {
-      width: 95px;
+      width: 100px;
     }
 
     img {
-      width: 100%;
+      max-width: 120px;
     }
   }
 

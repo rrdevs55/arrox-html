@@ -689,6 +689,7 @@
         display: grid;
         gap: 15px 30px;
         grid-template-columns: 120px 1fr 295px;
+        pointer-events: auto;
 
         @media #{$xxl} {
             padding-top: 11px;
@@ -712,7 +713,7 @@
         &:hover {
             .thumb {
                 img {
-                    width: 100%;
+                    max-width: 100%;
                 }
             }
 
@@ -789,7 +790,8 @@
             img {
                 border-radius: 15px;
                 width: 100%;
-                width: 165px;
+                max-width: 165px;
+                height: auto;
                 transition: all 0.5s;
 
                 @media #{$lg} {

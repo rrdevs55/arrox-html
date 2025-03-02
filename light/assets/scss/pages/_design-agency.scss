@@ -704,22 +704,6 @@
 
 /* capabilities area style  */
 .capabilities-area {
-    &-inner {
-        position: relative;
-        padding-bottom: 136px; //added padding for height of client-area-4
-
-        @media #{$xxl} {
-            padding-bottom: 106px;
-        }
-
-        @media #{$lg} {
-            padding-bottom: 86px;
-        }
-
-        .pin-spacer {
-            pointer-events: none;
-        }
-    }
 
     .section-content-wrapper {
         margin-top: 50px;
@@ -914,7 +898,6 @@
 
 /* client area 4 style  */
 .client-area-4 {
-    position: absolute;
     width: 100%;
     top: 0;
     left: 0;
@@ -981,6 +964,10 @@
                 width: 70px;
                 height: 70px;
             }
+
+            @media #{$sm} {
+                margin-left: -35px;
+            }
         }
     }
 
@@ -999,6 +986,11 @@
         @media #{$lg} {
             padding-top: 25px;
             padding-bottom: 25px;
+        }
+
+        @media #{$sm} {
+            padding-left: 20px;
+            margin-left: 20px;
         }
     }
 

@@ -1108,15 +1108,15 @@ h6 {
   align-items: center;
 }
 .offset-logo {
-  width: 95px;
+  width: 120px;
 }
 @media (max-width: 575px) {
   .offset-logo {
-    width: 95px;
+    width: 100px;
   }
 }
 .offset-logo img {
-  width: 100%;
+  max-width: 120px;
 }
 .offset-button {
   margin-top: 40px;
@@ -5460,23 +5460,6 @@ video.video-area {
 }
 
 /* capabilities area style  */
-.capabilities-area-inner {
-  position: relative;
-  padding-bottom: 136px;
-}
-@media only screen and (max-width: 1919px) {
-  .capabilities-area-inner {
-    padding-bottom: 106px;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .capabilities-area-inner {
-    padding-bottom: 86px;
-  }
-}
-.capabilities-area-inner .pin-spacer {
-  pointer-events: none;
-}
 .capabilities-area .section-content-wrapper {
   margin-top: 50px;
   display: grid;
@@ -5660,7 +5643,6 @@ video.video-area {
 
 /* client area 4 style  */
 .client-area-4 {
-  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -5728,6 +5710,11 @@ video.video-area {
     height: 70px;
   }
 }
+@media only screen and (max-width: 767px) {
+  .client-area-4 .video-wrapper-box .btn-circle {
+    margin-left: -35px;
+  }
+}
 .client-area-4 .clients-wrapper-box {
   border-left: 1px solid var(--border);
   padding-left: 30px;
@@ -5745,6 +5732,12 @@ video.video-area {
   .client-area-4 .clients-wrapper-box {
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .client-area-4 .clients-wrapper-box {
+    padding-left: 20px;
+    margin-left: 20px;
   }
 }
 .client-area-4 .clients-wrapper {
@@ -6240,7 +6233,7 @@ video.video-area {
   border-color: rgba(17, 17, 17, 0.1);
 }
 .body-creative-agency.dark .header-area-2 .side-toggle {
-  background-color: var(--white);
+  background-color: #292828;
 }
 .body-creative-agency .body-bg {
   position: absolute;
@@ -9437,6 +9430,7 @@ video.video-area {
   display: grid;
   gap: 15px 30px;
   grid-template-columns: 120px 1fr 295px;
+  pointer-events: auto;
 }
 @media only screen and (max-width: 1919px) {
   .service-area-5 .service-box {
@@ -9460,7 +9454,7 @@ video.video-area {
   }
 }
 .service-area-5 .service-box:hover .thumb img {
-  width: 100%;
+  max-width: 100%;
 }
 .service-area-5 .service-box:hover .text {
   opacity: 1;
@@ -9533,7 +9527,8 @@ video.video-area {
 .service-area-5 .service-box .thumb img {
   border-radius: 15px;
   width: 100%;
-  width: 165px;
+  max-width: 165px;
+  height: auto;
   transition: all 0.5s;
 }
 @media only screen and (max-width: 1199px) {
@@ -10322,6 +10317,11 @@ video.video-area {
   .portfolio .swiper-pagination-bullet {
     width: 70px;
     bottom: 45px;
+  }
+}
+@media (max-width: 575px) {
+  .portfolio .swiper-pagination-bullet {
+    width: 40px;
   }
 }
 .portfolio .swiper-pagination-bullet::before {
@@ -16667,7 +16667,7 @@ video.video-area {
   }
 }
 .header-area .header__logo img {
-  width: 100%;
+  max-width: 95px;
 }
 .header-area .header__nav {
   border: 1px solid var(--border);
@@ -16749,7 +16749,7 @@ video.video-area {
   background-color: #FCF7F3;
 }
 .header-area-2 .header__logo img {
-  width: 100%;
+  max-width: 120px;
 }
 .header-area-2 .header__nav {
   margin-right: -50%;
@@ -16818,7 +16818,7 @@ video.video-area {
   }
 }
 .header-area-3 .header__logo img {
-  width: 100%;
+  max-width: 120px;
 }
 .header-area-3 .menu li a {
   font-size: 18px;
@@ -16895,7 +16895,7 @@ video.video-area {
   }
 }
 .header-area-4 .header__logo img {
-  width: 100%;
+  max-width: 120px;
 }
 .header-area-4 .header__middel {
   margin-right: 320px;
@@ -16963,7 +16963,7 @@ video.video-area {
   margin-inline-end: auto;
 }
 .header-area-5 .header__logo img {
-  width: 100%;
+  max-width: 120px;
 }
 .header-area-5 .menu li a {
   font-size: 18px;
@@ -17033,7 +17033,7 @@ video.video-area {
   }
 }
 .header-area-6 .header__logo img {
-  width: 100%;
+  max-width: 120px;
 }
 .header-area-6 .header__middel {
   margin-right: 320px;
@@ -17110,7 +17110,7 @@ video.video-area {
   background-color: #FCF7F3;
 }
 .header-area-7 .header__logo img {
-  width: 100%;
+  max-width: 95px;
 }
 .header-area-7 .header__nav {
   margin-right: -50%;
@@ -17180,7 +17180,7 @@ video.video-area {
   background-color: #FCF7F3;
 }
 .header-area-8 .header__logo img {
-  width: 100%;
+  max-width: 120px;
 }
 .header-area-8 .header__nav {
   margin-right: -50%;
@@ -18038,6 +18038,9 @@ video.video-area {
   .footer-area-4 .footer-widget-wrapper {
     grid-template-columns: 1fr;
   }
+}
+.footer-area-4 .footer-logo img {
+  max-width: 120px;
 }
 .footer-area-4 .footer-nav-list {
   display: flex;

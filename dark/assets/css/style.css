@@ -6240,7 +6240,7 @@ video.video-area {
   border-color: rgba(17, 17, 17, 0.1);
 }
 .body-creative-agency.dark .header-area-2 .side-toggle {
-  background-color: var(--white);
+  background-color: #292828;
 }
 .body-creative-agency .body-bg {
   position: absolute;
@@ -9438,6 +9438,7 @@ video.video-area {
   display: grid;
   gap: 15px 30px;
   grid-template-columns: 120px 1fr 295px;
+  pointer-events: auto;
 }
 @media only screen and (max-width: 1919px) {
   .service-area-5 .service-box {
@@ -9535,6 +9536,7 @@ video.video-area {
   border-radius: 15px;
   width: 100%;
   width: 165px;
+  height: auto;
   transition: all 0.5s;
 }
 @media only screen and (max-width: 1199px) {

@@ -713,7 +713,7 @@
         &:hover {
             .thumb {
                 img {
-                    width: 100%;
+                    max-width: 100%;
                 }
             }
 
@@ -790,7 +790,7 @@
             img {
                 border-radius: 15px;
                 width: 100%;
-                width: 165px;
+                max-width: 165px;
                 height: auto;
                 transition: all 0.5s;
 

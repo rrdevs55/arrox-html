@@ -5460,6 +5460,23 @@ video.video-area {
 }
 
 /* capabilities area style  */
+.capabilities-area-inner {
+  position: relative;
+  padding-bottom: 136px;
+}
+@media only screen and (max-width: 1919px) {
+  .capabilities-area-inner {
+    padding-bottom: 106px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .capabilities-area-inner {
+    padding-bottom: 86px;
+  }
+}
+.capabilities-area-inner .pin-spacer {
+  pointer-events: none;
+}
 .capabilities-area .section-content-wrapper {
   margin-top: 50px;
   display: grid;
@@ -5643,6 +5660,7 @@ video.video-area {
 
 /* client area 4 style  */
 .client-area-4 {
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -5741,17 +5759,25 @@ video.video-area {
   }
 }
 .client-area-4 .clients-wrapper {
-  overflow: hidden;
+  align-items: center;
+  animation: marquee-081a87f6 20s linear infinite;
+  display: flex;
+  flex-wrap: nowrap;
+  width: -moz-max-content;
+  width: max-content;
 }
-.client-area-4 .clients-wrapper .client-slider-active .swiper-slide {
-  width: auto;
-}
-.client-area-4 .clients-wrapper .client-slider-active .swiper-wrapper {
-  transition-timing-function: linear !important;
-  display: flex !important;
+@keyframes marquee-081a87f6 {
+  to {
+    transform: translate(-50%);
+  }
 }
 .client-area-4 .client-box {
   margin-right: 80px;
+}
+@media only screen and (max-width: 1199px) {
+  .client-area-4 .client-box {
+    margin-right: 50px;
+  }
 }
 .client-area-4 .client-box img {
   opacity: 0.3;

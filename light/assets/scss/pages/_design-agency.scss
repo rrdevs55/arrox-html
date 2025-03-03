@@ -704,6 +704,22 @@
 
 /* capabilities area style  */
 .capabilities-area {
+    &-inner {
+        position: relative;
+        padding-bottom: 136px; //added padding for height of client-area-4
+
+        @media #{$xxl} {
+            padding-bottom: 106px;
+        }
+
+        @media #{$lg} {
+            padding-bottom: 86px;
+        }
+
+        .pin-spacer {
+            pointer-events: none;
+        }
+    }
 
     .section-content-wrapper {
         margin-top: 50px;
@@ -898,6 +914,7 @@
 
 /* client area 4 style  */
 .client-area-4 {
+    position: absolute;
     width: 100%;
     top: 0;
     left: 0;
@@ -995,22 +1012,27 @@
     }
 
     .clients-wrapper {
-        overflow: hidden;
+        align-items: center;
+        animation: marquee-081a87f6 20s linear infinite;
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+    }
 
-        .client-slider-active {
-            .swiper-slide {
-                width: auto;
-            }
-
-            .swiper-wrapper {
-                transition-timing-function: linear !important;
-                display: flex !important;
-            }
+    @keyframes marquee-081a87f6 {
+        to {
+            transform: translate(-50%)
         }
     }
 
+
+
     .client-box {
         margin-right: 80px;
+
+        @media #{$lg} {
+            margin-right: 50px;
+        }
 
         img {
             opacity: 0.3;

@@ -1,51 +1,13 @@
 /* sercices page css */
 /* service area style  */
 .service-area-service-page {
-    .page-title {
-        font-family: var(--font_thunder);
-        font-size: 495px;
-        font-weight: 600;
-        line-height: 0.80;
-        letter-spacing: -0.02em;
-        text-align: center;
-        text-transform: uppercase;
 
-        @media #{$xxl} {
-            font-size: 385px;
-        }
-
-        @media #{$xl} {
-            font-size: 325px;
-        }
-
-        @media #{$lg} {
-            font-size: 265px;
-        }
-
-        @media #{$md} {
-            font-size: 185px;
-        }
-
-        @media #{$sm} {
-            font-size: 125px;
-        }
-
-        @media #{$xs} {
-            font-size: 90px;
-        }
-    }
-
-    .page-title-wrapper {
-        margin-top: 68px;
-    }
 
     .section-header {
-        margin-top: 28px;
         border-top: 1px solid var(--border);
         padding-top: 37px;
 
         @media #{$md} {
-            margin-top: 10px;
             padding-top: 7px;
         }
     }

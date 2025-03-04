@@ -36,69 +36,72 @@
         }
     }
 
-    .works-wrapper {
-        display: grid;
-        gap: 40px 40px;
-        grid-template-columns: repeat(4, 1fr);
 
-        @media #{$xxl} {
-            gap: 30px 30px;
 
+
+}
+
+.works-wrapper-5 {
+    display: grid;
+    gap: 40px 40px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media #{$xxl} {
+        gap: 30px 30px;
+
+    }
+
+    @media #{$lg} {
+        gap: 20px 20px;
+    }
+
+    @media #{$md} {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media #{$sm} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$xs} {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    >* {
+
+
+        &.span-2 {
+            grid-column: span 2;
         }
 
-        @media #{$lg} {
-            gap: 20px 20px;
+        &.grid-column-start-1 {
+            grid-column-start: 1;
+
+            @media #{$md} {
+                grid-column-start: auto;
+            }
         }
 
-        @media #{$md} {
-            grid-template-columns: repeat(3, 1fr);
+        &.grid-column-start-2 {
+            grid-column-start: 2;
+
+            @media #{$md} {
+                grid-column-start: auto;
+            }
         }
 
-        @media #{$sm} {
-            grid-template-columns: repeat(2, 1fr);
+        &.grid-column-start-3 {
+            grid-column-start: 3;
+
+            @media #{$md} {
+                grid-column-start: auto;
+            }
         }
 
-        @media #{$xs} {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        >* {
-
-
-            &.span-2 {
-                grid-column: span 2;
+        &:nth-child(n) {
+            @media #{$md} {
+                grid-column-start: auto;
             }
-
-            &.grid-column-start-1 {
-                grid-column-start: 1;
-
-                @media #{$md} {
-                    grid-column-start: auto;
-                }
-            }
-
-            &.grid-column-start-2 {
-                grid-column-start: 2;
-
-                @media #{$md} {
-                    grid-column-start: auto;
-                }
-            }
-
-            &.grid-column-start-3 {
-                grid-column-start: 3;
-
-                @media #{$md} {
-                    grid-column-start: auto;
-                }
-            }
-
-            &:nth-child(n) {
-                @media #{$md} {
-                    grid-column-start: auto;
-                }
-            }
-
         }
 
     }
@@ -197,6 +200,7 @@
         }
     }
 }
+
 
 
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);

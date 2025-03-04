@@ -418,6 +418,7 @@
       });
     });
   }
+
   // scale animation 
   var scale = document.querySelectorAll(".scale");
   var image = document.querySelectorAll(".scale img");
@@ -751,9 +752,9 @@
   // service-area-2 text and bg animation end
 
 
-  // work-area-2 box animation start
-  if (document.querySelectorAll(".work-area-2").length > 0) {
-    const workBoxes = document.querySelectorAll(".work-area-2 .work-box");
+  // works-wrapper-2 box animation start
+  if (document.querySelectorAll(".works-wrapper-2").length > 0) {
+    const workBoxes = document.querySelectorAll(".works-wrapper-2 .work-box");
     gsap.fromTo(
       workBoxes,
       {
@@ -771,7 +772,7 @@
           from: "random",
         },
         scrollTrigger: {
-          trigger: ".works-wrapper",
+          trigger: ".works-wrapper-2",
           start: "top bottom",
           end: "bottom top",
           scrub: false,
@@ -779,7 +780,7 @@
       }
     );
   }
-  // work-area-2 box animation end
+  // works-wrapper-2 box animation end
 
   // hover reveal image animation 
   if (document.querySelectorAll(".hover-image-wrpper").length > 0) {
@@ -1747,7 +1748,7 @@
   }
 
   // woking card
-  if (document.querySelectorAll(".work-area-5").length > 0) {
+  if (document.querySelectorAll(".works-wrapper-5").length > 0) {
     const cards = document.querySelectorAll(".card-wrap");
 
     cards.forEach(card => {

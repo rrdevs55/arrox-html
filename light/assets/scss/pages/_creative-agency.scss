@@ -544,63 +544,66 @@
     }
 
 
-    .works-wrapper {
-        display: grid;
-        gap: 98px 20px;
-        grid-template-columns: repeat(4, 1fr);
 
-        @media #{$xxl} {
-            gap: 78px 20px;
+
+
+}
+
+.works-wrapper-2 {
+    display: grid;
+    gap: 98px 20px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media #{$xxl} {
+        gap: 78px 20px;
+    }
+
+    @media #{$xl} {
+        gap: 58px 20px;
+    }
+
+    @media #{$md} {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media #{$md} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$xs} {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    >* {
+        &:nth-child(3) {
+            grid-column-start: 4;
         }
 
-        @media #{$xl} {
-            gap: 58px 20px;
+        &:nth-child(4) {
+            grid-column-start: 2;
         }
 
-        @media #{$md} {
-            grid-template-columns: repeat(3, 1fr);
+        &:nth-child(6) {
+            grid-column-start: 1;
         }
 
-        @media #{$md} {
-            grid-template-columns: repeat(2, 1fr);
+        &:nth-child(7) {
+            grid-column-start: 3;
         }
 
-        @media #{$xs} {
-            grid-template-columns: repeat(1, 1fr);
+        &:nth-child(9) {
+            grid-column-start: 2;
         }
 
-        >* {
-            &:nth-child(3) {
-                grid-column-start: 4;
-            }
-
-            &:nth-child(4) {
-                grid-column-start: 2;
-            }
-
-            &:nth-child(6) {
-                grid-column-start: 1;
-            }
-
-            &:nth-child(7) {
-                grid-column-start: 3;
-            }
-
-            &:nth-child(9) {
-                grid-column-start: 2;
-            }
-
-            &:nth-child(12) {
-                grid-column-start: 3;
-            }
-
-            &:nth-child(n) {
-                @media #{$md} {
-                    grid-column-start: auto;
-                }
-            }
+        &:nth-child(12) {
+            grid-column-start: 3;
         }
 
+        &:nth-child(n) {
+            @media #{$md} {
+                grid-column-start: auto;
+            }
+        }
     }
 
     .work-box {
@@ -686,9 +689,8 @@
             }
         }
     }
-
-
 }
+
 
 .actually-area {
     height: 100vh;

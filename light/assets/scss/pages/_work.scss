@@ -1,51 +1,13 @@
 /* work page css */
 /* work area work page style  */
 .work-area-work-page {
-    .page-title {
-        font-family: var(--font_thunder);
-        font-size: 495px;
-        font-weight: 600;
-        line-height: 0.80;
-        letter-spacing: -0.02em;
-        text-align: center;
-        text-transform: uppercase;
 
-        @media #{$xxl} {
-            font-size: 385px;
-        }
-
-        @media #{$xl} {
-            font-size: 325px;
-        }
-
-        @media #{$lg} {
-            font-size: 265px;
-        }
-
-        @media #{$md} {
-            font-size: 185px;
-        }
-
-        @media #{$sm} {
-            font-size: 125px;
-        }
-
-        @media #{$xs} {
-            font-size: 90px;
-        }
-    }
-
-    .page-title-wrapper {
-        margin-top: 68px;
-    }
 
     .section-header {
-        margin-top: 28px;
         border-top: 1px solid var(--border);
         padding-top: 37px;
 
         @media #{$md} {
-            margin-top: 10px;
             padding-top: 7px;
         }
     }
@@ -122,6 +84,7 @@
 
     .section-content-wrapper {
         margin-top: 84px;
+        margin-bottom: 93px;
         max-width: 1235px;
         margin-left: auto;
         display: grid;
@@ -130,6 +93,7 @@
 
         @media #{$xxl} {
             margin-top: 54px;
+            margin-bottom: 53px;
             max-width: 1000px;
         }
 
@@ -139,6 +103,7 @@
         }
 
         @media #{$lg} {
+            margin-bottom: 43px;
             max-width: 750px;
         }
 
@@ -148,47 +113,48 @@
     }
 
     .works-wrapper-box {
-        margin-top: 93px;
-
-        @media #{$xxl} {
-            margin-top: 53px;
-        }
-
-        @media #{$lg} {
-            margin-top: 43px;
-        }
 
         .container.large {
             max-width: 1850px;
         }
     }
 
-    .works-wrapper {
-        display: grid;
-        gap: 68px 20px;
-        grid-template-columns: repeat(2, 1fr);
 
-        @media #{$xxl} {
-            gap: 48px 20px;
-        }
 
-        @media #{$sm} {
-            gap: 38px 20px;
-        }
-
-        @media #{$xs} {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        >* {
-            .image {
-                transform-origin: bottom right;
+    .work-area-2 {
+        &-inner {
+            @media (min-width:992px) {
+                padding-top: 0px !important;
             }
+        }
+    }
+}
 
-            &:nth-child(2n) {
-                .image {
-                    transform-origin: bottom left;
-                }
+.works-wrapper-8 {
+    display: grid;
+    gap: 68px 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media #{$xxl} {
+        gap: 48px 20px;
+    }
+
+    @media #{$sm} {
+        gap: 38px 20px;
+    }
+
+    @media #{$xs} {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    >* {
+        .image {
+            transform-origin: bottom right;
+        }
+
+        &:nth-child(2n) {
+            .image {
+                transform-origin: bottom left;
             }
         }
     }

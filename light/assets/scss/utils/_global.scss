@@ -1078,3 +1078,48 @@
   }
 
 }
+
+/* page title style  */
+.page-title-wrapper {
+  margin-top: 68px;
+  margin-bottom: 28px;
+
+  @media #{$md} {
+    margin-bottom: 10px;
+  }
+
+  .page-title {
+    font-family: var(--font_thunder);
+    font-size: 495px;
+    font-weight: 600;
+    line-height: 0.80;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media #{$xxl} {
+      font-size: 385px;
+    }
+
+    @media #{$xl} {
+      font-size: 325px;
+    }
+
+    @media #{$lg} {
+      font-size: 265px;
+    }
+
+    @media #{$md} {
+      font-size: 185px;
+    }
+
+    @media #{$sm} {
+      font-size: 125px;
+    }
+
+    @media #{$xs} {
+      font-size: 90px;
+    }
+  }
+
+}

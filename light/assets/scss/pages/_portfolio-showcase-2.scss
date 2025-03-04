@@ -167,55 +167,61 @@
         }
     }
 
-    .works-wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        border-left: 1px solid var(--border);
-        border-right: 1px solid var(--border);
 
-        @media #{$xs} {
-            grid-template-columns: 1fr;
+
+
+
+
+}
+
+.works-wrapper-7 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+
+    @media #{$xs} {
+        grid-template-columns: 1fr;
+    }
+
+    >* {
+        border-top: 1px solid var(--border);
+        padding: 150px;
+
+        @media #{$xxl} {
+            padding: 80px;
         }
 
-        >* {
-            border-top: 1px solid var(--border);
-            padding: 150px;
+        @media #{$lg} {
+            padding: 40px;
+        }
 
-            @media #{$xxl} {
-                padding: 80px;
+        @media #{$md} {
+            padding: 30px;
+        }
+
+        @media #{$sm} {
+            padding: 10px;
+        }
+
+        &:nth-child(1) {
+            border-top: 0;
+        }
+
+        &:nth-child(2) {
+            border-top: 0;
+
+            @media #{$xs} {
+                border-top: 1px solid var(--border);
+
             }
+        }
 
-            @media #{$lg} {
-                padding: 40px;
-            }
+        &:nth-child(2n+1) {
+            border-right: 1px solid var(--border);
 
-            @media #{$md} {
-                padding: 30px;
-            }
-
-            @media #{$sm} {
-                padding: 10px;
-            }
-
-            &:nth-child(1) {
-                border-top: 0;
-            }
-
-            &:nth-child(2) {
-                border-top: 0;
-
-                @media #{$xs} {
-                    border-top: 1px solid var(--border);
-
-                }
-            }
-
-            &:nth-child(2n+1) {
-                border-right: 1px solid var(--border);
-
-                @media #{$xs} {
-                    border-right: 0;
-                }
+            @media #{$xs} {
+                border-right: 0;
             }
         }
     }
@@ -325,10 +331,8 @@
             }
         }
     }
-
-
-
 }
+
 
 
 

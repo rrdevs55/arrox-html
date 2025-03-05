@@ -1364,18 +1364,21 @@
     width: 100vw;
     overflow: hidden;
 
-    .services-wrapper {
-        gap: 100px;
-        width: fit-content;
-        display: flex;
-        align-items: center;
 
-        @media #{$md} {
-            display: grid;
-            gap: 50px;
-        }
+
+
+}
+
+.services-wrapper-4 {
+    gap: 100px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+
+    @media #{$md} {
+        display: grid;
+        gap: 50px;
     }
-
 
     .service-box {
         border-top: 1px solid var(--primary);

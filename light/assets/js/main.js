@@ -1404,7 +1404,7 @@
           },
         });
 
-        wrapperTimeline.to(".services-wrapper", {
+        wrapperTimeline.to(".services-wrapper-4", {
           x: getScrollAmount(),
           delay: 0.05,
           ease: "power1.inOut",

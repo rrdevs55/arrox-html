@@ -794,6 +794,13 @@
 
 
 
+
+
+}
+
+.service-content-wrapper {
+    background-color: var(--primary);
+
     .service-content {
         display: grid;
         gap: 30px 60px;
@@ -871,15 +878,6 @@
                 }
             }
         }
-
-        .t-btn-primary {
-            border-color: rgba(252, 247, 243, 0.1);
-            color: var(--white);
-        }
-    }
-
-    .service-content-wrapper {
-        background-color: var(--primary);
     }
 }
 

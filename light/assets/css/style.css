@@ -6200,6 +6200,7 @@ video.video-area {
   }
 }
 .services-wrapper-4 .service-box .title {
+  font-family: var(--font_thunder);
   font-size: 100px;
   text-transform: uppercase;
   margin-top: 40px;
@@ -7023,23 +7024,27 @@ video.video-area {
   background-color: var(--primary);
   position: relative;
 }
-.service-area-2 .service-content {
+
+.service-content-wrapper {
+  background-color: var(--primary);
+}
+.service-content-wrapper .service-content {
   display: grid;
   gap: 30px 60px;
   grid-template-columns: 705px auto;
   justify-content: space-between;
 }
 @media only screen and (max-width: 1199px) {
-  .service-area-2 .service-content {
+  .service-content-wrapper .service-content {
     grid-template-columns: 405px auto;
   }
 }
 @media only screen and (max-width: 991px) {
-  .service-area-2 .service-content {
+  .service-content-wrapper .service-content {
     grid-template-columns: auto;
   }
 }
-.service-area-2 .service-content .text {
+.service-content-wrapper .service-content .text {
   font-family: var(--font_sequelsansromanbody);
   font-size: 30px;
   font-weight: 310;
@@ -7048,61 +7053,54 @@ video.video-area {
   color: rgba(252, 247, 243, 0.3);
 }
 @media only screen and (max-width: 1919px) {
-  .service-area-2 .service-content .text {
+  .service-content-wrapper .service-content .text {
     font-size: 24px;
   }
 }
 @media only screen and (max-width: 1399px) {
-  .service-area-2 .service-content .text {
+  .service-content-wrapper .service-content .text {
     font-size: 22px;
   }
 }
 @media only screen and (max-width: 1199px) {
-  .service-area-2 .service-content .text {
+  .service-content-wrapper .service-content .text {
     font-size: 20px;
   }
 }
-.service-area-2 .service-content .text.text-invert > div {
+.service-content-wrapper .service-content .text.text-invert > div {
   background-image: linear-gradient(to right, rgb(252, 247, 243) 50%, rgba(252, 247, 243, 0.3) 51%);
 }
-.dark .service-area-2 .service-content .text.text-invert > div {
+.dark .service-content-wrapper .service-content .text.text-invert > div {
   background-image: linear-gradient(to right, rgb(17, 17, 17) 50%, rgba(17, 17, 17, 0.3) 51%);
 }
-.service-area-2 .service-content .btn-wrapper {
+.service-content-wrapper .service-content .btn-wrapper {
   margin-top: 54px;
 }
-.service-area-2 .service-content .text-wrapper {
+.service-content-wrapper .service-content .text-wrapper {
   margin-top: 192px;
   max-width: 525px;
 }
 @media only screen and (max-width: 1919px) {
-  .service-area-2 .service-content .text-wrapper {
+  .service-content-wrapper .service-content .text-wrapper {
     margin-top: 102px;
   }
 }
 @media only screen and (max-width: 991px) {
-  .service-area-2 .service-content .text-wrapper {
+  .service-content-wrapper .service-content .text-wrapper {
     margin-top: 0;
   }
 }
-.service-area-2 .service-content .text-wrapper .text:not(:first-child) {
+.service-content-wrapper .service-content .text-wrapper .text:not(:first-child) {
   margin-top: 35px;
 }
-.service-area-2 .service-content .section-info-wrapper .thumb {
+.service-content-wrapper .service-content .section-info-wrapper .thumb {
   max-width: 250px;
   margin-left: auto;
 }
 @media only screen and (max-width: 991px) {
-  .service-area-2 .service-content .section-info-wrapper .thumb {
+  .service-content-wrapper .service-content .section-info-wrapper .thumb {
     display: none;
   }
-}
-.service-area-2 .service-content .t-btn-primary {
-  border-color: rgba(252, 247, 243, 0.1);
-  color: var(--white);
-}
-.service-area-2 .service-content-wrapper {
-  background-color: var(--primary);
 }
 
 .services-wrapper-2 .service-box {
@@ -8405,19 +8403,6 @@ video.video-area {
 }
 .funfact-area-2 .section-header {
   margin-top: 50px;
-}
-.funfact-area-2 .section-header .t-btn-group {
-  transform: translateY(-14px);
-}
-.funfact-area-2 .section-header .t-btn-group .t-btn-primary {
-  color: #FCF7F3;
-  border-color: #FCF7F3;
-  background-color: var(--black);
-}
-.funfact-area-2 .section-header .t-btn-group .t-btn-circle {
-  color: #FCF7F3;
-  border-color: #FCF7F3;
-  background-color: var(--black);
 }
 .funfact-area-2 .section-title {
   max-width: 820px;
@@ -11918,6 +11903,9 @@ video.video-area {
     margin-top: 7px;
   }
 }
+.capabilities-area-2 .section-content .section-title-wrapper {
+  display: block;
+}
 @media only screen and (max-width: 767px) {
   .capabilities-area-2 .capability-wrapper {
     border-top: 1px solid var(--border);
@@ -15331,77 +15319,43 @@ video.video-area {
     margin-top: 44px;
   }
 }
-.service-area-service-page .service-content {
-  display: grid;
-  gap: 30px 60px;
-  grid-template-columns: 705px auto;
-  justify-content: space-between;
-  margin-top: 20px;
+.service-area-service-page .service-content-wrapper {
+  background-color: transparent;
 }
-@media only screen and (max-width: 1199px) {
-  .service-area-service-page .service-content {
-    grid-template-columns: 405px auto;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .service-area-service-page .service-content {
-    grid-template-columns: auto;
-  }
-}
-.service-area-service-page .service-content .text {
-  font-family: var(--font_sequelsansromanbody);
-  font-size: 30px;
-  font-weight: 310;
-  line-height: 1.16;
-  letter-spacing: -0.07em;
-  color: rgba(252, 247, 243, 0.3);
-}
-@media only screen and (max-width: 1919px) {
-  .service-area-service-page .service-content .text {
-    font-size: 24px;
-  }
-}
-@media only screen and (max-width: 1399px) {
-  .service-area-service-page .service-content .text {
-    font-size: 22px;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .service-area-service-page .service-content .text {
-    font-size: 20px;
-  }
-}
-.service-area-service-page .service-content .text.text-invert > div {
+.service-area-service-page .service-content-wrapper .service-content .text.text-invert > div {
   background-image: linear-gradient(to right, rgb(17, 17, 17) 50%, rgba(17, 17, 17, 0.3) 51%);
 }
-.dark .service-area-service-page .service-content .text.text-invert > div {
+.dark .service-area-service-page .service-content-wrapper .service-content .text.text-invert > div {
   background-image: linear-gradient(to right, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.3) 51%);
 }
-.service-area-service-page .service-content .text-wrapper {
-  margin-top: 192px;
-  max-width: 525px;
+.service-area-service-page .services-wrapper-2 .service-box {
+  background-color: var(--white);
+  border-color: var(--border);
 }
-@media only screen and (max-width: 1919px) {
-  .service-area-service-page .service-content .text-wrapper {
-    margin-top: 102px;
-  }
+.dark .service-area-service-page .services-wrapper-2 .service-box {
+  background-color: var(--black);
 }
-@media only screen and (max-width: 991px) {
-  .service-area-service-page .service-content .text-wrapper {
-    margin-top: 0;
-  }
+.service-area-service-page .services-wrapper-2 .service-box:last-child {
+  border-color: var(--border);
 }
-.service-area-service-page .service-content .text-wrapper .text:not(:first-child) {
-  margin-top: 35px;
+.service-area-service-page .services-wrapper-2 .service-box-wrapper {
+  background-color: var(--border);
 }
-.service-area-service-page .service-content .section-info-wrapper .thumb {
-  max-width: 250px;
-  margin-left: auto;
+.service-area-service-page .services-wrapper-2 .service-box .number {
+  color: var(--primary);
 }
-@media only screen and (max-width: 991px) {
-  .service-area-service-page .service-content .section-info-wrapper .thumb {
-    display: none;
-  }
+.service-area-service-page .services-wrapper-2 .service-box .title {
+  color: var(--primary);
+}
+.service-area-service-page .services-wrapper-2 .service-box .text {
+  color: var(--primary);
+}
+.service-area-service-page .capabilities-area-2 .capability-box .title {
+  font-family: var(--font_thunder);
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 0.85;
+  text-transform: uppercase;
 }
 
 /* client area service-page style  */

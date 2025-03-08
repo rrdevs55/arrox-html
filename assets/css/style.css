@@ -547,11 +547,6 @@ h6 {
      object-fit: cover;
 }
 
-.border-top-bottom {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
 .has-top-line {
   position: relative;
   padding-top: 10px;
@@ -11701,6 +11696,8 @@ video.video-area {
 
 /* work area 7 style  */
 .work-area-7 .works-wrapper-box {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   margin-top: 50px;
 }
 @media only screen and (max-width: 1919px) {
@@ -18186,6 +18183,408 @@ video.video-area {
   }
 }
 @media only screen and (max-width: 1199px) {
+  .footer-area-inner-page .footer-widget-wrapper {
+    gap: 30px 90px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .footer-area-inner-page .footer-widget-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .footer-area-inner-page .footer-widget-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 575px) {
+  .footer-area-inner-page .footer-widget-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-area-inner-page .subscribe-form {
+  max-width: 515px;
+}
+.footer-area-inner-page .subscribe-form .input-field {
+  display: flex;
+  gap: 10px;
+  background-color: rgba(17, 17, 17, 0.05);
+  padding: 32px 30px;
+  border-radius: 50px;
+}
+.dark .footer-area-inner-page .subscribe-form .input-field {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+@media only screen and (max-width: 1919px) {
+  .footer-area-inner-page .subscribe-form .input-field {
+    padding: 22px 30px;
+  }
+}
+.footer-area-inner-page .subscribe-form .input-field input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 22px;
+  color: var(--primary);
+}
+@media only screen and (max-width: 1199px) {
+  .footer-area-inner-page .subscribe-form .input-field input {
+    font-size: 18px;
+  }
+}
+.footer-area-inner-page .subscribe-form .input-field input::-moz-placeholder {
+  line-height: 1;
+  color: rgba(17, 17, 17, 0.3);
+}
+.footer-area-inner-page .subscribe-form .input-field input::placeholder {
+  line-height: 1;
+  color: rgba(17, 17, 17, 0.3);
+}
+.dark .footer-area-inner-page .subscribe-form .input-field input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.dark .footer-area-inner-page .subscribe-form .input-field input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.footer-area-inner-page .subscription-text {
+  margin-top: 23px;
+}
+.footer-area-inner-page .subscription-text .text {
+  font-size: 22px;
+  line-height: 28px;
+  color: var(--primary);
+  max-width: 345px;
+}
+@media only screen and (max-width: 1919px) {
+  .footer-area-inner-page .subscription-text .text {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .footer-area-inner-page .subscription-text .text {
+    font-size: 18px;
+  }
+}
+.footer-area-inner-page .subscription-text .text a {
+  position: relative;
+}
+.footer-area-inner-page .subscription-text .text a::before {
+  transition: all 0.5s;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background-color: currentColor;
+}
+.footer-area-inner-page .subscription-text .text a:hover:hover::before {
+  width: 0;
+}
+.footer-area-inner-page .footer-widget-box .title {
+  font-size: 22px;
+  line-height: 20px;
+  margin-bottom: 30px;
+  color: var(--black-2);
+  font-family: var(--font_dmsans);
+}
+.dark .footer-area-inner-page .footer-widget-box .title {
+  color: #555555;
+}
+@media only screen and (max-width: 1919px) {
+  .footer-area-inner-page .footer-widget-box .title {
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .footer-area-inner-page .footer-widget-box.newsletter {
+    order: 4;
+    grid-column: span 2;
+  }
+}
+@media (max-width: 575px) {
+  .footer-area-inner-page .footer-widget-box.newsletter {
+    grid-column: auto;
+  }
+}
+.footer-area-inner-page .footer-nav-list:hover li a {
+  opacity: 0.3;
+}
+.footer-area-inner-page .footer-nav-list li {
+  font-size: 22px;
+  line-height: 30px;
+  color: var(--primary);
+  transition-property: opacity;
+  transition-duration: 500ms;
+}
+@media only screen and (max-width: 1199px) {
+  .footer-area-inner-page .footer-nav-list li {
+    font-size: 18px;
+  }
+}
+.footer-area-inner-page .footer-nav-list li a:hover {
+  opacity: 1;
+}
+.footer-area-inner-page .footer-nav-list li a:hover a strong {
+  opacity: 1;
+  top: -23px;
+}
+.footer-area-inner-page .footer-nav-list li a a strong {
+  opacity: 0;
+  transition-property: opacity, top;
+  transition-duration: 250ms;
+}
+.footer-area-inner-page .copyright-area-inner {
+  border-top: 1px solid var(--border);
+  padding: 47px 0;
+}
+@media only screen and (max-width: 1919px) {
+  .footer-area-inner-page .copyright-area-inner {
+    padding: 37px 0;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .footer-area-inner-page .copyright-area-inner {
+    padding: 27px 0;
+  }
+}
+.footer-area-inner-page .copyright-text .text {
+  font-size: 24px;
+  line-height: 1;
+  color: var(--primary);
+  text-align: center;
+}
+@media only screen and (max-width: 1919px) {
+  .footer-area-inner-page .copyright-text .text {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .footer-area-inner-page .copyright-text .text {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .footer-area-inner-page .copyright-text .text {
+    font-size: 18px;
+  }
+}
+.footer-area-inner-page .copyright-text .text a {
+  color: #999999;
+  transition: all 0.3s;
+  position: relative;
+}
+.dark .footer-area-inner-page .copyright-text .text a {
+  color: #555555;
+}
+.footer-area-inner-page .copyright-text .text a::before {
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.5s;
+}
+.footer-area-inner-page .copyright-text .text a:hover {
+  color: var(--primary);
+}
+.footer-area-inner-page .copyright-text .text a:hover::before {
+  width: 100%;
+}
+
+/* team list area style  */
+.team-list-area .team-box {
+  border-bottom: 1px solid #E1E1E1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: grid;
+  gap: 15px 25px;
+  grid-template-columns: 100px 1fr 960px auto;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s;
+}
+.dark .team-list-area .team-box {
+  border-color: #292929;
+}
+@media only screen and (max-width: 1919px) {
+  .team-list-area .team-box {
+    grid-template-columns: 100px 1fr 560px auto;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .team-list-area .team-box {
+    grid-template-columns: 100px 1fr 310px auto;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .team-list-area .team-box {
+    grid-template-columns: 80px 1fr 210px auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .team-list-area .team-box {
+    grid-template-columns: 1fr 1fr auto;
+  }
+}
+.team-list-area .team-box:hover {
+  background-color: #FAFAFA;
+}
+.dark .team-list-area .team-box:hover {
+  background-color: #1D1C1C;
+}
+.team-list-area .team-box:hover .thumb {
+  transform: translateX(20px);
+}
+.team-list-area .team-box:hover .name {
+  transform: translateX(20px);
+}
+.team-list-area .team-box:hover .t-btn-normal {
+  transform: translateX(-20px);
+}
+.team-list-area .team-box .thumb {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+@media only screen and (max-width: 991px) {
+  .team-list-area .team-box .thumb {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .team-list-area .team-box .thumb {
+    grid-column: span 3;
+  }
+}
+.team-list-area .team-box .thumb img {
+  width: 100%;
+}
+.team-list-area .team-box .name {
+  font-size: 30px;
+  font-weight: 310;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  transition: all 0.5s;
+}
+@media only screen and (max-width: 1399px) {
+  .team-list-area .team-box .name {
+    font-size: 24px;
+  }
+}
+.team-list-area .team-box .post {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  display: inline-block;
+}
+.team-list-area .team-wrapper-box {
+  margin-top: 90px;
+}
+@media only screen and (max-width: 1399px) {
+  .team-list-area .team-wrapper-box {
+    margin-top: 70px;
+  }
+}
+.team-list-area .team-wrapper {
+  border-top: 1px solid #E1E1E1;
+}
+.dark .team-list-area .team-wrapper {
+  border-color: #292929;
+}
+
+/* team area style  */
+.team-area .section-header {
+  margin-top: 59px;
+  display: grid;
+  gap: 20px 20px;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-end;
+}
+@media only screen and (max-width: 991px) {
+  .team-area .section-header {
+    grid-template-columns: 1fr;
+  }
+}
+.team-area .section-header .text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  max-width: 375px;
+}
+.team-area .section-header .section-title-wrapper {
+  order: 2;
+}
+@media only screen and (max-width: 991px) {
+  .team-area .section-header .section-title-wrapper {
+    order: unset;
+  }
+}
+.team-area .team-wrapper-box {
+  margin-top: 94px;
+}
+@media only screen and (max-width: 1919px) {
+  .team-area .team-wrapper-box {
+    margin-top: 64px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .team-area .team-wrapper-box {
+    margin-top: 44px;
+  }
+}
+.team-area .team-wrapper {
+  display: grid;
+  gap: 40px 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media only screen and (max-width: 991px) {
+  .team-area .team-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .team-area .team-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.team-area .team-box:hover .thumb img {
+  transform: scale(1.1);
+}
+.team-area .team-box .thumb {
+  overflow: hidden;
+}
+.team-area .team-box .thumb img {
+  width: 100%;
+  transition: all 0.5s;
+}
+.team-area .team-box .name {
+  font-size: 30px;
+  font-weight: 310;
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+@media only screen and (max-width: 1919px) {
+  .team-area .team-box .name {
+    font-size: 24px;
+  }
+}
+.team-area .team-box .post {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  display: inline-block;
+  margin-top: 3px;
+}
+.team-area .team-box .content {
+  margin-top: 19px;
+}/*# sourceMappingURL=style.css.map */edia only screen and (max-width: 1199px) {
   .footer-area-inner-page .footer-widget-wrapper {
     gap: 30px 90px;
   }

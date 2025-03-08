@@ -154,8 +154,6 @@
 .work-area-7 {
 
     .works-wrapper-box {
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
         margin-top: 50px;
 
         @media #{$xxl} {
@@ -166,12 +164,6 @@
             margin-top: 30px;
         }
     }
-
-
-
-
-
-
 }
 
 .works-wrapper-7 {

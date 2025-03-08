@@ -79,26 +79,6 @@
             @media #{$sm} {
                 font-size: 35px;
             }
-
-            &.large {
-                font-size: 64px;
-
-                @media #{$xxl} {
-                    font-size: 56px;
-                }
-
-                @media #{$lg} {
-                    font-size: 48px;
-                }
-
-                @media #{$md} {
-                    font-size: 42px;
-                }
-
-                @media #{$sm} {
-                    font-size: 36px;
-                }
-            }
         }
 
         .rr-btn {

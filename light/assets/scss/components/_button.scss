@@ -220,6 +220,29 @@
     background-color: transparent;
   }
 
+  &.hover-bg-theme {
+    border-width: 0;
+
+    &:hover,
+    &:focus {
+      .btn-wrap {
+        .text-two {
+          color: var(--white);
+        }
+      }
+    }
+
+    &::before {
+      background-color: var(--theme);
+    }
+
+    &.btn-border {
+      border-width: 1px;
+    }
+
+  }
+
+
 }
 
 

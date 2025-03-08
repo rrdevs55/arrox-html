@@ -128,22 +128,27 @@
   &-heading {
     &-instrumentsans-medium {
       @include heading (var(--font_instrumentsans), 500, 0.90);
+      @include headingfont (var(--font_instrumentsans));
     }
 
     &-sequelsans-romanbody {
       @include heading (var(--font_sequelsansromanbody), 310, 0.90);
+      @include headingfont (var(--font_sequelsansromanbody));
     }
 
     &-thunder-regular {
       @include heading (var(--font_thunder), 400, 0.85);
+      @include headingfont (var(--font_thunder));
     }
 
     &-bdogrotesk-regular {
       @include heading (var(--font_bdogrotesk), 400, 0.95);
+      @include headingfont (var(--font_bdogrotesk));
     }
 
     &-tartuffotrial-thin {
       @include heading (var(--font_tartuffotrial), 100, 1);
+      @include headingfont (var(--font_tartuffotrial));
     }
 
   }

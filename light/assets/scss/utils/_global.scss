@@ -645,12 +645,27 @@
     font-family: var(--font_thunder);
     font-weight: 400;
     line-height: 0.85;
+    text-transform: uppercase;
+
+    span {
+      font-family: var(--font_timesnow);
+      color: rgba(17, 17, 17, 0.4);
+      display: inline-block;
+      line-height: 0;
+
+
+    }
   }
 
   &.font-bdogrotesk-regular {
     font-family: var(--font_bdogrotesk);
     font-weight: 400;
     line-height: 0.95;
+    letter-spacing: -0.05em;
+
+    @media #{$md} {
+      line-height: 1.1;
+    }
   }
 
   &.font-tartuffotrial-thin {

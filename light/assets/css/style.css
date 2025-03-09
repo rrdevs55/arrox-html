@@ -168,26 +168,6 @@ work page css
 .font-heading-instrumentsans-medium h5,
 .font-heading-instrumentsans-medium h6 {
   font-family: var(--font_instrumentsans);
-  font-weight: 500;
-  line-height: 0.9;
-}
-.font-heading-instrumentsans-medium h1,
-.font-heading-instrumentsans-medium h2,
-.font-heading-instrumentsans-medium h3,
-.font-heading-instrumentsans-medium h4,
-.font-heading-instrumentsans-medium h5,
-.font-heading-instrumentsans-medium h6 {
-  font-family: var(--font_instrumentsans);
-}
-.font-heading-sequelsans-romanbody h1,
-.font-heading-sequelsans-romanbody h2,
-.font-heading-sequelsans-romanbody h3,
-.font-heading-sequelsans-romanbody h4,
-.font-heading-sequelsans-romanbody h5,
-.font-heading-sequelsans-romanbody h6 {
-  font-family: var(--font_sequelsansromanbody);
-  font-weight: 310;
-  line-height: 0.9;
 }
 .font-heading-sequelsans-romanbody h1,
 .font-heading-sequelsans-romanbody h2,
@@ -204,16 +184,6 @@ work page css
 .font-heading-thunder-regular h5,
 .font-heading-thunder-regular h6 {
   font-family: var(--font_thunder);
-  font-weight: 400;
-  line-height: 0.85;
-}
-.font-heading-thunder-regular h1,
-.font-heading-thunder-regular h2,
-.font-heading-thunder-regular h3,
-.font-heading-thunder-regular h4,
-.font-heading-thunder-regular h5,
-.font-heading-thunder-regular h6 {
-  font-family: var(--font_thunder);
 }
 .font-heading-bdogrotesk-regular h1,
 .font-heading-bdogrotesk-regular h2,
@@ -222,26 +192,6 @@ work page css
 .font-heading-bdogrotesk-regular h5,
 .font-heading-bdogrotesk-regular h6 {
   font-family: var(--font_bdogrotesk);
-  font-weight: 400;
-  line-height: 0.95;
-}
-.font-heading-bdogrotesk-regular h1,
-.font-heading-bdogrotesk-regular h2,
-.font-heading-bdogrotesk-regular h3,
-.font-heading-bdogrotesk-regular h4,
-.font-heading-bdogrotesk-regular h5,
-.font-heading-bdogrotesk-regular h6 {
-  font-family: var(--font_bdogrotesk);
-}
-.font-heading-tartuffotrial-thin h1,
-.font-heading-tartuffotrial-thin h2,
-.font-heading-tartuffotrial-thin h3,
-.font-heading-tartuffotrial-thin h4,
-.font-heading-tartuffotrial-thin h5,
-.font-heading-tartuffotrial-thin h6 {
-  font-family: var(--font_tartuffotrial);
-  font-weight: 100;
-  line-height: 1;
 }
 .font-heading-tartuffotrial-thin h1,
 .font-heading-tartuffotrial-thin h2,
@@ -1059,11 +1009,24 @@ h6 {
   font-family: var(--font_thunder);
   font-weight: 400;
   line-height: 0.85;
+  text-transform: uppercase;
+}
+.section-title.font-thunder-regular span {
+  font-family: var(--font_timesnow);
+  color: rgba(17, 17, 17, 0.4);
+  display: inline-block;
+  line-height: 0;
 }
 .section-title.font-bdogrotesk-regular {
   font-family: var(--font_bdogrotesk);
   font-weight: 400;
   line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+@media only screen and (max-width: 991px) {
+  .section-title.font-bdogrotesk-regular {
+    line-height: 1.1;
+  }
 }
 .section-title.font-tartuffotrial-thin {
   font-family: var(--font_tartuffotrial);
@@ -11501,21 +11464,21 @@ video.video-area {
 
 /* portfolio showcase 2 page css */
 @media (min-width: 1850px) {
-  .body-portfolio-showcase-2 .container.large {
+  .body-modern-agency .container.large {
     max-width: 1850px;
   }
 }
-.body-portfolio-showcase-2 .rr-btn {
+.body-modern-agency .rr-btn {
   padding: 15px 27px;
 }
-.body-portfolio-showcase-2 .section-subtitle {
+.body-modern-agency .section-subtitle {
   font-family: var(--font_tartuffotrial);
   font-weight: 100;
   font-size: 20px;
   line-height: 26px;
   text-transform: none;
 }
-.body-portfolio-showcase-2 .footer-area-3 .footer-widget-wrapper-box {
+.body-modern-agency .footer-area-3 .footer-widget-wrapper-box {
   border-top: 1px solid var(--border);
 }
 

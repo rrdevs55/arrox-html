@@ -167,16 +167,7 @@
         }
     }
 
-    .container {
-        &.large {
-            .body-creative-agency {
 
-                @media (min-width: 1850px) {
-                    max-width: 1850px;
-                }
-            }
-        }
-    }
 
     .sticky,
     .transformed {

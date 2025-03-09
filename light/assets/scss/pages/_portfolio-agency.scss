@@ -1,13 +1,11 @@
 /* portfolio agency page css */
-.body {
-    &-portfolio-agency {
-        background-color: #F8F8F8;
+.body-portfolio-agency {
+    background-color: #F8F8F8;
 
-        .container {
-            &.large {
-                @media (min-width: 1870px) {
-                    max-width: 1870px;
-                }
+    .container {
+        &.large {
+            @media (min-width: 1870px) {
+                max-width: 1870px;
             }
         }
     }

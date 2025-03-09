@@ -1,34 +1,32 @@
 /* digital agency page css */
-.body {
-    &-digital-agency {
-        background-color: #F8F8F8;
-        color: var(--secondary);
+.body-digital-agency {
+    background-color: #F8F8F8;
+    color: var(--secondary);
 
-        &.dark {
-            background-color: #111111;
-        }
+    &.dark {
+        background-color: #111111;
+    }
 
-        .container {
-            &.large {
-                @media (min-width: 1800px) {
-                    max-width: 1750px;
-                }
+    .container {
+        &.large {
+            @media (min-width: 1800px) {
+                max-width: 1750px;
             }
         }
+    }
 
-        .section-header {
-            margin-top: 20px;
-        }
+    .section-header {
+        margin-top: 20px;
+    }
 
-        .section-subtitle {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1;
-            display: inline-block;
-            text-transform: uppercase;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
+    .section-subtitle {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        display: inline-block;
+        text-transform: uppercase;
+        color: var(--primary);
+        letter-spacing: 1px;
     }
 }
 

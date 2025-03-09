@@ -1,21 +1,19 @@
 /* portfolio showcase page css */
-.body {
-    &-portfolio-showcase {
-        .container {
-            &.large {
-                @media (min-width: 1650px) {
-                    max-width: 1650px;
-                }
+.body-portfolio-showcase {
+    .container {
+        &.large {
+            @media (min-width: 1650px) {
+                max-width: 1650px;
             }
         }
+    }
 
-        .header-area-2 .side-toggle {
-            background-color: #F3F3F3;
-        }
+    .header-area-2 .side-toggle {
+        background-color: #F3F3F3;
+    }
 
-        .footer-area-4 .footer-widget-wrapper-box {
-            margin-top: 0px;
-        }
+    .footer-area-4 .footer-widget-wrapper-box {
+        margin-top: 0px;
     }
 }
 

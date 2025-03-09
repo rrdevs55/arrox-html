@@ -1,100 +1,98 @@
 /* startup agency page css */
-.body {
-    &-startup-agency {
-        background-color: #FFFFFF;
+.body-startup-agency {
+    background-color: #FFFFFF;
 
-        .container {
-            &.large {
-                @media (min-width: 1650px) {
-                    max-width: 1650px;
-                }
+    .container {
+        &.large {
+            @media (min-width: 1650px) {
+                max-width: 1650px;
+            }
+        }
+    }
+
+    .section-subtitle {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+        text-transform: unset;
+        display: inline-block;
+        color: var(--primary);
+        padding-bottom: 10px;
+        position: relative;
+
+        svg {
+            position: absolute;
+            bottom: 0;
+            width: 100% !important;
+            left: 0;
+            height: 7px;
+        }
+
+
+
+
+        @-webkit-keyframes animate-svg-stroke-1 {
+            0% {
+                stroke-dashoffset: 195.80113220214844px;
+                stroke-dasharray: 195.80113220214844px;
+            }
+
+
+            20% {
+                stroke-dashoffset: 391.6022644042969px;
+                stroke-dasharray: 195.80113220214844px;
+            }
+
+            100% {
+                stroke-dashoffset: 391.6022644042969px;
+                stroke-dasharray: 195.80113220214844px;
             }
         }
 
-        .section-subtitle {
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 26px;
-            text-transform: unset;
-            display: inline-block;
-            color: var(--primary);
-            padding-bottom: 10px;
-            position: relative;
-
-            svg {
-                position: absolute;
-                bottom: 0;
-                width: 100% !important;
-                left: 0;
-                height: 7px;
+        @keyframes animate-svg-stroke-1 {
+            0% {
+                stroke-dashoffset: 195.80113220214844px;
+                stroke-dasharray: 195.80113220214844px;
             }
 
 
-
-
-            @-webkit-keyframes animate-svg-stroke-1 {
-                0% {
-                    stroke-dashoffset: 195.80113220214844px;
-                    stroke-dasharray: 195.80113220214844px;
-                }
-
-
-                20% {
-                    stroke-dashoffset: 391.6022644042969px;
-                    stroke-dasharray: 195.80113220214844px;
-                }
-
-                100% {
-                    stroke-dashoffset: 391.6022644042969px;
-                    stroke-dasharray: 195.80113220214844px;
-                }
+            20% {
+                stroke-dashoffset: 391.6022644042969px;
+                stroke-dasharray: 195.80113220214844px;
             }
 
-            @keyframes animate-svg-stroke-1 {
-                0% {
-                    stroke-dashoffset: 195.80113220214844px;
-                    stroke-dasharray: 195.80113220214844px;
-                }
-
-
-                20% {
-                    stroke-dashoffset: 391.6022644042969px;
-                    stroke-dasharray: 195.80113220214844px;
-                }
-
-                100% {
-                    stroke-dashoffset: 391.6022644042969px;
-                    stroke-dasharray: 195.80113220214844px;
-                }
-            }
-
-            .svg-elem-1 {
-                -webkit-animation: animate-svg-stroke-1 5s ease-in-out 0s both infinite;
-                animation: animate-svg-stroke-1 5s ease-in-out 0s both infinite;
-            }
-
-
-        }
-
-        .rr-btn-underline {
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 26px;
-            text-transform: unset;
-            gap: 5px;
-
-            &::before {
-                height: 1px;
-            }
-
-            .icon {
-                width: 13px;
+            100% {
+                stroke-dashoffset: 391.6022644042969px;
+                stroke-dasharray: 195.80113220214844px;
             }
         }
 
-        .header-area-5 .side-toggle {
-            background-color: rgba(243, 243, 243, 1);
+        .svg-elem-1 {
+            -webkit-animation: animate-svg-stroke-1 5s ease-in-out 0s both infinite;
+            animation: animate-svg-stroke-1 5s ease-in-out 0s both infinite;
         }
+
+
+    }
+
+    .rr-btn-underline {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 26px;
+        text-transform: unset;
+        gap: 5px;
+
+        &::before {
+            height: 1px;
+        }
+
+        .icon {
+            width: 13px;
+        }
+    }
+
+    .header-area-5 .side-toggle {
+        background-color: rgba(243, 243, 243, 1);
     }
 }
 

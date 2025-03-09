@@ -1,65 +1,69 @@
 /* creative agency page css */
-.body {
-    &-creative-agency {
-        position: relative;
-        z-index: 100;
-        background-color: #FCF7F3;
+.body-creative-agency {
+    position: relative;
+    z-index: 100;
+    background-color: #FCF7F3;
 
-        &.dark {
-            --primary: #FCF7F3;
-
-            .rr-btn {
-
-                &::before {
-                    background-color: var(--black);
-                }
-
-                &.btn-border-white {
-                    border-color: rgba(17, 17, 17, 0.1);
-                }
-            }
-
-            .header-area-2 .side-toggle {
-                background-color: #292828;
-            }
-        }
-
-        .body-bg {
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            z-index: -1;
-
-            img {
-                width: 100%;
-            }
-        }
-
-        .container {
-            &.large {
-                @media (min-width: 1850px) {
-                    max-width: 1850px;
-                    --container-max-widths: 1820px;
-                }
-            }
-        }
-
-        .section-subtitle {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1;
-            display: inline-block;
-            text-transform: uppercase;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
+    &.dark {
+        --primary: #FCF7F3;
 
         .rr-btn {
+
             &::before {
-                background-color: #FCF7F3;
+                background-color: var(--black);
             }
+
+            &.btn-border-white {
+                border-color: rgba(17, 17, 17, 0.1);
+            }
+        }
+
+        .header-area-2 .side-toggle {
+            background-color: #292828;
+        }
+    }
+
+    .body-bg {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .container {
+        &.large {
+            @media (min-width: 1850px) {
+                max-width: 1850px;
+                --container-max-widths: 1820px;
+            }
+        }
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        display: inline-block;
+        text-transform: uppercase;
+        color: var(--primary);
+        letter-spacing: 1px;
+    }
+
+    .section-title {
+        @media (min-width:1920px) {
+            font-size: 110px;
+        }
+    }
+
+    .rr-btn {
+        &::before {
+            background-color: #FCF7F3;
         }
     }
 }

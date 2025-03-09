@@ -1,37 +1,35 @@
 /* marketing agency page css */
-.body {
-    &-marketing-agency {
-        background-color: #FCF7F3;
+.body-marketing-agency {
+    background-color: #FCF7F3;
 
-        &.dark {
-            --border: rgba(252, 247, 243, 0.1);
+    &.dark {
+        --border: rgba(252, 247, 243, 0.1);
+    }
+
+    .container {
+        &.large {
+            @media (min-width: 1850px) {
+                max-width: 1850px;
+            }
         }
+    }
 
-        .container {
-            &.large {
-                @media (min-width: 1850px) {
-                    max-width: 1850px;
-                }
+    .section-title {
+
+        .mb-14 {
+            transform: translate(0px, -14px);
+            display: inline-block;
+
+            @media #{$lg} {
+                display: block;
+                transform: none;
+            }
+
+            @media #{$sm} {
+                margin-top: 10px;
             }
         }
 
-        .section-title {
-
-            .mb-14 {
-                transform: translate(0px, -14px);
-                display: inline-block;
-
-                @media #{$lg} {
-                    display: block;
-                    transform: none;
-                }
-
-                @media #{$sm} {
-                    margin-top: 10px;
-                }
-            }
-
-        }
     }
 }
 

@@ -56,38 +56,10 @@
             letter-spacing: 1px;
         }
 
-        .section-title {
-            font-size: 110px;
-            letter-spacing: -0.07em;
-
-            @media #{$xxl} {
-                font-size: 80px;
-            }
-
-            @media #{$xl} {
-                font-size: 60px;
-            }
-
-            @media #{$lg} {
-                font-size: 50px;
-            }
-
-            @media #{$md} {
-                font-size: 40px;
-            }
-
-            @media #{$sm} {
-                font-size: 35px;
-            }
-        }
-
         .rr-btn {
             &::before {
                 background-color: #FCF7F3;
             }
-
-
-
         }
     }
 }

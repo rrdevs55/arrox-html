@@ -639,6 +639,34 @@
     font-weight: 310;
     line-height: 0.9;
     letter-spacing: -0.07em;
+
+    @media #{$md} {
+      line-height: 1.1;
+    }
+
+    &.large {
+      font-size: 110px;
+
+      @media #{$xxl} {
+        font-size: 80px;
+      }
+
+      @media #{$xl} {
+        font-size: 60px;
+      }
+
+      @media #{$lg} {
+        font-size: 50px;
+      }
+
+      @media #{$md} {
+        font-size: 40px;
+      }
+
+      @media #{$sm} {
+        font-size: 35px;
+      }
+    }
   }
 
   &.font-thunder-regular {
@@ -652,8 +680,6 @@
       color: rgba(17, 17, 17, 0.4);
       display: inline-block;
       line-height: 0;
-
-
     }
   }
 

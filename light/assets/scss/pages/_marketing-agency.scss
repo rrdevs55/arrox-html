@@ -16,30 +16,6 @@
         }
 
         .section-title {
-            font-size: 100px;
-            letter-spacing: -0.07em;
-
-
-            @media #{$xxl} {
-                font-size: 80px;
-            }
-
-            @media #{$xl} {
-                font-size: 60px;
-            }
-
-            @media #{$lg} {
-                font-size: 50px;
-            }
-
-            @media #{$md} {
-                font-size: 40px;
-                line-height: 1.1;
-            }
-
-            @media #{$sm} {
-                font-size: 35px;
-            }
 
             .mb-14 {
                 transform: translate(0px, -14px);

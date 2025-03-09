@@ -55,11 +55,11 @@
         gap: 20px 20px;
     }
 
-    @media #{$md} {
+    @media #{$lg} {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @media #{$sm} {
+    @media #{$md} {
         grid-template-columns: repeat(2, 1fr);
     }
 

@@ -52,6 +52,7 @@
   // portfolio-slide-5
   // parallax
   // woking card
+  // circle Animation
 
 
 
@@ -1807,6 +1808,15 @@
     });
   });
 
+
+
+  // circle Animation
+  const circleAnimation = document.querySelector(".circle-text .text");
+  if (circleAnimation) {
+    circleAnimation.innerHTML = [...circleAnimation.innerText]
+      .map((char, i) => `<span style="transform:rotate(${i * 10}deg)">${char}</span>`)
+      .join("");
+  }
 
 
 })(jQuery);

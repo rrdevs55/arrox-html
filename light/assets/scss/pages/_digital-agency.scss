@@ -218,23 +218,21 @@
             }
         }
 
-        .circle-text {
-            width: 130px;
-            height: 190px;
+        .circle-text-wrapper {
+            padding-top: 30px;
+            padding-bottom: 30px;
             background-color: #F9E6DC;
 
             @include dark {
                 background-color: var(--bg);
             }
+        }
 
+        .circle-text {
+            width: 130px;
+            height: 130px;
+            padding: 0;
 
-            @media #{$xxl} {
-                height: 150px;
-            }
-
-            @media #{$sm} {
-                height: 130px;
-            }
         }
     }
 

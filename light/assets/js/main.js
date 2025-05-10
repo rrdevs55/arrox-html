@@ -1606,8 +1606,7 @@
   // portfolio-slide-4
   if (document.querySelectorAll(".portfolio-4").length > 0) {
     const interleaveOffset = 0.75;
-
-    let portfolio4_activ = new Swiper(".portfolio-4-activ", {
+    var portfolio_4_activ = new Swiper('.portfolio-4-activ', {
       loop: true,
       direction: "vertical",
       autoplay: false,
@@ -1623,41 +1622,28 @@
         el: ".portfolio-4-pagination",
         clickable: true,
       },
-
       on: {
         progress: function () {
+          console.log('test')
           let swiper = this;
 
           for (let i = 0; i < swiper.slides.length; i++) {
             let slideProgress = swiper.slides[i].progress;
             let innerOffset = swiper.height * interleaveOffset;
             let innerTranslate = slideProgress * innerOffset;
+
             TweenMax.set(swiper.slides[i].querySelector(".slide-inner"), {
               y: innerTranslate,
             });
           }
         },
-        touchStart: function () {
-          let swiper = this;
-          for (let i = 0; i < swiper.slides.length; i++) {
-            swiper.slides[i].style.transition = "";
-          }
-        },
-        setTransition: function (speed) {
+        setTransition: function (slider, speed) {
           let swiper = this;
           for (let i = 0; i < swiper.slides.length; i++) {
             swiper.slides[i].style.transition = speed + "ms";
             swiper.slides[i].querySelector(".slide-inner").style.transition =
               speed + "ms";
           }
-        },
-        slideChange: function () {
-          var bullets = document.querySelectorAll(".swiper-pagination-bullet");
-          bullets.forEach((bullet, index) => {
-            if (index <= this.realIndex) {
-              bullet.classList.add("swiper-pagination-bullet-active");
-            }
-          });
         }
       }
     });
@@ -1814,7 +1800,7 @@
   const circleAnimation = document.querySelector(".circle-text .text");
   if (circleAnimation) {
     circleAnimation.innerHTML = [...circleAnimation.innerText]
-      .map((char, i) => `<span style="transform:rotate(${i * 10}deg)">${char}</span>`)
+      .map((char, i) => `<span style="transform:rotate(${i * 14}deg)">${char}</span>`)
       .join("");
   }
 

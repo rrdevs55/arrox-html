@@ -10666,17 +10666,38 @@ video.video-area {
   width: 100%;
 }
 
-.portfolio-4 {
-  width: 100%;
-  float: left;
-  height: 100vh;
+.portfolio-4 .slider {
+  min-height: 50vh;
 }
-.portfolio-4__item {
+.portfolio-4 .slider .swiper-slide {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.portfolio-4 .slider .swiper-slide .slide-inner {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+.portfolio-4 .slider .swiper-slide .slide-inner img {
+  position: absolute;
   width: 100vw;
   height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.portfolio-4 .swiper-container {
+  width: 100%;
+  height: 100vh;
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 .portfolio-4__content {
   z-index: 9;
@@ -10736,28 +10757,9 @@ video.video-area {
   transform: translatey(0px);
   transition: all 2000ms ease;
 }
-.portfolio-4__slider-item {
-  position: relative;
-}
-.portfolio-4__slider-item .media-wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  left: 0;
-  top: 0;
-}
-.portfolio-4__slider-item img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .portfolio-4__slider {
   width: 100vw;
   height: 100vh;
-}
-.portfolio-4__slider .swiper-slide {
-  overflow: hidden;
 }
 .portfolio-4__slider__arrow {
   gap: 40px;
@@ -10796,7 +10798,11 @@ video.video-area {
   bottom: 50px;
   left: 50px;
   z-index: 9;
-  display: inline-block;
+  display: flex;
+  gap: 15px;
+  top: inherit;
+  right: 0;
+  transform: inherit;
 }
 @media (max-width: 575px) {
   .portfolio-4 .portfolio-4-pagination {
@@ -10826,7 +10832,7 @@ video.video-area {
 }
 @media only screen and (max-width: 767px) {
   .portfolio-4 .swiper-pagination-bullet {
-    width: 60px;
+    width: 70px;
     bottom: 45px;
   }
 }

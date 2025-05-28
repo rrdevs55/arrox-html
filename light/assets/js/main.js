@@ -462,11 +462,12 @@
         pinSpacing: true,
         scrub: 2,
         start: 'bottom 100%',
-        end: "bottom 0%",
+        // end: "bottom 0%",
+        end: "200%",
       }
     });
-    tl.to(".cta-area .area-bg", { scale: "10", delay: 0.1 });
-    tl.to(".cta-area .section-title", { fontSize: "18vw" }, "<");
+    tl.to(".cta-area .area-bg", { scale: "10", delay: 0.1, ease: "power2.in" });
+    tl.to(".cta-area .section-title", { fontSize: "18vw", ease: "power2.in" }, "<");
   }
 
 
@@ -493,7 +494,7 @@
 
   if (document.querySelectorAll(".circular-shape-wrapper").length > 0) {
     var cs = gsap.timeline({
-      ease: "none",
+      ease: "power2.in",
       backgroundColor: "#FCF7F3",
       scrollTrigger: {
         trigger: ".circular-shape-wrapper",

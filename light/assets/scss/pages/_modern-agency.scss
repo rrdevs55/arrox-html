@@ -221,6 +221,17 @@
         .thumb {
             position: relative;
 
+            .image {
+                overflow: hidden;
+                position: relative;
+                transform: scale(0.9);
+
+                img {
+                    transform-origin: center;
+                }
+
+            }
+
             img {
                 width: 100%;
                 cursor: none;

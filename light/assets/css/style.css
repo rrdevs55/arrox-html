@@ -1,8 +1,8 @@
 /*-----------------------------------------------------------------------------------
 
-  Theme Name: Arrox - Agency HTML Template
-  Author: 
-  Support: 
+  Theme Name: Arrox - Creative Digital Agency HTML Template
+  Author: ravextheme
+  Support: https://support.rrdevs.net/
   Description: 
   Version: 1.0
 
@@ -6827,7 +6827,7 @@ video.video-area {
   margin-inline: auto;
 }
 .actually-area .t_line > div {
-  background-image: linear-gradient(to right, var(--primary) 50%, #CDC9C6 51%);
+  background-image: linear-gradient(to right, var(--primary) 50%, #CDC9C6 50%);
   background-size: 200% 100%;
   background-position-x: 100%;
   color: transparent;
@@ -8987,9 +8987,24 @@ video.video-area {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.works-wrapper-4 > * .image {
+  transform-origin: bottom right;
+}
+.works-wrapper-4 > *:nth-child(2n) .image {
+  transform-origin: bottom left;
+}
 .works-wrapper-4 .work-box .thumb {
   border-radius: 15px;
   overflow: hidden;
+}
+.works-wrapper-4 .work-box .thumb .image {
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  transform: scale(0.9);
+}
+.works-wrapper-4 .work-box .thumb .image img {
+  transform-origin: center;
 }
 .works-wrapper-4 .work-box .thumb img {
   width: 100%;
@@ -9970,6 +9985,15 @@ video.video-area {
 .works-wrapper-6 .work-box .thumb {
   border-radius: 15px;
   overflow: hidden;
+}
+.works-wrapper-6 .work-box .thumb .image {
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  transform: scale(0.9);
+}
+.works-wrapper-6 .work-box .thumb .image img {
+  transform-origin: center;
 }
 .works-wrapper-6 .work-box .thumb img {
   width: 100%;
@@ -11324,6 +11348,9 @@ video.video-area {
     font-size: 24px;
   }
 }
+.works-wrapper-5 .service-box .title a:hover {
+  color: var(--secondary);
+}
 
 .card-wrap {
   transform: perspective(700px);
@@ -11578,6 +11605,14 @@ video.video-area {
 }
 .works-wrapper-7 .work-box .thumb {
   position: relative;
+}
+.works-wrapper-7 .work-box .thumb .image {
+  overflow: hidden;
+  position: relative;
+  transform: scale(0.9);
+}
+.works-wrapper-7 .work-box .thumb .image img {
+  transform-origin: center;
 }
 .works-wrapper-7 .work-box .thumb img {
   width: 100%;
@@ -16839,6 +16874,10 @@ video.video-area {
 .dark .footer-area .subscribe-form .input-field input::placeholder {
   color: rgba(255, 255, 255, 0.3);
 }
+.footer-area .subscribe-form .input-field input:-webkit-autofill, .footer-area .subscribe-form .input-field input:-webkit-autofill:focus {
+  -webkit-transition: background-color 0s 600000s, color 0s 600000s !important;
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
 .footer-area .subscription-text {
   margin-top: 23px;
 }
@@ -17063,6 +17102,10 @@ video.video-area {
 }
 .dark .footer-area-2 .subscribe-form .input-field input::placeholder {
   color: rgba(252, 247, 243, 0.3);
+}
+.footer-area-2 .subscribe-form .input-field input:-webkit-autofill, .footer-area-2 .subscribe-form .input-field input:-webkit-autofill:focus {
+  -webkit-transition: background-color 0s 600000s, color 0s 600000s !important;
+  transition: background-color 0s 600000s, color 0s 600000s !important;
 }
 .footer-area-2 .subscription-text {
   margin-top: 23px;

@@ -975,6 +975,10 @@
                     }
                 }
 
+                &:-webkit-autofill,
+                &:-webkit-autofill:focus {
+                    transition: background-color 0s 600000s, color 0s 600000s !important;
+                }
             }
         }
 
@@ -1235,6 +1239,11 @@
                     @include dark {
                         color: rgba(252, 247, 243, 0.3);
                     }
+                }
+
+                &:-webkit-autofill,
+                &:-webkit-autofill:focus {
+                    transition: background-color 0s 600000s, color 0s 600000s !important;
                 }
             }
         }

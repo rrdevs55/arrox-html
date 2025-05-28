@@ -195,6 +195,10 @@
             @media #{$lg} {
                 font-size: 24px;
             }
+
+            a:hover {
+                color: var(--secondary);
+            }
         }
     }
 }

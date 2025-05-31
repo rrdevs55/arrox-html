@@ -66,8 +66,18 @@
 
 
 
+  // Preloader
+  $(document).ready(function () {
+    $('#container').addClass('loaded');
+    if ($('#container').hasClass('loaded')) {
+      $('#preloader').delay(1000).queue(function () {
+        $(this).remove();
+      });
+    }
+  });
+
+
   $(window).on('load', function (event) {
-    $('#preloader').delay(1000).fadeOut(500);
 
     $('.odometer').waypoint(function (direction) {
       if (direction === 'down') {
@@ -78,6 +88,7 @@
       offset: '80%'
     });
   });
+
 
 
   // Data Css js
@@ -136,16 +147,6 @@
 
   }
 
-
-  // Preloader
-  $(document).ready(function () {
-    $('#container').addClass('loaded');
-    if ($('#container').hasClass('loaded')) {
-      $('#preloader').delay(1000).queue(function () {
-        $(this).remove();
-      });
-    }
-  });
 
 
   // Side Info Js
@@ -2022,6 +2023,166 @@
     });
   }
 
+
+  // video - 3 Animation 
+  if (document.querySelectorAll(".pinned-3").length > 0) {
+    const isMobile = window.matchMedia("(max-width: 1700px)").matches;
+    if (isMobile) return;
+
+    const tl = gsap.timeline({
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".pinned-3",
+        pin: true,
+        pinSpacing: false,
+        scrub: 1,
+        start: "top top",
+        endTrigger: ".banner-section-3__video__wrapper",
+        end: "bottom bottom",
+        markers: false
+      }
+    });
+
+    tl.to(".pinned-3 #myVideo", {
+      scale: 1,
+      width: "100vw",
+      height: "100vh",
+      right: "auto",
+      xPercent: "-72",
+      transformOrigin: "center center",
+      ease: "power2.out"
+    });
+  }
+
+
+  // service 3 active 
+  let rItems = document.querySelectorAll('.service-3__item');
+  let lItems = document.querySelectorAll('.service-3__img');
+
+  if (rItems.length > 0 && lItems.length > 0) {
+    rItems.forEach((rItem, index) => {
+      rItem.addEventListener('mouseenter', function () {
+        if (!rItem.classList.contains('active')) {
+          handleHover(rItem, lItems[index]);
+        }
+      });
+    });
+
+    function handleHover(rItem, lItem) {
+      rItems.forEach(item => {
+        item.classList.remove('active');
+      });
+
+      lItems.forEach(item => {
+        item.classList.remove('active');
+      });
+
+      rItem.classList.add('active');
+      lItem.classList.add('active');
+    }
+  }
+
+
+  // cta bg animation 
+  if (document.querySelectorAll(".project-bg-area").length > 0) {
+    var tl = gsap.timeline({
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".project-bg-area",
+        pin: true,
+        pinSpacing: true,
+        scrub: 2,
+        start: 'bottom 100%',
+        end: "bottom 0%",
+      }
+    });
+    tl.to(".project-bg-area .bg-circle", {
+      scale: "10",
+      width: '100vw',
+      height: "100vh",
+      delay: 0.1
+    });
+  }
+
+  // pin area 3 animation 
+  if ($('.pin-area-3').length > 0) {
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      return gsap.to('.pin-element_3', {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: '.pin-area-3',
+          scrub: 1,
+          start: 'top 30%',
+          end: "bottom 100%",
+          pin: '.pin-element_3',
+          pinSpacing: false,
+          markers: false,
+          toggleActions: 'play reverse play reverse',
+        }
+      });
+    });
+  }
+
+  // hover reveal start
+  const hoveritem = document.querySelectorAll(".rr-hover-reveal-item");
+
+  function moveImage(e, hoveritem, index) {
+    const item = hoveritem.getBoundingClientRect();
+    const x = e.clientX - item.x;
+    const y = e.clientY - item.y;
+    if (hoveritem.children[index]) {
+      hoveritem.children[index].style.transform = `translate(${x}px, ${y}px)`;
+    }
+  }
+  hoveritem.forEach((item, i) => {
+    item.addEventListener("mousemove", (e) => {
+      setInterval(moveImage(e, item, 1), 50);
+    });
+  });
+  // hover reveal end
+
+  // testimonial-section-3 activation 
+  if (document.querySelector(".testimonial-section-3__active")) {
+    var testimonial3 = new Swiper(".testimonial-section-3__active", {
+      slidesPerView: 2,
+      spaceBetween: 0,
+      loop: true,
+      centeredSlides: false,
+      autoplay: true,
+      centerMode: true,
+      speed: 1000,
+      navigation: {
+        prevEl: ".testimonial-section-3__slide__arrow-prev",
+        nextEl: ".testimonial-section-3__slide__arrow-next",
+      },
+      breakpoints: {
+        1400: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 1.5,
+          centeredSlides: true,
+          centerMode: false,
+        },
+        992: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 1.5,
+          centeredSlides: true,
+          centerMode: false,
+        },
+        576: {
+          slidesPerView: 1,
+        },
+        320: {
+          slidesPerView: 1,
+        },
+
+      },
+    });
+  }
 
   // section scroll activation 
   document.querySelectorAll(".scroll-btn").forEach((btn, index) => {

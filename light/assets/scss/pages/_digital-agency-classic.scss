@@ -15,6 +15,18 @@
     background-color: var(--rr-heading-primary);
 }
 
+.header-p-inline-60 {
+    padding: 0 60px;
+
+    @media #{$lg,$md,$sm,$xs} {
+        padding: 15px 30px;
+    }
+
+    @media #{$sm,$xs} {
+        padding: 15px 5px;
+    }
+}
+
 
 .rr-container-1630 {
     --bs-gutter-x: 30px;

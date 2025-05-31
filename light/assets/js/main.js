@@ -115,7 +115,7 @@
 
 
   // Register GSAP Plugins
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase, ScrollToPlugin);
 
   // Smooth active
   var device_width = window.screen.width;
@@ -1991,6 +1991,119 @@
       lItem.classList.add('active');
     }
   }
+
+  // title animation 
+  if (document.querySelectorAll(".rr-title-anim").length > 0) {
+    document.addEventListener("DOMContentLoaded", () => {
+      let titles = document.querySelectorAll(".rr-title-anim");
+
+      titles.forEach(title => {
+        let split = new SplitText(title, { type: "chars, words" });
+
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: title,
+            start: "top bottom",
+            toggleActions: "play none none reverse",
+            onEnter: () => tl.timeScale(2.3),
+            onLeaveBack: () => tl.timeScale(2.3).reverse()
+          }
+        });
+
+        tl.from(split.chars, {
+          opacity: 0,
+          y: 50,
+          rotation: 1,
+          duration: 2,
+          ease: "back",
+          stagger: 0.05
+        });
+      });
+    });
+  }
+
+
+  // section scroll activation 
+  document.querySelectorAll(".scroll-btn").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      var sectionTarget = btn.getAttribute("data-target");
+      gsap.to(window, { duration: 1, scrollTo: { y: sectionTarget, offsetY: 70 } });
+    });
+  });
+
+
+  // Check if any elements with the class ".end" exist
+  if (document.querySelector('.end')) {
+    let endTl = gsap.timeline({
+      repeat: -1,
+      delay: 1,
+      scrollTrigger: {
+        trigger: '.end',
+        start: 'bottom 100%-=50px'
+      }
+    });
+
+    gsap.set('.end', {
+      opacity: 0
+    });
+
+    gsap.to('.end', {
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.end',
+        start: 'bottom 100%-=50px',
+        once: true
+      }
+    });
+
+    let mySplitText = new SplitText(".end", {
+      type: "words,chars"
+    });
+    let chars = mySplitText.chars;
+    let endGradient = chroma.scale(['#fff']);
+
+    endTl.to(chars, {
+      duration: 0.5,
+      scaleY: 0.6,
+      ease: "power3.out",
+      stagger: 0.04,
+      transformOrigin: 'center bottom'
+    });
+    endTl.to(chars, {
+      yPercent: -20,
+      ease: "elastic",
+      stagger: 0.03,
+      duration: 0.8
+    }, 0.5);
+    endTl.to(chars, {
+      scaleY: 1,
+      ease: "elastic.out(1.5, 0.2)",
+      stagger: 0.03,
+      duration: 1.5
+    }, 0.5);
+    endTl.to(chars, {
+      color: (i, el, arr) => {
+        return endGradient(i / arr.length).hex();
+      },
+      ease: "power2.out",
+      stagger: 0.03,
+      duration: 0.3
+    }, 0.5);
+    endTl.to(chars, {
+      yPercent: 0,
+      ease: "back",
+      stagger: 0.03,
+      duration: 0.8
+    }, 0.7);
+    endTl.to(chars, {
+      color: '#fff',
+      duration: 1.4,
+      stagger: 0.05
+    });
+  }
+
 
 
 })(jQuery);

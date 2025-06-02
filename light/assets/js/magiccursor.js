@@ -36,47 +36,66 @@ class Cursor {
             self.setState('-active');
         }).on('mouseup', () => {
             self.removeState('-active');
-        }).on('mouseenter', 'a,input,textarea,button', () => {
-            self.setState('all-element');
-        }).on('mouseleave', 'a,input,textarea,button', () => {
-            self.removeState('all-element');
-        }).on('mouseenter', 'iframe', () => {
-            self.hide();
-        }).on('mouseleave', 'iframe', () => {
-            self.show();
-        }).on('mouseenter', '[data-cursor]', function () {
-            self.setState(this.dataset.cursor);
-        }).on('mouseleave', '[data-cursor]', function () {
-            self.removeState(this.dataset.cursor);
-        }).on('mouseenter', '[data-cursor-text]', function () {
-            self.setText(this.dataset.cursorText);
-        }).on('mouseleave', '[data-cursor-text]', function () {
-            self.removeText();
-        }).on('mouseenter', '[data-cursor-text-green]', function () {
-            self.setText(this.dataset.cursorText);
-            self.el.addClass('-green'); // Add class for green text
-        }).on('mouseleave', '[data-cursor-text-green]', function () {
-            self.removeText();
-            self.el.removeClass('-green'); // Remove green class
-        }).on('mouseenter', '[data-cursor-text-red]', function () {
-            self.setText(this.dataset.cursorText);
-            self.el.addClass('-red'); // Add class for red text
-        }).on('mouseleave', '[data-cursor-text-red]', function () {
-            self.removeText();
-            self.el.removeClass('-red'); // Remove red class
-        }).on('mouseenter', '[data-cursor-text-portfolio]', function () {
-            self.setText(this.dataset.cursorText);
-            self.el.addClass('-portfolio'); // Add class for red text
-        }).on('mouseleave', '[data-cursor-text-portfolio]', function () {
-            self.removeText();
-            self.el.removeClass('-portfolio'); // Remove red class
-        }).on('mouseenter', '[data-cursor-stick]', function () {
-            self.setStick(this.dataset.cursorStick);
-        }).on('mouseleave', '[data-cursor-stick]', function () {
-            self.removeStick();
-        });
-    }
+        })
+            // Extended target elements
+            .on('mouseenter', 'a, input, textarea, button, h1, h2, img', () => {
+                self.setState('all-element');
+            }).on('mouseleave', 'a, input, textarea, button, h1, h2, img', () => {
+                self.removeState('all-element');
+            }).on('mouseenter', 'iframe', () => {
+                self.hide();
+            }).on('mouseleave', 'iframe', () => {
+                self.show();
+            })
 
+            // State & Text management
+            .on('mouseenter', '[data-cursor]', function () {
+                self.setState(this.dataset.cursor);
+            }).on('mouseleave', '[data-cursor]', function () {
+                self.removeState(this.dataset.cursor);
+            }).on('mouseenter', '[data-cursor-text]', function () {
+                self.setText($(this).data('cursor-text'));
+            }).on('mouseleave', '[data-cursor-text]', function () {
+                self.removeText();
+            })
+
+            // Generic class support
+            .on('mouseenter', '[data-cursor-class]', function () {
+                const classes = $(this).data('cursor-class').split(' ');
+                self.addClasses(classes);
+            }).on('mouseleave', '[data-cursor-class]', function () {
+                const classes = $(this).data('cursor-class').split(' ');
+                self.removeClasses(classes);
+            })
+
+            // Legacy support for color-based classes
+            .on('mouseenter', '[data-cursor-text-green]', function () {
+                self.setText(this.dataset.cursorText);
+                self.el.addClass('-green');
+            }).on('mouseleave', '[data-cursor-text-green]', function () {
+                self.removeText();
+                self.el.removeClass('-green');
+            }).on('mouseenter', '[data-cursor-text-red]', function () {
+                self.setText(this.dataset.cursorText);
+                self.el.addClass('-red');
+            }).on('mouseleave', '[data-cursor-text-red]', function () {
+                self.removeText();
+                self.el.removeClass('-red');
+            }).on('mouseenter', '[data-cursor-text-portfolio]', function () {
+                self.setText(this.dataset.cursorText);
+                self.el.addClass('-portfolio');
+            }).on('mouseleave', '[data-cursor-text-portfolio]', function () {
+                self.removeText();
+                self.el.removeClass('-portfolio');
+            })
+
+            // Stick-to-element behavior
+            .on('mouseenter', '[data-cursor-stick]', function () {
+                self.setStick(this.dataset.cursorStick);
+            }).on('mouseleave', '[data-cursor-stick]', function () {
+                self.removeStick();
+            });
+    }
 
     setState(state) {
         this.el.addClass(state);
@@ -84,6 +103,14 @@ class Cursor {
 
     removeState(state) {
         this.el.removeClass(state);
+    }
+
+    addClasses(classes) {
+        this.el.addClass(classes.join(' '));
+    }
+
+    removeClasses(classes) {
+        this.el.removeClass(classes.join(' '));
     }
 
     setText(text) {
@@ -138,5 +165,6 @@ class Cursor {
         this.visibleInt = setTimeout(() => this.visible = false, this.options.visibleTimeout);
     }
 }
+
 // Init cursor
 const cursor = new Cursor();

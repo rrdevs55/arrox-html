@@ -2105,6 +2105,330 @@
   }
 
 
+  // web-development style start
 
+  // Sponsor Carousel
+  var swiperBlog = new Swiper(".sponsor-carousel-2", {
+    slidesPerView: 6,
+    spaceBetween: 24,
+    slidesPerGroup: 1,
+    loop: true,
+    autoplay: true,
+    grabcursor: true,
+    speed: 600,
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 25,
+      },
+      767: {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 6,
+        slidesPerGroup: 1,
+      },
+    },
+  });
+
+  // carouselTicker initail 
+  $('.carouselTicker-nav').carouselTicker({
+  });
+  $(".carouselTicker-start").carouselTicker({
+    direction: "next",
+  });
+
+  // Project Carousel
+  var swiperProject = new Swiper(".project-carousel", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    slidesPerGroup: 1,
+    loop: true,
+    autoplay: false,
+    grabcursor: true,
+    initialSlide: -1,
+    speed: 600,
+    navigation: {
+      nextEl: ".project-section .swiper-prev",
+      prevEl: ".project-section .swiper-next",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+  });
+
+
+
+  let typeSplit = new SplitType("[data-text-animation]", {
+    types: "lines,words, chars",
+    className: "line",
+  });
+  var text_animations = document.querySelectorAll(
+    "[data-text-animation]"
+  );
+  function createScrollTrigger(triggerElement, timeline) {
+    // Play tl when scrolled into view (60% from top of screen)
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top 80%",
+      onEnter: () => timeline.play(),
+      toggleClass: { targets: triggerElement, className: "active" }
+    });
+  }
+  text_animations.forEach((animation) => {
+    let type = "slide-up",
+      duration = 0.75,
+      offset = 80,
+      stagger = 0.6,
+      delay = 0,
+      scroll = 1,
+      split = "line",
+      ease = "power2.out";
+    // Set attribute
+    if (animation.getAttribute("data-stagger")) {
+      stagger = animation.getAttribute("data-stagger");
+    }
+    if (animation.getAttribute("data-duration")) {
+      duration = animation.getAttribute("data-duration");
+    }
+    if (animation.getAttribute("data-text-animation")) {
+      type = animation.getAttribute("data-text-animation");
+    }
+    if (animation.getAttribute("data-delay")) {
+      delay = animation.getAttribute("data-delay");
+    }
+    if (animation.getAttribute("data-ease")) {
+      ease = animation.getAttribute("data-ease");
+    }
+    if (animation.getAttribute("data-scroll")) {
+      scroll = animation.getAttribute("data-scroll");
+    }
+    if (animation.getAttribute("data-offset")) {
+      offset = animation.getAttribute("data-offset");
+    }
+    if (animation.getAttribute("data-split")) {
+      split = animation.getAttribute("data-split");
+    }
+    if (scroll == 1) {
+      if (type == "slide-up") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          yPercent: offset,
+          duration,
+          ease,
+          opacity: 0,
+          stagger: { amount: stagger },
+        });
+        createScrollTrigger(animation, tl);
+      }
+      if (type == "slide-down") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          yPercent: -offset,
+          duration,
+          ease,
+          opacity: 0,
+          stagger: { amount: stagger },
+        });
+        createScrollTrigger(animation, tl);
+      }
+      if (type == "rotate-in") {
+        let tl = gsap.timeline({ paused: true });
+        tl.set(animation.querySelectorAll(`.${split}`), {
+          transformPerspective: 400,
+        });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          rotationX: -offset,
+          duration,
+          ease,
+          force3D: true,
+          opacity: 0,
+          transformOrigin: "top center -50",
+          stagger: { amount: stagger },
+        });
+        createScrollTrigger(animation, tl);
+      }
+      if (type == "slide-from-left") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0,
+          xPercent: -offset,
+          duration,
+          opacity: 0,
+          ease,
+          stagger: { amount: stagger },
+        });
+        createScrollTrigger(animation, tl);
+      }
+      if (type == "slide-from-right") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0,
+          xPercent: offset,
+          duration,
+          opacity: 0,
+          ease,
+          stagger: { amount: stagger },
+        });
+        createScrollTrigger(animation, tl);
+      }
+      if (type == "fade-in") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0,
+          duration,
+          ease,
+          opacity: 0,
+          stagger: { amount: stagger },
+        });
+        createScrollTrigger(animation, tl);
+      }
+      if (type == "fade-in-right") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          x: 100,
+          autoAlpha: 0,
+          duration,
+          stagger: stagger,
+        });
+        createScrollTrigger(animation, tl);
+      }
+      if (type == "fade-in-random") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0,
+          duration,
+          ease,
+          opacity: 0,
+          stagger: { amount: stagger, from: "random" },
+        });
+        createScrollTrigger(animation, tl);
+      }
+      if (type == "scrub") {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: animation,
+            start: "top 90%",
+            end: "top center",
+            scrub: true,
+          },
+        });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0.2,
+          duration,
+          ease,
+          stagger: { amount: stagger },
+        });
+      }
+      // Avoid flash of unstyled content
+      gsap.set("[data-text-animation]", { opacity: 1 });
+    } else {
+      if (type == "slide-up") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          yPercent: offset,
+          duration,
+          ease,
+          opacity: 0,
+        });
+      }
+      if (type == "slide-down") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          yPercent: -offset,
+          duration,
+          ease,
+          opacity: 0,
+        });
+      }
+      if (type == "rotate-in") {
+        let tl = gsap.timeline({ paused: true });
+        tl.set(animation.querySelectorAll(`.${split}`), {
+          transformPerspective: 400,
+        });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          rotationX: -offset,
+          duration,
+          ease,
+          force3D: true,
+          opacity: 0,
+          transformOrigin: "top center -50",
+        });
+      }
+      if (type == "slide-from-right") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0,
+          xPercent: offset,
+          duration,
+          opacity: 0,
+          ease,
+        });
+      }
+      if (type == "fade-in") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0,
+          duration,
+          ease,
+          opacity: 0,
+        });
+      }
+      if (type == "fade-in-random") {
+        let tl = gsap.timeline({ paused: true });
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0,
+          duration,
+          ease,
+          opacity: 0,
+          stagger: { amount: stagger, from: "random" },
+        });
+      }
+      if (type == "scrub") {
+        tl.from(animation.querySelectorAll(`.${split}`), {
+          opacity: 0.2,
+          duration,
+          ease,
+        });
+      }
+    }
+  });
+  function textAnimationEffect() {
+    let TextAnim = gsap.timeline();
+    let splitText = new SplitType(".text-animation-effect", { types: 'chars' });
+    if ($('.text-animation-effect .char').length) {
+      TextAnim.from(".text-animation-effect .char", { duration: 1, x: 100, autoAlpha: 0, stagger: 0.1 }, "-=1");
+    }
+  }
+
+
+  // image animation
+  let revealContainers = document.querySelectorAll(".reveal");
+
+  revealContainers.forEach((container) => {
+    let image = container.querySelector("img");
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        toggleActions: "restart none none reset"
+      }
+    });
+
+    tl.set(container, { autoAlpha: 1 });
+    tl.from(container, 1.5, {
+      xPercent: -100,
+      ease: Power2.out
+    });
+    tl.from(image, 1.5, {
+      xPercent: 100,
+      scale: 1.3,
+      delay: -1.5,
+      ease: Power2.out
+    });
+  });
 })(jQuery);
 

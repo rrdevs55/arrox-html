@@ -121,8 +121,123 @@
   }
   pinned_header();
 
+  const $owlCarousel = $(".agency-slider-active").owlCarousel({
+    items: 1,
+    dots: true,
+    loop: true,
+    autoplayTimeout: 9000,
+    autoplay: true,
+  });
 
+  $(".owl-carousel").on("initialized.owl.carousel", () => {
+    setTimeout(() => {
+      $(".owl-item.active .animated-text").addClass("is-transitioned");
+    }, 200);
+  });
 
+  $owlCarousel.on("changed.owl.carousel", e => {
+    $(".animated-text").removeClass("is-transitioned");
+
+    const $currentOwlItem = $(".owl-item").eq(e.item.index);
+    $currentOwlItem.find(".animated-text").addClass("is-transitioned");
+
+    const $target = $currentOwlItem.find(".hero-contents");
+  });
+
+  $(".global-carousel").owlCarousel({
+    margin: 80,
+    loop: true,
+    autoplayTimeout: 5000,
+    autoplay: true,
+    responsive: {
+      // breakpoint from 0 up
+      0: {
+        items: 2,
+      },
+      // breakpoint from 768 up
+      480: {
+        items: 3
+      },
+      // breakpoint from 768 up
+      768: {
+        items: 3
+      },
+      // breakpoint from 992 up
+      992: {
+        items: 4
+      },
+
+    }
+  });
+
+  $(".portfolio-showcase-carousel-active").owlCarousel({
+    margin: 30,
+    loop: true,
+    autoplayTimeout: 5000,
+    autoplay: true,
+    dots: true,
+    responsive: {
+      // breakpoint from 0 up
+      0: {
+        items: 1,
+      },
+      // breakpoint from 768 up
+      480: {
+        items: 1
+      },
+      // breakpoint from 768 up
+      768: {
+        items: 2
+      },
+      // breakpoint from 992 up
+      992: {
+        items: 3
+      },
+
+      1191: {
+        items: 3
+      },
+
+      1400: {
+        items: 5
+      },
+    }
+  });
+
+  $(".testimonial-carousel-list").owlCarousel({
+    items: 1,
+    dots: false,
+    loop: true,
+    autoplayTimeout: 8000,
+    autoplay: true,
+    nav: true,
+    navText: ['<i class="fas fa-long-arrow-left"></i>', '<i class="fas fa-long-arrow-right"></i>'],
+  });
+
+  // counter up activation 
+  new WOW().init();
+
+  const counterUp = window.counterUp.default
+
+  const callback = entries => {
+    entries.forEach(entry => {
+      const el = entry.target
+      if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+        counterUp(el, {
+          duration: 3500,
+          delay: 15,
+        })
+        el.classList.add('is-visible')
+      }
+    })
+  }
+
+  const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+  const el = document.querySelectorAll('.single-fun-fact span');
+  el.forEach((el) => {
+    IO.observe(el);
+  });
 
 
   // Register GSAP Plugins
@@ -2633,6 +2748,8 @@
       TextAnim.from(".text-animation-effect .char", { duration: 1, x: 100, autoAlpha: 0, stagger: 0.1 }, "-=1");
     }
   }
+
+
 
 
   // image animation

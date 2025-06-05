@@ -78,15 +78,16 @@
 
 
   $(window).on('load', function (event) {
-
-    $('.odometer').waypoint(function (direction) {
-      if (direction === 'down') {
-        let countNumber = $(this.element).attr("data-count");
-        $(this.element).html(countNumber);
-      }
-    }, {
-      offset: '80%'
-    });
+    if (document.querySelectorAll(".odometer").length > 0) {
+      $('.odometer').waypoint(function (direction) {
+        if (direction === 'down') {
+          let countNumber = $(this.element).attr("data-count");
+          $(this.element).html(countNumber);
+        }
+      }, {
+        offset: '80%'
+      });
+    }
   });
 
 
@@ -121,6 +122,111 @@
   }
   pinned_header();
 
+
+  // agency slider active 
+  if (document.querySelectorAll(".agency-slider-active").length > 0) {
+    const $owlCarousel = $(".agency-slider-active").owlCarousel({
+      items: 1,
+      dots: true,
+      loop: true,
+      autoplayTimeout: 9000,
+      autoplay: true,
+    });
+
+    $(".owl-carousel").on("initialized.owl.carousel", () => {
+      setTimeout(() => {
+        $(".owl-item.active .animated-text").addClass("is-transitioned");
+      }, 200);
+    });
+
+    $owlCarousel.on("changed.owl.carousel", e => {
+      $(".animated-text").removeClass("is-transitioned");
+
+      const $currentOwlItem = $(".owl-item").eq(e.item.index);
+      $currentOwlItem.find(".animated-text").addClass("is-transitioned");
+
+      const $target = $currentOwlItem.find(".hero-contents");
+    });
+  }
+
+  // global carousel active 
+  if (document.querySelectorAll(".global-carousel").length > 0) {
+    $(".global-carousel").owlCarousel({
+      margin: 80,
+      loop: true,
+      autoplayTimeout: 5000,
+      autoplay: true,
+      responsive: {
+        // breakpoint from 0 up
+        0: {
+          items: 2,
+        },
+        // breakpoint from 768 up
+        480: {
+          items: 3
+        },
+        // breakpoint from 768 up
+        768: {
+          items: 3
+        },
+        // breakpoint from 992 up
+        992: {
+          items: 4
+        },
+
+      }
+    });
+  }
+
+  // portfolio showcase carousel active 
+  if (document.querySelectorAll(".portfolio-showcase-carousel-active").length > 0) {
+    $(".portfolio-showcase-carousel-active").owlCarousel({
+      margin: 30,
+      loop: true,
+      autoplayTimeout: 5000,
+      autoplay: true,
+      dots: true,
+      responsive: {
+        // breakpoint from 0 up
+        0: {
+          items: 1,
+        },
+        // breakpoint from 768 up
+        480: {
+          items: 1
+        },
+        // breakpoint from 768 up
+        768: {
+          items: 2
+        },
+        // breakpoint from 992 up
+        992: {
+          items: 3
+        },
+
+        1191: {
+          items: 3
+        },
+
+        1400: {
+          items: 5
+        },
+      }
+    });
+  }
+
+  // testimonial carousel active 
+  if (document.querySelectorAll(".testimonial-carousel-list").length > 0) {
+    $(".testimonial-carousel-list").owlCarousel({
+      items: 1,
+      dots: false,
+      loop: true,
+      autoplayTimeout: 8000,
+      autoplay: true,
+      nav: true,
+      navText: ['<i class="fas fa-long-arrow-left"></i>', '<i class="fas fa-long-arrow-right"></i>'],
+    });
+  }
 
 
 
@@ -2043,31 +2149,31 @@
 
   // video - 3 Animation 
   if (document.querySelectorAll(".pinned-3").length > 0) {
-    const isMobile = window.matchMedia("(max-width: 1700px)").matches;
-    if (isMobile) return;
+    mm.add("(min-width: 1700px)", () => {
 
-    const tl = gsap.timeline({
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".pinned-3",
-        pin: true,
-        pinSpacing: false,
-        scrub: 1,
-        start: "top top",
-        endTrigger: ".banner-section-3__video__wrapper",
-        end: "bottom bottom",
-        markers: false
-      }
-    });
+      const tl = gsap.timeline({
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".pinned-3",
+          pin: true,
+          pinSpacing: false,
+          scrub: 1,
+          start: "top top",
+          endTrigger: ".banner-section-3__video__wrapper",
+          end: "bottom bottom",
+          markers: false
+        }
+      });
 
-    tl.to(".pinned-3 #myVideo", {
-      scale: 1,
-      width: "100vw",
-      height: "100vh",
-      right: "auto",
-      xPercent: "-72",
-      transformOrigin: "center center",
-      ease: "power2.out"
+      tl.to(".pinned-3 #myVideo", {
+        scale: 1,
+        width: "100vw",
+        height: "100vh",
+        right: "auto",
+        xPercent: "-72",
+        transformOrigin: "center center",
+        ease: "power2.out"
+      });
     });
   }
 
@@ -2650,6 +2756,8 @@
       TextAnim.from(".text-animation-effect .char", { duration: 1, x: 100, autoAlpha: 0, stagger: 0.1 }, "-=1");
     }
   }
+
+
 
 
   // image animation

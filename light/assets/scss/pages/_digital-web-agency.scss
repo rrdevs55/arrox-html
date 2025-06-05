@@ -1573,6 +1573,13 @@ $heading-color: $theme-color;
     h2 {
         font-size: 50px;
         margin-bottom: 0;
+
+        .odometer.odometer-auto-theme,
+        .odometer.odometer-theme-default {
+            font-family: 'Oswald', sans-serif;
+            line-height: 1.22;
+            margin-top: -11px;
+        }
     }
 
     h3 {

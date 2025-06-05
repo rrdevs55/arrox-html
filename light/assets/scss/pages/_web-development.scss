@@ -1412,8 +1412,7 @@ START: About CSS
             position: relative;
 
             &:before {
-                font-family: "Font Awesome 6 Pro";
-                font-weight: 500;
+                font-family: var(--font_awesome);
                 content: "\f068";
                 position: absolute;
                 right: -40px;
@@ -1424,7 +1423,23 @@ START: About CSS
     }
 
     &.running-1 {
-        background-color: var(--rr-color-bg-1);
+        background-color: var(--rr-color-grey-light);
+
+        @include dark {
+            background-color: var(--rr-color-bg-1);
+
+        }
+
+
+        ul {
+            li {
+                color: var(--rr-color-theme-primary);
+
+                @include dark {
+                    color: var(--rr-color-common-white);
+                }
+            }
+        }
     }
 
     &.testi {
@@ -1439,6 +1454,7 @@ START: About CSS
                 font-size: 120px;
                 font-weight: 700;
                 line-height: 1;
+                color: var(--rr-color-bg-1);
 
                 @include breakpoint(md) {
                     font-size: 60px;
@@ -1446,6 +1462,10 @@ START: About CSS
 
                 @include breakpoint(sm) {
                     font-size: 40px;
+                }
+
+                @include dark {
+                    color: var(--rr-color-common-white);
                 }
 
                 &:before {
@@ -1542,7 +1562,6 @@ START: About CSS
             }
         }
     }
-
 }
 
 // Project 
@@ -2443,14 +2462,15 @@ START: Blog CSS
 }
 
 .post-card {
-    background-color: var(--rr-color-bg-1);
     display: grid;
     align-items: center;
     grid-template-columns: 570px 1fr;
     grid-gap: 40px;
     padding: 30px;
-    border: 1px solid var(--rr-color-border-1);
     @include transition(all 0.3s ease-in-out);
+
+    background-color: var(--rr-color-grey-light);
+    border: 1px solid var(--rr-color-grey-light);
 
     @include breakpoint(lg) {
         grid-template-columns: 470px 1fr;
@@ -2462,6 +2482,11 @@ START: Blog CSS
 
     @include breakpoint(sm) {
         padding: 30px 20px;
+    }
+
+    @include dark {
+        background-color: var(--rr-color-bg-1);
+        border: 1px solid var(--rr-color-border-1);
     }
 
     .post-thumb {
@@ -2502,25 +2527,43 @@ START: Blog CSS
                 }
 
                 &:hover {
-                    color: var(--rr-color-common-white);
+                    color: var(--rr-color-theme-primary);
                     background-size: 100% 2px;
+
+                    @include dark {
+                        color: var(--rr-color-common-white);
+                    }
                 }
             }
         }
 
         .rr-primary-btn {
             background-color: transparent;
-            border: 1px solid var(--rr-color-border-1);
             padding: 14.5px 30px;
+            border: 1px solid #1E2228;
+            color: var(--rr-color-heading-primary);
+
+            @include dark {
+                border: 1px solid var(--rr-color-border-1);
+                color: var(--rr-color-common-white);
+            }
 
             &:before {
                 background-color: var(--rr-color-theme-primary);
+            }
+
+            &:hover {
+                color: var(--rr-color-common-white);
+                border: 1px solid var(--rr-color-theme-primary);
             }
         }
     }
 
     &:hover {
-        border: 1px solid var(--rr-color-theme-primary);
+
+        @include dark {
+            border: 1px solid var(--rr-color-theme-primary);
+        }
 
         .post-thumb {
             img {
@@ -2576,13 +2619,17 @@ START: Blog CSS
         margin-bottom: 20px;
 
         li {
-            font-family: var(--rr-ff-body);
-            color: #B0B2B7;
+            font-family: var(--rr-ff-p);
             font-size: 14px;
             font-weight: 600;
             text-transform: uppercase;
             @include flex-vertical-center;
             column-gap: 10px;
+            color: var(--rr-color-text-body-light);
+
+            @include dark {
+                color: #B0B2B7;
+            }
 
             i {
                 font-size: 14px;
@@ -2922,6 +2969,13 @@ START: Footer CSS
                 left: 0;
             }
         }
+
+    }
+
+    P {
+        color: var(--rr-color-text-body);
+        font-size: 16px;
+        line-height: 28px;
     }
 
     .title {
@@ -2930,6 +2984,7 @@ START: Footer CSS
         margin-bottom: 0;
         margin-top: 30px;
         text-transform: uppercase;
+        color: var(--rr-color-border-light);
 
         span {
             color: var(--rr-color-text-body);
@@ -3093,10 +3148,10 @@ START: Footer CSS
 
                     &:before {
                         background-image: none;
-                        font-family: "Font Awesome 6 Pro";
+                        font-family: var(--font_awesome);
                         font-size: 14px;
                         font-weight: 700;
-                        content: "\f356";
+                        content: "\f061";
                         color: var(--rr-color-text-body);
                         position: absolute;
                         top: 55%;

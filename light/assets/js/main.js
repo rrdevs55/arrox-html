@@ -381,6 +381,23 @@
   });
 
 
+  // gsap nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1); // Get section ID
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
+
+
 
 
   mm.add("(min-width: 1024px)", () => {
@@ -2659,5 +2676,38 @@
       ease: Power2.out
     });
   });
+
+
+  // Testimonial Carousel
+  var swiperTesti = new Swiper(".testi-carousel", {
+    slidesPerView: 3,
+    spaceBetween: 24,
+    slidesPerGroup: 1,
+    loop: true,
+    autoplay: true,
+    grabcursor: true,
+    speed: 600,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 25,
+      },
+      767: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+      },
+    },
+  });
+
 })(jQuery);
 

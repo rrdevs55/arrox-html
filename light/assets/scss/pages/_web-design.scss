@@ -312,6 +312,10 @@ START: Process CSS
             height: 55px;
             object-fit: contain;
         }
+
+        &.icon-2 {
+            background-color: var(--rr-color-common-white);
+        }
     }
 
     .process-content {

@@ -1562,6 +1562,27 @@ START: About CSS
             }
         }
     }
+
+    &.running-5 {
+        ul {
+            li {
+                font-family: var(--rr-ff-heading);
+                @include flex-vertical-center;
+                column-gap: 10px;
+                font-size: 24px;
+                font-weight: 700;
+
+                i {
+                    font-size: 22px;
+                    margin-top: -2px;
+                }
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 // Project 
@@ -2862,6 +2883,49 @@ START: Blog CSS
             .post-thumb {
                 img {
                     transform: scale(1.02)
+                }
+            }
+        }
+    }
+
+    &.card-4 {
+        .post-thumb {
+            height: 320px;
+        }
+
+        .post-content-wrap {
+            .post-content {
+                .post-meta {
+                    column-gap: 0px;
+
+                    li {
+                        font-size: 16px;
+                        position: relative;
+                        text-transform: capitalize;
+
+                        &:nth-child(1) {
+                            color: var(--rr-color-theme-primary);
+                        }
+
+                        &:not(:last-of-type) {
+                            margin-right: 10px;
+                            padding-right: 15px;
+
+                            &:before {
+                                color: var(--rr-color-text-body);
+                                content: "/";
+                                position: absolute;
+                                top: 50%;
+                                right: 0;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                }
+
+                .title {
+                    margin-bottom: 30px;
+                    font-weight: 700;
                 }
             }
         }

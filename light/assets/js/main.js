@@ -255,6 +255,92 @@
 
 
 
+  // Slider 1
+  function sliderAnimations(elements) {
+    var animationEndEvents = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+    elements.each(function () {
+      var $this = $(this);
+      var $animationDelay = $this.data("delay");
+      var $animationDuration = $this.data("duration");
+      var $animationType = "runok-animation " + $this.data("animation");
+      $this.css({
+        "animation-delay": $animationDelay,
+        "-webkit-animation-delay": $animationDelay,
+        "animation-duration": $animationDuration,
+      });
+      $this.addClass($animationType).one(animationEndEvents, function () {
+        $this.removeClass($animationType);
+      });
+    });
+  }
+  // Sliderthumb
+  var sliderThumb = new Swiper(".slider-tab", {
+    spaceBetween: 20,
+    slidesPerView: 3,
+  });
+  var slider2Options = {
+    speed: 1500,
+    autoplay: {
+      delay: 7000,
+    },
+    disableOnInteraction: false,
+    initialSlide: 0,
+    parallax: false,
+    mousewheel: false,
+    loop: true,
+    grabCursor: true,
+    effect: "fade",
+    navigation: {
+      nextEl: ".slider-arrow .slider-next",
+      prevEl: ".slider-arrow .slider-prev",
+    },
+    thumbs: {
+      swiper: sliderThumb,
+    },
+  };
+  slider2Options.on = {
+    slideChangeTransitionStart: function () {
+      var swiper = this;
+      var animatingElements = $(swiper.slides[swiper.activeIndex]).find("[data-animation]");
+      sliderAnimations(animatingElements);
+    },
+
+    resize: function () {
+      this.update();
+    },
+  };
+
+  var swiper2 = new Swiper(".runok-slider", slider2Options);
+
+
+  // Testimonial Carousel 3
+  var testimonialThumb = new Swiper(".thumb-carousel", {
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+    loop: false,
+    autoplay: true,
+    centerSlides: true,
+    speed: 600,
+  });
+  var testimonials = new Swiper(".content-carousel", {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+    loop: true,
+    autoplay: true,
+    speed: 600,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    thumbs: {
+      swiper: testimonialThumb,
+    },
+  });
+
+
+
   // Side Info Js
   $(".side-info-close,.offcanvas-overlay").on("click", function () {
     $(".side-info").removeClass("info-open");

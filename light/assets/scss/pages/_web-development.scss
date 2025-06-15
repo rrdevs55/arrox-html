@@ -2814,22 +2814,22 @@ START: Blog CSS
             .post-content {
                 .post-meta {
                     li {
-                        font-weight: 500;
-                        color: var(--rr-color-text-body-light);
-
-                        @include dark {
-                            color: var(--rr-color-text-body);
-                        }
+                        color: var(--rr-color-text-body);
                     }
                 }
 
                 .title {
                     a {
+                        color: var(--rr-color-heading-primary);
                         background: linear-gradient(var(--rr-color-theme-primary) 0%, var(--rr-color-theme-primary) 98%);
                         background-size: 0 2px;
                         background-repeat: no-repeat;
                         background-position: left 100%;
                         @include transition(all 0.3s ease-in-out);
+
+                        @include dark {
+                            color: var(--rr-color-common-white);
+                        }
 
                         &:hover {
                             color: var(--rr-color-theme-primary);
@@ -2864,20 +2864,6 @@ START: Blog CSS
                     transform: scale(1.02)
                 }
             }
-        }
-    }
-
-    &.post-card-3 {
-        @include breakpoint(lg) {
-            height: 100%;
-
-            .post-thumb {
-                height: 100%;
-            }
-        }
-
-        @include breakpoint(sm) {
-            height: 350px;
         }
     }
 }
@@ -3183,11 +3169,15 @@ START: Footer CSS
 
 
 .copyright-area {
-    border-top: 1px solid var(--rr-color-border-1);
-    padding: 40px 0;
 
-    @include breakpoint(md) {
-        padding: 40px 0
+    &.has--border {
+        border-top: 1px solid var(--rr-color-border-1);
+        padding: 40px 0;
+
+        @include breakpoint(md) {
+            padding: 40px 0
+        }
+
     }
 }
 

@@ -182,6 +182,20 @@
 
     .header__logo {
 
+        .light-logo {
+            @include dark {
+                display: none;
+            }
+        }
+
+        .dark-logo {
+            display: none;
+
+            @include dark {
+                display: block;
+            }
+        }
+
         img {
             max-width: 120px;
         }

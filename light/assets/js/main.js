@@ -2817,5 +2817,36 @@
     },
   });
 
+  // Testimonial Carousel 2
+  var swiperTesti = new Swiper(".testi-carousel-2", {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    slidesPerGroup: 1,
+    loop: true,
+    autoplay: true,
+    grabcursor: true,
+    speed: 600,
+    navigation: {
+      nextEl: ".testimonial-section-4 .swiper-prev",
+      prevEl: ".testimonial-section-4 .swiper-next",
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 25,
+      },
+      767: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+      },
+    },
+  });
+
 })(jQuery);
 

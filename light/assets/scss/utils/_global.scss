@@ -835,6 +835,20 @@
     img {
       max-width: 120px;
     }
+
+    .light-logo {
+      @include dark {
+        display: none;
+      }
+    }
+
+    .dark-logo {
+      display: none;
+
+      @include dark {
+        display: block;
+      }
+    }
   }
 
   &-button {

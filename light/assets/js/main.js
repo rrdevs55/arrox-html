@@ -255,62 +255,65 @@
 
 
 
-  // Slider 1
-  function sliderAnimations(elements) {
-    var animationEndEvents = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
-    elements.each(function () {
-      var $this = $(this);
-      var $animationDelay = $this.data("delay");
-      var $animationDuration = $this.data("duration");
-      var $animationType = "runok-animation " + $this.data("animation");
-      $this.css({
-        "animation-delay": $animationDelay,
-        "-webkit-animation-delay": $animationDelay,
-        "animation-duration": $animationDuration,
+
+  $(document).ready(function () {
+
+    function sliderAnimations(elements) {
+      var animationEndEvents = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+      elements.each(function () {
+        var $this = $(this);
+        var $animationDelay = $this.data("delay");
+        var $animationDuration = $this.data("duration");
+        var $animationType = "runok-animation " + $this.data("animation");
+        $this.css({
+          "animation-delay": $animationDelay,
+          "-webkit-animation-delay": $animationDelay,
+          "animation-duration": $animationDuration,
+        });
+        $this.addClass($animationType).one(animationEndEvents, function () {
+          $this.removeClass($animationType);
+        });
       });
-      $this.addClass($animationType).one(animationEndEvents, function () {
-        $this.removeClass($animationType);
-      });
+    }
+    // Sliderthumb
+    var sliderThumb = new Swiper(".slider-tab", {
+      spaceBetween: 20,
+      slidesPerView: 3,
     });
-  }
-  // Sliderthumb
-  var sliderThumb = new Swiper(".slider-tab", {
-    spaceBetween: 20,
-    slidesPerView: 3,
+    var slider2Options = {
+      speed: 1500,
+      autoplay: {
+        delay: 7000,
+      },
+      disableOnInteraction: false,
+      initialSlide: 0,
+      parallax: false,
+      mousewheel: false,
+      loop: true,
+      grabCursor: true,
+      effect: "fade",
+      navigation: {
+        nextEl: ".slider-arrow .slider-next",
+        prevEl: ".slider-arrow .slider-prev",
+      },
+      thumbs: {
+        swiper: sliderThumb,
+      },
+    };
+    slider2Options.on = {
+      slideChangeTransitionStart: function () {
+        var swiper = this;
+        var animatingElements = $(swiper.slides[swiper.activeIndex]).find("[data-animation]");
+        sliderAnimations(animatingElements);
+      },
+
+      resize: function () {
+        this.update();
+      },
+    };
+
+    var swiper2 = new Swiper(".runok-slider", slider2Options);
   });
-  var slider2Options = {
-    speed: 1500,
-    autoplay: {
-      delay: 7000,
-    },
-    disableOnInteraction: false,
-    initialSlide: 0,
-    parallax: false,
-    mousewheel: false,
-    loop: true,
-    grabCursor: true,
-    effect: "fade",
-    navigation: {
-      nextEl: ".slider-arrow .slider-next",
-      prevEl: ".slider-arrow .slider-prev",
-    },
-    thumbs: {
-      swiper: sliderThumb,
-    },
-  };
-  slider2Options.on = {
-    slideChangeTransitionStart: function () {
-      var swiper = this;
-      var animatingElements = $(swiper.slides[swiper.activeIndex]).find("[data-animation]");
-      sliderAnimations(animatingElements);
-    },
-
-    resize: function () {
-      this.update();
-    },
-  };
-
-  var swiper2 = new Swiper(".runok-slider", slider2Options);
 
 
   // Testimonial Carousel 3
@@ -845,9 +848,14 @@
     });
   }
 
+
+
   // video start
   mm.add("(min-width: 1200px)", () => {
     if (document.querySelectorAll(".hero-area").length > 0) {
+      // Detect dark mode via body class
+      const isDarkMode = document.body.classList.contains("dark");
+      const bigtextColor = isDarkMode ? "#FFFFFF" : "#111111";
       var ab2 = gsap.timeline({
         duration: 5,
         scrollTrigger: {
@@ -859,7 +867,7 @@
       });
       ab2.to(".big-text-wrapper .big-text", {
         scale: 0.1,
-        color: "#111111",
+        color: bigtextColor,
         duration: 2,
         y: "76%",
         transformOrigin: "bottom center",
@@ -893,7 +901,6 @@
           start: "top center",
           end: "center center",
           scrub: 1,
-
         },
       });
     }

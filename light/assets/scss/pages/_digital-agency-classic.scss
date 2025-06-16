@@ -28,11 +28,11 @@ $mxs: '(max-width:320px)';
     padding: 0 60px;
 
     @media #{$lgr,$mdr,$smr,$xs} {
-        padding: 15px 30px;
+        padding: 15px 0px;
     }
 
     @media #{$smr,$xs} {
-        padding: 15px 5px;
+        padding: 15px 0px;
     }
 }
 

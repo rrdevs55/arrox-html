@@ -315,6 +315,10 @@ START: Process CSS
 
         &.icon-2 {
             background-color: var(--rr-color-common-white);
+
+            @include dark {
+                background-color: #02050A;
+            }
         }
     }
 
@@ -326,6 +330,10 @@ START: Process CSS
             font-size: 24px;
             line-height: 28px;
 
+            @include dark {
+                color: var(--rr-color-common-white);
+            }
+
             @include breakpoint(lg) {
                 font-size: 20px;
             }
@@ -335,6 +343,10 @@ START: Process CSS
             font-size: 16px;
             line-height: 28px;
             color: #74787C;
+
+            @include dark {
+                color: var(--rr-color-text-body);
+            }
 
             @include breakpoint(lg) {
                 br {

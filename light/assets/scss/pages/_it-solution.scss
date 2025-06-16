@@ -76,6 +76,64 @@ $breakpoints: (
     max-width: 1405px;
 }
 
+.body-it-solution.dark {
+    background-color: #02050A;
+}
+
+// Animation
+
+@-webkit-keyframes wobble-vertical {
+    16.65% {
+        transform: translateY(8px);
+    }
+
+    33.3% {
+        transform: translateY(-6px);
+    }
+
+    49.95% {
+        transform: translateY(4px);
+    }
+
+    66.6% {
+        transform: translateY(-2px);
+    }
+
+    83.25% {
+        transform: translateY(1px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes wobble-vertical {
+    16.65% {
+        transform: translateY(8px);
+    }
+
+    33.3% {
+        transform: translateY(-6px);
+    }
+
+    49.95% {
+        transform: translateY(4px);
+    }
+
+    66.6% {
+        transform: translateY(-2px);
+    }
+
+    83.25% {
+        transform: translateY(1px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 /* Fade Effect */
 .runok-fadeIn {
     animation-name: asFadeIn;
@@ -264,6 +322,7 @@ START: Theme Slider CSS
                     @include flex-center;
                     border-radius: 50%;
                     border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease-in-out 0s;
 
                     @include breakpoint(sm) {
                         height: 100px;
@@ -314,6 +373,10 @@ START: Theme Slider CSS
 
             .slider-tab-btn {
                 color: var(--rr-color-heading-primary);
+
+                @include dark {
+                    color: var(--rr-color-theme-primary);
+                }
             }
         }
     }
@@ -397,6 +460,7 @@ START: Theme Slider CSS
         font-family: var(--rr-ff-heading);
         line-height: 1.2;
         margin-bottom: .5rem;
+        transition: all 0.3s ease-in-out 0s;
 
         @include breakpoint(md) {
             font-size: 35px;
@@ -417,6 +481,7 @@ START: Theme Slider CSS
         color: var(--rr-color-common-white);
         font-family: var(--rr-ff-heading);
         margin-bottom: .5rem;
+        transition: all 0.3s ease-in-out 0s;
 
         @include breakpoint(md) {
             font-size: 80px;
@@ -448,6 +513,7 @@ START: Theme Slider CSS
         font-family: var(--rr-ff-heading);
         line-height: 1.2;
         margin-bottom: .5rem;
+        transition: all 0.3s ease-in-out 0s;
 
         @include breakpoint(md) {
             font-size: 45px;
@@ -542,6 +608,10 @@ START: Theme Slider CSS
         padding-bottom: 30px;
         border-bottom: 1px solid #E6E6E6;
 
+        @include dark {
+            border-color: var(--rr-color-border-1);
+        }
+
         .section-title {
             margin-bottom: 20px;
         }
@@ -553,6 +623,10 @@ START: Theme Slider CSS
             color: #74787C;
             margin-bottom: 15px;
             line-height: 28px;
+
+            @include dark {
+                color: var(--rr-color-text-body);
+            }
         }
     }
 
@@ -578,6 +652,10 @@ START: Theme Slider CSS
             line-height: 1.2;
             color: var(--rr-color-heading-primary);
             font-weight: 600;
+
+            @include dark {
+                color: var(--rr-color-common-white);
+            }
         }
 
         p {
@@ -587,6 +665,10 @@ START: Theme Slider CSS
             font-size: 16px;
             font-weight: var(--rr-fw-normal);
             line-height: 28px;
+
+            @include dark {
+                color: var(--rr-color-text-body);
+            }
         }
     }
 }
@@ -622,6 +704,10 @@ START: Theme Slider CSS
             font-weight: var(--rr-fw-normal);
             line-height: 28px;
             margin-bottom: 15px;
+
+            @include dark {
+                color: var(--rr-color-text-body);
+            }
         }
     }
 
@@ -634,6 +720,10 @@ START: Theme Slider CSS
             margin-bottom: 30px;
             display: block;
             line-height: 1.625;
+
+            @include dark {
+                color: var(--rr-color-common-white);
+            }
         }
 
         .about-list {
@@ -649,6 +739,10 @@ START: Theme Slider CSS
                 font-size: 16px;
                 line-height: 1.625;
                 color: #74787C;
+
+                @include dark {
+                    color: var(--rr-color-text-body);
+                }
 
                 &:not(:last-of-type) {
                     margin-right: 40px;
@@ -678,6 +772,11 @@ START: Theme Slider CSS
     overflow: hidden;
     position: relative;
     z-index: 1;
+
+    @include dark {
+        background-color: var(--rr-color-bg-1);
+        border-color: var(--rr-color-border-1);
+    }
 
     @include breakpoint(md) {
         grid-template-columns: 1fr;
@@ -715,6 +814,10 @@ START: Theme Slider CSS
             font-family: var(--rr-ff-heading);
             line-height: 1.2;
 
+            @include dark {
+                color: var(--rr-color-common-white);
+            }
+
             @include breakpoint(md) {
                 font-size: 20px;
             }
@@ -727,12 +830,20 @@ START: Theme Slider CSS
             font-weight: var(--rr-fw-normal);
             line-height: 28px;
             margin-bottom: 15px;
+
+            @include dark {
+                color: var(--rr-color-text-body);
+            }
         }
 
         .read-more {
             font-size: 16px;
             font-weight: 700;
             color: var(--rr-color-heading-primary);
+
+            @include dark {
+                color: var(--rr-color-theme-primary);
+            }
 
             i {
                 margin-left: 5px;
@@ -753,7 +864,11 @@ START: Theme Slider CSS
             top: 0;
             left: 0;
             visibility: visible;
-            opacity: 1;
+            opacity: 0.05;
+
+            @include dark {
+                opacity: 1;
+            }
         }
     }
 }
@@ -793,6 +908,10 @@ START: Theme Slider CSS
 .process-counter {
     border-bottom: 1px solid #E6E6E6;
 
+    @include dark {
+        border-color: var(--rr-color-border-1);
+    }
+
     @include breakpoint(sm) {
         padding: 50px 0 20px 0;
     }
@@ -804,6 +923,10 @@ START: Theme Slider CSS
         grid-gap: 20px;
         padding: 60px 0;
         border-right: 1px solid #E6E6E6;
+
+        @include dark {
+            border-color: var(--rr-color-border-1);
+        }
 
         &.card-4 {
             border-right: none;
@@ -822,6 +945,10 @@ START: Theme Slider CSS
             @include flex-center;
             border-radius: 50%;
 
+            @include dark {
+                background-color: #1E2228;
+            }
+
             img {
                 height: 45px;
                 width: 45px;
@@ -837,6 +964,10 @@ START: Theme Slider CSS
                 margin-bottom: 0;
                 color: var(--rr-color-heading-primary);
 
+                @include dark {
+                    color: var(--rr-color-common-white);
+                }
+
                 .odometer-auto-theme {
                     font-family: inherit;
                     line-height: 1;
@@ -850,6 +981,10 @@ START: Theme Slider CSS
                 margin-bottom: 0;
                 color: #74787C;
                 line-height: 28px;
+
+                @include dark {
+                    color: var(--rr-color-text-body);
+                }
             }
         }
     }
@@ -891,16 +1026,34 @@ START: Theme Slider CSS
             p {
                 font-size: 18px;
                 margin-bottom: 30px;
+                color: #74787C;
+                font-family: var(--rr-ff-p);
+                font-weight: var(--rr-fw-normal);
+                line-height: 28px;
+
+                @include dark {
+                    color: var(--rr-color-text-body);
+                }
             }
 
             .author-info {
                 .name {
                     font-size: 24px;
                     margin-bottom: 5px;
+                    color: var(--rr-color-heading-primary);
+
+                    @include dark {
+                        color: var(--rr-color-common-white);
+                    }
                 }
 
                 span {
                     font-size: 14px;
+                    font-family: var(--rr-ff-body);
+
+                    @include dark {
+                        color: var(--rr-color-text-body);
+                    }
                 }
             }
         }

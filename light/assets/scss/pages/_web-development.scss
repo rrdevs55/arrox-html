@@ -1570,6 +1570,7 @@ START: About CSS
                 column-gap: 10px;
                 font-size: 24px;
                 font-weight: 700;
+                line-height: 1.625;
 
                 i {
                     font-size: 22px;
@@ -2834,7 +2835,11 @@ START: Blog CSS
             .post-content {
                 .post-meta {
                     li {
-                        color: var(--rr-color-text-body);
+                        color: var(--rr-color-text-body-light);
+
+                        @include dark {
+                            color: var(--rr-color-text-body);
+                        }
                     }
                 }
 
@@ -2901,6 +2906,7 @@ START: Blog CSS
                         font-size: 16px;
                         position: relative;
                         text-transform: capitalize;
+                        line-height: 1.625;
 
                         &:nth-child(1) {
                             color: var(--rr-color-theme-primary);
@@ -3063,6 +3069,10 @@ START: Footer CSS
 
         li {
             color: rgba(255, 255, 255, 0.8);
+            font-family: var(--rr-ff-body);
+            font-size: 16px;
+            line-height: 1.625;
+            font-weight: normal;
 
             a {
                 font-family: var(--rr-ff-body);
@@ -3124,6 +3134,8 @@ START: Footer CSS
             color: rgba(255, 255, 255, 0.8);
             display: flex;
             column-gap: 10px;
+            line-height: 1.625;
+            font-weight: normal;
 
             &:not(:last-of-type) {
                 margin-bottom: 15px;
@@ -3193,6 +3205,8 @@ START: Footer CSS
             font-size: 14px;
             font-weight: 400;
             cursor: pointer;
+            color: var(--rr-color-text-body);
+            line-height: 1.625;
         }
     }
 

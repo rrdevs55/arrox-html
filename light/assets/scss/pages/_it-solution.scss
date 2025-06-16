@@ -835,6 +835,7 @@ START: Theme Slider CSS
                 font-weight: 700;
                 line-height: 1;
                 margin-bottom: 0;
+                color: var(--rr-color-heading-primary);
 
                 .odometer-auto-theme {
                     font-family: inherit;
@@ -847,6 +848,8 @@ START: Theme Slider CSS
                 font-weight: 600;
                 text-transform: capitalize;
                 margin-bottom: 0;
+                color: #74787C;
+                line-height: 28px;
             }
         }
     }

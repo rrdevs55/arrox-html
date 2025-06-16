@@ -1,3 +1,33 @@
+@font-face {
+    font-family: "Beatrice Trial";
+    src: url('../fonts/BeatriceTRIAL-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Beatrice Trial";
+    src: url('../fonts/BeatriceTRIAL-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Beatrice Trial";
+    src: url('../fonts/BeatriceTRIAL-Semibold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Beatrice Trial";
+    src: url('../fonts/BeatriceTRIAL-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Beatrice Trial";
+    src: url('../fonts/BeatriceTRIAL-Extrabold.ttf');
+    font-weight: 800;
+}
+
 :root {
     --rr-ff-heading1: 'Beatrice Trial', sans-serif;
     --rr-background-section-3-bg: #121212;

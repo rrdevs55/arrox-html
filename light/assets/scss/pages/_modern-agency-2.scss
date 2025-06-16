@@ -958,7 +958,7 @@ START: Brand CSS
 
     .copyright-content {
         p {
-            color: var(--rr-color-common-white);
+            color: var(--rr-color-text-body);
             margin-bottom: 0;
 
             @include breakpoint(md) {

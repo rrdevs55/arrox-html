@@ -1,5 +1,5 @@
 :root {
-    --rr-ff-heading: 'BDO Grotesk', sans-serif;
+    --rr-ff-grotesk: 'BDO Grotesk', sans-serif;
     --rr-ff-body: 'Inter', sans-serif;
     --rr-common-white: #FFFFFF;
     --rr-theme-primary: #222222;
@@ -214,7 +214,7 @@ $mxs: '(max-width:320px)';
     padding-right: 20px;
     font-weight: var(--rr-fw-medium);
     color: var(--rr-common-white);
-    font-family: var(--rr-ff-heading);
+    font-family: var(--rr-ff-grotesk);
     border: 1px solid rgba(255, 255, 255, 0.14);
 
     &::before {
@@ -287,7 +287,7 @@ $mxs: '(max-width:320px)';
         }
 
         .tp-btn-circle-text-2 {
-            font-family: var(--rr-ff-heading);
+            font-family: var(--rr-ff-grotesk);
             font-weight: var(--rr-fw-medium);
             display: block;
             font-style: normal;
@@ -488,7 +488,7 @@ $mxs: '(max-width:320px)';
 .section {
     &__title-wrapper {
         &-sub-title {
-            font-family: var(--rr-ff-heading);
+            font-family: var(--rr-ff-grotesk);
             font-weight: var(--rr-fw-medium);
             color: var(--rr-heading-primary);
             font-style: normal;
@@ -497,7 +497,7 @@ $mxs: '(max-width:320px)';
         }
 
         &-title {
-            font-family: var(--rr-ff-heading);
+            font-family: var(--rr-ff-grotesk);
             font-weight: var(--rr-fw-medium);
             color: var(--rr-heading-primary);
             font-style: normal;
@@ -628,7 +628,7 @@ $mxs: '(max-width:320px)';
                 font-style: normal;
                 font-size: 18px;
                 line-height: 30px;
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
                 color: rgba(255, 255, 255, 0.7);
 
                 br {
@@ -648,7 +648,7 @@ $mxs: '(max-width:320px)';
 
         &-title {
             h2 {
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
                 font-weight: var(--rr-fw-medium);
                 font-style: normal;
                 font-size: 60px;
@@ -721,7 +721,7 @@ $mxs: '(max-width:320px)';
 
             h3 {
                 margin-bottom: 0;
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
                 font-weight: var(--rr-fw-medium);
                 color: var(--rr-common-white);
                 font-style: normal;
@@ -730,7 +730,7 @@ $mxs: '(max-width:320px)';
 
                 .odometer.odometer-auto-theme,
                 .odometer.odometer-theme-default {
-                    font-family: var(--rr-ff-heading);
+                    font-family: var(--rr-ff-grotesk);
                     line-height: 1;
                 }
 
@@ -743,7 +743,7 @@ $mxs: '(max-width:320px)';
             }
 
             p {
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
                 font-weight: var(--rr-fw-medium);
                 font-style: normal;
                 font-size: 16px;
@@ -906,7 +906,7 @@ $mxs: '(max-width:320px)';
             line-height: 106%;
             text-transform: uppercase;
             color: var(--rr-heading-primary);
-            font-family: var(--rr-ff-heading);
+            font-family: var(--rr-ff-grotesk);
             font-weight: var(--rr-fw-medium);
 
             @media #{$lgr} {
@@ -1063,7 +1063,7 @@ $mxs: '(max-width:320px)';
                 }
 
                 p {
-                    font-family: var(--rr-ff-heading);
+                    font-family: var(--rr-ff-grotesk);
                     font-style: normal;
                     font-weight: var(--rr-fw-medium);
                     font-size: 16px;
@@ -1105,7 +1105,7 @@ $mxs: '(max-width:320px)';
         padding-bottom: 15px;
         font-weight: var(--rr-fw-medium);
         color: var(--rr-heading-primary);
-        font-family: var(--rr-ff-heading);
+        font-family: var(--rr-ff-grotesk);
         border-bottom: 1px solid rgb(225, 226, 228);
 
         @media #{$mdr} {
@@ -1170,7 +1170,7 @@ $mxs: '(max-width:320px)';
 
             .slider-content {
                 .slider-title {
-                    font-family: var(--rr-ff-heading);
+                    font-family: var(--rr-ff-grotesk);
                     font-weight: var(--rr-fw-medium);
                     font-style: normal;
                     font-size: 16px;
@@ -1244,7 +1244,7 @@ $mxs: '(max-width:320px)';
                 .slider-wrap {
                     .slider-content {
                         .slider-title {
-                            font-family: var(--rr-ff-heading);
+                            font-family: var(--rr-ff-grotesk);
                             font-weight: var(--rr-fw-medium);
                             font-style: normal;
                             font-size: 16px;
@@ -1439,7 +1439,7 @@ $mxs: '(max-width:320px)';
             justify-content: space-between;
 
             & .date {
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
                 font-style: normal;
                 font-weight: var(--rr-fw-regular);
                 font-size: 16px;
@@ -1459,7 +1459,7 @@ $mxs: '(max-width:320px)';
                 position: relative;
                 font-weight: var(--rr-fw-medium);
                 color: var(--rr-heading-primary);
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
                 transition: all 0.3s ease-in-out;
 
 
@@ -1493,7 +1493,7 @@ $mxs: '(max-width:320px)';
         }
 
         & .number {
-            font-family: var(--rr-ff-heading);
+            font-family: var(--rr-ff-grotesk);
             font-style: normal;
             font-weight: 400;
             font-size: 20px;
@@ -1750,7 +1750,7 @@ $mxs: '(max-width:320px)';
         margin-bottom: 50px;
         margin-top: 30px;
         text-transform: capitalize;
-        font-family: var(--rr-ff-heading);
+        font-family: var(--rr-ff-grotesk);
 
         @media #{$xxlr, $xlr, $lgr, $mdr, $smr, $xs} {
             br {
@@ -1805,7 +1805,7 @@ $mxs: '(max-width:320px)';
                 line-height: 1;
                 margin-bottom: 8px;
                 color: var(--rr-theme-primary);
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
 
                 @media #{$xs} {
                     font-size: 18px;
@@ -1819,7 +1819,7 @@ $mxs: '(max-width:320px)';
                 opacity: 0.6;
                 text-transform: uppercase;
                 color: var(--rr-theme-primary);
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
 
                 @media #{$xs} {
                     font-size: 15px;
@@ -1914,7 +1914,7 @@ $mxs: '(max-width:320px)';
                 align-items: center;
                 margin-bottom: 17px;
                 color: rgba(34, 34, 34, 0.6);
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
 
                 @media #{$xs} {
                     br {
@@ -1933,7 +1933,7 @@ $mxs: '(max-width:320px)';
                 font-size: 30px;
                 line-height: 133%;
                 color: var(--rr-heading-primary);
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
 
                 @media #{$xs} {
                     font-size: 20px;
@@ -1962,7 +1962,7 @@ $mxs: '(max-width:320px)';
                 line-height: 162%;
                 padding-bottom: 22px;
                 color: rgba(34, 34, 34, 0.6);
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
 
                 @media #{$xxlr,$xlr,$lgr,$mdr,$smr,$xs} {
                     br {
@@ -2015,7 +2015,7 @@ $mxs: '(max-width:320px)';
             }
 
             .top-title {
-                font-family: var(--rr-ff-heading);
+                font-family: var(--rr-ff-grotesk);
                 font-weight: var(--rr-fw-regular);
                 color: var(--rr-common-white);
                 font-style: normal;
@@ -2073,7 +2073,7 @@ $mxs: '(max-width:320px)';
                 list-style-type: none;
 
                 a {
-                    font-family: var(--rr-ff-heading);
+                    font-family: var(--rr-ff-grotesk);
                     font-weight: var(--rr-fw-medium);
                     font-style: normal;
                     font-size: 16px;
@@ -2118,7 +2118,7 @@ $mxs: '(max-width:320px)';
         }
 
         &-title {
-            font-family: var(--rr-ff-heading);
+            font-family: var(--rr-ff-grotesk);
             color: var(--rr-common-white);
             font-weight: var(--rr-fw-medium);
             font-style: normal;

@@ -266,12 +266,18 @@
 .show-light {
   display: inline-block;
 
+  @include dark {
+    display: none;
+  }
 
 }
 
 .show-dark {
   display: none;
 
+  @include dark {
+    display: inline-block;
+  }
 
 }
 
@@ -1055,6 +1061,12 @@
   z-index: 100;
   background-color: #FFFFFF;
 
+  &.dark {
+    .header-area-2 .side-toggle {
+      background-color: #1D1C1C;
+    }
+  }
+
   .container {
     &.large {
       @media (min-width: 1650px) {
@@ -1069,10 +1081,6 @@
 
   .header-area-2 .side-toggle {
     background-color: rgba(243, 243, 243, 1);
-
-    @include dark {
-      background-color: #1D1C1C;
-    }
   }
 
   .header-area-2__inner {
@@ -1161,4 +1169,225 @@
     }
   }
 
+}
+
+
+
+
+
+/* team list area style  */
+.team-list-area {
+  .team-box {
+    border-bottom: 1px solid #E1E1E1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    gap: 15px 25px;
+    grid-template-columns: 100px 1fr 960px auto;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s;
+
+    @include dark {
+      border-color: #292929;
+    }
+
+    @media #{$xxl} {
+      grid-template-columns: 100px 1fr 560px auto;
+
+    }
+
+    @media #{$lg} {
+      grid-template-columns: 100px 1fr 310px auto;
+    }
+
+    @media #{$md} {
+      grid-template-columns: 80px 1fr 210px auto;
+    }
+
+    @media #{$sm} {
+      grid-template-columns: 1fr 1fr auto;
+    }
+
+
+    &:hover {
+      background-color: #FAFAFA;
+
+      @include dark {
+        background-color: #1D1C1C;
+      }
+
+      .thumb {
+        transform: translateX(20px);
+      }
+
+      .name {
+        transform: translateX(20px);
+      }
+
+      .t-btn-normal {
+        transform: translateX(-20px);
+      }
+    }
+
+    .thumb {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: all 0.5s;
+
+      @media #{$md} {
+        width: 80px;
+        height: 80px;
+      }
+
+      @media #{$sm} {
+        grid-column: span 3;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .name {
+      font-size: 30px;
+      font-weight: 310;
+      line-height: 1;
+      letter-spacing: -0.07em;
+      transition: all 0.5s;
+
+      @media #{$xl} {
+        font-size: 24px;
+      }
+
+    }
+
+    .post {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 16px;
+      display: inline-block;
+    }
+
+  }
+
+  .team-wrapper-box {
+    margin-top: 90px;
+
+    @media #{$xl} {
+      margin-top: 70px;
+    }
+  }
+
+  .team-wrapper {
+    border-top: 1px solid #E1E1E1;
+
+    @include dark {
+      border-color: #292929;
+    }
+  }
+}
+
+
+/* team area style  */
+.team-area {
+
+  .section-header {
+    margin-top: 59px;
+    display: grid;
+    gap: 20px 20px;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-end;
+
+    @media #{$md} {
+      grid-template-columns: 1fr;
+    }
+
+    .text {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      max-width: 375px;
+    }
+
+    .section-title-wrapper {
+      order: 2;
+
+      @media #{$md} {
+        order: unset;
+      }
+    }
+  }
+
+
+
+  .team-wrapper-box {
+    margin-top: 94px;
+
+    @media #{$xxl} {
+      margin-top: 64px;
+    }
+
+    @media #{$md} {
+      margin-top: 44px;
+    }
+  }
+
+  .team-wrapper {
+    display: grid;
+    gap: 40px 20px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media #{$md} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$xs} {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .team-box {
+    &:hover {
+      .thumb {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .thumb {
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        transition: all 0.5s;
+      }
+    }
+
+    .name {
+      font-size: 30px;
+      font-weight: 310;
+      line-height: 1;
+      letter-spacing: -0.07em;
+
+      @media #{$xxl} {
+        font-size: 24px;
+      }
+    }
+
+    .post {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      display: inline-block;
+      margin-top: 3px;
+    }
+
+    .content {
+      margin-top: 19px;
+    }
+  }
 }

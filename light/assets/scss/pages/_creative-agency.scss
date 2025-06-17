@@ -438,10 +438,6 @@
 
 }
 
-
-
-
-
 /* work area 2 style  */
 .work-area-2 {
     position: relative;
@@ -687,15 +683,10 @@
         top: 40%;
         left: 51%;
         transform: translate(-50%, -50%) scale(0);
-        /* Start with scale 0 */
         background-color: var(--primary);
-        // background-color: red;
         width: 250px;
-        /* Adjust width as needed */
         height: 250px;
-        /* Adjust height as needed */
         border-radius: 50%;
-        /* Circular shape */
     }
 }
 
